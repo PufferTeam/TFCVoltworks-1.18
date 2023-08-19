@@ -1,0 +1,14 @@
+name = "TFCGyres-VeinBuffs"
+filename = "TFCGyres-VeinBuffs-1.5.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "70309afdfcf464cd0b35e159b9d228a824b743a4"
+
+[update]
+[update.curseforge]
+file-id = 4590556
+project-id = 875937

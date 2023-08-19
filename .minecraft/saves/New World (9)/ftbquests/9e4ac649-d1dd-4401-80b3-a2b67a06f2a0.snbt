@@ -1,0 +1,15 @@
+{
+	version: 1
+	uuid: "9e4ac649d1dd440180b3a2b67a06f2a0"
+	name: "Jerome226"
+	can_edit: false
+	lock: false
+	auto_pin: false
+	chapter_pinned: false
+	rewards_blocked: false
+	task_progress: { }
+	started: { }
+	completed: { }
+	claimed_rewards: { }
+	pinned_quests: [ ]
+}

@@ -1,0 +1,14 @@
+name = "TFCPyros-AdjustedGen"
+filename = "TFCPyrosAdjustedGen-1.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "73403af5917ff9ca0954fb624a742249a84a845b"
+
+[update]
+[update.curseforge]
+file-id = 4526746
+project-id = 859214

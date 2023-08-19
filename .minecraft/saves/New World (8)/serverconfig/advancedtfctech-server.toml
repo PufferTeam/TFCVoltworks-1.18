@@ -1,0 +1,19 @@
+
+[general]
+	#A modifier to apply to the energy costs of every Thresher recipe.
+	thresher_energyModifier = 1.0
+	#A modifier to apply to the time of every Thresher recipe. Can't be lower than 1.
+	thresher_timeModifier = 1.0
+	#A modifier to apply to the energy costs of every Grist Mill recipe.
+	gristMill_energyModifier = 1.0
+	#A modifier to apply to the time of every Grist Mill recipe. Can't be lower than 1.
+	gristMill_timeModifier = 1.0
+	#A modifier to apply to the energy costs of every Power Loom recipe.
+	powerLoom_energyModifier = 1.0
+	#A modifier to apply to the time of every Power Loom recipe. Can't be lower than 1.
+	powerLoom_timeModifier = 1.0
+
+[debug]
+	#If true, a GUI can be opened up by rightclicking the Power Loom with a Pirn.
+	enablePowerLoomDebug = false
+

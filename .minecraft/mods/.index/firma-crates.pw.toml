@@ -1,0 +1,14 @@
+name = "Firma Crates"
+filename = "Firma Crates-forge-1.18.2-0.7.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "a5044d7d654e5f58949fdc160ae05d2f816d4df4"
+
+[update]
+[update.curseforge]
+file-id = 3996364
+project-id = 677954

@@ -1,0 +1,14 @@
+name = "Dynamic Trees +"
+filename = "DynamicTreesPlus-1.18.2-1.0.4.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "761aa562aec63b95cebdf7421cadf30ea3244082"
+
+[update]
+[update.curseforge]
+file-id = 4609572
+project-id = 478155

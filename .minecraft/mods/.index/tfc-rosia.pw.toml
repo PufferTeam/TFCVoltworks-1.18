@@ -1,0 +1,14 @@
+name = "Rosia"
+filename = "rosia-0.0.16-1.18.2.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "3f786510dd517adf22a62c07ce370fc376395d50"
+
+[update]
+[update.curseforge]
+file-id = 4681351
+project-id = 856122

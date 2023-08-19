@@ -1,0 +1,5 @@
+
+["Config for woodencog"]
+	#Should create handle temperature ?
+	"Handle temperature" = true
+

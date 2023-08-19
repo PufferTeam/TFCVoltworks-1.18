@@ -1,0 +1,14 @@
+name = "TFC Metallum U"
+filename = "TFC Metallum 1.18.2-1.0.3.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "7f73fa364f6f8391c65b8fdfffd4930ecb3f709d"
+
+[update]
+[update.curseforge]
+file-id = 4449385
+project-id = 819850

@@ -1,0 +1,17 @@
+{
+	id: "9e4ac649-d1dd-4401-80b3-a2b67a06f2a0"
+	type: "player"
+	player_name: "Jerome226"
+	ranks: {
+		9e4ac649-d1dd-4401-80b3-a2b67a06f2a0: "owner"
+	}
+	properties: {
+		"ftbteams:display_name": "Jerome226"
+		"ftbteams:description": ""
+		"ftbteams:color": "#FF59F8"
+		"ftbteams:free_to_join": 0b
+		"ftbteams:max_msg_history_size": 1000
+	}
+	message_history: [ ]
+	extra: { }
+}

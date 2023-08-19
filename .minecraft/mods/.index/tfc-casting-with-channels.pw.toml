@@ -1,0 +1,14 @@
+name = "TFC Casting with Channels!"
+filename = "tfcchannelcasting-0.1.6-beta.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "95efba2d62cba2a1df4ca60d4094cd101cb58775"
+
+[update]
+[update.curseforge]
+file-id = 4533709
+project-id = 820815

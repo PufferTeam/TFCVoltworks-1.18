@@ -1,0 +1,11 @@
+{
+	muted: false
+	fly: false
+	god: false
+	nick: ""
+	name: "Jerome226"
+	last_seen: { dim: "minecraft:overworld", x: -6586, y: 85, z: 2346, time: 1692153152947L, xRot: 73.79985f, yRot: 178.55072f }
+	recording: 0
+	teleport_history: [ ]
+	homes: { }
+}

@@ -1,0 +1,101 @@
+{
+    "block.kubejs.rock.pavedcobble.granite": "Granite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.granite_slab": "Granite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.granite_stairs": "Granite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.granite_wall": "Granite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.diorite": "Diorite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.diorite_slab": "Diorite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.diorite_stairs": "Diorite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.diorite_wall": "Diorite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.gabbro": "Gabbro Paved Cobble",
+    "block.kubejs.rock.pavedcobble.gabbro_slab": "Gabbro Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.gabbro_stairs": "Gabbro Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.gabbro_wall": "Gabbro Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.shale": "Shale Paved Cobble",
+    "block.kubejs.rock.pavedcobble.shale_slab": "Shale Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.shale_stairs": "Shale Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.shale_wall": "Shale Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.claystone": "Claystone Paved Cobble",
+    "block.kubejs.rock.pavedcobble.claystone_slab": "Claystone Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.claystone_stairs": "Claystone Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.claystone_wall": "Claystone Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.limestone": "Limestone Paved Cobble",
+    "block.kubejs.rock.pavedcobble.limestone_slab": "Limestone Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.limestone_stairs": "Limestone Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.limestone_wall": "Limestone Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.conglomerate": "Conglomerate Paved Cobble",
+    "block.kubejs.rock.pavedcobble.conglomerate_slab": "Conglomerate Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.conglomerate_stairs": "Conglomerate Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.conglomerate_wall": "Conglomerate Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.dolomite": "Dolomite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.dolomite_slab": "Dolomite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.dolomite_stairs": "Dolomite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.dolomite_wall": "Dolomite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.chert": "Chert Paved Cobble",
+    "block.kubejs.rock.pavedcobble.chert_slab": "Chert Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.chert_stairs": "Chert Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.chert_wall": "Chert Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.chalk": "Chalk Paved Cobble",
+    "block.kubejs.rock.pavedcobble.chalk_slab": "Chalk Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.chalk_stairs": "Chalk Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.chalk_wall": "Chalk Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.rhyolite": "Rhyolite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.rhyolite_slab": "Rhyolite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.rhyolite_stairs": "Rhyolite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.rhyolite_wall": "Rhyolite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.basalt": "Basalt Paved Cobble",
+    "block.kubejs.rock.pavedcobble.basalt_slab": "Basalt Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.basalt_stairs": "Basalt Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.basalt_wall": "Basalt Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.andesite": "Andesite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.andesite_slab": "Andesite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.andesite_stairs": "Andesite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.andesite_wall": "Andesite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.dacite": "Dacite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.dacite_slab": "Dacite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.dacite_stairs": "Dacite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.dacite_wall": "Dacite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.quartzite": "Quartzite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.quartzite_slab": "Quartzite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.quartzite_stairs": "Quartzite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.quartzite_wall": "Quartzite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.slate": "Slate Paved Cobble",
+    "block.kubejs.rock.pavedcobble.slate_slab": "Slate Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.slate_stairs": "Slate Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.slate_wall": "Slate Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.phyllite": "Phyllite Paved Cobble",
+    "block.kubejs.rock.pavedcobble.phyllite_slab": "Phyllite Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.phyllite_stairs": "Phyllite Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.phyllite_wall": "Phyllite Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.schist": "Schist Paved Cobble",
+    "block.kubejs.rock.pavedcobble.schist_slab": "Schist Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.schist_stairs": "Schist Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.schist_wall": "Schist Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.gneiss": "Gneiss Paved Cobble",
+    "block.kubejs.rock.pavedcobble.gneiss_slab": "Gneiss Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.gneiss_stairs": "Gneiss Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.gneiss_wall": "Gneiss Paved Cobble Wall",
+
+    "block.kubejs.rock.pavedcobble.marble": "Marble Paved Cobble",
+    "block.kubejs.rock.pavedcobble.marble_slab": "Marble Paved Cobble Slab",
+    "block.kubejs.rock.pavedcobble.marble_stairs": "Marble Paved Cobble Stairs",
+    "block.kubejs.rock.pavedcobble.marble_wall": "Marble Paved Cobble Wall"
+}

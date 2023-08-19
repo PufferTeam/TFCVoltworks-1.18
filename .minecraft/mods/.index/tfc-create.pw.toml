@@ -1,0 +1,14 @@
+name = "TFC Create"
+filename = "tfcreate-1.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "c96cd8b8d99fb26ab5ecdcec39896b42623a533d"
+
+[update]
+[update.curseforge]
+file-id = 4226288
+project-id = 759509

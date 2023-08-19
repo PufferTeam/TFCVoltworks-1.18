@@ -1,0 +1,142 @@
+
+[general]
+	#Puts all the added items into a new Every Compat tab instead of their own mod tabs. Be warned that if disabled it could cause some issue with some mods that have custom tabs
+	creative_tab = true
+	#Allows the mod to try to remap and convert other blocks and items from other compat mods that have been uninstalled from one world. This was made so one can uninstall such mods seamlessly having their blocks converted into Evety Compat counterparts
+	remap_other_mods = false
+	#Clears out and remaps all blocks registered by this mod belonging to uninstalled wood types to air or oak wood
+	remap_self = true
+	#Makes dynamic assets that are generated depend on loaded resource packs. Turn off to make them just use vanilla assets
+	assets_depend_on_loaded_packs = true
+
+[leaves_type]
+
+	[leaves_type.minecraft]
+		oak = false
+		spruce = false
+		birch = false
+		jungle = false
+		acacia = false
+		dark_oak = false
+		azalea = false
+		flowering_azalea = false
+
+	[leaves_type.dynamictrees]
+		spruce = false
+		oak_undergrowth = false
+		oak = false
+		jungle_undergrowth = false
+		jungle = false
+		flowering_azalea = false
+		dark_oak = false
+		birch = false
+		azalea = false
+		acacia = false
+
+	[leaves_type.dttfc]
+		willow_undergrowth = true
+		willow = true
+		white_cedar_undergrowth = true
+		white_cedar = true
+		sycamore = true
+		spruce_undergrowth = true
+		spruce = true
+		sequoia_undergrowth = true
+		sequoia = true
+		rosewood = true
+		pine_undergrowth = true
+		pine = true
+		palm = true
+		oak_undergrowth = true
+		oak = true
+		maple_undergrowth = true
+		maple = true
+		kapok_undergrowth = true
+		kapok = true
+		hickory_undergrowth = true
+		hickory = true
+		douglas_fir_undergrowth = true
+		douglas_fir = true
+		chestnut_undergrowth = true
+		chestnut = true
+		blackwood_undergrowth = true
+		blackwood = true
+		birch_undergrowth = true
+		birch = true
+		aspen_undergrowth = true
+		aspen = true
+		ash_undergrowth = true
+		ash = true
+		acacia_undergrowth = true
+		acacia = true
+
+	[leaves_type.quark]
+		blue_blossom = false
+		lavender_blossom = false
+		orange_blossom = false
+		pink_blossom = false
+		yellow_blossom = false
+		red_blossom = false
+
+	[leaves_type.tfc]
+		acacia = true
+		ash = true
+		aspen = true
+		birch = true
+		blackwood = true
+		chestnut = true
+		douglas_fir = true
+		hickory = true
+		kapok = true
+		maple = true
+		oak = true
+		palm = true
+		pine = true
+		rosewood = true
+		sequoia = true
+		spruce = true
+		sycamore = true
+		white_cedar = true
+		willow = true
+
+[wood_type]
+
+	[wood_type.minecraft]
+		oak = true
+		spruce = true
+		birch = true
+		jungle = true
+		acacia = true
+		dark_oak = true
+		crimson = true
+		warped = true
+
+	[wood_type.tfc]
+		acacia = true
+		ash = true
+		aspen = true
+		birch = true
+		blackwood = true
+		chestnut = true
+		douglas_fir = true
+		hickory = true
+		kapok = true
+		maple = true
+		oak = true
+		palm = true
+		pine = true
+		rosewood = true
+		sequoia = true
+		spruce = true
+		sycamore = true
+		white_cedar = true
+		willow = true
+
+	[wood_type.botania]
+		livingwood = false
+		dreamwood = false
+
+	[wood_type.quark]
+		azalea = false
+		blossom = false
+

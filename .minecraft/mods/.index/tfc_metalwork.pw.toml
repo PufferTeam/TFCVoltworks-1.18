@@ -1,0 +1,14 @@
+name = "TFC Metalwork"
+filename = "TFC Metalwork 1.18.2-0.0.4.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "f0fd3e4dc136ef586743415ed2d6d023aa675b29"
+
+[update]
+[update.curseforge]
+file-id = 4395522
+project-id = 826323

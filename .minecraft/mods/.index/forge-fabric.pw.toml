@@ -1,0 +1,14 @@
+name = "Clock-work"
+filename = "clockwork-forge-9d71707e9c1442328ec42ca7043ad10fac6071d7.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "2bc820e8c57edbdc97deaebedc6069ada67e4630"
+
+[update]
+[update.curseforge]
+file-id = 4595409
+project-id = 876933

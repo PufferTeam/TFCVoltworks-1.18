@@ -1,0 +1,14 @@
+name = "Decay 2012"
+filename = "decay_2012-1.0.3.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "df0224803ec0e6ac0bf0a91b49ee0f512f416990"
+
+[update]
+[update.curseforge]
+file-id = 4651475
+project-id = 676521

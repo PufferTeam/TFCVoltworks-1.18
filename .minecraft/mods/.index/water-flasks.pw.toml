@@ -1,0 +1,14 @@
+name = "TFC Water Flasks"
+filename = "waterflasks-2.0.5.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "0212800345ae2cd5c3093dd5ca83b64b21abc1b4"
+
+[update]
+[update.curseforge]
+file-id = 4466931
+project-id = 354353

@@ -1,0 +1,14 @@
+name = "CC: Tweaked 90gq Create Edition"
+filename = "cc-tweaked-1.18.2-1.100.8.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "02b3a618db1627965483037a5969e4535bc68215"
+
+[update]
+[update.curseforge]
+file-id = 3903051
+project-id = 652088

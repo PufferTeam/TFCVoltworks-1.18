@@ -1,0 +1,14 @@
+name = "Apple Crates"
+filename = "Apple Crates-forge-1.18.2-1.7.3.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "5a3fe19dbf2d21a3cc5600f56fe20c494cd6831a"
+
+[update]
+[update.curseforge]
+file-id = 3996308
+project-id = 630726

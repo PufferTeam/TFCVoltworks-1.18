@@ -1,0 +1,14 @@
+name = "GoProne"
+filename = "goprone-1.18.2-2.2.1.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "198c98ee7f2a9cd0fb67693ca64f56243a6a17c8"
+
+[update]
+[update.curseforge]
+file-id = 4497799
+project-id = 327968

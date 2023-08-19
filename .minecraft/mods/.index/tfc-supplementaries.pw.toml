@@ -1,0 +1,14 @@
+name = "TFC Supplementaries"
+filename = "tfcsupplementaries-1.1.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "70b569af16e1f5cc265a06f89e26f921dd1f8e62"
+
+[update]
+[update.curseforge]
+file-id = 4127853
+project-id = 714127
