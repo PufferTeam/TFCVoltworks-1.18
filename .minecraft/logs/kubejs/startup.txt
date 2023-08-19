@@ -1,5 +1,0 @@
-[17:43:30] [INFO ] Loaded script startup_scripts:constants.js in 0.393 s
-[17:43:30] [INFO ] Loaded script startup_scripts:remove_and_hide.js in 0.113 s
-[17:43:30] [INFO ] Loaded script startup_scripts:blocks.js in 0.005 s
-[17:43:30] [INFO ] Loaded script startup_scripts:items.js in 0.004 s
-[17:43:30] [INFO ] Loaded 4/4 KubeJS startup scripts in 2.129 s
