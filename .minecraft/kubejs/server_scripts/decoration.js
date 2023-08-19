@@ -146,8 +146,12 @@ onEvent('recipes', event => {
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_concrete`, `minecraft:${i}_concrete`));
 
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:hay_block', 'tfc:thatch')
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:hay_block', 'tfc:thatch')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:stick', '#tfc:firepit_sticks')
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:stick', '#tfc:firepit_sticks')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:glass', '#forge:glass/colorless')
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:glass', '#forge:glass/colorless')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:crafting_table', '#tfc:workbenches')
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:crafting_table', '#tfc:workbenches')
 
 })
