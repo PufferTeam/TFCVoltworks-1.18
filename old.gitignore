@@ -1,0 +1,41 @@
+# ignore everything
+*
+!*/
+
+# unignore github and curseforge  files
+!.gitignore
+!config.json
+!.gitattributes
+!.github/**
+
+# unignore config
+!.minecraft/config/**
+.minecraft/config/cherisedworlds/**
+.minecraft/config/dsurround/*.toml.bak
+.minecraft/config/controllable/**
+.minecraft/config/fancymenu/locals/**
+.minecraft/config/voicechat/**
+.minecraft/config/konkrete/locals/**
+.minecraft/config/drippyloadingscreen/locals/**
+.minecraft/config/defaultoptions/servers.dat
+.minecraft/config/jei/world/**
+.minecraft/config/*.toml.bak
+
+# unignore defaultconfigs
+!.minecraft/defaultconfigs/**
+
+# minemenu
+!.minecraft/minemenu/**
+
+# unignore kubejs folders
+!.minecraft/kubejs/assets/**
+!.minecraft/kubejs/client_scripts/**
+!.minecraft/kubejs/config/**
+!.minecraft/kubejs/data/**
+!.minecraft/kubejs/server_scripts/**
+!.minecraft/kubejs/startup_scripts/**
+
+# unignore resourcepacks
+!.minecraft/resourcepacks/**
+.minecraft/resourcepacks/Quark Programmer Art.zip
+.minecraft/resourcepacks/*.zip
