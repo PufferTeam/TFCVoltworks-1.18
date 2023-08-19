@@ -1,0 +1,41 @@
+# ignore everything
+*
+!*/
+
+# unignore github and curseforge  files
+!.gitignore
+!config.json
+!.gitattributes
+!.github/**
+
+# unignore config
+!/config/**
+/config/cherisedworlds/**
+/config/dsurround/*.toml.bak
+/config/controllable/**
+/config/fancymenu/locals/**
+/config/voicechat/**
+/config/konkrete/locals/**
+/config/drippyloadingscreen/locals/**
+/config/defaultoptions/servers.dat
+/config/jei/world/**
+/config/*.toml.bak
+
+# unignore defaultconfigs
+!/defaultconfigs/**
+
+# minemenu
+!/minemenu/**
+
+# unignore kubejs folders
+!/kubejs/assets/**
+!/kubejs/client_scripts/**
+!/kubejs/config/**
+!/kubejs/data/**
+!/kubejs/server_scripts/**
+!/kubejs/startup_scripts/**
+
+# unignore resourcepacks
+!/resourcepacks/**
+/resourcepacks/Quark Programmer Art.zip
+/resourcepacks/*.zip
