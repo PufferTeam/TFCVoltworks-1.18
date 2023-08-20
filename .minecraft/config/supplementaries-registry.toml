@@ -50,7 +50,7 @@
 	deepslate_lamp = false
 	checker_block = true
 	netherite_door = false
-	netherite_trapdoor = fale
+	netherite_trapdoor = false
 	lock_block = true
 	flax = true
 	rope = true

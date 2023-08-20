@@ -22,9 +22,9 @@
 	#Disable automatic wall and ceiling weighted pressure plate placement. Use if a mod is conflicting.
 	disable_weighted_pressure_plate_placement = false
 	#Show tooltip when a block has additional placements
-	tooltip = true
+	tooltip = false
 	#Check for and notify of mismatching tags. Only works when the same option in the server/world config is true.
-	check_tags = true
+	check_tags = false
 	#Log missing or additional tags on generated blocks.
 	log_tag_mismatch = false
 	#The thread priority of the mismatched tag checker. 1 is lowest, 10 is highest, 5 is normal.
@@ -33,7 +33,7 @@
 	#Blacklist for blocks to not have generated placement variants
 	blacklist = []
 	#Blacklist for mods to not have generated placement variants
-	mod_blacklist = []
+	mod_blacklist = ["mcwroofs", "everycomp", "tfc_metalwork"]
 	#Whitelist for blocks from blacklisted mods to still have generated placement variants
 	mod_block_whitelist = []
 

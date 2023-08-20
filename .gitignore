@@ -8,6 +8,7 @@
 !.gitattributes
 !.github/**
 
+.minecraft/lightspeed-cache
 # unignore config
 !.minecraft/config/**
 .minecraft/config/cherisedworlds/**
