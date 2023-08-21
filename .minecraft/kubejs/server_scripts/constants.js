@@ -46,6 +46,7 @@ global.recipeIdToRemove = [
     'framedblocks:framing_saw/framed_powered_rail_slope',
     'framedblocks:framing_saw/framed_detector_rail_slope',
     'framedblocks:framing_saw/framed_activator_rail_slope',
+    'framedblocks:framing_saw/framed_secret_storage',
 
     'thermal:machines/bottler/bottler_honey_bottle',
     'thermal:machines/bottler/bottler_mossy_stone_bricks'

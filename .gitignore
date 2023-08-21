@@ -11,6 +11,7 @@
 .minecraft/lightspeed-cache
 # unignore config
 !.minecraft/config/**
+.minecraft/config/jei/world/local/**
 .minecraft/config/cherisedworlds/**
 .minecraft/config/dsurround/*.toml.bak
 .minecraft/config/controllable/**

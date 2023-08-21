@@ -37,6 +37,7 @@ global.removeAndHide = [
     'framedblocks:framed_fancy_powered_rail_slope',
     'framedblocks:framed_fancy_detector_rail_slope',
     'framedblocks:framed_fancy_activator_rail_slope',
+    'framedblocks:framed_secret_storage',
     'createbigcannons:cast_iron_ingot',
     'createbigcannons:cast_iron_nugget',
     'createbigcannons:nethersteel_ingot',
