@@ -38,6 +38,11 @@ global.removeAndHide = [
     'framedblocks:framed_fancy_detector_rail_slope',
     'framedblocks:framed_fancy_activator_rail_slope',
     'framedblocks:framed_secret_storage',
+    'rosia:copper_wire',
+    'rosia:copper_coil',
+    'rosia:purple_steel_rifle',
+    'rosia:bullets',
+    'rosia:rifle_ammo',
     'createbigcannons:cast_iron_ingot',
     'createbigcannons:cast_iron_nugget',
     'createbigcannons:nethersteel_ingot',
@@ -71,6 +76,8 @@ global.removeAndHide = [
     'create:sweet_roll',
     'create:chocolate_glazed_berries',
     'create:honeyed_apple',
+    'create:empty_blaze_burner',
+    'create:blaze_burner',
     'minecraft:barrier'
 ]
 
@@ -356,6 +363,11 @@ global.forgingBonusWhitelist = [
     "shield"
 ];
 
+global.rosiaMetalTypes = [
+    'purple_steel',
+    'invar'
+]
+
 global.tfcMetalTypes = [
     'bismuth',
     'bismuth_bronze',
@@ -624,6 +636,7 @@ global.duplicateAnimals = [
     'chicken',
     'donkey',
     'ocelot',
+    'panda',
     'wolf',
     'pig'
 ]
@@ -649,6 +662,9 @@ global.modFluids = [
     'pneumaticcraft:biodiesel',
     'pneumaticcraft:lubricant',
     'pneumaticcraft:vegetable_oil',
+    'rosia:invar_fluid',
+    'rosia:weak_purple_steel_fluid',
+    'rosia:purple_steel_fluid',
     'createbigcannons:molten_steel',
     'createbigcannons:molten_nethersteel'
 ]
@@ -853,7 +869,6 @@ global.vanillaItems = [
     'honeycomb',
     'glow_berries',
     'amethyst_shard',
-    'lectern',
     'sea_pickle',
     'nautilus_shell',
     'netherite_block',
@@ -868,8 +883,11 @@ global.vanillaItems = [
     'spore_blossom',
     'wheat_seeds',
     'pumpkin_seeds',
+    'iron_horse_armor',
+    'golden_horse_armor',
     'beetroot_seeds',
     'fishing_rod',
+    'slime_ball',
     'dirt',
     'coarse_dirt',
     'rooted_dirt',

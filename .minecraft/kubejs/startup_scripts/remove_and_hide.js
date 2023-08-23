@@ -21,6 +21,52 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
         )
     }
 
+    if(type == 'tfcmetal' && mod == 'rosia') {
+        global.removeAndHide.push(
+            `${mod}:weak_${item}_ingot`,
+            `${mod}:${item}_ingot`,
+            `${mod}:${item}_double_ingot`,
+            `${mod}:${item}_sheet`,
+            `${mod}:${item}_double_sheet`,
+            `${mod}:${item}_rod`,
+            `${mod}:${item}_wire`,
+            `${mod}:${item}_coil`,
+            `${mod}:${item}_unfinished_helmet`,
+            `${mod}:${item}_helmet`,
+            `${mod}:${item}_unfinished_chestplate`,
+            `${mod}:${item}_chestplate`,
+            `${mod}:${item}_unfinished_greaves`,
+            `${mod}:${item}_greaves`,
+            `${mod}:${item}_unfinished_boots`,
+            `${mod}:${item}_boots`,
+            `${mod}:${item}_pickaxe`,
+            `${mod}:${item}_pickaxe_head`,
+            `${mod}:${item}_propick`,
+            `${mod}:${item}_propick_head`,
+            `${mod}:${item}_axe`,
+            `${mod}:${item}_axe_head`,
+            `${mod}:${item}_shovel`,
+            `${mod}:${item}_shovel_head`,
+            `${mod}:${item}_hoe`,
+            `${mod}:${item}_hoe_head`,
+            `${mod}:${item}_chisel`,
+            `${mod}:${item}_chisel_head`,
+            `${mod}:${item}_hammer`,
+            `${mod}:${item}_hammer_head`,
+            `${mod}:${item}_saw`,
+            `${mod}:${item}_saw_blade`,
+            `${mod}:${item}_sword`,
+            `${mod}:${item}_sword_blade`,
+            `${mod}:${item}_mace`,
+            `${mod}:${item}_mace_head`,
+            `${mod}:${item}_knife`,
+            `${mod}:${item}_knife_blade`,
+            `${mod}:${item}_scythe`,
+            `${mod}:${item}_scythe_blade`,
+            `${mod}:${item}_shears`
+        )
+    }
+
     if(type == 'tfcwood') {
         global.removeAndHide.push(
             `everycomp:q/tfc/wood/planks/${item}_post`,
@@ -402,6 +448,8 @@ global.duplicateAnimals.forEach(i => global.removeAndHide.push(`minecraft:${i}_s
 global.tfcGlobalMetalTypes.forEach(i => global.removeAndHide.push(`tfc_metalwork:metal/large_plate/${i}`));
 
 global.miscRoofTypes.forEach(i => removeAndHide('', '', i, 'roofs', 'mcwroofs', false, null, null));
+
+global.rosiaMetalTypes.forEach(i => removeAndHide('', '', i, 'tfcmetal', 'rosia', false, null, null));
 
 global.colors.forEach(colors => {
 

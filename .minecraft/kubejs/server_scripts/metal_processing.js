@@ -66,9 +66,15 @@ onEvent('tags.items', event => {
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/iron`, `tfc:metal/sheet/${i}`));
 
     const knifes = event.get('tfc:knifes').getObjectIds()
+
     knifes.forEach(i => event.add('tfc:sharp_tools', i))
     knifes.forEach(i => event.add('tfc:deals_piercing_damage', i))
     knifes.forEach(i => event.add('tfc:knives', i))
+
+    const knives = event.get('tfc:knives').getObjectIds()
+    knives.forEach(i => event.add('sliceanddice:allowed_tools', i))
+    const axes = event.get('tfc:axes').getObjectIds()
+    axes.forEach(i => event.add('sliceanddice:allowed_tools', i))
 
     event.add(`forge:plates/iron`, 'tfc_metalwork:metal/plate/wrought_iron')
 })   
@@ -81,6 +87,13 @@ onEvent('recipes', event => {
     global.tfcGlobalMetalTypes.forEach(i => event.remove({ id: `tfc_metalwork:anvil/${i}_large_plate` }));
     global.tfcGlobalMetalTypes.forEach(i => event.remove({ id: `tfc_metalwork:quern/${i}_dust` }));
 
+    event.remove({ id: `rosia:casting/invar_fire_ingot` })
+    event.remove({ id: `rosia:casting/invar_ingot` })
+    event.remove({ id: `rosia:casting/purple_steel_fire_ingot` })
+    event.remove({ id: `rosia:casting/purple_steel_ingot` })
+    event.remove({ id: `rosia:casting/weak_purple_steel_fire_ingot` })
+    event.remove({ id: `rosia:casting/weak_purple_steel_ingot` })
+
     event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
     event.replaceInput({type: 'minecraft:crafting_shaped'}, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
 
@@ -90,4 +103,9 @@ onEvent('recipes', event => {
     event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron')
     event.replaceInput({type: 'minecraft:crafting_shaped'}, 'minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron')
 
+    event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'minecraft:slime_ball', 'tfc:glue')
+    event.replaceInput({type: 'minecraft:crafting_shaped'}, 'minecraft:slime_ball', 'tfc:glue')
+
+    event.replaceInput({type: 'minecraft:crafting_shapeless'}, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
+    event.replaceInput({type: 'minecraft:crafting_shaped'}, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
 })

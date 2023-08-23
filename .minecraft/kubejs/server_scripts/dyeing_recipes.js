@@ -89,7 +89,7 @@ onEvent('recipes', event => {
             'SS'
         ], {
             S: `minecraft:${colors}_wool`
-        })
+        }).id(`minecraft:${colors}_carpet`)
 
         global.dyeItem('_', '', colors, 'carpet', 'minecraft:', null, null, 'minecraft:white_carpet', null);
 
@@ -102,7 +102,7 @@ onEvent('recipes', event => {
         ], {
             S: '#tfc:high_quality_cloth',
             L: '#tfc:lumber'
-        });
+        }).id('minecraft:white_bed')
 
         global.dyeItem('_', '', colors, 'banner', 'minecraft:', null, null, 'minecraft:white_banner', null);
         event.shaped('minecraft:white_banner', [
@@ -112,7 +112,7 @@ onEvent('recipes', event => {
         ], {
             S: '#tfc:high_quality_cloth',
             L: '#tfc:firepit_sticks'
-        });
+        }).id('minecraft:white_banner')
 
         global.dyeItem('_', '', colors, 'stained_glass', 'minecraft:', null, null, 'minecraft:glass', null);
         event.shaped(`minecraft:${colors}_stained_glass`, [
@@ -120,14 +120,21 @@ onEvent('recipes', event => {
             'SS'
         ], {
             S: `quark:${colors}_shard`
-        })
+        }).id(`minecraft:${colors}_stained_glass_from_shard`)
         global.dyeItem('_', '', colors, 'stained_glass_pane', 'minecraft:', null, null, 'minecraft:glass_pane', null);
         event.shaped(`16x minecraft:${colors}_stained_glass_pane`, [
             'SSS',
             'SSS'
         ], {
             S: `minecraft:${colors}_stained_glass`
-        })
+        }).id(`minecraft:${colors}_stained_glass_pane_from_full_glass`)
+
+        event.shaped('16x minecraft:glass_pane', [
+            'SSS',
+            'SSS'
+        ], {
+            S: 'minecraft:glass'
+        }).id('minecraft:glass_pane')
         global.dyeItem('_', '', colors, 'terracotta', 'minecraft:', null, null, 'minecraft:terracotta', null);
         global.dyeItem('_', '', colors, 'concrete', 'minecraft:', null, null, 'immersiveengineering:concrete', null);
         global.dyeItem('_', '', colors, 'shulker_box', 'minecraft:', 'shulker_boxes', null, 'minecraft:shulker_box', null);
@@ -146,13 +153,13 @@ onEvent('recipes', event => {
             A: 'sewingkit:leather_sheet',
             B: '#forge:sheets/brass',
             L: '#tfc:lumber'
-        });
+        }).id('create:brown_toolbox')
         global.dyeItem('', '_', colors, 'sleeping_bag', 'comforts:', null, null, 'comforts:sleeping_bag_white', null);
         event.shaped('comforts:sleeping_bag_white', [
             'SSS',
         ], {
             S: '#tfc:high_quality_cloth'
-        });
+        }).id('comforts:sleeping_bag_white')
         global.dyeItem('', '_', colors, 'hammock', 'comforts:', null, null, 'comforts:hammock_white', null);
         event.shaped('comforts:hammock_white', [
             'A A',
@@ -161,7 +168,7 @@ onEvent('recipes', event => {
         ], {
             S: '#tfc:high_quality_cloth',
             A: '#tfc:firepit_sticks'
-        });
+        }).id('comforts:hammock_white')
         global.dyeItem('_', '', colors, 'valve_handle', 'create:', null, 'create:valve_handles', 'create:copper_valve_handle', null);
         global.dyeItem('', '/', colors, 'wattle', 'tfc:', null, null, 'tfc:wattle/unstained', null);
         event.shapeless('tfc:wattle/unstained', ['tfc:wattle', '#tfc:firepit_sticks', '#tfc:firepit_sticks', '#tfc:firepit_sticks', '#tfc:firepit_sticks', 'tfc:daub'])
@@ -177,7 +184,7 @@ onEvent('recipes', event => {
         ], {
             S: '#tfc:high_quality_cloth',
             L: '#tfc:firepit_sticks'
-        });
+        }).id('supplementaries:flag_white')
         global.dyeItem('_', '', colors, 'brass_flywheel', 'extendedflywheels:', null, 'forge:flywheels/brass_painted_flywheels', 'extendedflywheels:flywheel', 'brown');
         global.dyeItem('_', '', colors, 'steel_flywheel', 'extendedflywheels:', null, 'forge:flywheels/steel_painted_flywheels', 'extendedflywheels:steelflywheel', 'brown');
         global.dyeItem('_', '', colors, 'iron_flywheel', 'extendedflywheels:', null, 'forge:flywheels/iron_painted_flywheels', 'extendedflywheels:ironflywheel', 'brown');
@@ -188,21 +195,21 @@ onEvent('recipes', event => {
         global.dyeItem('_', '', colors, 'shingles', 'quark:', null, null, 'quark:shingles', null);
         global.dyeItem('_', '', colors, 'framed_glass', 'quark:', null, null, 'quark:framed_glass', null);
         event.remove({ output: 'quark:framed_glass' })
-        event.shaped('4x quark:framed_glass', [
-            ' L ',
+        event.shaped('8x quark:framed_glass', [
+            'LLL',
             'LSL',
-            ' L '
+            'LLL'
         ], {
             S: '#forge:rods/cast_iron',
             L: 'minecraft:glass'
-        });
+        }).id('quark:framed_glass')
         global.dyeItem('_', '', colors, 'framed_glass_pane', 'quark:', null, null, 'quark:framed_glass_pane', null);
         event.shaped(`16x quark:${colors}_framed_glass_pane`, [
             'SSS',
             'SSS'
         ], {
             S: `quark:${colors}_framed_glass`
-        })
+        }).id(`quark:${colors}_framed_glass_pane_from_full_block`)
         global.dyeItem('_', '', colors, 'shard', 'quark:', null, null, 'quark:clear_shard', null);
         global.dyeItem('_', '', colors, 'chalk', 'chalk:', null, 'chalk:chalk', 'chalk:white_chalk', null);
         //event.recipes.tfc.damage_inputs_shapeless_crafting('2x chalk:white_chalk', ['tfc:brick/chalk', Item.of('#tfc:chisels').ignoreNBT()])

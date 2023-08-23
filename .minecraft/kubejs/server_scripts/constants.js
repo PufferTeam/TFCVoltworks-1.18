@@ -61,6 +61,8 @@ global.recipeTypeToRemove = [
     'create:crushing',
     'create:deploying',
     'create:milling',
+    
+    'create_mechanical_extruder:extruding',
 
     'createaddition:rolling',
 

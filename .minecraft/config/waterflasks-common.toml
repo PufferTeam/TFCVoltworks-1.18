@@ -7,4 +7,6 @@ damageFactor = 5
 #Liquid Capacity of Iron Flask (1000 = 1 bucket = 10 drinks or 4 water bars)
 #Range: > 100
 ironCapacity = 2000
+#Allow drinking when not thirsty? Could be useful or wasteful if that's not water in there... Default False
+thirstyDrinking = false
 
