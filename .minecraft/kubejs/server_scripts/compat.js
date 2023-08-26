@@ -384,8 +384,6 @@ onEvent('recipes', event => {
         event.recipes.createSequencedAssembly(sresults, input, smethods).transitionalItem(transitionItem).loops(1);
     });
 
-
-
     /*
     event.forEachRecipe({ type: "tfc:casting" }, recipe => {
         const castingRecipe = JSON.parse(recipe.json);
