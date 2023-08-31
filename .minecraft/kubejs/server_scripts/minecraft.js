@@ -300,5 +300,26 @@ onEvent('recipes', event => {
     event.shapeless('4x minecraft:clay_ball', ['minecraft:clay']).id('minecraft:clay_ball_from_clay')
     event.shapeless('4x minecraft:snowball', ['minecraft:snow_block']).id('minecraft:snowball_from_snow_block')
     event.shapeless('9x minecraft:redstone', ['minecraft:redstone_block']).id('minecraft:redstone_from_redstone_block')
+    event.remove({ id: 'tfc:crafting/vanilla/hay' })
+    event.shapeless('9x tfc:straw', ['minecraft:hay_block']).id('tfc:crafting/vanilla/hay')
+
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:copper_ingot', 'tfc:metal/ingot/copper')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:copper_ingot', 'tfc:metal/ingot/copper')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:slime_ball', 'tfc:glue')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:slime_ball', 'tfc:glue')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
 
 });

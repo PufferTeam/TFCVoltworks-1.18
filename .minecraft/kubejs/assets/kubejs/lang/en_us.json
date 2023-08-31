@@ -1,4 +1,14 @@
 {
+    "item.kubejs.stone.pickaxe.igneous_extrusive": "Stone Pickaxe",
+    "item.kubejs.stone.pickaxe.igneous_intrusive": "Stone Pickaxe",
+    "item.kubejs.stone.pickaxe.metamorphic": "Stone Pickaxe",
+    "item.kubejs.stone.pickaxe.sedimentary": "Stone Pickaxe",
+
+    "item.kubejs.stone.pickaxe_head.igneous_extrusive": "Stone Pickaxe Head",
+    "item.kubejs.stone.pickaxe_head.igneous_intrusive": "Stone Pickaxe Head",
+    "item.kubejs.stone.pickaxe_head.metamorphic": "Stone Pickaxe Head",
+    "item.kubejs.stone.pickaxe_head.sedimentary": "Stone Pickaxe Head",
+
     "block.kubejs.rock.pavedcobble.granite": "Granite Paved Cobble",
     "block.kubejs.rock.pavedcobble.granite_slab": "Granite Paved Cobble Slab",
     "block.kubejs.rock.pavedcobble.granite_stairs": "Granite Paved Cobble Stairs",

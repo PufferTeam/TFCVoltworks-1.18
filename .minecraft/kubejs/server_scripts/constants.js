@@ -47,6 +47,12 @@ global.recipeIdToRemove = [
     'framedblocks:framing_saw/framed_detector_rail_slope',
     'framedblocks:framing_saw/framed_activator_rail_slope',
     'framedblocks:framing_saw/framed_secret_storage',
+    'create:crafting/kinetics/copper_valve_handle_from_others',
+    'extendedflywheels:brass_flywheel_from_painted_flywheel',
+    'extendedflywheels:steel_flywheel_from_painted_flywheel',
+    'extendedflywheels:iron_flywheel_from_painted_flywheel',
+    'create:crafting/kinetics/mechanical_press',
+    'create:crafting/kinetics/encased_fan',
 
     'thermal:machines/bottler/bottler_honey_bottle',
     'thermal:machines/bottler/bottler_mossy_stone_bricks'

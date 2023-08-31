@@ -27,6 +27,9 @@ onEvent('tags.items', event => {
     global.largePlatesTag = []
     global.tfcGlobalMetalTypes.forEach(i => global.largePlatesTag.push(`forge:large_plates/${i}`));
 
+    global.largeGearsTag = []
+    global.tfcGlobalMetalTypes.forEach(i => global.largeGearsTag.push(`forge:large_gears/${i}`));
+
     global.dustsTag = []
     global.tfcGlobalMetalTypes.forEach(i => global.dustsTag.push(`forge:dusts/${i}`));
 
@@ -66,11 +69,20 @@ onEvent('tags.items', event => {
         'wall'
     ]
 
+    global.anvilCopyBlacklist = [
+        'tfc_metalwork:metal/block/copper_slab',
+        'tfc_metalwork:metal/block/copper_stairs',
+        'tfc_metalwork:metal/cut/copper',
+        'tfc_metalwork:metal/cut/copper_slab',
+        'tfc_metalwork:metal/cut/copper_stairs'
+    ]
+
     global.unfiredPotteryItem.forEach(i => global.heatingBlacklist.push(i));
     global.terracotta.forEach(i => global.heatingBlacklist.push(i));
 
     global.dusttagrx = new RegExp(global.dustsTag.join('|'));
     global.largeplatetagrx = new RegExp(global.largePlatesTag.join('|'));
+    global.largegeartagrx = new RegExp(global.largeGearsTag.join('|'));
     global.largerodtagrx = new RegExp(global.largeRodsTag.join('|'));
     global.platetagrx = new RegExp(global.platesTag.join('|'));
     global.ingottagrx = new RegExp(global.ingotsTag.join('|'));
@@ -81,12 +93,12 @@ onEvent('tags.items', event => {
     global.doubleingotrx = new RegExp(global.doubleIngotBlacklist.join('|'));
     global.ingotrx = new RegExp(global.pileableIngots.join('|'));
     global.bonuswhitelistrx = new RegExp(global.forgingBonusWhitelist.join('|'));
+    global.anvilblacklistrx = new RegExp(global.anvilCopyBlacklist.join('|'));
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));
     global.rx = new RegExp(global.heatingBlacklist.join('|'));
     global.tagrx = new RegExp(global.heatingTagBlacklist.join('|'));
     global.toolmetalrx = new RegExp(global.toolMetalTypes.join('|'));
-
 })
 
 onEvent('recipes', event => {
@@ -129,7 +141,7 @@ onEvent('recipes', event => {
         let output_item = result[1]
         let mod = result[0]
 
-        if(mod == 'rosia') {
+        if (mod == 'rosia') {
             event.remove({ id: `${mod}:welding/${output_item}` })
         }
 
@@ -143,7 +155,7 @@ onEvent('recipes', event => {
         let output_item = result[1]
         let mod = result[0]
 
-        if(mod == 'rosia') {
+        if (mod == 'rosia') {
             event.remove({ id: `${mod}:anvil/${output_item}` })
             event.remove({ id: `${mod}:anvil/tools/${output_item}` })
             event.remove({ id: `${mod}:anvil/armor/${output_item}` })
@@ -205,6 +217,7 @@ onEvent('recipes', event => {
         let tier = anvilRecipe.tier;
         let result = output.split('/')
         let mod = result[0]
+        let blockType = undefined
         let toolType = result[1]
         let inputResult = input.split('/')
         let inputType = inputResult[1]
@@ -213,153 +226,171 @@ onEvent('recipes', event => {
             let metal = undefined;
 
             console.log(resultDivided)
+
             if (resultDivided[0] !== undefined && !global.nameblacklistrx.test(resultDivided[0])) {
                 if (global.nameblacklistrx.test(resultDivided[1]) || resultDivided[1] == undefined) {
                     metal = resultDivided[0]
+
+                    if (resultDivided[1] == undefined) {
+                        blockType = 'block'
+                    } else {
+                        blockType = resultDivided[1]
+                    }
                 }
             }
             if (resultDivided[1] !== undefined && !global.nameblacklistrx.test(resultDivided[1])) {
                 if (global.nameblacklistrx.test(resultDivided[2]) || resultDivided[2] == undefined) {
                     metal = resultDivided[0] + '_' + resultDivided[1]
-                }
-            }
 
-            const order = []
-            const methods = []
-            const results = []
-
-            let transitionItem = `kubejs:transition_${metal}`
-
-            for (let i in rules) {
-                let index = [];
-                index[i] = rules[i]
-                let step = rules[i];
-                let stepDivided = step.split("_")
-                let stepName = stepDivided[0];
-                let stepOrder = step.substring(stepName.length + 1);
-
-                if (stepName !== '') {
-                    if (stepOrder == 'last') {
-                        order[(rules.length) - 1] = stepName
-                    } else if (stepOrder == 'second_last') {
-                        order[(rules.length) - 2] = stepName
-                    } else if (stepOrder == 'third_last') {
-                        order[0] = stepName
-                    } else if (stepOrder == 'not_last') {
-                        if (order[0] == undefined) {
-                            order[0] = stepName
-                        } else if (order[1] == undefined) {
-                            order[1] = stepName
-                        }
-                    } else if (stepOrder == 'any') {
-                        if (order[0] == undefined) {
-                            order[0] = stepName
-                        } else if (order[1] == undefined) {
-                            order[1] = stepName
-                        } else if (order[(rules.length) - 1] == undefined) {
-                            order[(rules.length) - 1] = stepName
-                        }
-                    }
-                }
-
-            }
-
-            if (toolType == 'sheet' || toolType == 'plate' || toolType == 'ingot' || inputType == 'double_sheet' || toolType == 'trapdoor' || toolType == 'ladder') {
-                methods.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-            } else if (global.bonuswhitelistrx.test(toolType) || toolType == 'chain' || toolType == 'lamp') {
-                let toolCopy = `#forge:tier${tier}_${toolType}s`
-                methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, toolCopy]).keepHeldItem());
-            } else if (toolType == 'block' || toolType == 'cut' || toolType == 'rod' || toolType == 'large_rod') {
-                if (inputType !== 'double_sheet') {
-                    methods.push(event.recipes.createCutting(transitionItem, transitionItem))
-                }
-            } else {
-                methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, output]).keepHeldItem());
-            }
-
-            for (let i in order) {
-                let recipeType = undefined;
-                let deployingItem = undefined;
-                let keepHeldItem = false;
-
-                switch (order[i]) {
-                    case 'draw':
-                        recipeType = 'pressing'
-                        break;
-
-                    case 'hit':
-                        recipeType = 'deploying'
-                        deployingItem = 'hammers'
-                        break;
-
-                    case 'upset':
-                        recipeType = 'deploying'
-                        deployingItem = 'rods'
-                        keepHeldItem = true
-                        break;
-
-                    case 'punch':
-                        recipeType = 'deploying'
-                        deployingItem = 'chisels'
-                        break;
-
-                    case 'bend':
-                        recipeType = 'deploying'
-                        deployingItem = 'double_ingots'
-                        keepHeldItem = true
-                        break;
-
-                    case 'shrink':
-                        recipeType = 'deploying'
-                        deployingItem = 'double_sheets'
-                        keepHeldItem = true
-                        break;
-                }
-
-                if (recipeType == 'pressing') {
-                    methods.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-                } else if (recipeType == 'deploying') {
-                    if (keepHeldItem) {
-                        methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]).keepHeldItem())
+                    if (resultDivided[2] == undefined) {
+                        blockType = 'block'
                     } else {
-                        methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]))
+                        blockType = resultDivided[2]
                     }
                 }
             }
 
-            if (toolType == 'large_rod' || toolType == 'rod') {
-                count = 2
+            if(output == 'tfc_metalwork:metal/block/copper') {
+                output = 'minecraft:copper_block'
+                blockType = 'block'
             }
 
-            console.log(count + 'of output')
-            if (global.bonuswhitelistrx.test(toolType)) {
-                results.push(Item.of(output, '{"tfc:forging_bonus": 3}').withChance(80));
-                results.push(Item.of(output, '{"tfc:forging_bonus": 2}').withChance(15));
-                results.push(Item.of(output, '{"tfc:forging_bonus": 1}').withChance(5));
-            } else {
-                results.push(Item.of(`${count}x ${output}`).withChance(100));
+            if(global.anvilblacklistrx.test(output)) {
+                blockType = 'fcut'
             }
 
-            if (global.ingottagrx.test(input)) {
-                if (tier <= 3) {
-                    /*
-                    event.recipes.createPressing(`${mod}/sheet/${metal}`, `${mod}/double_ingot/${metal}`)
-                    event.recipes.createPressing(`tfc_metalwork:metal/plate/${metal}`, `${mod}/ingot/${metal}`)
-                    global.addRolling(`${mod}/ingot/${metal}`, `${mod}/rod/${metal}`, 2)
-                    global.addRolling(`${mod}/double_ingot/${metal}`, `tfc_metalwork:metal/large_rod/${metal}`, 2)
-                    */
+
+            rules = anvilRecipe.rules;
+
+            console.log(blockType)
+
+            if (blockType !== 'wall' && blockType !== 'fcut') {
+
+                const order = []
+                const methods = []
+                const results = []
+
+                let transitionItem = `kubejs:transition_${metal}`
+
+                for (let i in rules) {
+                    let index = [];
+                    index[i] = rules[i]
+                    let step = rules[i];
+                    let stepDivided = step.split("_")
+                    let stepName = stepDivided[0];
+                    let stepOrder = step.substring(stepName.length + 1);
+
+                    if (stepName !== '') {
+                        if (stepOrder == 'last') {
+                            order[(rules.length) - 1] = stepName
+                        } else if (stepOrder == 'second_last') {
+                            order[(rules.length) - 2] = stepName
+                        } else if (stepOrder == 'third_last') {
+                            order[0] = stepName
+                        } else if (stepOrder == 'not_last') {
+                            if (order[0] == undefined) {
+                                order[0] = stepName
+                            } else if (order[1] == undefined) {
+                                order[1] = stepName
+                            }
+                        } else if (stepOrder == 'any') {
+                            if (order[0] == undefined) {
+                                order[0] = stepName
+                            } else if (order[1] == undefined) {
+                                order[1] = stepName
+                            } else if (order[(rules.length) - 1] == undefined) {
+                                order[(rules.length) - 1] = stepName
+                            }
+                        }
+                    }
+
                 }
-            }
 
-            if (toolType !== 'large_plate') {
-                event.recipes.createSequencedAssembly(results, tagPrefix + input, methods).transitionalItem(transitionItem).loops(1);
-            }
-            console.log(results)
-            console.log(methods)
+                if (toolType == 'sheet' || toolType == 'plate' || toolType == 'ingot' || inputType == 'double_sheet' || toolType == 'trapdoor' || toolType == 'ladder') {
+                    methods.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+                } else if (global.bonuswhitelistrx.test(toolType) || toolType == 'chain' || toolType == 'lamp') {
+                    let toolCopy = `#forge:tier${tier}_${toolType}s`
+                    methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, toolCopy]).keepHeldItem());
+                } else if (toolType == 'block' || toolType == 'cut' || toolType == 'rod' || toolType == 'large_rod') {
+                    if (inputType !== 'double_sheet') {
+                        methods.push(event.recipes.createCutting(transitionItem, transitionItem))
+                    }
+                } else {
+                    methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, output]).keepHeldItem());
+                }
 
-            console.log(output + order);
+                for (let i in order) {
+                    let recipeType = undefined;
+                    let deployingItem = undefined;
+                    let keepHeldItem = false;
+
+                    switch (order[i]) {
+                        case 'draw':
+                            recipeType = 'pressing'
+                            break;
+
+                        case 'hit':
+                            recipeType = 'deploying'
+                            deployingItem = 'hammers'
+                            break;
+
+                        case 'upset':
+                            recipeType = 'deploying'
+                            deployingItem = 'rods'
+                            keepHeldItem = true
+                            break;
+
+                        case 'punch':
+                            recipeType = 'deploying'
+                            deployingItem = 'chisels'
+                            break;
+
+                        case 'bend':
+                            recipeType = 'deploying'
+                            deployingItem = 'double_ingots'
+                            keepHeldItem = true
+                            break;
+
+                        case 'shrink':
+                            recipeType = 'deploying'
+                            deployingItem = 'double_sheets'
+                            keepHeldItem = true
+                            break;
+                    }
+
+                    if (recipeType == 'pressing') {
+                        methods.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+                    } else if (recipeType == 'deploying') {
+                        if (keepHeldItem) {
+                            methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]).keepHeldItem())
+                        } else {
+                            methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]))
+                        }
+                    }
+                }
+
+                if (toolType == 'large_rod' || toolType == 'rod') {
+                    count = 2
+                }
+
+                console.log(count + 'of output')
+                if (global.bonuswhitelistrx.test(toolType)) {
+                    results.push(Item.of(output, '{"tfc:forging_bonus": 3}').withChance(80));
+                    results.push(Item.of(output, '{"tfc:forging_bonus": 2}').withChance(15));
+                    results.push(Item.of(output, '{"tfc:forging_bonus": 1}').withChance(5));
+                } else {
+                    results.push(Item.of(`${count}x ${output}`).withChance(100));
+                }
+
+                if (toolType !== 'large_plate') {
+                    event.recipes.createSequencedAssembly(results, tagPrefix + input, methods).transitionalItem(transitionItem).loops(1);
+                }
+                console.log(results)
+                console.log(methods)
+
+                console.log(output + order);
+            }
         }
-
     });
 
     event.forEachRecipe({ type: "tfc:scraping" }, recipe => {
@@ -470,12 +501,24 @@ onEvent('recipes', event => {
                     }
                 }
 
+                if (global.largegeartagrx.test(input)) {
+                    event.remove({ id: `tfc_metalwork:heating/metal/${metal}_large_gear` })
+                    event.recipes.tfc.heating(Fluid.of(fluid, 400), `#${input}`, temperature)
+
+                    if (temperature <= 2015) {
+                        global.addMelting(isTag, input, fluid, 400, heatingLevel)
+                    }
+                }
+
                 console.log(metal + fluid + input)
                 if (metal !== undefined && fluid !== undefined && input !== undefined && !global.doubleingotrx.test(metal) && !global.largeplatetagrx.test(input) && !global.dusttagrx.test(input)) {
                     let dustCount = 1
                     dustCount = fluidAmount / 100
                     if (global.largerodtagrx.test(input) || global.platetagrx.test(input) || global.laddertagrx.test(input)) {
                         dustCount = 1
+                    }
+                    if (global.largegeartagrx.test(input)) {
+                        dustCount = 4
                     }
                     if (Number.isInteger(dustCount)) {
                         event.recipes.tfc.quern(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, `${tagPrefix}${input}`)
@@ -502,7 +545,7 @@ onEvent('recipes', event => {
                 if (temperature <= 2015) {
 
                     //console.log(fluid)
-                    if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input)) {
+                    if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input)) {
                         let processingSpeed = Math.ceil(heatcapacity * 100)
                         global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
                     }

@@ -1,0 +1,40 @@
+{
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.create.andesite_belt_funnel": "Igneous Belt Funnel",
+	"block.create.andesite_casing": "Igneous Casing",
+	"block.create.andesite_encased_cogwheel": "Igneous Encased Cogwheel",
+	"block.create.andesite_encased_large_cogwheel": "Igneous Encased Large Cogwheel",
+	"block.create.andesite_encased_shaft": "Igneous Encased Shaft",
+	"block.create.andesite_funnel": "Igneous Funnel",
+	"block.create.andesite_ladder": "Igneous Ladder",
+	"block.create.andesite_pillar": "Igneous Pillar",
+	"block.create.andesite_tunnel": "Igneous Tunnel",
+
+	"item.create.andesite_alloy": "Igneous Alloy",
+
+	"_": "->------------------------]  Advancements  [------------------------<-",
+
+	"advancement.create.andesite_alloy.desc": "Obtain some Igneous Alloy, Create's most important resource",
+	"advancement.create.andesite_casing": "The Igneous Age",
+	"advancement.create.andesite_casing.desc": "Apply Igneous Alloy to stripped wood, creating a basic casing for your machines",
+
+
+	"_": "->------------------------]  Ponder Content  [------------------------<-",
+
+	"create.ponder.andesite_tunnel.header": "Using Igneous Tunnels",
+	"create.ponder.andesite_tunnel.text_1": "Igneous Tunnels can be used to cover up your belts",
+	"create.ponder.andesite_tunnel.text_2": "Whenever an Igneous Tunnel has connections to the sides...",
+
+	"create.ponder.belt_casing.text_1": "Brass or Igneous Casing can be used to decorate Mechanical Belts",
+
+	"create.ponder.brass_funnel.text_1": "Igneous Funnels can only ever extract single items.",
+
+	"create.ponder.cogwheel_casing.text_1": "Brass or Igneous Casing can be used to decorate Cogwheels",
+
+	"create.ponder.shaft_casing.text_1": "Brass or Igneous Casing can be used to decorate Shafts",
+
+	"_": "Thank you for translating Create!"
+
+}

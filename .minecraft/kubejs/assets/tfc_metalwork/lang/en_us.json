@@ -1,0 +1,17 @@
+{
+  "item.tfc_metalwork.metal.dust.andesite_alloy": "Igneous Alloy Dust",
+  "item.tfc_metalwork.metal.plate.andesite_alloy": "Igneous Alloy Plate",
+  "item.tfc_metalwork.metal.large_plate.andesite_alloy": "Igneous Alloy Large Plate",
+  "item.tfc_metalwork.metal.small_gear.andesite_alloy": "Igneous Alloy Small Gear",
+  "item.tfc_metalwork.metal.large_gear.andesite_alloy": "Igneous Alloy Large Gear",
+  "item.tfc_metalwork.metal.large_rod.andesite_alloy": "Igneous Alloy Large Rod",
+  "block.tfc_metalwork.metal.block.andesite_alloy_slab": "Igneous Alloy Block Slab",
+  "block.tfc_metalwork.metal.block.andesite_alloy_stairs": "Igneous Alloy Block Stairs",
+  "block.tfc_metalwork.metal.block.andesite_alloy_wall": "Igneous Alloy Block Wall",
+  "block.tfc_metalwork.metal.block.andesite_alloy": "Igneous Alloy Block",
+  "block.tfc_metalwork.metal.cut.andesite_alloy_slab": "Igneous Alloy Cut Slab",
+  "block.tfc_metalwork.metal.cut.andesite_alloy_stairs": "Igneous Alloy Cut Stairs",
+  "block.tfc_metalwork.metal.cut.andesite_alloy_wall": "Igneous Alloy Cut Wall",
+  "block.tfc_metalwork.metal.cut.andesite_alloy": "Igneous Alloy Cut",
+  "block.tfc_metalwork.metal.ladder.andesite_alloy": "Igneous Alloy Ladder"
+}

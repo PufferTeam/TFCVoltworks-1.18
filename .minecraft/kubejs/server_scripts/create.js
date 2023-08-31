@@ -52,7 +52,7 @@ onEvent('recipes', event => {
     event.shaped('4x create:radial_chassis', [
         ' S ',
         'RAR',
-        ' S'
+        ' S '
     ], {
         S: '#minecraft:planks',
         A: '#tfc:pit_kiln_logs',
@@ -68,6 +68,15 @@ onEvent('recipes', event => {
         S: '#forge:rods/cast_iron',
         A: '#forge:plates/cast_iron'
     }).id('create:metal_girder')
+
+    event.remove({ output: 'create:depot' })
+    event.shaped('create:depot', [
+        'A',
+        'S'
+    ], {
+        S: 'create:andesite_casing',
+        A: '#forge:plates/cast_iron'
+    }).id('create:depot')
 
     event.remove({ output: 'create:shaft' })
     event.shaped('8x create:shaft', [
@@ -106,6 +115,63 @@ onEvent('recipes', event => {
         S: '#forge:rods/andesite_alloy',
         A: '#minecraft:planks'
     }).id('create:piston_extension_pole')
+
+    event.remove({ output: 'create:brass_tunnel' })
+    event.shaped('2x create:brass_tunnel', [
+        'LP',
+        'SS',
+        'AA'
+    ], {
+        S: '#forge:plates/brass',
+        A: '#forge:leather',
+        L: 'create:electron_tube',
+        P: 'tfc:brass_mechanisms'
+    }).id('create:brass_tunnel')
+
+    event.remove({ output: 'create:andesite_tunnel' })
+    event.shaped('2x create:andesite_tunnel', [
+        'SS',
+        'AA'
+    ], {
+        S: '#forge:plates/andesite_alloy',
+        A: '#forge:leather'
+    }).id('create:andesite_tunnel')
+
+    event.remove({ output: 'create:andesite_funnel' })
+    event.shaped('2x create:andesite_funnel', [
+        'S',
+        'A'
+    ], {
+        S: '#forge:plates/andesite_alloy',
+        A: '#forge:leather'
+    }).id('create:andesite_funnel')
+
+    event.remove({ output: 'create:brass_funnel' })
+    event.shaped('2x create:brass_funnel', [
+        'P',
+        'S',
+        'A'
+    ], {
+        S: '#forge:plates/brass',
+        A: '#forge:leather',
+        P: 'tfc:brass_mechanisms'
+    }).id('create:brass_funnel')
+
+    event.remove({ output: 'create:hose_pulley' })
+    event.shaped('create:hose_pulley', [
+        ' S ',
+        'OAO',
+        ' P '
+    ], {
+        S: 'create:copper_casing',
+        A: '#forge:rope',
+        P: '#forge:plates/copper',
+        O: 'create:shaft'
+    }).id('create:hose_pulley')
+
+    event.remove({ output: 'create:encased_chain_drive' })
+    event.shapeless('create:encased_chain_drive', ['create:andesite_casing', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron']).id('create:encased_chain_drive')
+
 
     global.addDamageInputShapeless(1, 'create:sticky_mechanical_piston', 'create:mechanical_piston', "tfc:knives", 1)
 

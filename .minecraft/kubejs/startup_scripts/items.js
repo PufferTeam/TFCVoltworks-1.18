@@ -9,9 +9,14 @@ onEvent('item.registry', event => {
 
     global.tfcGlobalMetalTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
 
-    event.create('transition_small_soaked_hide', 'create:sequenced_assembly').maxStackSize(1)   
-    event.create('transition_medium_soaked_hide', 'create:sequenced_assembly').maxStackSize(1)   
-    event.create('transition_large_soaked_hide', 'create:sequenced_assembly').maxStackSize(1)   
-    event.create('transition_unrefined_paper', 'create:sequenced_assembly').maxStackSize(1)   
+    global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
+ 
+    global.stoneToolsTypes.forEach(i => {
+        let result = i.split('/')
+        let stone = result[0]
+        let damage = result[1]
+        event.create('stone/pickaxe/' + stone, 'pickaxe').tier('wood').maxDamage(damage)
+        event.create('stone/pickaxe_head/' + stone).maxStackSize(64)
+    });
 
 })

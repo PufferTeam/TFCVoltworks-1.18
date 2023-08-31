@@ -65,14 +65,17 @@ onEvent('recipes', event => {
             event.remove({ id: `tfc:barrel/dye/${color}_concrete_powder` })
             event.remove({ id: `tfc:barrel/dye/bleach_${item}` })
 
-            //dyeing
-            //global.addBarrelSealed('item', nodye, `tfc:${color}_dye`, 125, global.iteminput, global.dyeingDuration)
-            event.recipes.tfc.barrel_sealed([`1x ${global.iteminput}`], [Fluid.of(`tfc:${color}_dye`, 125), nodye], global.dyeingDuration).id(`tfc:barrel/dye/${color}_${global.dyeingid}`)
+            if (nodye !== global.iteminput) {
+                //dyeing
+                //global.addBarrelSealed('item', nodye, `tfc:${color}_dye`, 125, global.iteminput, global.dyeingDuration)
+                event.recipes.tfc.barrel_sealed([`1x ${global.iteminput}`], [Fluid.of(`tfc:${color}_dye`, 125), nodye], global.dyeingDuration).id(`tfc:barrel/dye/${color}_${global.dyeingid}`)
+                event.recipes.createFilling(`1x ${global.iteminput}`, [nodye, Fluid.of(`tfc:${color}_dye`, 125)]).id(`tfc:filling/dye/${color}_${global.dyeingid}`)
+            }
 
             //lyeing
             //global.addBarrelSealed('item', nodye, `tfc:lye`, 125, `${nodye}`, global.lyeingDuration)
             event.recipes.tfc.barrel_sealed([nodye], [Fluid.of(`tfc:lye`, 125), `#${global.coloredtag}`], global.lyeingDuration).id(`tfc:barrel/dye/bleach_${global.dyeingid}`)
-
+            event.recipes.createFilling(nodye, [`#${global.coloredtag}`, Fluid.of(`tfc:lye`, 125)]).id(`tfc:filling/dye/bleach_${global.dyeingid}`)
             //shapeless crafting
             //event.shapeless(global.iteminput, [`#${global.coloredtag}`, `minecraft:${color}_dye`])
             //painting machine

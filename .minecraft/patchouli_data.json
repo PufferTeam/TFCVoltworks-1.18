@@ -1,5 +1,15 @@
 {
   "bookGuiScale": 0,
   "clickedVisualize": false,
-  "bookData": {}
+  "bookData": {
+    "tfc:field_guide": {
+      "viewedEntries": [
+        "tfchomestead:tfchomestead/pickling_jars",
+        "tfc:mechanics/panning",
+        "tfc:getting_started/introduction"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    }
+  }
 }

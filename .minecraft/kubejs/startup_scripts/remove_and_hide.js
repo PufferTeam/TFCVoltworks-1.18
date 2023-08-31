@@ -447,6 +447,10 @@ global.duplicateAnimals.forEach(i => global.removeAndHide.push(`minecraft:${i}_s
 
 global.tfcGlobalMetalTypes.forEach(i => global.removeAndHide.push(`tfc_metalwork:metal/large_plate/${i}`));
 
+global.tfcGlobalMetalTypes.forEach(i => global.removeAndHide.push(`tfc_metalwork:metal/cut/${i}_wall`));
+
+global.tfcGlobalMetalTypes.forEach(i => global.removeAndHide.push(`tfc_metalwork:metal/block/${i}_wall`));
+
 global.miscRoofTypes.forEach(i => removeAndHide('', '', i, 'roofs', 'mcwroofs', false, null, null));
 
 global.rosiaMetalTypes.forEach(i => removeAndHide('', '', i, 'tfcmetal', 'rosia', false, null, null));

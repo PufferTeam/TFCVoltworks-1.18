@@ -19,6 +19,18 @@ global.colors = [
     'black'
 ];
 
+global.limitedColors = [
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue',
+    'indigo',
+    'violet',
+    'white',
+    'black'
+]
+
 global.removeAndHide = [
     'framedblocks:framed_torch',
     'framedblocks:framed_soul_torch',
@@ -38,6 +50,12 @@ global.removeAndHide = [
     'framedblocks:framed_fancy_detector_rail_slope',
     'framedblocks:framed_fancy_activator_rail_slope',
     'framedblocks:framed_secret_storage',
+    'tfc_metalwork:metal/block/copper',
+    'tfc_metalwork:metal/block/copper_slab',
+    'tfc_metalwork:metal/block/copper_stairs',
+    'tfc_metalwork:metal/cut/copper',
+    'tfc_metalwork:metal/cut/copper_slab',
+    'tfc_metalwork:metal/cut/copper_stairs',
     'rosia:copper_wire',
     'rosia:copper_coil',
     'rosia:purple_steel_rifle',
@@ -64,6 +82,7 @@ global.removeAndHide = [
     'mekanism:nugget_refined_glowstone',
     'mekanism:nugget_refined_obsidian',
     'mekanism:creative_fluid_tank',
+    'mekanism:creative_chemical_tank',
     'pneumaticcraft:compressed_iron_helmet',
     'pneumaticcraft:compressed_iron_chestplate',
     'pneumaticcraft:compressed_iron_leggings',
@@ -81,12 +100,38 @@ global.removeAndHide = [
     'minecraft:barrier'
 ]
 
+global.weatheringLevels = [
+    'exposed',
+    'weathered',
+    'oxidized'
+]
+
+global.waxingAgents = [
+    'minecraft:honeycomb',
+    'immersivepetroleum:paraffin_wax',
+    'firmalife:beeswax'
+]
+
 global.removeAndHideFluid = [
     'createaddition:seed_oil'
 ]
 
 global.tfcGrass = [
     'tfc:peat_grass'
+]
+
+global.stoneToolsTypes = [
+    'igneous_extrusive/60',
+    'igneous_intrusive/60',
+    'metamorphic/55',
+    'sedimentary/50'
+]
+
+global.scrapingItems = [
+    'small_soaked_hide',
+    'medium_soaked_hide',
+    'large_soaked_hide',
+    'unrefined_paper'
 ]
 
 global.tfcRockTypes = [
@@ -662,6 +707,9 @@ global.modFluids = [
     'pneumaticcraft:biodiesel',
     'pneumaticcraft:lubricant',
     'pneumaticcraft:vegetable_oil',
+    'thermal:creosote',
+    'cofh_core:honey',
+    'cofh_core:potion',
     'rosia:invar_fluid',
     'rosia:weak_purple_steel_fluid',
     'rosia:purple_steel_fluid',
@@ -866,7 +914,6 @@ global.vanillaItems = [
     'flowering_azalea',
     'blast_furnace',
     'diamond_horse_armor',
-    'honeycomb',
     'glow_berries',
     'amethyst_shard',
     'sea_pickle',
