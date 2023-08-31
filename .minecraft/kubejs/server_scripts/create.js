@@ -116,6 +116,50 @@ onEvent('recipes', event => {
         A: '#minecraft:planks'
     }).id('create:piston_extension_pole')
 
+    event.remove({ output: 'create:fluid_tank' })
+    event.shaped('3x create:fluid_tank', [
+        ' S ',
+        'AAA',
+        ' S '
+    ], {
+        S: '#forge:plates/copper',
+        A: '#forge:glass/colorless'
+    }).id('create:fluid_tank')
+
+    event.remove({ output: 'create:mechanical_mixer' })
+    event.shaped('create:mechanical_mixer', [
+        ' P ',
+        'CSC',
+        ' A '
+    ], {
+        S: 'create:andesite_casing',
+        A: 'create:whisk',
+        P: 'create:shaft',
+        C: '#forge:cogwheels'
+    }).id('create:mechanical_mixer')
+
+    event.remove({ output: 'create:mechanical_drill' })
+    event.shaped('create:mechanical_drill', [
+        'P',
+        'S',
+        'A'
+    ], {
+        S: 'create:andesite_casing',
+        A: 'thermal:drill_head',
+        P: 'create:shaft',
+    }).id('create:mechanical_drill')
+
+    event.remove({ output: 'create:mechanical_saw' })
+    event.shaped('create:mechanical_saw', [
+        'P',
+        'S',
+        'A'
+    ], {
+        S: 'create:andesite_casing',
+        A: 'thermal:saw_blade',
+        P: 'create:shaft',
+    }).id('create:mechanical_saw')
+
     event.remove({ output: 'create:brass_tunnel' })
     event.shaped('2x create:brass_tunnel', [
         'LP',
@@ -154,7 +198,7 @@ onEvent('recipes', event => {
     ], {
         S: '#forge:plates/brass',
         A: '#forge:leather',
-        P: 'tfc:brass_mechanisms'
+        P: 'create:electron_tube'
     }).id('create:brass_funnel')
 
     event.remove({ output: 'create:hose_pulley' })

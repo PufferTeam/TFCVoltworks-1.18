@@ -23,6 +23,12 @@
 
 	"_": "->------------------------]  Ponder Content  [------------------------<-",
 
+	"create.ponder.mechanical_mixer.text_3": "Some of those recipes may require the heat of a Charcoal Forge",
+
+	"create.ponder.mechanical_press_compacting.text_3": "Some of those recipes may require the heat of a Charcoal Forge",
+
+	"create.ponder.steam_engine.text_6": "With the help of Charcoal Forges, the power output can be increased",
+
 	"create.ponder.andesite_tunnel.header": "Using Igneous Tunnels",
 	"create.ponder.andesite_tunnel.text_1": "Igneous Tunnels can be used to cover up your belts",
 	"create.ponder.andesite_tunnel.text_2": "Whenever an Igneous Tunnel has connections to the sides...",

@@ -21,7 +21,7 @@ onEvent('recipes', event => {
 
         event.recipes.tfc.rock_knapping(`kubejs:stone/pickaxe_head/${stone}`, [
             'X   X', 
-            ' XXX'
+            ' XXX '
         ], `#tfc:${stone}_rock`).outsideSlotNotRequired().id(`kubejs:rock_knapping/pickaxe_head_2_${stone}`)
 
         event.recipes.tfc.rock_knapping(`2x kubejs:stone/pickaxe_head/${stone}`, [
@@ -42,7 +42,7 @@ onEvent('recipes', event => {
 
         event.recipes.tfc.rock_knapping(`2x kubejs:stone/pickaxe_head/${stone}`, [
             'X   X', 
-            ' XXX',
+            ' XXX ',
             '     ',
             ' XXX ', 
             'X   X'
@@ -50,7 +50,7 @@ onEvent('recipes', event => {
 
         event.recipes.tfc.rock_knapping(`2x kubejs:stone/pickaxe_head/${stone}`, [
             'X   X', 
-            ' XXX',
+            ' XXX ',
             '     ',
             'X   X', 
             ' XXX '
