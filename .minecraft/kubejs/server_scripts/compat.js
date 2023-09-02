@@ -72,9 +72,28 @@ onEvent('tags.items', event => {
     global.anvilCopyBlacklist = [
         'tfc_metalwork:metal/block/copper_slab',
         'tfc_metalwork:metal/block/copper_stairs',
+        'tfc:metal/bucket/red_steel',
+        'tfc:metal/bucket/blue_steel',
         'tfc_metalwork:metal/cut/copper',
         'tfc_metalwork:metal/cut/copper_slab',
         'tfc_metalwork:metal/cut/copper_stairs'
+    ]
+
+    global.anvilCopyWhitelist = [
+        'tfc:refined_iron_bloom',
+        'minecraft:iron_door',
+        'tfc:metal/ingot/high_carbon_steel'
+    ]
+
+    global.metalworkMetalParts = [
+        'dust',
+        'plate',
+        'small_gear',
+        'large_gear',
+        'large_rod',
+        'block',
+        'cut',
+        'ladder'
     ]
 
     global.unfiredPotteryItem.forEach(i => global.heatingBlacklist.push(i));
@@ -94,8 +113,10 @@ onEvent('tags.items', event => {
     global.ingotrx = new RegExp(global.pileableIngots.join('|'));
     global.bonuswhitelistrx = new RegExp(global.forgingBonusWhitelist.join('|'));
     global.anvilblacklistrx = new RegExp(global.anvilCopyBlacklist.join('|'));
+    global.anvilwhitelistrx = new RegExp(global.anvilCopyWhitelist.join('|'));
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));
+    global.metalworkpartsrx = new RegExp(global.metalworkMetalParts.join('|'));
     global.rx = new RegExp(global.heatingBlacklist.join('|'));
     global.tagrx = new RegExp(global.heatingTagBlacklist.join('|'));
     global.toolmetalrx = new RegExp(global.toolMetalTypes.join('|'));
@@ -221,7 +242,10 @@ onEvent('recipes', event => {
         let toolType = result[1]
         let inputResult = input.split('/')
         let inputType = inputResult[1]
-        if (result[2] !== undefined && !global.doubleingotrx.test(result[2])) {
+        if (global.anvilwhitelistrx.test(output)) {
+            result[2] = 'custom'
+        }
+        if (result[2] !== undefined) {
             let resultDivided = result[2].split("_")
             let metal = undefined;
 
@@ -250,15 +274,31 @@ onEvent('recipes', event => {
                 }
             }
 
-            if(output == 'tfc_metalwork:metal/block/copper') {
+            switch (output) {
+                case 'tfc:refined_iron_bloom':
+                    metal = 'bloom'
+                    toolType = 'customp'
+                    break;
+                case 'minecraft:iron_door':
+                    metal = 'wrought_iron'
+                    break;
+                case 'tfc:metal/ingot/high_carbon_steel':
+                    metal = 'steel'
+                    toolType = 'customp'
+                    break;
+            }
+
+            if (output == 'tfc_metalwork:metal/block/copper') {
                 output = 'minecraft:copper_block'
                 blockType = 'block'
             }
 
-            if(global.anvilblacklistrx.test(output)) {
+            if (global.anvilwhitelistrx.test(output)) {
+                blockType = 'custom'
+            }
+            if (global.anvilblacklistrx.test(output)) {
                 blockType = 'fcut'
             }
-
 
             rules = anvilRecipe.rules;
 
@@ -306,7 +346,7 @@ onEvent('recipes', event => {
 
                 }
 
-                if (toolType == 'sheet' || toolType == 'plate' || toolType == 'ingot' || inputType == 'double_sheet' || toolType == 'trapdoor' || toolType == 'ladder') {
+                if (toolType == 'sheet' || toolType == 'plate' || toolType == 'ingot' || inputType == 'double_sheet' || toolType == 'trapdoor' || toolType == 'ladder' || toolType == 'customp') {
                     methods.push(event.recipes.createPressing(transitionItem, [transitionItem]));
                 } else if (global.bonuswhitelistrx.test(toolType) || toolType == 'chain' || toolType == 'lamp') {
                     let toolCopy = `#forge:tier${tier}_${toolType}s`
@@ -454,46 +494,98 @@ onEvent('recipes', event => {
             let mod = undefined
             let metal = undefined
             let modresult = undefined
+            let toolType = undefined
+            let toolResult = undefined
 
             let heatcapacity = undefined;
 
             if (isTag == false) {
                 result = input.split('/')
                 metal = result[2];
+                toolType = result[1]
                 mod = result[0];
             } else {
                 result = input.split('/')
                 metal = result[1];
+                toolResult = result[0].split(':')
+                toolType = toolResult[1].substr(0, toolResult[1].length - 1);
                 modresult = fluid.split('/')
                 mod = modresult[0];
             }
 
-            if (mod !== 'rosia:metal' && mod !== 'rosia') {
+            if(isTag) {
+                switch(result[0]) {
+                    case 'tfc_metalwork:metal_ladders':
+                        toolType = 'ladder'
+                    break;
+                    case 'tfc_metalwork:storage_blocks':
+                        toolType = 'block'
+                    break;
+                    case 'tfc_metalwork:cut':
+                        toolType = 'cut'
+                    break;
+                    case 'forge:gears':
+                        toolType = 'small_gear'
+                    break;
+                }
+            }
+
+            let isMetalworkPart = false
+            if(global.metalworkpartsrx.test(toolType)) {
+                isMetalworkPart = true
+            }
+
+            let modResult = undefined
+            modResult = input.split(':')
+            let modName = undefined
+            let itemName = undefined
+            modName = modResult[0]
+            itemName = modResult[1]
+
+            if (modName == 'rosia') {
+                event.remove({ id: `rosia:heating/${itemName}` })
+                event.remove({ id: `rosia:heating/tools/${itemName}` })
+                event.remove({ id: `rosia:heating/armor/${itemName}` })
+
+                event.remove({ id: `rosia:crafting/${itemName}` })
+                event.remove({ id: `rosia:crafting/tools/${itemName}` })
+            }
+
+            if (modName !== 'rosia') {
 
                 heatcapacity = fluidAmount * 0.02857
 
                 let weldingHeatingLevel = undefined
                 let weldingTemperature = temperature - 200;
+                weldingHeatingLevel = global.getHeatingLevel(weldingTemperature)
+                /*
                 if (weldingTemperature <= 1100 && weldingTemperature >= 100) {
                     weldingHeatingLevel = 'heated'
                 }
                 if (weldingTemperature <= 2015 && weldingTemperature > 1100) {
                     weldingHeatingLevel = 'superheated'
                 }
+                */
 
                 let heatingLevel = undefined
+                heatingLevel = global.getHeatingLevel(temperature)
+                /*
                 if (temperature <= 1100 && temperature >= 100) {
                     heatingLevel = 'heated'
                 }
                 if (temperature <= 2015 && temperature > 1100) {
                     heatingLevel = 'superheated'
                 }
+                */
 
                 console.log(input)
                 if (global.largerodtagrx.test(input) || global.platetagrx.test(input) || global.laddertagrx.test(input)) {
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_ladder` })
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_large_rod` })
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_plate` })
+                    if(fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
+                        fluid = 'tfc:metal/cast_iron'
+                    }
                     event.recipes.tfc.heating(Fluid.of(fluid, 100), `#${input}`, temperature)
 
                     if (temperature <= 2015) {
@@ -503,6 +595,9 @@ onEvent('recipes', event => {
 
                 if (global.largegeartagrx.test(input)) {
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_large_gear` })
+                    if(fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
+                        fluid = 'tfc:metal/cast_iron'
+                    }
                     event.recipes.tfc.heating(Fluid.of(fluid, 400), `#${input}`, temperature)
 
                     if (temperature <= 2015) {
@@ -531,6 +626,18 @@ onEvent('recipes', event => {
                         if (metal !== undefined && mod !== undefined) {
                             global.addCompacting3ItemEItem(`${mod}/ingot/${metal}`, `${mod}/ingot/${metal}`, 'tfc:powder/flux', `${mod}/double_ingot/${metal}`, weldingHeatingLevel)
                             global.addCompacting3ItemEItem(`${mod}/sheet/${metal}`, `${mod}/sheet/${metal}`, 'tfc:powder/flux', `${mod}/double_sheet/${metal}`, weldingHeatingLevel)
+                            if (metal !== 'copper') {
+                                let mFluid = `${mod}/${metal}`
+                                if (metal == 'wrought_iron') {
+                                    mFluid = "tfc:metal/cast_iron"
+                                }
+
+                                global.addMeltingHeatingFluid(`tfc_metalwork:metal/block/${metal}_slab`, mFluid, 200, temperature)
+                                global.addMeltingHeatingFluid(`tfc_metalwork:metal/cut/${metal}_slab`, mFluid, 200, temperature)
+
+                                global.addMeltingHeatingFluid(`tfc_metalwork:metal/block/${metal}_stairs`, mFluid, 300, temperature)
+                                global.addMeltingHeatingFluid(`tfc_metalwork:metal/cut/${metal}_stairs`, mFluid, 300, temperature)
+                            }
                             if (global.toolmetalrx.test(metal) && mod !== 'firmalife:metal') {
                                 global.addCompacting3ItemEItem(`${mod}/knife_blade/${metal}`, `${mod}/knife_blade/${metal}`, 'tfc:powder/flux', `${mod}/shears/${metal}`, weldingHeatingLevel)
                                 global.addCompacting3ItemEItem(`${mod}/unfinished_helmet/${metal}`, `${mod}/sheet/${metal}`, 'tfc:powder/flux', `${mod}/helmet/${metal}`, weldingHeatingLevel)
@@ -547,6 +654,13 @@ onEvent('recipes', event => {
                     //console.log(fluid)
                     if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input)) {
                         let processingSpeed = Math.ceil(heatcapacity * 100)
+                        if(fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
+                            fluid = 'tfc:metal/cast_iron'
+
+                            event.remove({ id: `tfc_metalwork:heating/metal/wrought_iron_block` })
+                            event.remove({ id: `tfc_metalwork:heating/metal/${metal}_${toolType}` })
+                            event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), `${tagPrefix}${input}`, temperature)
+                        }
                         global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
                     }
                 }

@@ -249,6 +249,18 @@ onEvent('recipes', event => {
         }
     }
 
+    global.addMeltingHeatingFluid = function addMeltingHeatingFluid(input, fluid, fluidAmount, temperature) {
+        let heatcapacity = fluidAmount * 0.02857
+        let processingSpeed = Math.ceil(heatcapacity * 100)
+        let isTag = false;
+
+        let heatingLevel = global.getHeatingLevel(temperature)
+
+        event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), input, temperature)
+        global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
+
+    }
+
     global.addRolling = function addRolling(input, output, outputCount) {
         if (outputCount == undefined || outputCount == null) {
             outputCount == 1;

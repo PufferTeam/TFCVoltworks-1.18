@@ -26,6 +26,8 @@ global.recipeIdToRemove = [
     'tfc:barrel/dye/bleach_concrete_powder',
     'tfc:barrel/dye/bleach_candles',
     'tfc:crafting/vanilla/armor_stand',
+    'tfc:anvil/red_steel_bucket',
+    'tfc:anvil/blue_steel_bucket',
     'tconstruct:common/glass/vanilla/daylight_sensor',
     'tconstruct:common/slime/lead',
     'quark:mobs/smelting/cooked_frog_leg',
@@ -53,6 +55,9 @@ global.recipeIdToRemove = [
     'extendedflywheels:iron_flywheel_from_painted_flywheel',
     'create:crafting/kinetics/mechanical_press',
     'create:crafting/kinetics/encased_fan',
+    'create:splashing/stained_glass',
+    'create:splashing/stained_glass_pane',
+    'create:splashing/sand',
 
     'thermal:machines/bottler/bottler_honey_bottle',
     'thermal:machines/bottler/bottler_mossy_stone_bricks'

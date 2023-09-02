@@ -9,6 +9,8 @@ onEvent('item.registry', event => {
 
     global.tfcGlobalMetalTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
 
+    event.create('transition_bloom', 'create:sequenced_assembly').maxStackSize(1);
+
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
  
     global.stoneToolsTypes.forEach(i => {

@@ -89,6 +89,8 @@ global.removeAndHide = [
     'pneumaticcraft:compressed_iron_boots',
     'pneumaticcraft:compressed_iron_gear',
     'pneumaticcraft:ingot_iron_compressed',
+    'tfc:metal/bucket/red_steel',
+    'tfc:metal/bucket/blue_steel',
     'vs_clockwork:universal_joint',
     'create:bar_of_chocolate',
     'create:tree_fertilizer',

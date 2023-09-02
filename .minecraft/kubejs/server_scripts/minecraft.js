@@ -295,6 +295,21 @@ onEvent('recipes', event => {
         L: 'minecraft:end_stone'
     }).id('minecraft:end_rod')
 
+    event.remove({ output: 'minecraft:bucket' })
+    event.remove({ id: 'rosia:anvil/bucket' })
+    const bucket = []
+    let transitionItem = 'kubejs:transition_wrought_iron'
+    bucket.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'minecraft:bucket']).keepHeldItem())
+    bucket.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    bucket.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    bucket.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    event.recipes.tfc.anvil('minecraft:bucket', '#forge:sheets/wrought_iron', [
+        "bend_last",
+        "bend_second_last",
+        "bend_third_last"
+    ]).tier(3).id(`tfc:anvil/part/bucket`)
+    event.recipes.createSequencedAssembly('minecraft:bucket', '#forge:sheets/wrought_iron', bucket).transitionalItem(transitionItem).loops(1);
+
     event.shapeless('4x tfc:plant/moss', ['minecraft:moss_block']).id('tfc:moss_from_moss_block')
     event.shapeless('4x minecraft:glowstone_dust', ['minecraft:glowstone']).id('minecraft:glowstone_dust_from_glowstone')
     event.shapeless('4x minecraft:clay_ball', ['minecraft:clay']).id('minecraft:clay_ball_from_clay')
@@ -302,7 +317,6 @@ onEvent('recipes', event => {
     event.shapeless('9x minecraft:redstone', ['minecraft:redstone_block']).id('minecraft:redstone_from_redstone_block')
     event.remove({ id: 'tfc:crafting/vanilla/hay' })
     event.shapeless('9x tfc:straw', ['minecraft:hay_block']).id('tfc:crafting/vanilla/hay')
-
 
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')

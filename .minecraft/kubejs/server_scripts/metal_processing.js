@@ -222,4 +222,17 @@ onEvent('recipes', event => {
     event.remove({ id: `rosia:casting/purple_steel_ingot` })
     event.remove({ id: `rosia:casting/weak_purple_steel_fire_ingot` })
     event.remove({ id: `rosia:casting/weak_purple_steel_ingot` })
+
+    global.addMeltingHeatingFluid('create:whisk', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid('create:propeller', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid('thermal:drill_head', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid('thermal:saw_blade', "tfc:metal/cast_iron", 200, 1535)
+
+})
+
+onEvent('server.datapack.first', event => {
+    event.addTFCHeat('create:whisk', 5.714, 921)
+    event.addTFCHeat('create:propeller', 5.714, 921)
+    event.addTFCHeat('thermal:drill_head', 5.714, 921)
+    event.addTFCHeat('thermal:saw_blade', 5.714, 921)
 })

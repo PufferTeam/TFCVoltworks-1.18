@@ -213,6 +213,60 @@ onEvent('recipes', event => {
         O: 'create:shaft'
     }).id('create:hose_pulley')
 
+    let transitionItem = 'kubejs:transition_wrought_iron'
+
+    event.remove({ output: 'thermal:saw_blade' })
+    const sawBlade = []
+    sawBlade.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'thermal:saw_blade']).keepHeldItem())
+    sawBlade.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_rods`]).keepHeldItem())
+    sawBlade.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
+    sawBlade.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_hammers`]))
+    event.recipes.tfc.anvil('thermal:saw_blade', '#forge:sheets/wrought_iron', [
+        "hit_last",
+        "shrink_second_last",
+        "upset_third_last"
+    ]).tier(3).id(`tfc:anvil/part/saw_blade`)
+    event.recipes.createSequencedAssembly('thermal:saw_blade', '#forge:sheets/wrought_iron', sawBlade).transitionalItem(transitionItem).loops(1);
+
+    event.remove({ output: 'thermal:drill_head' })
+    const drillHead = []
+    drillHead.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'thermal:drill_head']).keepHeldItem())
+    drillHead.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    drillHead.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
+    drillHead.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_chisels`]))
+    event.recipes.tfc.anvil('thermal:drill_head', '#forge:sheets/wrought_iron', [
+        "punch_last",
+        "shrink_second_last",
+        "bend_third_last"
+    ]).tier(3).id(`tfc:anvil/part/drill_head`)
+    event.recipes.createSequencedAssembly('thermal:drill_head', '#forge:sheets/wrought_iron', drillHead).transitionalItem(transitionItem).loops(1);
+
+    event.remove({ output: 'create:propeller' })
+    const propeller = []
+    propeller.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:propeller']).keepHeldItem())
+    propeller.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_hammers`]))
+    propeller.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+    propeller.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    event.recipes.tfc.anvil('create:propeller', '#forge:sheets/wrought_iron', [
+        "bend_last",
+        "draw_second_last",
+        "hit_third_last"
+    ]).tier(3).id(`tfc:anvil/part/propeller`)
+    event.recipes.createSequencedAssembly('create:propeller', '#forge:sheets/wrought_iron', propeller).transitionalItem(transitionItem).loops(1);
+
+    event.remove({ output: 'create:whisk' })
+    const whisk = []
+    whisk.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:whisk']).keepHeldItem())
+    whisk.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
+    whisk.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_rods`]).keepHeldItem())
+    whisk.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    event.recipes.tfc.anvil('create:whisk', '#forge:sheets/wrought_iron', [
+        "bend_last",
+        "upset_second_last",
+        "shrink_third_last"
+    ]).tier(3).id(`tfc:anvil/part/whisk`)
+    event.recipes.createSequencedAssembly('create:whisk', '#forge:sheets/wrought_iron', whisk).transitionalItem(transitionItem).loops(1);
+
     event.remove({ output: 'create:encased_chain_drive' })
     event.shapeless('create:encased_chain_drive', ['create:andesite_casing', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron']).id('create:encased_chain_drive')
 
