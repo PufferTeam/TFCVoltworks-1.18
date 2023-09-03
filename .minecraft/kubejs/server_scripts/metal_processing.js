@@ -114,7 +114,7 @@ onEvent('recipes', event => {
     ]).tier(1).id(`tfc_metalwork:anvil/copper_block`)
 
     function copperBlockRecipes(input, inputCut, output, outputCut) {
-        let transitionItem = `kubejs:transition_copper`
+        let transitionItem = `kubejs:transition_copper_block`
         let result = output.split(':')
         let name = result[1]
         let mod = result[0]
@@ -200,6 +200,9 @@ onEvent('recipes', event => {
             event.recipes.tfc.chisel(`${output}`, input, 'smooth').id(`${mod}:chisel/smooth/${name}`)
         }
 
+        if(inputCut == null) {
+            inputCut = input
+        }
         if (inputCut !== undefined) {
             event.recipes.tfc.chisel(`${outputCut}_slab`, `${inputCut}_slab`, 'smooth').id(`${mod}:chisel/smooth/${name}_slab`)
             event.recipes.tfc.chisel(`${outputCut}_stairs`, `${inputCut}_stairs`, 'smooth').id(`${mod}:chisel/smooth/${name}_stairs`)

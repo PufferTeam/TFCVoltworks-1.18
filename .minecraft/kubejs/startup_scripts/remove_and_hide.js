@@ -443,6 +443,8 @@ global.modFluids.forEach(i => global.removeAndHide.push(`${i}_bucket`));
 
 global.mekanismItems.forEach(i => global.removeAndHide.push(`mekanism:${i}`));
 
+global.thermalItems.forEach(i => global.removeAndHide.push(`thermal:${i}`));
+
 global.duplicateAnimals.forEach(i => global.removeAndHide.push(`minecraft:${i}_spawn_egg`));
 
 global.tfcGlobalMetalTypes.forEach(i => global.removeAndHide.push(`tfc_metalwork:metal/large_plate/${i}`));

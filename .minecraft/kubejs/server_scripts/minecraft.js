@@ -330,9 +330,6 @@ onEvent('recipes', event => {
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:slime_ball', 'tfc:glue')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:slime_ball', 'tfc:glue')
 
-    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
-    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
-
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
 

@@ -270,9 +270,9 @@ onEvent('recipes', event => {
     event.remove({ output: 'create:encased_chain_drive' })
     event.shapeless('create:encased_chain_drive', ['create:andesite_casing', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron']).id('create:encased_chain_drive')
 
-
     global.addDamageInputShapeless(1, 'create:sticky_mechanical_piston', 'create:mechanical_piston', "tfc:knives", 1)
 
-
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
 
 });

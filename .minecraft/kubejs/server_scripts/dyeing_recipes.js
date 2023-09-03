@@ -2,8 +2,10 @@
 
 onEvent('recipes', event => {
 
+    global.colors.forEach(i => event.recipes.createMixing(Fluid.of(`tfc:${i}_dye`, 1000), [`minecraft:${i}_dye`, Fluid.of(`minecraft:water`, 1000)]).heated())
+
     function dyeMixing(first, second, result) {
-        global.addMixingFluidFluidEFluid(`tfc:${first}_dye`, 1, `tfc:${second}_dye`, 1, `tfc:${result}_dye`, 2)
+        event.recipes.createMixing(Fluid.of(`tfc:${result}_dye`, 2), [Fluid.of(`tfc:${first}_dye`, 1), Fluid.of(`tfc:${second}_dye`, 1)])
         event.recipes.tfc.barrel_instant_fluid(Fluid.of(`tfc:${result}_dye`, 2), Fluid.of(`tfc:${second}_dye`, 1), Fluid.of(`tfc:${first}_dye`, 1))
 
         event.shapeless(`2x minecraft:${result}_dye`, [`minecraft:${first}_dye`, `minecraft:${second}_dye`])

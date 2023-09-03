@@ -96,6 +96,10 @@ onEvent('tags.items', event => {
         'ladder'
     ]
 
+    global.rottableFoods = []
+    const rottableFoods = event.get('tfc:foods').getObjectIds()
+    rottableFoods.forEach(i => global.rottableFoods.push(i))
+
     global.unfiredPotteryItem.forEach(i => global.heatingBlacklist.push(i));
     global.terracotta.forEach(i => global.heatingBlacklist.push(i));
 
@@ -114,6 +118,8 @@ onEvent('tags.items', event => {
     global.bonuswhitelistrx = new RegExp(global.forgingBonusWhitelist.join('|'));
     global.anvilblacklistrx = new RegExp(global.anvilCopyBlacklist.join('|'));
     global.anvilwhitelistrx = new RegExp(global.anvilCopyWhitelist.join('|'));
+    global.rottablefoodsrx = new RegExp(global.rottableFoods.join('|'));
+
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));
     global.metalworkpartsrx = new RegExp(global.metalworkMetalParts.join('|'));
@@ -125,34 +131,38 @@ onEvent('tags.items', event => {
 onEvent('recipes', event => {
 
     //Quern to Milling
-    global.tfcGrains.forEach(i => global.invisibleQuernInput.push(`tfc:food/${i}_grain`));
-
     event.forEachRecipe({ type: "tfc:quern" }, recipe => {
         const quernRecipe = JSON.parse(recipe.json);
         let input = undefined
         let isTag = false
         input = quernRecipe.ingredient.item;
+        if(input == undefined && quernRecipe.ingredient.ingredient !== undefined) {
+            input = quernRecipe.ingredient.ingredient.item;
+        }
         if (input == undefined) {
             input = quernRecipe.ingredient.tag;
             isTag = true
         }
-        if (input == undefined) {
-            input = undefined
-        }
+        let time = 50
         let output = quernRecipe.result.item;
         let outputCount = quernRecipe.result.count;
-        if (output !== undefined && input !== undefined && input !== global.invisibleQuernInput && !global.ingotrx.test(input)) {
-            console.log(input)
-            if (isTag) {
-                event.recipes.create.milling(`${outputCount}x ${output}`, `#${input}`);
-            } else {
-                event.recipes.create.milling(`${outputCount}x ${output}`, input);
-            }
+        if(outputCount == undefined) {
+            outputCount = 1
         }
-
+        let modifiers = false
+        if(output == undefined) {
+            output = quernRecipe.result.stack.item
+            modifiers = true
+        }
+        console.log(output)
+        console.log(outputCount)
+        if (output !== undefined && input !== undefined && !global.ingotrx.test(input)) {
+            console.log(input)
+            global.addMilling(isTag, input, output, outputCount, time, modifiers)
+        }
     });
 
-    global.tfcGrains.forEach(i => event.recipes.create.milling(`tfc:food/${i}_flour`, `tfc:food/${i}_grain`));
+    //global.tfcGrains.forEach(i => event.recipes.create.milling(`tfc:food/${i}_flour`, `tfc:food/${i}_grain`));
 
     event.forEachRecipe({ type: "tfc:welding" }, recipe => {
         const weldingRecipe = JSON.parse(recipe.json);
@@ -311,6 +321,9 @@ onEvent('recipes', event => {
                 const results = []
 
                 let transitionItem = `kubejs:transition_${metal}`
+                if(toolType == 'block' || toolType == 'cut') {
+                    transitionItem = `kubejs:transition_${metal}_block`
+                }
 
                 for (let i in rules) {
                     let index = [];

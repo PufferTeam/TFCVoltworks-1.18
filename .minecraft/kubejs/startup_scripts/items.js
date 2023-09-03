@@ -2,17 +2,22 @@ onEvent('item.registry', event => {
 
     //event.create('firewood').maxStackSize(64)
 
-    global.tfcWoodTypes.forEach(i => event.create(`${i}_firewood`).maxStackSize(64));
-    global.tfcWoodTypes.forEach(i => event.create(`stripped_${i}_firewood`).maxStackSize(64));
+    global.tfcWoodTypes.forEach(i => {
+        event.create(`${i}_firewood`).maxStackSize(64)
+        event.create(`stripped_${i}_firewood`).maxStackSize(64)
+    });
 
-    //global.forgingBonusWhitelist.forEach(i => event.create(`${i}_template`).maxStackSize(1));
-
-    global.tfcGlobalMetalTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
-
+    global.tfcGlobalMetalTypes.forEach(i => {
+        event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1)
+        event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1)
+    });    
+    
     event.create('transition_bloom', 'create:sequenced_assembly').maxStackSize(1);
 
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
  
+    global.framesTypes.forEach(i => event.create(i + '_frame').maxStackSize(64));    
+
     global.stoneToolsTypes.forEach(i => {
         let result = i.split('/')
         let stone = result[0]

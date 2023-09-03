@@ -33,69 +33,170 @@ onEvent('recipes', event => {
     }
     */
 
-    global.addMixingFluidItemEFluid = function addMixingFluidItemEFluid(input, fluid_input, fluid_input_amount, fluid_output, fluid_output_amount) {
+    global.addMixingItemFluidEItem = function addMixingItemFluidEItem(input, fluid, fluidCount, output, outputCount, heatingLevel) {
+        if(heatingLevel !== null) {
+            event.custom({
+                "type": "create:mixing",
+                "ingredients": [
+                    {
+                        "type": "tfc:not_rotten",
+                        "ingredient": {
+                            "item": input
+                        }
+                    },
+                    {
+                        "fluid": fluid,
+                        "amount": fluidCount
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": outputCount
+                    }
+                ],
+                "heatRequirement": heatingLevel
+            })
+        } else {
+            event.custom({
+                "type": "create:mixing",
+                "ingredients": [
+                    {
+                        "type": "tfc:not_rotten",
+                        "ingredient": {
+                            "item": input
+                        }
+                    },
+                    {
+                        "fluid": fluid,
+                        "amount": fluidCount
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": outputCount
+                    }
+                ]
+            })
+        }
+
+    }
+
+    global.addMixingTagTagFluidTagEFluid = function addMixingTagTagFluidTagEFluid(input1, input2, fluid, fluidCount, output, outputCount, heatingLevel) {
         event.custom({
             "type": "create:mixing",
             "ingredients": [
                 {
-                    "fluid": fluid_input,
-                    "amount": fluid_input_amount
+                    "tag": input1
                 },
                 {
-                    "item": input
+                    "type": "tfc:not_rotten",
+                    "ingredient": {
+                        "tag": input2
+                    }
+                },
+                {
+                    "fluidTag": fluid,
+                    "amount": fluidCount
                 }
             ],
             "results": [
                 {
-                    "fluid": fluid_output,
-                    "amount": fluid_output_amount
+                    "fluid": output,
+                    "amount": outputCount
                 }
             ],
+            "heatRequirement": heatingLevel
         })
     }
 
-    global.addMixingFluidItemEItem = function addMixingFluidItemEItem(input, fluid_input, fluid_input_amount, output) {
+    global.addMixingItemTagItemFluidEItem = function addMixingItemTagItemFluidEItem(input1, input2, input3, fluid, fluidCount, output, outputCount, heatingLevel) {
         event.custom({
             "type": "create:mixing",
             "ingredients": [
                 {
-                    "fluid": fluid_input,
-                    "amount": fluid_input_amount
+                    "item": input1
                 },
                 {
-                    "item": input
+                    "tag": input2
+                },
+                {
+                    "type": "tfc:not_rotten",
+                    "ingredient": {
+                        "item": input3
+                    }
+                },
+                {
+                    "fluid": fluid,
+                    "amount": fluidCount
                 }
             ],
             "results": [
                 {
-                    "item": output
+                    "item": output,
+                    "count": outputCount
                 }
             ],
-        })
-    }
-    
-    global.addMixingFluidFluidEFluid = function addMixingFluidFluidEFluid(fluid_input, fluid_input_amount, second_fluid_input, second_fluid_input_amount, fluid_output, fluid_output_amount) {
-        event.custom({
-            "type": "create:mixing",
-            "ingredients": [
-                {
-                    "fluid": fluid_input,
-                    "amount": fluid_input_amount
-                },
-                {
-                    "fluid": second_fluid_input,
-                    "amount": second_fluid_input_amount
-                },
-            ],
-            "results": [
-                {
-                    "fluid": fluid_output,
-                    "amount": fluid_output_amount
-                }
-            ],
+            "heatRequirement": heatingLevel
         })
     }
 
+    global.addMilling = function addMilling(isTag, input, output, outputCount, time, modifiers) {
+        if (global.rottablefoodsrx.test(input)) {
+            event.custom({
+                "type": "create:milling",
+                "ingredients": [
+                    {
+                        "type": "tfc:not_rotten",
+                        "ingredient": {
+                            "item": input
+                        }
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": outputCount
+                    }
+                ],
+                "processingTime": time
+            })
+        } else if (isTag) {
+            event.custom({
+                "type": "create:milling",
+                "ingredients": [
+                    {
+                        "tag": input
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": outputCount
+                    }
+                ],
+                "processingTime": time
+            })
+        } else {
+            event.custom({
+                "type": "create:milling",
+                "ingredients": [
+                    {
+                        "item": input
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": outputCount
+                    }
+                ],
+                "processingTime": time
+            })
+        }
+
+    }
     global.addBlasting = function addBlasting(input, output) {
         event.custom({
             "type": "immersiveengineering:blast_furnace",
@@ -209,7 +310,7 @@ onEvent('recipes', event => {
     }
 
     global.addMelting = function addMelting(isTag, input, fluid, fluid_amount, heat, time) {
-        if(time == undefined || time == null) {
+        if (time == undefined || time == null) {
             time == 50;
         }
         if (isTag) {
@@ -361,7 +462,7 @@ onEvent('recipes', event => {
         if (input_number == undefined || input_number == null) {
             input_number == 1;
         }
-        
+
         switch (input_number) {
             case 1:
                 event.custom({

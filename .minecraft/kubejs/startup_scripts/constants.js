@@ -136,6 +136,15 @@ global.scrapingItems = [
     'unrefined_paper'
 ]
 
+global.framesTypes = [
+    'andesite',
+    'copper',
+    'brass',
+    'railway',
+    'refined_radiance',
+    'shadow_steel'
+]
+
 global.tfcRockTypes = [
     'granite',
     'diorite',
@@ -779,14 +788,40 @@ global.tfcGrains = [
     'wheat',
     'oat',
     'maize',
+    'rice',
     'barley'
 ]
-global.invisibleQuernInput = [
-    null
-]
-global.tfcGrains.forEach(i => global.invisibleQuernInput.push(`tfc:food/${i}_grain`));
 
-global.mekanismItems = [
+global.tfcJarTypes = [
+    'blackberry',
+    'blueberry',
+    'bunchberry',
+    'cloudberry',
+    'cranberry',
+    'elderberry',
+    'gooseberry',
+    'raspberry',
+    'snowberry',
+    'strawberry',
+    'wintergreen_berry',
+    'banana',
+    'cherry',
+    'green_apple',
+    'lemon',
+    'olive',
+    'orange',
+    'peach',
+    'plum',
+    'red_apple'
+  ]
+
+  global.firmalifeJarTypes = [
+    'fig',
+    'pineapple',
+    'pumpkin_chunks'
+  ]
+
+global.thermalItems = [
     'sugar_cane_block',
     'apple_block',
     'carrot_block',
@@ -799,7 +834,7 @@ global.mekanismItems = [
     'quartz_dust'
 ]
 
-global.thermalItems = [
+global.mekanismItems = [
     'dust_quartz',
     'dust_sulfur',
     'sawdust',
