@@ -2,13 +2,22 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "item": "firmalife:food/goat_curd"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/goat_curd"
+            }
         },
         {
-            "item": "firmalife:food/goat_curd"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/goat_curd"
+            }
         },
         {
-            "item": "firmalife:food/goat_curd"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/goat_curd"
+            }
         },
         {
             "fluid": "tfc:salt_water",

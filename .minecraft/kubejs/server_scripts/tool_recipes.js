@@ -6,6 +6,31 @@ onEvent('recipes', event => {
         let result = i.split("/")
         let stone = result[0]
 
+        event.remove({ id: `woodencog:compacting/axe_head_${stone}` })
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `tfc:stone/axe_head/${stone}`, 1)
+
+        event.remove({ id: `woodencog:compacting/javelin_head_${stone}` })
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `tfc:stone/javelin_head/${stone}`, 1)
+
+        event.remove({ id: `woodencog:compacting/shovel_head_${stone}` })
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `tfc:stone/shovel_head/${stone}`, 1)
+
+        event.remove({ id: `woodencog:compacting/hammer_head_${stone}` })
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `tfc:stone/hammer_head/${stone}`, 1)
+
+        event.remove({ id: `woodencog:compacting/hoe_head_2_${stone}` })
+        event.remove({ id: `woodencog:compacting/hoe_head_1_${stone}` })
+        event.remove({ id: `woodencog:compacting/hoe_head_${stone}` })
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `tfc:stone/hoe_head/${stone}`, 2)
+
+        event.remove({ id: `woodencog:compacting/knife_head_3_${stone}` })
+        event.remove({ id: `woodencog:compacting/knife_head_2_${stone}` })
+        event.remove({ id: `woodencog:compacting/knife_head_1_${stone}` })
+        event.remove({ id: `woodencog:compacting/knife_head_${stone}` })
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `tfc:stone/knife_head/${stone}`, 2)
+
+        global.addCompactingTagEItem(`tfc:${stone}_rock`, `kubejs:stone/pickaxe_head/${stone}`, 2)
+
         event.shaped(`kubejs:stone/pickaxe/${stone}`, [
             'S',
             'A'

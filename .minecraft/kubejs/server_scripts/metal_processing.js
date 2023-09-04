@@ -230,6 +230,8 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid('create:propeller', "tfc:metal/cast_iron", 200, 1535)
     global.addMeltingHeatingFluid('thermal:drill_head', "tfc:metal/cast_iron", 200, 1535)
     global.addMeltingHeatingFluid('thermal:saw_blade', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid('minecraft:bucket', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid('firmalife:pie_pan', "tfc:metal/cast_iron", 50, 1535)
 
 })
 
@@ -238,4 +240,7 @@ onEvent('server.datapack.first', event => {
     event.addTFCHeat('create:propeller', 5.714, 921)
     event.addTFCHeat('thermal:drill_head', 5.714, 921)
     event.addTFCHeat('thermal:saw_blade', 5.714, 921)
+    event.addTFCHeat('minecraft:bucket', 5.714, 921)
+    event.addTFCHeat('firmalife:pie_pan', 1.428, 921)
+
 })

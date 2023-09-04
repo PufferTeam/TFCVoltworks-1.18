@@ -14,15 +14,29 @@ onEvent('recipes', event => {
   event.recipes.createMixing('tfc:food/boiled_egg', ['minecraft:egg', Fluid.of('minecraft:water', 100)]).heated()
 
   global.tfcGrains.forEach(i => {
-    for (let n = 0; n < 9; n++) {
-      event.remove({ id: `tfc:crafting/dough/food/${i}_dough_${n}` })
-    }
-    global.addFirmaMixingItemFluidEItem(`tfc:food/${i}_flour`, 'minecraft:water', 100, `tfc:food/${i}_dough`, 2)
+
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_1` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_2` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_3` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_4` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_5` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_6` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_7` })
+    event.remove({ id: `tfc:crafting/dough/${i}_dough_8` })
+
+    global.addFirmaMixingItemFluidEItem(1, `tfc:food/${i}_flour`, 'minecraft:water', 1000, `tfc:food/${i}_dough`, 2)
+    global.addFirmaMixingItemFluidEItem(2, `tfc:food/${i}_flour`, 'minecraft:water', 1000, `tfc:food/${i}_dough`, 4)
+
     global.addMixingItemFluidEItem(`tfc:food/${i}_flour`, 'minecraft:water', 100, `tfc:food/${i}_dough`, 2, null)
 
     event.remove({ output: `firmalife:food/${i}_dough` })
-    global.addFirmaMixingItemTagFluidEItem('firmalife:sweetener', `tfc:food/${i}_flour`, 'firmalife:yeast_starter', 100, `firmalife:food/${i}_dough`, 4)
+    global.addFirmaMixingItemTagFluidEItem('firmalife:sweetener', `tfc:food/${i}_flour`, 'firmalife:yeast_starter', 1000, `firmalife:food/${i}_dough`, 4)
     global.addMixingTagItemFluidEItem('firmalife:sweetener', `tfc:food/${i}_flour`, 'firmalife:yeast_starter', 100, `firmalife:food/${i}_dough`, 4)
+  })
+
+  global.tfcSoilsTypes.forEach(i => {
+    event.recipes.createMixing(`tfc:mud/${i}`, [`tfc:dirt/${i}`, Fluid.of('minecraft:water', 100)])
+    global.addDrying(`tfc:drying_bricks/${i}`, `tfc:mud_brick/${i}`)
   })
 
   global.addMixingItemFluidEItem('tfc:food/rice_grain', 'minecraft:water', 100, 'tfc:food/cooked_rice', 1, 'heated')
@@ -32,6 +46,34 @@ onEvent('recipes', event => {
   global.addMixingItemFluidEItem('tfc:food/soybean', 'tfc:salt_water', 1000, 'firmalife:food/soy_mixture', 1, 'heated')
 
   global.addMixingTagTagFluidTagEFluid('firmalife:sweetener', 'firmalife:foods/chocolate', 'tfc:milks', 1000, 'firmalife:chocolate', 1000, 'heated')
+
+  event.remove({ id: 'tfc:quern/olive' })
+  global.addQuerning('tfc:food/olive', 'tfc:olive_paste', 2)
+
+  global.addQuerning('firmalife:food/cocoa_beans', 'firmalife:food/cocoa_powder', 1)
+  global.addMilling(false, 'firmalife:food/cocoa_beans', 'firmalife:food/cocoa_powder', 1, 50, false)
+
+  event.remove({ id: 'tfc:clay_knapping/brick' })
+  event.recipes.tfc.clay_knapping('6x tfc:ceramic/unfired_brick', [
+    'XX XX', 
+    '     ', 
+    'XX XX', 
+    '     ', 
+    'XX XX'
+  ]).id('tfc:clay_knapping/brick')
+  global.addCompactingTagEItem(`tfc:clay_knapping`, 'tfc:ceramic/unfired_brick', 6)
+
+
+  event.remove({ id: 'tfc:fire_clay_knapping/brick' })
+  event.remove({ id: 'woodencog:compacting/brick' })
+  event.recipes.tfc.fire_clay_knapping('6x tfc:ceramic/unfired_fire_brick', [
+    'XX XX', 
+    '     ', 
+    'XX XX', 
+    '     ', 
+    'XX XX'
+  ]).id('tfc:fire_clay_knapping/brick')
+  global.addCompactingTagEItem(`tfc:fire_clay_knapping`, 'tfc:ceramic/unfired_fire_brick', 6)
 
   event.remove({ output: 'tfc:fire_bricks', type: 'minecraft:crafting_shaped' })
   event.shaped('2x tfc:fire_bricks', [

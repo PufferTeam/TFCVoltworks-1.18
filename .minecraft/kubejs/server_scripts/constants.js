@@ -61,6 +61,7 @@ global.recipeIdToRemove = [
     'extendedflywheels:brass_flywheel_from_painted_flywheel',
     'extendedflywheels:steel_flywheel_from_painted_flywheel',
     'extendedflywheels:iron_flywheel_from_painted_flywheel',
+    'immersiveengineering:alloysmelter/rose_gold',
     'create:crafting/kinetics/mechanical_press',
     'create:crafting/kinetics/encased_fan',
     'create:splashing/stained_glass',

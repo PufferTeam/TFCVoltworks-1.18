@@ -2,7 +2,10 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "item": "firmalife:food/frothy_coconut"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/frothy_coconut"
+            }
         },
         {
             "fluid": "tfc:rum",

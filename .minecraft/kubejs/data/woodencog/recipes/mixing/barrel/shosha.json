@@ -2,13 +2,22 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "item": "firmalife:food/yak_curd"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/yak_curd"
+            }
         },
         {
-            "item": "firmalife:food/yak_curd"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/yak_curd"
+            }
         },
         {
-            "item": "firmalife:food/yak_curd"
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/yak_curd"
+            }
         },
         {
             "fluid": "tfc:salt_water",

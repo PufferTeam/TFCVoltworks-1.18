@@ -33,26 +33,71 @@ onEvent('recipes', event => {
     }
     */
 
-    global.addFirmaMixingItemFluidEItem = function addFirmaMixingItemFluidEItem(input, fluid, fluidAmount, output, outputCount) {
+    global.addDrying = function addDrying(input, output) {
         event.custom({
-            "type": "firmalife:mixing_bowl",
-            "ingredients": [
-                {
-                    "type": "tfc:not_rotten",
-                    "ingredient": {
-                        "item": input
-                    }
-                }
-            ],
-            "fluid_ingredient": {
-                "ingredient": fluid,
-                "amount": fluidAmount
+            "type": "firmalife:drying",
+            "ingredient": {
+              "item": input
             },
-            "output_item": {
-                "item": output,
-                "count": outputCount
+            "result": {
+              "item": output
             }
-        })
+          })
+    }
+
+    global.addFirmaMixingItemFluidEItem = function addFirmaMixingItemFluidEItem(number, input, fluid, fluidAmount, output, outputCount) {
+        switch (number) {
+            case 1:
+                event.custom({
+                    "type": "firmalife:mixing_bowl",
+                    "ingredients": [
+                        {
+                            "type": "tfc:not_rotten",
+                            "ingredient": {
+                                "item": input
+                            }
+                        }
+                    ],
+                    "fluid_ingredient": {
+                        "ingredient": fluid,
+                        "amount": fluidAmount
+                    },
+                    "output_item": {
+                        "item": output,
+                        "count": outputCount
+                    }
+                })
+                break;
+
+            case 2:
+                event.custom({
+                    "type": "firmalife:mixing_bowl",
+                    "ingredients": [
+                        {
+                            "type": "tfc:not_rotten",
+                            "ingredient": {
+                                "item": input
+                            }
+                        },
+                        {
+                            "type": "tfc:not_rotten",
+                            "ingredient": {
+                                "item": input
+                            }
+                        }
+                    ],
+                    "fluid_ingredient": {
+                        "ingredient": fluid,
+                        "amount": fluidAmount
+                    },
+                    "output_item": {
+                        "item": output,
+                        "count": outputCount
+                    }
+                })
+                break;
+        }
+
     }
 
     global.addFirmaMixingItemTagFluidEItem = function addFirmaMixingItemTagFluidEItem(input, input2, fluid, fluidAmount, output, outputCount) {
@@ -214,6 +259,56 @@ onEvent('recipes', event => {
         })
     }
 
+    global.addQuerning = function addQuerning(input, output, outputCount) {
+        if (global.rottablefoodsrx.test(input)) {
+            if (global.rottablefoodsrx.test(output)) {
+                event.custom({
+                    "type": "tfc:quern",
+                    "ingredient": {
+                        "type": "tfc:not_rotten",
+                        "ingredient": {
+                            "item": input
+                        }
+                    },
+                    "result": {
+                        "stack": {
+                            "item": output,
+                            "count": outputCount
+                        },
+                        "modifiers": [
+                            "tfc:copy_food"
+                        ]
+                    }
+                })
+            } else {
+                event.custom({
+                    "type": "tfc:quern",
+                    "ingredient": {
+                        "type": "tfc:not_rotten",
+                        "ingredient": {
+                            "item": input
+                        }
+                    },
+                    "result": {
+                        "item": output,
+                        "count": outputCount
+                    }
+                })
+            }
+        } else {
+            event.custom({
+                "type": "tfc:quern",
+                "ingredient": {
+                    "item": input
+                },
+                "result": {
+                    "item": output,
+                    "count": outputCount
+                }
+            })
+        }
+    }
+
     global.addMilling = function addMilling(isTag, input, output, outputCount, time, modifiers) {
         if (global.rottablefoodsrx.test(input)) {
             event.custom({
@@ -320,6 +415,23 @@ onEvent('recipes', event => {
                 }
             ],
             "heatRequirement": heatRequirement
+        })
+    }
+
+    global.addCompactingTagEItem = function addCompactingTagEItem(input, output, outputCount) {
+        event.custom({
+            "type": "create:compacting",
+            "ingredients": [
+                {
+                    "tag": input
+                }
+            ],
+            "results": [
+                {
+                    "item": output,
+                    "count": outputCount
+                }
+            ]
         })
     }
 

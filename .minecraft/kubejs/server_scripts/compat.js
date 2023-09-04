@@ -82,6 +82,7 @@ onEvent('tags.items', event => {
     global.anvilCopyWhitelist = [
         'tfc:refined_iron_bloom',
         'minecraft:iron_door',
+        'firmalife:pie_pan',
         'tfc:metal/ingot/high_carbon_steel'
     ]
 
@@ -292,6 +293,9 @@ onEvent('recipes', event => {
                 case 'minecraft:iron_door':
                     metal = 'wrought_iron'
                     break;
+                case 'firmalife:pie_pan':
+                    metal = 'cast_iron'
+                break;
                 case 'tfc:metal/ingot/high_carbon_steel':
                     metal = 'steel'
                     toolType = 'customp'

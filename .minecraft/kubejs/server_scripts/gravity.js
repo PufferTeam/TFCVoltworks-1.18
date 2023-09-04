@@ -16,6 +16,7 @@ onEvent('tags.blocks', event => {
 
     global.tfcRockTypes.forEach(i => tagInsulation('tfc:rock', i, 'cobble'));
     global.tfcRockTypes.forEach(i => tagInsulation('tfc:rock', i, 'mossy_cobble'));
+    global.tfcRockTypes.forEach(i => tagInsulation('tfc:rock', i, 'mossy_bricks'));
     global.tfcRockTypes.forEach(i => tagInsulation('tfc:rock', i, 'raw'));
     global.tfcRockTypes.forEach(i => tagInsulation('tfc:rock', i, 'bricks'));
     global.tfcRockTypes.forEach(i => tagInsulation('tfc:rock', i, 'cracked_bricks'));
@@ -23,6 +24,7 @@ onEvent('tags.blocks', event => {
 
     global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:tfc.rock', i, 'cobble'));
     global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:tfc.rock', i, 'mossy_cobble'));
+    global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:tfc.rock', i, 'mossy_bricks'));
     global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:tfc.rock', i, 'raw'));
     global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:tfc.rock', i, 'bricks'));
     global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:tfc.rock', i, 'cracked_bricks'));
