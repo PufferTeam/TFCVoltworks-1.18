@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "firmalife:cheesecloth"
+        },
+        {
+            "fluidTag": "tfc:milks",
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "item": "firmalife:cheesecloth",
+            "count": 1
+        },
+        {
+            "fluid": "firmalife:cream",
+            "amount": 1000
+        }
+    ],
+    "processingTime": 500
+}

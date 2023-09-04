@@ -629,8 +629,10 @@ onEvent('recipes', event => {
                         dustCount = 4
                     }
                     if (Number.isInteger(dustCount)) {
-                        event.recipes.tfc.quern(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, `${tagPrefix}${input}`)
-                        event.recipes.create.milling(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, `${tagPrefix}${input}`);
+                        event.recipes.createCrushing([`${dustCount}x tfc_metalwork:metal/dust/${metal}`], `${tagPrefix}${input}`)
+
+                        //event.recipes.tfc.quern(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, `${tagPrefix}${input}`)
+                        //event.recipes.create.milling(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, `${tagPrefix}${input}`);
                     }
                 }
 

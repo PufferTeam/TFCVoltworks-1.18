@@ -2,8 +2,8 @@
 
 onEvent('recipes', event => {
 
-  global.tfcJarTypes.forEach(i => global.addMixingItemTagItemFluidEItem('firmalife:empty_jar', 'firmalife:sweetener', `tfc:food/${i}`, 'minecraft:water', 1000, `firmalife:${i}_jar`, 1, 'heated'))
-  global.firmalifeJarTypes.forEach(i => global.addMixingItemTagItemFluidEItem('firmalife:empty_jar', 'firmalife:sweetener', `firmalife:food/${i}`, 'minecraft:water', 1000, `firmalife:${i}_jar`, 1, 'heated'))
+  global.tfcJarTypes.forEach(i => global.addMixingItemItemFluidEItem('firmalife:empty_jar', `tfc:food/${i}`, 'firmalife:sugar_water', 1000, `firmalife:${i}_jar`, 1, 'heated'))
+  global.firmalifeJarTypes.forEach(i => global.addMixingItemItemFluidEItem('firmalife:empty_jar', `firmalife:food/${i}`, 'firmalife:sugar_water', 1000, `firmalife:${i}_jar`, 1, 'heated'))
 
   event.recipes.createMixing(Fluid.of('tfc:limewater', 500), ['tfc:powder/flux', Fluid.of('minecraft:water', 500)])
   event.recipes.createMixing('tfc:soaked_papyrus_strip', ['tfc:papyrus_strip', Fluid.of('minecraft:water', 200)])
@@ -11,7 +11,19 @@ onEvent('recipes', event => {
   event.recipes.createMixing(Fluid.of('tfc:tallow', 200), ['tfc:blubber', Fluid.of('minecraft:water', 200)]).heated()
   event.recipes.createMixing(Fluid.of('tfc:olive_oil_water', 200), ['tfc:olive_paste', Fluid.of('minecraft:water', 200)]).heated()
   event.recipes.createMixing(Fluid.of('tfc:salt_water', 125), ['tfc:powder/salt', Fluid.of('minecraft:water', 125)])
-  event.recipes.createMixing('tfc:food/boiled_egg', ['minecraft:egg', Fluid.of('minecraft:water', 100)])
+  event.recipes.createMixing('tfc:food/boiled_egg', ['minecraft:egg', Fluid.of('minecraft:water', 100)]).heated()
+
+  global.tfcGrains.forEach(i => {
+    for (let n = 0; n < 9; n++) {
+      event.remove({ id: `tfc:crafting/dough/food/${i}_dough_${n}` })
+    }
+    global.addFirmaMixingItemFluidEItem(`tfc:food/${i}_flour`, 'minecraft:water', 100, `tfc:food/${i}_dough`, 2)
+    global.addMixingItemFluidEItem(`tfc:food/${i}_flour`, 'minecraft:water', 100, `tfc:food/${i}_dough`, 2, null)
+
+    event.remove({ output: `firmalife:food/${i}_dough` })
+    global.addFirmaMixingItemTagFluidEItem('firmalife:sweetener', `tfc:food/${i}_flour`, 'firmalife:yeast_starter', 100, `firmalife:food/${i}_dough`, 4)
+    global.addMixingTagItemFluidEItem('firmalife:sweetener', `tfc:food/${i}_flour`, 'firmalife:yeast_starter', 100, `firmalife:food/${i}_dough`, 4)
+  })
 
   global.addMixingItemFluidEItem('tfc:food/rice_grain', 'minecraft:water', 100, 'tfc:food/cooked_rice', 1, 'heated')
   global.addMixingItemFluidEItem('firmalife:food/tomato_sauce_mix', 'minecraft:water', 200, 'firmalife:food/tomato_sauce', 1, 'heated')

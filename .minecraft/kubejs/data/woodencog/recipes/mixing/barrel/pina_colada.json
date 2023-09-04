@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "firmalife:food/frothy_coconut"
+        },
+        {
+            "fluid": "tfc:rum",
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "fluid": "firmalife:pina_colada",
+            "amount": 1000
+        }
+    ],
+    "processingTime": 200
+}

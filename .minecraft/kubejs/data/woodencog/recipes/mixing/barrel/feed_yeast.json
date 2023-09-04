@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "tag": "firmalife:feeds_yeast"
+        },
+        {
+            "fluid": "firmalife:yeast_starter",
+            "amount": 100
+        }
+    ],
+    "results": [
+        {
+            "fluid": "firmalife:yeast_starter",
+            "amount": 600
+        }
+    ],
+    "processingTime": 1200
+}

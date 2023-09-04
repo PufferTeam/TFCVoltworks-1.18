@@ -1,0 +1,47 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "tfc:food/beet"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "tfc:food/beet"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "tfc:food/beet"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "tfc:food/beet"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "tfc:food/beet"
+            }
+        },
+        {
+            "fluid": "tfc:salt_water",
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "item": "minecraft:sugar",
+            "count": 3
+        }
+    ],
+    "processingTime": 800,
+    "heatRequirement": "heated"
+}

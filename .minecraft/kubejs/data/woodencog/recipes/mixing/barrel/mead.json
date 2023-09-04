@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "firmalife:raw_honey"
+        },
+        {
+            "fluid": "minecraft:water",
+            "amount": 100
+        }
+    ],
+    "results": [
+        {
+            "fluid": "firmalife:mead",
+            "amount": 100
+        }
+    ],
+    "processingTime": 7200
+}

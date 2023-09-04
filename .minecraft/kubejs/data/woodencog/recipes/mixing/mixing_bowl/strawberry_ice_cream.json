@@ -1,0 +1,28 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/vanilla_ice_cream"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "tfc:food/strawberry"
+            }
+        },
+        {
+            "fluid": "firmalife:chocolate",
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "item": "firmalife:food/strawberry_ice_cream",
+            "count": 1
+        }
+    ],
+    "processingTime": 100
+}

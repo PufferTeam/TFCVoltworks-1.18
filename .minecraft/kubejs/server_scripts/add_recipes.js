@@ -33,8 +33,55 @@ onEvent('recipes', event => {
     }
     */
 
+    global.addFirmaMixingItemFluidEItem = function addFirmaMixingItemFluidEItem(input, fluid, fluidAmount, output, outputCount) {
+        event.custom({
+            "type": "firmalife:mixing_bowl",
+            "ingredients": [
+                {
+                    "type": "tfc:not_rotten",
+                    "ingredient": {
+                        "item": input
+                    }
+                }
+            ],
+            "fluid_ingredient": {
+                "ingredient": fluid,
+                "amount": fluidAmount
+            },
+            "output_item": {
+                "item": output,
+                "count": outputCount
+            }
+        })
+    }
+
+    global.addFirmaMixingItemTagFluidEItem = function addFirmaMixingItemTagFluidEItem(input, input2, fluid, fluidAmount, output, outputCount) {
+        event.custom({
+            "type": "firmalife:mixing_bowl",
+            "ingredients": [
+                {
+                    "tag": input
+                },
+                {
+                    "type": "tfc:not_rotten",
+                    "ingredient": {
+                        "item": input2
+                    }
+                }
+            ],
+            "fluid_ingredient": {
+                "ingredient": fluid,
+                "amount": fluidAmount
+            },
+            "output_item": {
+                "item": output,
+                "count": outputCount
+            }
+        })
+    }
+
     global.addMixingItemFluidEItem = function addMixingItemFluidEItem(input, fluid, fluidCount, output, outputCount, heatingLevel) {
-        if(heatingLevel !== null) {
+        if (heatingLevel !== null) {
             event.custom({
                 "type": "create:mixing",
                 "ingredients": [
@@ -111,7 +158,7 @@ onEvent('recipes', event => {
         })
     }
 
-    global.addMixingItemTagItemFluidEItem = function addMixingItemTagItemFluidEItem(input1, input2, input3, fluid, fluidCount, output, outputCount, heatingLevel) {
+    global.addMixingItemItemFluidEItem = function addMixingItemItemFluidEItem(input1, input2, fluid, fluidCount, output, outputCount, heatingLevel) {
         event.custom({
             "type": "create:mixing",
             "ingredients": [
@@ -119,12 +166,37 @@ onEvent('recipes', event => {
                     "item": input1
                 },
                 {
-                    "tag": input2
+                    "type": "tfc:not_rotten",
+                    "ingredient": {
+                        "item": input2
+                    }
+                },
+                {
+                    "fluid": fluid,
+                    "amount": fluidCount
+                }
+            ],
+            "results": [
+                {
+                    "item": output,
+                    "count": outputCount
+                }
+            ],
+            "heatRequirement": heatingLevel
+        })
+    }
+
+    global.addMixingTagItemFluidEItem = function addMixingTagItemFluidEItem(input1, input2, fluid, fluidCount, output, outputCount, heatingLevel) {
+        event.custom({
+            "type": "create:mixing",
+            "ingredients": [
+                {
+                    "tag": input1
                 },
                 {
                     "type": "tfc:not_rotten",
                     "ingredient": {
-                        "item": input3
+                        "item": input2
                     }
                 },
                 {

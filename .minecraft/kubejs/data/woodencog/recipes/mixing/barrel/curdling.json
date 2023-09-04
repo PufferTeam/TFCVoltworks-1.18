@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "firmalife:rennet"
+        },
+        {
+            "fluid": "minecraft:milk",
+            "amount": 2000
+        }
+    ],
+    "results": [
+        {
+            "fluid": "tfc:curdled_milk",
+            "amount": 2000
+        }
+    ],
+    "processingTime": 800
+}

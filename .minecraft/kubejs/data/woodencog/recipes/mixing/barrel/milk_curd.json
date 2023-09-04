@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "firmalife:cheesecloth"
+        },
+        {
+            "fluid": "tfc:curdled_milk",
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "item": "firmalife:food/milk_curd",
+            "count": 1
+        }
+    ],
+    "processingTime": 500
+}

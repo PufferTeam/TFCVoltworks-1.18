@@ -1,0 +1,40 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "minecraft:egg"
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/pumpkin_chunks"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "item": "firmalife:food/pumpkin_chunks"
+            }
+        },
+        {
+            "type": "tfc:not_rotten",
+            "ingredient": {
+                "tag": "tfc:foods/flour"
+            }
+        },
+        {
+            "tag": "firmalife:sweetener"
+        },
+        {
+            "fluid": "minecraft:water",
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "item": "firmalife:food/pumpkin_pie_dough",
+            "count": 1
+        }
+    ],
+    "processingTime": 100
+}

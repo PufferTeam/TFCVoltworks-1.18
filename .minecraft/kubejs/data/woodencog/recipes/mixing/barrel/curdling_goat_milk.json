@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "firmalife:rennet"
+        },
+        {
+            "fluid": "firmalife:goat_milk",
+            "amount": 2000
+        }
+    ],
+    "results": [
+        {
+            "fluid": "firmalife:curdled_goat_milk",
+            "amount": 2000
+        }
+    ],
+    "processingTime": 800
+}
