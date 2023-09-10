@@ -201,7 +201,7 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
             )
 
             if (item !== 'steel') {
-                global.removeAndHide(
+                global.removeAndHide.push(
                     `immersiveengineering:storage_${item}`,
                     `immersiveengineering:slab_storage_${item}`
                 )
