@@ -29,7 +29,14 @@
         "tfc:getting_started/size_and_weight",
         "tfc:getting_started/finding_ores",
         "tfc:getting_started/pit_kiln",
-        "tfc:getting_started/building_materials"
+        "tfc:getting_started/building_materials",
+        "tfc:mechanics/blast_furnace",
+        "rosia:tfc_rosia/charcoal_kiln",
+        "tfc:mechanics/bloomery",
+        "tfc_ie_addon:tfc_ie_changes/drill",
+        "tfc_ie_addon:tfc_ie_changes/blueprint",
+        "tfc:mechanics/crops",
+        "tfc:mechanics/pets"
       ],
       "bookmarks": [],
       "completedManualQuests": []

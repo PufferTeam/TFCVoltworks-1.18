@@ -1,0 +1,14 @@
+name = "TFC Aged Alcohols"
+filename = "aged_drinks-1.1.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "4d02058ef80272d02b6e400ddf80218bf82978ac"
+
+[update]
+[update.curseforge]
+file-id = 4671836
+project-id = 883541

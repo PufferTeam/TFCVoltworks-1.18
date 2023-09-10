@@ -14,9 +14,15 @@ onEvent('item.registry', event => {
     
     event.create('transition_bloom', 'create:sequenced_assembly').maxStackSize(1);
 
+    event.create('transition_high_carbon_steel', 'create:sequenced_assembly').maxStackSize(1);
+
+    event.create('unfired_flower_box').maxStackSize(64);
+
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
- 
-    global.framesTypes.forEach(i => event.create(i + '_frame').maxStackSize(64));    
+    
+    global.colors.forEach(i => event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1));    
+
+    global.framesTypes.forEach(i => event.create('frame/' + i).maxStackSize(64));    
 
     global.stoneToolsTypes.forEach(i => {
         let result = i.split('/')

@@ -63,6 +63,16 @@ onEvent('recipes', event => {
   ]).id('tfc:clay_knapping/brick')
   global.addCompactingTagEItem(`tfc:clay_knapping`, 'tfc:ceramic/unfired_brick', 6)
 
+  event.remove({ output: 'supplementaries:flower_box' })
+  event.recipes.tfc.clay_knapping('2x kubejs:unfired_flower_box', [
+    'X   X', 
+    'XXXXX', 
+    '     ', 
+    'X   X', 
+    'XXXXX'
+  ]).id('kubejs:clay_knapping/unfired_flower_box')
+  global.addCompactingTagEItem(`tfc:clay_knapping`, 'kubejs:unfired_flower_box', 2)
+  event.recipes.tfc.heating('supplementaries:flower_box', 'kubejs:unfired_flower_box', 1399).id('tfc:heating/flower_box')
 
   event.remove({ id: 'tfc:fire_clay_knapping/brick' })
   event.remove({ id: 'woodencog:compacting/brick' })
@@ -83,7 +93,7 @@ onEvent('recipes', event => {
   ], {
     S: 'tfc:ceramic/fire_brick',
     A: 'tfc:mortar'
-  }).id('tfc:fire_bricks')
+  }).id('tfc:crafting/fire_bricks')
 
   event.remove({ output: 'tfc:alabaster/bricks', type: 'minecraft:crafting_shaped' })
   event.shaped('4x tfc:alabaster/bricks', [
@@ -93,7 +103,7 @@ onEvent('recipes', event => {
   ], {
     S: 'tfc:alabaster_brick',
     A: 'tfc:mortar'
-  }).id('tfc:alabaster/bricks')
+  }).id('tfc:crafting/alabaster/bricks')
 
   event.remove({ output: 'tfc:wooden_bucket', type: 'minecraft:crafting_shaped' })
   event.shaped('tfc:wooden_bucket', [
@@ -102,7 +112,7 @@ onEvent('recipes', event => {
     ' S '
   ], {
     S: '#tfc:lumber'
-  }).id('tfc:wooden_bucket')
+  }).id('tfc:crafting/wooden_bucket')
 
   event.remove({ output: 'minecraft:bowl', type: 'minecraft:crafting_shaped' })
   event.shaped('minecraft:bowl', [
@@ -112,6 +122,10 @@ onEvent('recipes', event => {
     S: '#tfc:lumber'
   }).id('minecraft:bowl')
 
+})
 
+
+onEvent('server.datapack.first', event => {
+  event.addTFCHeat('kubejs:unfired_flower_box', 0.8)
 
 })

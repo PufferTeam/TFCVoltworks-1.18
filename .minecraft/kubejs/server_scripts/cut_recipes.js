@@ -12,6 +12,7 @@ onEvent('recipes', event => {
     function miscAlabasterRecipes(mod, name) {
         //event.recipes.tfc.damage_inputs_shapeless_crafting(`${mod}:alabaster/polished/${name}`, [`${mod}:alabaster/raw/${name}`, Item.of('#tfc:chisels').ignoreNBT()])
         global.addDamageInputShapeless(1, `${mod}:alabaster/raw/${name}`, `${mod}:alabaster/polished/${name}`, "tfc:chisels", 1)
+        global.addCutting(`${mod}:alabaster/raw/${name}`, `${mod}:alabaster/polished/${name}`)
 
     }
 

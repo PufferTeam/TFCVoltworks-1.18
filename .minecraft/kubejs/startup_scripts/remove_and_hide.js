@@ -21,7 +21,7 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
         )
     }
 
-    if(type == 'tfcmetal' && mod == 'rosia') {
+    if (type == 'tfcmetal' && mod == 'rosia') {
         global.removeAndHide.push(
             `${mod}:weak_${item}_ingot`,
             `${mod}:${item}_ingot`,
@@ -67,7 +67,7 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
         )
     }
 
-    if(type == 'tfcwood') {
+    if (type == 'tfcwood') {
         global.removeAndHide.push(
             `everycomp:q/tfc/wood/planks/${item}_post`,
             `everycomp:q/tfc/stripped_wood/planks/${item}_post`,
@@ -200,6 +200,13 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `immersiveengineering:stick_${item}`
             )
 
+            if (item !== 'steel') {
+                global.removeAndHide(
+                    `immersiveengineering:storage_${item}`,
+                    `immersiveengineering:slab_storage_${item}`
+                )
+            }
+
             if (item == 'steel') {
                 global.removeAndHide.push(
                     `immersiveengineering:armor_${item}_head`,
@@ -300,9 +307,8 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `cfm:stripped_${item}_kitchen_sink_dark`,
                 `cfm:${item}_hedge`,
                 `dynamictrees:${item}_seed`,
-                `extendedflywheels:${item}_flywheel`,
-                `extendedflywheels:${item}_plated_flywheel`,
-                `extendedflywheels:large_${item}_flywheel`,
+                `extendedgears:${item}_cogwheel`,
+                `extendedgears:large_${item}_cogwheel`,
                 `create:${item}_window`,
                 `create:${item}_window_pane`,
                 `supplementaries:${mod}/hanging_sign_${item}`,
@@ -317,9 +323,6 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
             global.removeAndHide.push(
                 `smallships:${item}_cog`,
                 `smallships:${item}_brigg`,
-                `railways:track_${item}`,
-                `extendedgears:${item}_cogwheel`,
-                `extendedgears:large_${item}_cogwheel`,
                 `vs_eureka:${item}_ship_helm`,
                 `storagedrawers:${item}_full_drawers_1`,
                 `storagedrawers:${item}_full_drawers_2`,
@@ -328,6 +331,15 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `storagedrawers:${item}_half_drawers_2`,
                 `storagedrawers:${item}_half_drawers_4`,
                 `storagedrawers:${item}_trim`
+            )
+        }
+
+        if (item != 'spruce') {
+            global.removeAndHide.push(
+                `railways:track_${item}`,
+                `extendedflywheels:${item}_flywheel`,
+                `extendedflywheels:${item}_plated_flywheel`,
+                `extendedflywheels:large_${item}_flywheel`
             )
         }
     }
@@ -356,6 +368,26 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
         )
     }
 
+    if (type == 'rock' && mod == 'botania') {
+        global.removeAndHide.push(
+            `${mod}:apothecary_${item}`,
+            `${mod}:metamorphic_${item}_stone`,
+            `${mod}:metamorphic_${item}_stone_slab`,
+            `${mod}:metamorphic_${item}_stone_stairs`,
+            `${mod}:metamorphic_${item}_stone_wall`,
+            `${mod}:metamorphic_${item}_bricks`,
+            `${mod}:chiseled_metamorphic_${item}_bricks`,
+            `${mod}:metamorphic_${item}_bricks_slab`,
+            `${mod}:metamorphic_${item}_bricks_stairs`,
+            `${mod}:metamorphic_${item}_bricks_wall`,
+            `${mod}:metamorphic_${item}_cobblestone`,
+            `${mod}:metamorphic_${item}_cobblestone_slab`,
+            `${mod}:metamorphic_${item}_cobblestone_stairs`,
+            `${mod}:metamorphic_${item}_cobblestone_wall`
+        )
+    }
+
+
     if (type == 'rock' && mod == 'minecraft') {
 
         global.removeAndHide.push(
@@ -373,7 +405,7 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
             )
         }
 
-        if(item == 'stone' || item == 'granite' || item == 'diorite' || item == 'andesite') {
+        if (item == 'stone' || item == 'granite' || item == 'diorite' || item == 'andesite') {
             global.removeAndHide.push(
                 `cfm:${item}_table`,
                 `cfm:${item}_chair`,
@@ -428,6 +460,8 @@ global.vanillaFoodTypes.forEach(i => removeAndHide('', '', i, 'food', 'minecraft
 global.vanillaCoralTypes.forEach(i => removeAndHide('', '', i, 'coral', 'minecraft', false, null, null));
 
 global.createRockTypes.forEach(i => removeAndHide('', '', i, 'rock', 'create', true, null, null));
+
+global.botaniaRockTypes.forEach(i => removeAndHide('', '', i, 'rock', 'botania', true, null, null));
 
 global.createOreTypes.forEach(i => removeAndHide('', '', i, 'ore', 'create', true, null, null));
 

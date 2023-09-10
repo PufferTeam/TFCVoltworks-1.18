@@ -33,6 +33,14 @@ onEvent('tags.blocks', event => {
     global.tfcRockTypes.forEach(i => tagInsulation('kubejs:rock', i, 'pavedcobble'));
     global.tfcRockTypes.forEach(i => tagInsulation('additionalplacements:kubejs.rock', i, 'pavedcobble'));
 
+    addDirectInsulation('immersiveengineering:blastbrick')
+    addDirectInsulation('immersiveengineering:blastbrick_reinforced')
+    
+    function addDirectInsulation(input) {
+        event.add('tfc:forge_insulation', input)
+        event.add('tfc:bloomery_insulation', input)
+    }
+
     function tagInsulation(mod, name, block) {
         event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}_slab`)
         event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}_stairs`)

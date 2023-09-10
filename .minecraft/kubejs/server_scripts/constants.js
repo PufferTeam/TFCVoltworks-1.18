@@ -62,6 +62,15 @@ global.recipeIdToRemove = [
     'extendedflywheels:steel_flywheel_from_painted_flywheel',
     'extendedflywheels:iron_flywheel_from_painted_flywheel',
     'immersiveengineering:alloysmelter/rose_gold',
+    'thermal:gunpowder_4',
+    'immersiveengineering:crafting/gunpowder_from_dusts',
+    'thermal:earth_charge/prismarine_shard_from_prismarine_bricks',
+    'thermal:earth_charge/quartz_from_quartz_block',
+    'thermal:earth_charge/prismarine_shard_from_prismarine',
+    'thermal:ice_charge/ice_from_water_bucket',
+    'thermal:ice_charge/obsidian_from_lava_bucket',
+    'thermal:lightning_charge/witch_from_villager',
+    'thermal:lightning_charge/zombified_piglin_from_pig',
     'create:crafting/kinetics/mechanical_press',
     'create:crafting/kinetics/encased_fan',
     'create:splashing/stained_glass',
@@ -90,6 +99,7 @@ global.recipeTypeToRemove = [
 
     'immersiveengineering:blast_furnace',
     'immersiveengineering:crusher',
+    'immersiveengineering:arc_furnace',
 
     'mekanism:pigment_extracting',
     'mekanism:painting',
@@ -106,5 +116,5 @@ global.recipeTypeToRemove = [
 //Config
 //--------------------------------------------------------------
 
-global.dyeingDuration = 2000;
-global.lyeingDuration = 2000;
+global.dyeingDuration = 1000;
+global.lyeingDuration = 1000;

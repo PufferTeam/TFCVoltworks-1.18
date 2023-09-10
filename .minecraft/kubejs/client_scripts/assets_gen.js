@@ -27,6 +27,15 @@ onEvent('client.generate_assets', event => {
             })
         })
 
+        global.colors.forEach(i => {
+            event.addModel('item', 'kubejs:transition_' + i + '_block', m => {
+                m.parent('block/cube_all')
+                m.textures({
+                    all: `immersiveengineering:block/metal/sheetmetal_${i}`
+                })
+            })
+        })
+
         /*
         global.framesTypes.forEach(i => {
             event.addModel('item', 'kubejs:' + i + '_frame', m => {

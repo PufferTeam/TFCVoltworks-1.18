@@ -493,6 +493,40 @@ global.firmalifeMetalTypes = [
 ];
 global.firmalifeMetalTypes.forEach(i => global.tfcGlobalMetalTypes.push(i));
 
+global.tfcBarTypes = [
+    'wrought_iron',
+    'gold',
+    'steel',
+    'black_steel',
+    'red_steel',
+    'blue_steel',
+    'gold'
+]
+
+global.tfcSheetmetalTypes = [
+    'copper',
+    'silver',
+    'nickel',
+    'steel',
+    'gold',
+    'wrought_iron'
+]
+
+global.tfcMetallumBarTypes = [
+    'enderium',
+    'titanium',
+    'tungsten',
+    'tungsten_steel'
+]
+
+global.tfcMetallumSheetmetalTypes = [
+    'aluminum',
+    'lead',
+    'uranium',
+    'constantan',
+    'electrum'
+]
+
 global.tfcMeatTypes = [
     'beef',
     'calamari',
@@ -587,6 +621,17 @@ global.vanillaRockTypes = [
     'cobbled_deepslate'
 ];
 
+global.botaniaRockTypes = [
+    'forest', 
+    'plains',
+    'mountain',
+    'fungal',
+    'swamp',
+    'desert',
+    'taiga',
+    'mesa'
+]
+
 global.createRockTypes = [
     'granite',
     'diorite',
@@ -650,9 +695,7 @@ global.ieItems = [
     'crate',
     'minecart_woodencrate',
     'reinforced_crate',
-    'minecart_reinforcedcrate',
-    'metal_barrel',
-    'minecart_metalbarrel'
+    'minecart_reinforcedcrate'
 ]
 
 global.caItems = [

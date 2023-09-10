@@ -1,4 +1,11 @@
 {
+    "item.kubejs.frame.andesite": "Igneous Frame",
+    "item.kubejs.frame.copper": "Copper Frame",
+    "item.kubejs.frame.brass": "Brass Frame",
+    "item.kubejs.frame.railway": "Train Frame",
+    "item.kubejs.frame.refined_radiance": "Radiant Frame",
+    "item.kubejs.frame.shadow_steel": "Shadow Frame",
+
     "item.kubejs.stone.pickaxe.igneous_extrusive": "Stone Pickaxe",
     "item.kubejs.stone.pickaxe.igneous_intrusive": "Stone Pickaxe",
     "item.kubejs.stone.pickaxe.metamorphic": "Stone Pickaxe",

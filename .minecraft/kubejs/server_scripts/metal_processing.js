@@ -65,6 +65,24 @@ onEvent('tags.items', event => {
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/${i}`, `tfc:metal/sheet/${i}`));
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/iron`, `tfc:metal/sheet/${i}`));
 
+    function tagSheetmetal(metal) {
+        if(metal == 'wrought_iron') {
+            metal = 'iron'
+        }
+        event.add(`forge:metal_sheetmetals`, `immersiveengineering:sheetmetal_${metal}`)
+    }
+
+    global.tfcSheetmetalTypes.forEach(i => tagSheetmetal(i));
+    global.tfcMetallumSheetmetalTypes.forEach(i => tagSheetmetal(i));
+
+    function tagBars(mod, metal) {
+        let barItem = global.getValidBar(mod, metal)
+
+        event.add('forge:metal_bars', barItem)
+    }
+    global.tfcBarTypes.forEach(i => tagBars('tfc', i));
+    global.tfcMetallumBarTypes.forEach(i => tagBars('tfc_metallum', i));
+
     const knifes = event.get('tfc:knifes').getObjectIds()
 
     knifes.forEach(i => event.add('tfc:sharp_tools', i))
@@ -75,6 +93,35 @@ onEvent('tags.items', event => {
     knives.forEach(i => event.add('sliceanddice:allowed_tools', i))
     const axes = event.get('tfc:axes').getObjectIds()
     axes.forEach(i => event.add('sliceanddice:allowed_tools', i))
+
+    event.add('tfc_metalwork:cut/copper', `minecraft:cut_copper`)
+    event.add('tfc_metalwork:cut_slab/copper', `minecraft:cut_copper_slab`)
+    event.add('tfc_metalwork:cut_stairs/copper', `minecraft:cut_copper_stairs`)
+
+    event.add('tfc_metalwork:shingles/copper', `create:copper_shingles`)
+    event.add('tfc_metalwork:shingles_slab/copper', `create:copper_shingle_slab`)
+    event.add('tfc_metalwork:shingles_stairs/copper', `create:copper_shingle_stairs`)
+
+    event.add('tfc_metalwork:tiles/copper', `create:copper_tiles`)
+    event.add('tfc_metalwork:tiles_slab/copper', `create:copper_tile_slab`)
+    event.add('tfc_metalwork:tiles_stairs/copper', `create:copper_tile_stairs`)
+
+    global.weatheringLevels.forEach(i => {
+        event.add('forge:storage_blocks/copper', `minecraft:${i}_copper`)
+
+        event.add('tfc_metalwork:cut/copper', `minecraft:${i}_cut_copper`)
+        event.add('tfc_metalwork:cut_slab/copper', `minecraft:${i}_cut_copper_slab`)
+        event.add('tfc_metalwork:cut_stairs/copper', `minecraft:${i}_cut_copper_stairs`)
+
+        event.add('tfc_metalwork:shingles/copper', `create:${i}_copper_shingles`)
+        event.add('tfc_metalwork:shingles_slab/copper', `create:${i}_copper_shingle_slab`)
+        event.add('tfc_metalwork:shingles_stairs/copper', `create:${i}_copper_shingle_stairs`)
+
+        event.add('tfc_metalwork:tiles/copper', `create:${i}_copper_tiles`)
+        event.add('tfc_metalwork:tiles_slab/copper', `create:${i}_copper_tile_slab`)
+        event.add('tfc_metalwork:tiles_stairs/copper', `create:${i}_copper_tile_stairs`)
+    })
+
 
     event.add(`forge:plates/iron`, 'tfc_metalwork:metal/plate/wrought_iron')
 })
@@ -89,29 +136,93 @@ onEvent('recipes', event => {
     global.tfcGlobalMetalTypes.forEach(i => event.remove({ id: `tfc_metalwork:anvil/${i}_cut_block_wall` }));
     global.tfcGlobalMetalTypes.forEach(i => event.remove({ id: `tfc_metalwork:anvil/${i}_block_wall` }));
     global.tfcGlobalMetalTypes.forEach(i => event.remove({ id: `tfc_metalwork:chisel/cut/${i}_cut_wall` }));
+    global.tfcGlobalMetalTypes.forEach(i => {
+        event.remove({ id: `tfc_metalwork:chisel/cut/${i}_cut` })
+        event.remove({ id: `tfc_metalwork:chisel/cut/${i}_cut_slab` })
+        event.remove({ id: `tfc_metalwork:chisel/cut/${i}_cut_stairs` })
+        event.remove({ id: `tfc_metalwork:chisel/slab/${i}_block_slab` })
+        event.remove({ id: `tfc_metalwork:chisel/slab/${i}_cut_block_slab` })
+        event.remove({ id: `tfc_metalwork:chisel/stair/${i}_block_stair` })
+        event.remove({ id: `tfc_metalwork:chisel/stair/${i}_cut_block_stair` })
+    });
 
     event.remove({ id: `tfc_metalwork:anvil/copper_cut_block_slab` })
-    event.remove({ id: `tfc_metalwork:chisel/cut/copper_cut_slab` })
-    event.remove({ id: `tfc_metalwork:chisel/slab/copper_cut_block_slab` })
     event.remove({ id: `tfc_metalwork:anvil/copper_cut_block_stairs` })
-    event.remove({ id: `tfc_metalwork:chisel/cut/copper_cut_stairs` })
-    event.remove({ id: `tfc_metalwork:chisel/stair/copper_cut_block_stair` })
     event.remove({ id: `tfc_metalwork:anvil/copper_cut_block_wall` })
-    event.remove({ id: `tfc_metalwork:chisel/cut/copper_cut_wall` })
     event.remove({ id: `tfc_metalwork:anvil/copper_block` })
     event.remove({ id: `tfc_metalwork:anvil/copper_cut_block` })
     event.remove({ id: `tfc_metalwork:anvil/copper_block_slab` })
-    event.remove({ id: `tfc_metalwork:chisel/slab/copper_block_slab` })
     event.remove({ id: `tfc_metalwork:anvil/copper_block_stairs` })
-    event.remove({ id: `tfc_metalwork:chisel/stair/copper_block_stair` })
     event.remove({ id: `tfc_metalwork:anvil/copper_block_wall` })
-    event.remove({ id: `tfc_metalwork:chisel/cut/copper_cut` })
 
     event.recipes.tfc.anvil('minecraft:copper_block', 'tfc:metal/double_sheet/copper', [
         "bend_last",
         "hit_any",
         "bend_any"
     ]).tier(1).id(`tfc_metalwork:anvil/copper_block`)
+
+    function mCutRecipes(mod, tier, transitionItem, input, output, namePrefix, name, nameSuffix) {
+        const methodsCut = []
+        methodsCut.push(event.recipes.createCutting(transitionItem, transitionItem))
+        methodsCut.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_hammers`]))
+        methodsCut.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_rods`]).keepHeldItem())
+        methodsCut.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_hammers`]))
+        event.recipes.tfc.anvil(output, input, [
+            "hit_last",
+            "hit_any",
+            "upset_any"
+        ]).tier(tier).id(`${mod}:anvil/${namePrefix}${name}${nameSuffix}`)
+        console.log(name)
+        event.recipes.createSequencedAssembly(output, input, methodsCut).transitionalItem(transitionItem).loops(1);
+    }
+
+    function mSlabRecipes(mod, tier, transitionItem, input, output, namePrefix, name, nameSuffix) {
+        const methodsSlab = []
+        methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `${output}`]).keepHeldItem());
+        methodsSlab.push(event.recipes.createCutting(transitionItem, transitionItem))
+        methodsSlab.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+        methodsSlab.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+        methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_double_ingots`]).keepHeldItem())
+        event.recipes.tfc.anvil(`2x ${output}`, input, [
+            "bend_last",
+            "draw_any",
+            "draw_any"
+        ]).tier(tier).id(`${mod}:anvil/${namePrefix}${name}${nameSuffix}`)
+        event.recipes.createSequencedAssembly(`2x ${output}`, input, methodsSlab).transitionalItem(transitionItem).loops(1);
+    }
+
+    function mStairsRecipes(mod, tier, transitionItem, input, output, namePrefix, name, nameSuffix) {
+        const methodsStairs = []
+        methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `${output}`]).keepHeldItem());
+        methodsStairs.push(event.recipes.createCutting(transitionItem, transitionItem))
+        methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_hammers`]))
+        methodsStairs.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+        methodsStairs.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+        event.recipes.tfc.anvil(output, input, [
+            "hit_not_last",
+            "draw_any",
+            "draw_any"
+        ]).tier(tier).id(`${mod}:anvil/${namePrefix}${name}${nameSuffix}`)
+        event.recipes.createSequencedAssembly(output, input, methodsStairs).transitionalItem(transitionItem).loops(1);
+    }
+
+    function mBarRecipes(mod, tier, transitionItem, input, output, namePrefix, name, nameSuffix) {
+        let nameCopy = output
+        if(nameSuffix == '_bars') {
+            nameCopy = `#forge:metal_bars`
+        }
+        const methodsBar = []
+        methodsBar.push(event.recipes.createDeploying(transitionItem, [transitionItem, nameCopy]).keepHeldItem())
+        methodsBar.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_chisels`]).keepHeldItem())
+        methodsBar.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_chisels`]).keepHeldItem())
+        methodsBar.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_rods`]).keepHeldItem())
+        event.recipes.tfc.anvil(output, input, [
+            "upset_last",
+            "punch_second_last",
+            "punch_third_last"
+        ]).tier(tier).id(`${mod}:anvil/${namePrefix}${name}${nameSuffix}`)
+        event.recipes.createSequencedAssembly(output, input, methodsBar).transitionalItem(transitionItem).loops(1);
+    }
 
     function copperBlockRecipes(input, inputCut, output, outputCut) {
         let transitionItem = `kubejs:transition_copper_block`
@@ -132,81 +243,35 @@ onEvent('recipes', event => {
         let nameInput = resultInput[1]
 
         if (input !== null) {
-            const methodsCut = []
-            methodsCut.push(event.recipes.createCutting(transitionItem, transitionItem))
-            methodsCut.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier1_hammers`]))
-            methodsCut.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier1_rods`]).keepHeldItem())
-            methodsCut.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier1_hammers`]))
-            event.recipes.tfc.anvil(output, input, [
-                "hit_last",
-                "hit_any",
-                "upset_any"
-            ]).tier(1).id(`tfc_metalwork:anvil/copper_${name}_block`)
-            console.log(name)
-            event.recipes.createSequencedAssembly(output, input, methodsCut).transitionalItem(transitionItem).loops(1);
+            mCutRecipes('tfc_metalwork', 1, transitionItem, input, output, 'copper_', name, '_block')
         }
 
-        if(inputCut == undefined) {
-            event.remove({output: input})
-            event.remove({output: `${mod}:waxed_${nameInput}`})
-            event.shapeless(`minecraft:waxed_${nameInput}`, [ `${input}`, '#tfc:waxing_agents']).id(`minecraft:waxing_${nameInput}`)
+        if (inputCut == undefined) {
+            event.remove({ output: input })
+            event.remove({ output: `${mod}:waxed_${nameInput}` })
+            event.shapeless(`minecraft:waxed_${nameInput}`, [`${input}`, '#tfc:waxing_agents']).id(`minecraft:waxing_${nameInput}`)
             event.recipes.tfc.chisel(input, `minecraft:waxed_${nameInput}`, 'smooth').id(`minecraft:chisel/unwaxing/${nameInput}`)
         }
- 
-        event.remove({output: output})
-        event.remove({output: `${outputCut}_slab`})
-        event.remove({output: `${outputCut}_stairs`})
 
-        event.remove({output: `${mod}:waxed_${name}`})
-        event.shapeless(`${mod}:waxed_${name}`, [ `${output}`, '#tfc:waxing_agents']).id(`${mod}:waxing_${name}`)
+        event.remove({ output: output })
+        event.remove({ output: `${outputCut}_slab` })
+        event.remove({ output: `${outputCut}_stairs` })
+
+        event.remove({ output: `${mod}:waxed_${name}` })
+        event.shapeless(`${mod}:waxed_${name}`, [`${output}`, '#tfc:waxing_agents']).id(`${mod}:waxing_${name}`)
         event.recipes.tfc.chisel(output, `${mod}:waxed_${name}`, 'smooth').id(`${mod}:chisel/unwaxing/${name}`)
 
-        event.remove({output: `${modCut}:waxed_${nameCut}_slab`})
-        event.shapeless(`${modCut}:waxed_${nameCut}_slab`, [ `${outputCut}_slab`, '#tfc:waxing_agents']).id(`${modCut}:waxing_${nameCut}_slab`)
+        event.remove({ output: `${modCut}:waxed_${nameCut}_slab` })
+        event.shapeless(`${modCut}:waxed_${nameCut}_slab`, [`${outputCut}_slab`, '#tfc:waxing_agents']).id(`${modCut}:waxing_${nameCut}_slab`)
         event.recipes.tfc.chisel(`${outputCut}_slab`, `${modCut}:waxed_${nameCut}_slab`, 'smooth').id(`${modCut}:chisel/unwaxing/${nameCut}_slab`)
 
-        event.remove({output: `${modCut}:waxed_${nameCut}_stairs`})
-        event.shapeless(`${modCut}:waxed_${nameCut}_stairs`, [ `${outputCut}_stairs`, '#tfc:waxing_agents']).id(`${modCut}:waxing_${nameCut}_stairs`)
+        event.remove({ output: `${modCut}:waxed_${nameCut}_stairs` })
+        event.shapeless(`${modCut}:waxed_${nameCut}_stairs`, [`${outputCut}_stairs`, '#tfc:waxing_agents']).id(`${modCut}:waxing_${nameCut}_stairs`)
         event.recipes.tfc.chisel(`${outputCut}_stairs`, `${modCut}:waxed_${nameCut}_stairs`, 'smooth').id(`${modCut}:chisel/unwaxing/${nameCut}_stairs`)
 
-        const methodsSlab = []
-        methodsSlab.push(event.recipes.createCutting(transitionItem, transitionItem))
-        methodsSlab.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-        methodsSlab.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-        methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier1_double_ingots`]).keepHeldItem())
-        event.recipes.tfc.anvil(`2x ${outputCut}_slab`, output, [
-            "bend_last",
-            "draw_any",
-            "draw_any"
-        ]).tier(1).id(`tfc_metalwork:anvil/copper_${name}_slab`)
-        event.recipes.createSequencedAssembly(`2x ${outputCut}_slab`, output, methodsSlab).transitionalItem(transitionItem).loops(1);
+        mSlabRecipes('tfc_metalwork', 1, transitionItem, output, `${outputCut}_slab`, 'copper_', name, '_slab')
+        mStairsRecipes('tfc_metalwork', 1, transitionItem, output, `${outputCut}_stairs`, 'copper_', name, '_stairs')
 
-        const methodsStairs = []
-        methodsStairs.push(event.recipes.createCutting(transitionItem, transitionItem))
-        methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier1_hammers`]))
-        methodsStairs.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-        methodsStairs.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-        event.recipes.tfc.anvil(`${outputCut}_stairs`, output, [
-            "hit_not_last",
-            "draw_any",
-            "draw_any"
-        ]).tier(1).id(`tfc_metalwork:anvil/copper_${name}_stairs`)
-        event.recipes.createSequencedAssembly(`${outputCut}_stairs`, output, methodsStairs).transitionalItem(transitionItem).loops(1);
-
-        event.recipes.tfc.chisel(`${outputCut}_slab`, output, 'slab').extraDrop(`${outputCut}_slab`).id(`${mod}:chisel/slab/${name}_slab`)
-        event.recipes.tfc.chisel(`${outputCut}_stairs`, output, 'stair').id(`${mod}:chisel/stair/${name}_stairs`)
-
-        if (input !== null) {
-            event.recipes.tfc.chisel(`${output}`, input, 'smooth').id(`${mod}:chisel/smooth/${name}`)
-        }
-
-        if(inputCut == null) {
-            inputCut = input
-        }
-        if (inputCut !== undefined) {
-            event.recipes.tfc.chisel(`${outputCut}_slab`, `${inputCut}_slab`, 'smooth').id(`${mod}:chisel/smooth/${name}_slab`)
-            event.recipes.tfc.chisel(`${outputCut}_stairs`, `${inputCut}_stairs`, 'smooth').id(`${mod}:chisel/smooth/${name}_stairs`)
-        }
     }
 
     copperBlockRecipes('minecraft:copper_block', undefined, 'minecraft:cut_copper', null)
@@ -219,6 +284,62 @@ onEvent('recipes', event => {
         copperBlockRecipes(`create:${i}_copper_shingles`, `create:${i}_copper_shingle`, `create:${i}_copper_tiles`, `create:${i}_copper_tile`)
     })
 
+    function barsRecipes(mod, metal) {
+        let barItem = global.getValidBar(mod, metal)
+        let rodItem = `${mod}:metal/rod/${metal}`
+        let transitionItem = `kubejs:transition_${metal}`
+
+        if (metal == 'wrought_iron') {
+            metal = 'iron'
+        }
+        event.remove({ output: barItem })
+        event.remove({ id: `tfc:anvil/${metal}_bars` })
+        event.remove({ id: `tfc:anvil/${metal}_bars_double` })
+
+        let tier = 3;
+        tier = global.getTier(metal)
+
+        mBarRecipes(mod, tier, transitionItem, rodItem, `8x ${barItem}`, '', metal, '_bars')
+    }
+
+    global.tfcBarTypes.forEach(i => barsRecipes('tfc', i));
+    global.tfcMetallumBarTypes.forEach(i => barsRecipes('tfc_metallum', i));
+
+    function sheetmetalRecipes(mod, metal) {
+        console.log(metal)
+        event.remove({ output: `immersiveengineering:sheetmetal_${metal}` })
+        event.remove({ output: `immersiveengineering:slab_sheetmetal_${metal}` })
+        let transitionItem = `kubejs:transition_${metal}_block`
+        let iemetal = metal
+        if (metal == 'wrought_iron') {
+            iemetal = 'iron'
+        }
+
+        let tier = 3
+        tier = global.getTier(iemetal)
+
+        mCutRecipes('immersiveengineering', tier, transitionItem, `tfc_metalwork:metal/plate/${metal}`, `immersiveengineering:sheetmetal_${iemetal}`, '', iemetal, '_sheetmetal')
+        mSlabRecipes('immersiveengineering', tier, transitionItem, `immersiveengineering:sheetmetal_${iemetal}`, `immersiveengineering:slab_sheetmetal_${iemetal}`, 'slab_', iemetal, '_sheetmetal')
+
+    }
+
+    global.tfcSheetmetalTypes.forEach(i => sheetmetalRecipes('tfc', i));
+    global.tfcMetallumSheetmetalTypes.forEach(i => sheetmetalRecipes('tfc_metallum', i));
+
+    function coloredSheetmetalRecipes(metal) {
+        event.remove({ output: `immersiveengineering:slab_sheetmetal_colored_${metal}` })
+        let transitionItem = `kubejs:transition_${metal}_block`
+
+        let tier = 1;
+        mSlabRecipes('immersiveengineering', tier, transitionItem, `immersiveengineering:sheetmetal_colored_${metal}`, `immersiveengineering:slab_sheetmetal_colored_${metal}`, 'slab_', metal, '_sheetmetal')
+
+    }
+
+    global.colors.forEach(i => coloredSheetmetalRecipes(i));
+
+    global.tfcMetallumSheetmetalTypes.forEach(i => sheetmetalRecipes('tfc_metallum', i));
+
+
     event.remove({ id: `rosia:casting/invar_fire_ingot` })
     event.remove({ id: `rosia:casting/invar_ingot` })
     event.remove({ id: `rosia:casting/purple_steel_fire_ingot` })
@@ -226,13 +347,35 @@ onEvent('recipes', event => {
     event.remove({ id: `rosia:casting/weak_purple_steel_fire_ingot` })
     event.remove({ id: `rosia:casting/weak_purple_steel_ingot` })
 
-    global.addMeltingHeatingFluid('create:whisk', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid('create:propeller', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid('thermal:drill_head', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid('thermal:saw_blade', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid('minecraft:bucket', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid('firmalife:pie_pan', "tfc:metal/cast_iron", 50, 1535)
+    global.addMeltingHeatingFluid(false, 'create:whisk', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid(false, 'create:propeller', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid(false, 'thermal:drill_head', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid(false, 'thermal:saw_blade', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid(false, 'minecraft:bucket', "tfc:metal/cast_iron", 200, 1535)
+    global.addMeltingHeatingFluid(false, 'firmalife:pie_pan', "tfc:metal/cast_iron", 50, 1535)
 
+    global.addMeltingHeatingFluid(false, 'minecraft:iron_bars', "tfc:metal/cast_iron", 6, 1535)
+    global.addMeltingHeatingFluid(false, 'quark:gold_bars', "tfc:metal/gold", 6, 1060)
+    global.addMeltingHeatingFluid(false, 'tfc:steel_bars', "tfc:metal/steel", 6, 1540)
+    global.addMeltingHeatingFluid(false, 'tfc:black_steel_bars', "tfc:metal/black_steel", 6, 1485)
+    global.addMeltingHeatingFluid(false, 'tfc:red_steel_bars', "tfc:metal/red_steel", 6, 1540)
+    global.addMeltingHeatingFluid(false, 'tfc:blue_steel_bars', "tfc:metal/blue_steel", 6, 1540)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:enderium_bars', "tfc_metallum:metal/enderium", 6, 1700)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:titanium_bars', "tfc_metallum:metal/titanium", 6, 1700)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_bars', "tfc_metallum:metal/tungsten", 6, 3400)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 3690)
+
+    global.addMeltingCrushing(true, 'tfc_metalwork:cut/copper', 'tfc:metal/copper', 400, 'copper', 1080)
+    global.addMeltingCrushing(true, 'tfc_metalwork:cut_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
+    global.addMeltingCrushing(true, 'tfc_metalwork:cut_stairs/copper', 'tfc:metal/copper', 300, 'copper', 1080)
+
+    global.addMeltingCrushing(true, 'tfc_metalwork:shingles/copper', 'tfc:metal/copper', 400, 'copper', 1080)
+    global.addMeltingCrushing(true, 'tfc_metalwork:shingles_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
+    global.addMeltingCrushing(true, 'tfc_metalwork:shingles_stairs/copper', 'tfc:metal/copper', 300, 'copper', 1080)
+
+    global.addMeltingCrushing(true, 'tfc_metalwork:tiles/copper', 'tfc:metal/copper', 400, 'copper', 1080)
+    global.addMeltingCrushing(true, 'tfc_metalwork:tiles_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
+    global.addMeltingCrushing(true, 'tfc_metalwork:tiles_stairs/copper', 'tfc:metal/copper', 300, 'copper', 1080)
 })
 
 onEvent('server.datapack.first', event => {
@@ -243,4 +386,21 @@ onEvent('server.datapack.first', event => {
     event.addTFCHeat('minecraft:bucket', 5.714, 921)
     event.addTFCHeat('firmalife:pie_pan', 1.428, 921)
 
+    event.addTFCHeat('tfc_metallum:enderium_bars', 0.171, 1020)
+    event.addTFCHeat('tfc_metallum:titanium_bars', 0.171, 1020)
+    event.addTFCHeat('tfc_metallum:tungsten_bars', 0.3, 1020)
+    event.addTFCHeat('tfc_metallum:tungsten_steel_bars', 0.3, 2214)
+    event.addTFCHeat('quark:gold_bars', 0.171)
+
+    event.addTFCHeat('#tfc_metalwork:cut/copper', 11.429, 648)
+    event.addTFCHeat('#tfc_metalwork:shingles/copper', 11.429, 648)
+    event.addTFCHeat('#tfc_metalwork:tiles/copper', 11.429, 648)
+
+    event.addTFCHeat('#tfc_metalwork:cut_slab/copper', 5.714, 648)
+    event.addTFCHeat('#tfc_metalwork:shingles_slab/copper', 5.714, 648)
+    event.addTFCHeat('#tfc_metalwork:tiles_slab/copper', 5.714, 648)
+
+    event.addTFCHeat('#tfc_metalwork:cut_stairs/copper', 8.571, 648)
+    event.addTFCHeat('#tfc_metalwork:shingles_stairs/copper', 8.571, 648)
+    event.addTFCHeat('#tfc_metalwork:tiles_stairs/copper', 8.571, 648)
 })

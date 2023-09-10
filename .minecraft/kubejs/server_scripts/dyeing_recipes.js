@@ -208,6 +208,16 @@ onEvent('recipes', event => {
             S: '#forge:rods/cast_iron',
             L: 'minecraft:glass'
         }).id('quark:framed_glass')
+
+        event.remove({ output: 'create:ornate_iron_window' })
+        event.shaped('8x create:ornate_iron_window', [
+            'LLL',
+            'LSL',
+            'LLL'
+        ], {
+            S: '#forge:rods/cast_iron',
+            L: 'quark:framed_glass'
+        }).id('create:ornate_iron_window')
         global.dyeItem('_', '', colors, 'framed_glass_pane', 'quark:', null, null, 'quark:framed_glass_pane', null);
         event.shaped(`16x quark:${colors}_framed_glass_pane`, [
             'SSS',

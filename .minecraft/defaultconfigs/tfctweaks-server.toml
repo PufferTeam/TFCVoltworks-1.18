@@ -1,0 +1,8 @@
+
+[general]
+	#Riding a mount prevents slowdown from grass
+	mountsBypassSlowdown = true
+	#Lower values = crops will decay more quickly once they are fully grown
+	#Range: 0.0 ~ 10000.0
+	cropDecayModifier = 1.0
+

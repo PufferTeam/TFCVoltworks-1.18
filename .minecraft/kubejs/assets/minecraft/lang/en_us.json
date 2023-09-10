@@ -1,0 +1,5 @@
+{
+    "item.minecraft.carved_pumpkin.tooltip.summary": "Carve a _pumpkin_ by using _shears_ on it.",
+    "item.minecraft.carved_pumpkin.tooltip.condition": "Equip as a helmet",
+    "item.minecraft.carved_pumpkin.tooltip.behaviour": "Allows you to look at _Endermen_ without angering them."
+  }

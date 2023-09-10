@@ -37,12 +37,12 @@ onEvent('recipes', event => {
         event.custom({
             "type": "firmalife:drying",
             "ingredient": {
-              "item": input
+                "item": input
             },
             "result": {
-              "item": output
+                "item": output
             }
-          })
+        })
     }
 
     global.addFirmaMixingItemFluidEItem = function addFirmaMixingItemFluidEItem(number, input, fluid, fluidAmount, output, outputCount) {
@@ -534,15 +534,30 @@ onEvent('recipes', event => {
         }
     }
 
-    global.addMeltingHeatingFluid = function addMeltingHeatingFluid(input, fluid, fluidAmount, temperature) {
+    global.addMeltingHeatingFluid = function addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, temperature) {
         let heatcapacity = fluidAmount * 0.02857
         let processingSpeed = Math.ceil(heatcapacity * 100)
-        let isTag = false;
+        let tagPrefix = ''
+        if (isTag) {
+            tagPrefix = '#'
+        }
 
         let heatingLevel = global.getHeatingLevel(temperature)
 
-        event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), input, temperature)
-        global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
+        event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), tagPrefix + input, temperature)
+        if(temperature <= 2015) {
+            global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
+        }
+    }
+
+    global.addMeltingCrushing = function addMeltingCrushing(isTag, input, fluid, fluidAmount, metal, temperature) {
+        let dustCount = fluidAmount / 100
+        let tagPrefix = ''
+        if (isTag) {
+            tagPrefix = '#'
+        }
+        global.addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, temperature)
+        event.recipes.createCrushing([`${dustCount}x tfc_metalwork:metal/dust/${metal}`], tagPrefix + input)
 
     }
 

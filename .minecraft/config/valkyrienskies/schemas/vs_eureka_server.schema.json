@@ -21,6 +21,16 @@
       "format" : "double",
       "description" : "Weight of ballast when lowest redstone power"
     },
+    "balloonElevationMaxSpeed" : {
+      "type" : "number",
+      "format" : "double",
+      "description" : "The max elevation speed boost gained by having extra extra balloons"
+    },
+    "baseImpulseElevationRate" : {
+      "type" : "number",
+      "format" : "double",
+      "description" : "Vertical sensitivity up ascend/descend"
+    },
     "baseSpeed" : {
       "type" : "number",
       "format" : "double",
@@ -42,6 +52,25 @@
       "type" : "boolean",
       "description" : "Allow Eureka controlled ships to be affected by fluid drag"
     },
+    "elevationSnappiness" : {
+      "type" : "number",
+      "format" : "double",
+      "description" : "Ascend and descend acceleration"
+    },
+    "engineFuelMultiplier" : {
+      "type" : "number",
+      "format" : "float",
+      "description" : "Fuel burn time multiplier"
+    },
+    "engineFuelSaving" : {
+      "type" : "boolean",
+      "description" : "Avoids consuming fuel when heat is 100%"
+    },
+    "engineHeatChangeExponent" : {
+      "type" : "number",
+      "format" : "float",
+      "description" : "Increases heat gained at low heat level, and increased heat decreases when at high heat and not consuming fuel"
+    },
     "engineHeatGain" : {
       "type" : "number",
       "format" : "float",
@@ -52,20 +81,25 @@
       "format" : "float",
       "description" : "The amount of heat a engine loses per tick"
     },
+    "engineMinCapacity" : {
+      "type" : "integer",
+      "format" : "int32",
+      "description" : "Increasing this value will result in more items being able to converted to fuel"
+    },
     "enginePower" : {
       "type" : "number",
       "format" : "float",
-      "description" : "Movement power per engine heated fully"
+      "description" : "Movement power per engine when heated fully"
+    },
+    "engineTurnPower" : {
+      "type" : "number",
+      "format" : "float",
+      "description" : "Turning power per engine when heated fully"
     },
     "floaterBuoyantFactorPerKg" : {
       "type" : "number",
       "format" : "double",
       "description" : "The amount extra that each floater will make the ship float, per kg mass"
-    },
-    "impulseElevationRate" : {
-      "type" : "integer",
-      "format" : "int32",
-      "description" : "Vertical sensitivity up ascend/descend"
     },
     "linearStabilizeMaxAntiVelocity" : {
       "type" : "number",
@@ -79,13 +113,18 @@
     },
     "maxCasualSpeed" : {
       "type" : "number",
-      "format" : "float",
+      "format" : "double",
       "description" : "Max speed of a ship without boosting"
     },
     "maxFloaterBuoyantFactor" : {
       "type" : "number",
       "format" : "double",
       "description" : "The maximum amount extra each floater will multiply the buoyant force by, irrespective of mass"
+    },
+    "maxShipBlocks" : {
+      "type" : "integer",
+      "format" : "int32",
+      "description" : "Maximum number of blocks allowed in a ship. Set to 0 for no limit"
     },
     "maxSizeForTurnSpeedPenalty" : {
       "type" : "number",
