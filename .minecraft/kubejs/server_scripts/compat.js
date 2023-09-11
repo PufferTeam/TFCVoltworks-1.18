@@ -128,6 +128,7 @@ onEvent('tags.items', event => {
     global.anvilwhitelistrx = new RegExp(global.anvilCopyWhitelist.join('|'));
     global.rottablefoodsrx = new RegExp(global.rottableFoods.join('|'));
     global.meltingrx = new RegExp(global.meltingBlacklist.join('|'));
+    global.highmetalrx = new RegExp(global.highTierMetals.join('|'));
 
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));
@@ -368,7 +369,7 @@ onEvent('recipes', event => {
                 }
 
                 if (inputType !== 'double_sheet') {
-                    if(blockType == 'slab' || blockType == 'stairs') {
+                    if (blockType == 'slab' || blockType == 'stairs') {
                         methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, output]).keepHeldItem());
                     }
                 }
@@ -494,6 +495,12 @@ onEvent('recipes', event => {
             tagPrefix = "#"
         }
 
+        let isValid = true
+        if (heatingRecipe.use_durability == true) {
+            isValid = false
+            //fluidAmount = fluidAmount / 2
+        }
+
         if (!global.tagrx.test(input) && !global.rx.test(input) && !global.foodrx.test(input) && input !== undefined && heatingRecipe.result_fluid !== undefined) {
             //console.log(isTag)
             //console.log(input);
@@ -524,6 +531,10 @@ onEvent('recipes', event => {
                 modresult = fluid.split('/')
                 mod = modresult[0];
             }
+
+            let heatingTemperature = temperature
+            //console.log(global.highmetalrx)
+            //console.log(metal)
 
             if (isTag) {
                 switch (result[0]) {
@@ -568,6 +579,7 @@ onEvent('recipes', event => {
                 event.remove({ id: `tfc:heating/${itemName}` })
             }
 
+
             if (modName !== 'rosia') {
 
                 let heatCapacityModifier = 0.02857
@@ -595,6 +607,23 @@ onEvent('recipes', event => {
                 let heatingLevel = undefined
                 heatingLevel = global.getHeatingLevel(temperature)
 
+
+                if (global.highmetalrx.test(metal) && !global.doubleingotrx.test(metal)) {
+                    //console.log(`${mod}:heating/metal/${metal}_${toolType}`)
+                    heatingTemperature = 5000
+
+                    if (!global.largerodtagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.largeplatetagrx.test(input)) {
+                        //console.log(isTag + fluid + fluidAmount + tagPrefix + input + heatingTemperature + mod + metal + toolType)
+                        if (isValid) {
+                            global.addHeating(isTag, input, fluid, fluidAmount, heatingTemperature, false)
+                            //event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), tagPrefix + input, heatingTemperature).id(`${mod}:heating/custom/metal/${metal}_${toolType}`)
+                        } else {
+                            global.addHeating(isTag, input, fluid, fluidAmount, heatingTemperature, true)
+                            //event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), tagPrefix + input, heatingTemperature).id(`${mod}:heating/custom/metal/${metal}_${toolType}`).useDurability()
+                        }
+                    }
+                }
+
                 //console.log(input)
                 if (global.largerodtagrx.test(input) || global.platetagrx.test(input) || global.laddertagrx.test(input)) {
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_ladder` })
@@ -603,7 +632,8 @@ onEvent('recipes', event => {
                     if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
                         fluid = 'tfc:metal/cast_iron'
                     }
-                    event.recipes.tfc.heating(Fluid.of(fluid, 100), `#${input}`, temperature)
+
+                    event.recipes.tfc.heating(Fluid.of(fluid, 100), `#${input}`, heatingTemperature).id(`tfc_metalwork:heating/custom/metal/${metal}_${toolType}`)
 
                     if (temperature <= 2015) {
                         global.addMelting(isTag, input, fluid, 100, heatingLevel)
@@ -615,7 +645,7 @@ onEvent('recipes', event => {
                     if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
                         fluid = 'tfc:metal/cast_iron'
                     }
-                    event.recipes.tfc.heating(Fluid.of(fluid, 400), `#${input}`, temperature)
+                    event.recipes.tfc.heating(Fluid.of(fluid, 400), `#${input}`, heatingTemperature).id(`tfc_metalwork:heating/custom/metal/${metal}_${toolType}`)
 
                     if (temperature <= 2015) {
                         global.addMelting(isTag, input, fluid, 400, heatingLevel)
@@ -623,7 +653,7 @@ onEvent('recipes', event => {
                 }
 
                 //console.log(metal + fluid + input)
-                if (metal !== undefined && fluid !== undefined && input !== undefined && !global.doubleingotrx.test(metal) && !global.largeplatetagrx.test(input) && !global.dusttagrx.test(input)) {
+                if (metal !== undefined && fluid !== undefined && input !== undefined && !global.doubleingotrx.test(metal) && !global.largeplatetagrx.test(input) && !global.dusttagrx.test(input) && isValid) {
                     let dustCount = 1
                     dustCount = fluidAmount / 100
                     if (global.largerodtagrx.test(input) || global.platetagrx.test(input) || global.laddertagrx.test(input)) {
@@ -633,11 +663,14 @@ onEvent('recipes', event => {
                         dustCount = 4
                     }
                     if (Number.isInteger(dustCount)) {
-                        event.recipes.createCrushing([`${dustCount}x tfc_metalwork:metal/dust/${metal}`], `${tagPrefix}${input}`)
+                        if (!global.highmetalrx.test(metal)) {
+                            event.recipes.createCrushing([`${dustCount}x tfc_metalwork:metal/dust/${metal}`], tagPrefix + input)
+                        }
+                        event.recipes.immersiveengineeringCrusher(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, tagPrefix + input)
                     }
                 }
 
-                if (global.ingotrx.test(input) && !global.doubleingotrx.test(input) && input !== undefined && !global.meltingrx.test(input)) {
+                if (global.ingotrx.test(input) && !global.doubleingotrx.test(input) && input !== undefined && !global.meltingrx.test(input) && isValid) {
                     if (metal !== undefined && mod !== undefined) {
 
                         if (metal !== 'copper') {
@@ -673,14 +706,14 @@ onEvent('recipes', event => {
                 if (temperature <= 2015) {
 
                     //console.log(fluid)
-                    if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.meltingrx.test(input)) {
+                    if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.meltingrx.test(input) && isValid) {
                         let processingSpeed = Math.ceil(heatcapacity * 100)
                         if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
                             fluid = 'tfc:metal/cast_iron'
 
                             event.remove({ id: `tfc_metalwork:heating/metal/wrought_iron_block` })
                             event.remove({ id: `tfc_metalwork:heating/metal/${metal}_${toolType}` })
-                            event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), `${tagPrefix}${input}`, temperature)
+                            event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), `${tagPrefix}${input}`, heatingTemperature)
                         }
                         global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
                     }

@@ -66,7 +66,7 @@ onEvent('tags.items', event => {
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/iron`, `tfc:metal/sheet/${i}`));
 
     function tagSheetmetal(metal) {
-        if(metal == 'wrought_iron') {
+        if (metal == 'wrought_iron') {
             metal = 'iron'
         }
         event.add(`forge:metal_sheetmetals`, `immersiveengineering:sheetmetal_${metal}`)
@@ -208,7 +208,7 @@ onEvent('recipes', event => {
 
     function mBarRecipes(mod, tier, transitionItem, input, output, namePrefix, name, nameSuffix) {
         let nameCopy = output
-        if(nameSuffix == '_bars') {
+        if (nameSuffix == '_bars') {
             nameCopy = `#forge:metal_bars`
         }
         const methodsBar = []
@@ -306,14 +306,14 @@ onEvent('recipes', event => {
     global.tfcMetallumBarTypes.forEach(i => barsRecipes('tfc_metallum', i));
 
     function sheetmetalRecipes(mod, metal) {
-        console.log(metal)
-        event.remove({ output: `immersiveengineering:sheetmetal_${metal}` })
-        event.remove({ output: `immersiveengineering:slab_sheetmetal_${metal}` })
+        //console.log(metal)
         let transitionItem = `kubejs:transition_${metal}_block`
         let iemetal = metal
         if (metal == 'wrought_iron') {
             iemetal = 'iron'
         }
+        event.remove({ output: `immersiveengineering:sheetmetal_${metal}` })
+        event.remove({ output: `immersiveengineering:slab_sheetmetal_${metal}` })
 
         let tier = 3
         tier = global.getTier(iemetal)
@@ -347,23 +347,23 @@ onEvent('recipes', event => {
     event.remove({ id: `rosia:casting/weak_purple_steel_fire_ingot` })
     event.remove({ id: `rosia:casting/weak_purple_steel_ingot` })
 
-    global.addMeltingHeatingFluid(false, 'create:whisk', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid(false, 'create:propeller', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid(false, 'thermal:drill_head', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid(false, 'thermal:saw_blade', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid(false, 'minecraft:bucket', "tfc:metal/cast_iron", 200, 1535)
-    global.addMeltingHeatingFluid(false, 'firmalife:pie_pan', "tfc:metal/cast_iron", 50, 1535)
+    global.addMeltingHeatingFluid(false, 'create:whisk', "tfc:metal/cast_iron", 200, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'create:propeller', "tfc:metal/cast_iron", 200, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'thermal:drill_head', "tfc:metal/cast_iron", 200, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'thermal:saw_blade', "tfc:metal/cast_iron", 200, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'minecraft:bucket', "tfc:metal/cast_iron", 200, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'firmalife:pie_pan', "tfc:metal/cast_iron", 50, 'wrought_iron', 1535)
 
-    global.addMeltingHeatingFluid(false, 'minecraft:iron_bars', "tfc:metal/cast_iron", 6, 1535)
-    global.addMeltingHeatingFluid(false, 'quark:gold_bars', "tfc:metal/gold", 6, 1060)
-    global.addMeltingHeatingFluid(false, 'tfc:steel_bars', "tfc:metal/steel", 6, 1540)
-    global.addMeltingHeatingFluid(false, 'tfc:black_steel_bars', "tfc:metal/black_steel", 6, 1485)
-    global.addMeltingHeatingFluid(false, 'tfc:red_steel_bars', "tfc:metal/red_steel", 6, 1540)
-    global.addMeltingHeatingFluid(false, 'tfc:blue_steel_bars', "tfc:metal/blue_steel", 6, 1540)
-    global.addMeltingHeatingFluid(false, 'tfc_metallum:enderium_bars', "tfc_metallum:metal/enderium", 6, 1700)
-    global.addMeltingHeatingFluid(false, 'tfc_metallum:titanium_bars', "tfc_metallum:metal/titanium", 6, 1700)
-    global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_bars', "tfc_metallum:metal/tungsten", 6, 3400)
-    global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 3690)
+    global.addMeltingHeatingFluid(false, 'minecraft:iron_bars', "tfc:metal/cast_iron", 6, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'quark:gold_bars', "tfc:metal/gold", 6, 'gold', 1060)
+    global.addMeltingHeatingFluid(false, 'tfc:steel_bars', "tfc:metal/steel", 6, 'steel', 1540)
+    global.addMeltingHeatingFluid(false, 'tfc:black_steel_bars', "tfc:metal/black_steel", 6, 'black_steel', 1485)
+    global.addMeltingHeatingFluid(false, 'tfc:red_steel_bars', "tfc:metal/red_steel", 6, 'red_steel', 1540)
+    global.addMeltingHeatingFluid(false, 'tfc:blue_steel_bars', "tfc:metal/blue_steel", 6, 'blue_steel', 1540)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:enderium_bars', "tfc_metallum:metal/enderium", 6, 'enderium', 1700)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:titanium_bars', "tfc_metallum:metal/titanium", 6, 'titanium', 1700)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_bars', "tfc_metallum:metal/tungsten", 6, 'tungsten', 3400)
+    global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 'tungsten_steel', 3690)
 
     global.addMeltingCrushing(true, 'tfc_metalwork:cut/copper', 'tfc:metal/copper', 400, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:cut_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
@@ -376,6 +376,47 @@ onEvent('recipes', event => {
     global.addMeltingCrushing(true, 'tfc_metalwork:tiles/copper', 'tfc:metal/copper', 400, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:tiles_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:tiles_stairs/copper', 'tfc:metal/copper', 300, 'copper', 1080)
+
+    function wireRecipes(mod, metal) {
+        event.remove({ id: `immersiveengineering:crafting/wire_${metal}` })
+
+        global.addRolling(`${mod}:metal/rod/${metal}`, `immersiveengineering:wire_${metal}`, 2)
+        event.recipes.immersiveengineeringMetalPress(`2x immersiveengineering:wire_${metal}`, `${mod}:metal/rod/${metal}`, 'immersiveengineering:mold_wire')
+    }
+    wireRecipes('tfc', 'copper')
+    wireRecipes('tfc_metallum', 'electrum')
+    wireRecipes('tfc_metallum', 'aluminum')
+    wireRecipes('tfc', 'steel')
+    wireRecipes('tfc_metallum', 'lead')
+
+    function pressRecipes(mod, metal) {
+        event.remove({ id: `tfc_metalwork:crafting/small_gear/${metal}` })
+        event.remove({ id: `tfc_metalwork:crafting/large_gear/${metal}` })
+
+        event.recipes.immersiveengineeringMetalPress(`tfc_metalwork:metal/small_gear/${metal}`, `4x ${mod}:metal/rod/${metal}`, 'immersiveengineering:mold_gear')
+        event.recipes.immersiveengineeringMetalPress(`tfc_metalwork:metal/large_gear/${metal}`, `4x tfc_metalwork:metal/large_rod/${metal}`, 'immersiveengineering:mold_gear')
+
+    }
+    global.tfcMetalTypes.forEach(i => pressRecipes('tfc', i))
+    global.tfcMetallumMetalTypes.forEach(i => pressRecipes('tfc_metallum', i))
+    global.firmalifeMetalTypes.forEach(i => pressRecipes('firmalife', i))
+
+    global.highTierMetals.forEach(metal => {
+        event.remove({ id: `tfc_metallum:alloy/${metal}` })
+        event.remove({ id: `tfc:alloy/${metal}` })
+        event.remove({ id: `tfc:alloy/weak_${metal}` })
+        event.remove({ id: `tfc:alloy/weak_steel` })
+
+        global.tfcMetalParts.forEach(toolType => {
+            event.remove({ id: `tfc_metalwork:heating/metal/${metal}_${toolType}` })
+            event.remove({ id: `tfc:heating/metal/${metal}_${toolType}` })
+            event.remove({ id: `tfc_metallum:heating/metal/${metal}_${toolType}` })
+
+            if(toolType !== 'ingot') {
+                event.remove({ id: `tfc_metallum:casting/${metal}_${toolType}` })
+            }
+        });
+    });
 })
 
 onEvent('server.datapack.first', event => {

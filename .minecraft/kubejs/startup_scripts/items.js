@@ -20,6 +20,8 @@ onEvent('item.registry', event => {
 
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
     
+    global.tfcGemTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
+
     global.colors.forEach(i => event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1));    
 
     global.framesTypes.forEach(i => event.create('frame/' + i).maxStackSize(64));    

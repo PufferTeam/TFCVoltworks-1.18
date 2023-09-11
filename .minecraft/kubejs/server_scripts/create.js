@@ -2,8 +2,7 @@ onEvent('recipes', event => {
 
     event.remove({ output: 'create:basin' })
     event.shaped('create:basin', [
-        'SAS',
-        'SSS'
+        'SAS'
     ], {
         S: '#forge:plates/cast_iron',
         A: 'tfc:crucible'
@@ -213,6 +212,97 @@ onEvent('recipes', event => {
         O: 'create:shaft'
     }).id('create:hose_pulley')
 
+    event.remove({ output: 'create:rope_pulley' })
+    event.shaped('create:rope_pulley', [
+        ' S ',
+        'OAO',
+        ' P '
+    ], {
+        S: 'create:rope_pulley',
+        A: '#forge:rope',
+        P: '#forge:plates/wrought_iron',
+        O: 'create:shaft'
+    }).id('create:rope_pulley')
+
+    event.remove({ output: 'create:pulse_repeater' })
+    event.shaped('create:pulse_repeater', [
+        'LSP',
+        'AAA'
+    ], {
+        S: '#forge:plates/brass',
+        A: '#forge:smooth_stone',
+        L: 'minecraft:redstone',
+        P: 'minecraft:redstone_torch'
+    }).id('create:pulse_repeater')
+
+    event.remove({ output: 'create:pulse_extender' })
+    event.shaped('create:pulse_extender', [
+        '  P',
+        'LSP',
+        'AAA'
+    ], {
+        S: '#forge:plates/brass',
+        A: '#forge:smooth_stone',
+        L: 'minecraft:redstone',
+        P: 'minecraft:redstone_torch'
+    }).id('create:pulse_extender')
+
+    event.remove({ output: 'create:powered_latch' })
+    event.shaped('create:powered_latch', [
+        ' P ',
+        'LSL',
+        'AAA'
+    ], {
+        S: 'minecraft:lever',
+        A: '#forge:smooth_stone',
+        L: 'minecraft:redstone',
+        P: 'minecraft:redstone_torch'
+    }).id('create:powered_latch')
+
+    event.remove({ output: 'create:powered_toggle_latch' })
+    event.shaped('create:powered_toggle_latch', [
+        ' P ',
+        ' S ',
+        'AAA'
+    ], {
+        S: 'minecraft:lever',
+        A: '#forge:smooth_stone',
+        P: 'minecraft:redstone_torch'
+    }).id('create:powered_toggle_latch')
+
+    event.remove({ output: 'create:millstone' })
+    event.shaped('create:millstone', [
+        'P',
+        'A',
+        'S'
+    ], {
+        S: 'tfc:quern',
+        A: 'create:cogwheel',
+        P: 'create:andesite_casing'
+    }).id('create:millstone')
+    
+    event.remove({ output: 'create:millstone' })
+    event.shaped('create:millstone', [
+        'P',
+        'A',
+        'S'
+    ], {
+        S: 'tfc:quern',
+        A: 'create:cogwheel',
+        P: 'create:andesite_casing'
+    }).id('create:millstone')
+
+    event.remove({ output: 'create_mechanical_extruder:mechanical_extruder' })
+    event.shaped('create_mechanical_extruder:mechanical_extruder', [
+        ' S ',
+        'APA',
+        ' A '
+    ], {
+        S: 'create:shaft',
+        A: '#forge:glass/colorless',
+        P: 'create:mechanical_drill'
+    }).id('create_mechanical_extruder:mechanical_extruder')
+
     let transitionItem = 'kubejs:transition_wrought_iron'
 
     event.remove({ output: 'thermal:saw_blade' })
@@ -270,9 +360,39 @@ onEvent('recipes', event => {
     event.remove({ output: 'create:encased_chain_drive' })
     event.shapeless('create:encased_chain_drive', ['create:andesite_casing', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron']).id('create:encased_chain_drive')
 
+    global.framesTypes.forEach(i => {
+        let block = undefined
+        let isTag = false
+        switch(i) {
+            case 'andesite':
+            case 'copper':
+                block = 'minecraft:planks'
+                isTag = true
+            break;
+            case 'brass':
+                block = 'forge:treated_wood'
+                isTag = true
+            break;
+            case 'railway':
+                block = 'immersiveengineering:sheetmetal_lead'
+            break;
+            case 'refined_radiance':
+                block = 'immersiveengineering:sheetmetal_aluminum'
+            break;
+            case 'shadow_steel':
+                block = 'immersiveengineering:sheetmetal_steel'
+            break;
+        }
+        global.addItemApplication(isTag, block, `kubejs:frame/${i}`, `create:${i}_casing`)
+    })
+
     global.addDamageInputShapeless(1, 'create:sticky_mechanical_piston', 'create:mechanical_piston', "tfc:knives", 1)
 
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'create:andesite_alloy', 'tfc_metallum:metal/ingot/andesite_alloy')
+
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'createaddition:iron_wire', 'immersiveengineering:wire_aluminum')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'createaddition:copper_spool', 'immersiveengineering:wirecoil_copper')
 
 });

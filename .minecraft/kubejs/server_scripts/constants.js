@@ -71,11 +71,13 @@ global.recipeIdToRemove = [
     'thermal:ice_charge/obsidian_from_lava_bucket',
     'thermal:lightning_charge/witch_from_villager',
     'thermal:lightning_charge/zombified_piglin_from_pig',
+    'create:crafting/kinetics/white_sail',
     'create:crafting/kinetics/mechanical_press',
     'create:crafting/kinetics/encased_fan',
     'create:splashing/stained_glass',
     'create:splashing/stained_glass_pane',
     'create:splashing/sand',
+    'create:crafting/materials/sand_paper',
 
     'thermal:machines/bottler/bottler_honey_bottle',
     'thermal:machines/bottler/bottler_mossy_stone_bricks'
@@ -90,6 +92,7 @@ global.recipeTypeToRemove = [
     'create:crushing',
     'create:deploying',
     'create:milling',
+    'create:item_application',
     
     'create_mechanical_extruder:extruding',
 
@@ -99,6 +102,7 @@ global.recipeTypeToRemove = [
 
     'immersiveengineering:blast_furnace',
     'immersiveengineering:crusher',
+    'immersiveengineering:metal_press',
     'immersiveengineering:arc_furnace',
 
     'mekanism:pigment_extracting',

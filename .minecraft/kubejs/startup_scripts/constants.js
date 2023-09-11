@@ -323,6 +323,10 @@ global.tfcGlobalMetalTypes = [
 
 ];
 
+global.highTierMetals = [
+    'stainless_steel'
+]
+
 global.tier6MetalTypes = [
     'blue_steel',
     'red_steel'
@@ -335,6 +339,7 @@ global.tier4MetalTypes = [
     'steel',
 ];
 global.tier5MetalTypes.forEach(i => global.tier4MetalTypes.push(i));
+global.tier4MetalTypes.forEach(i => global.highTierMetals.push(i));
 global.tier3MetalTypes = [
     'wrought_iron',
 ];
@@ -366,6 +371,7 @@ global.tier4MetallumMetalTypes = [
     'lumium'
 ];
 global.tier5MetallumMetalTypes.forEach(i => global.tier4MetallumMetalTypes.push(i));
+global.tier4MetallumMetalTypes.forEach(i => global.highTierMetals.push(i));
 global.tier3MetallumMetalTypes = [
     'uranium',
     'pewter',
@@ -396,6 +402,27 @@ global.toolMetalTypes = [
 global.tier1MetallumMetalTypes.forEach(i => global.toolMetalTypes.push(i));
 global.tier1MetalTypes.forEach(i => global.toolMetalTypes.push(i));
 
+global.tfcMetalParts = [
+    'anvil',
+    'chain',
+    'dust',
+    'small_gear',
+    'block',
+    'cut',
+    'double_ingot',
+    'double_sheet',
+    'horse_armor',
+    'ingot',
+    'lamp',
+    'rod',
+    'sheet',
+    'unfinished_helmet',
+    'unfinished_chestplate',
+    'unfinished_greaves',
+    'unfinished_boots',
+    'trapdoor'
+]
+
 global.forgingBonusWhitelist = [
     "fish_hook",
     "tuyere",
@@ -419,9 +446,43 @@ global.forgingBonusWhitelist = [
     "shield"
 ];
 
+global.forgingBonusWhitelist.forEach(i => global.tfcMetalParts.push(i));
+
+global.tfcToolsTypes = [
+    'axe',
+    'chisel',
+    'fishing_rod',
+    'hammer',
+    'hoe',
+    'javelin',
+    'knife',
+    'mace',
+    'pickaxe',
+    'propick',
+    'saw',
+    'scythe',
+    'shears',
+    'shovel',
+    'sword'
+]
+
+global.tfcToolsTypes.forEach(i => global.tfcMetalParts.push(i));
+
 global.rosiaMetalTypes = [
     'purple_steel',
     'invar'
+]
+
+global.tfcGemTypes = [
+    'amethyst',
+    'diamond',
+    'emerald',
+    'lapis_lazuli',
+    'opal',
+    'pyrite',
+    'ruby',
+    'sapphire',
+    'topaz'
 ]
 
 global.tfcMetalTypes = [
@@ -705,6 +766,8 @@ global.caItems = [
     'chocolate_cake',
     'honey_cake',
     'spool',
+    'straw',
+    'festive_spool',
     'copper_spool',
     'gold_spool',
     'copper_wire',

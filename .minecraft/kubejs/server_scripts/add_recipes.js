@@ -435,6 +435,44 @@ onEvent('recipes', event => {
         })
     }
 
+    global.addItemApplication = function addItemApplication(isTag, block, input, result) {
+        if(isTag) {
+            event.custom({
+                "type": "create:item_application",
+                "ingredients": [
+                    {
+                        "tag": block
+                    },
+                    {
+                        "item": input
+                    }
+                ],
+                "results": [
+                    {
+                        "item": result
+                    }
+                ]
+            })
+        } else {
+            event.custom({
+                "type": "create:item_application",
+                "ingredients": [
+                    {
+                        "item": block
+                    },
+                    {
+                        "item": input
+                    }
+                ],
+                "results": [
+                    {
+                        "item": result
+                    }
+                ]
+            })
+        }
+    }
+
     global.addCutting = function addCutting(input, output, count) {
         if (count == undefined || count == null) {
             count == 1;
@@ -534,7 +572,68 @@ onEvent('recipes', event => {
         }
     }
 
-    global.addMeltingHeatingFluid = function addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, temperature) {
+    global.addHeating = function addHeating(isTag, input, fluid, fluidAmount, temperature, useDurability) {
+        if (isTag) {
+            if (useDurability) {
+                event.custom({
+                    "type": "tfc:heating",
+                    "ingredient": {
+                        "tag": input
+                    },
+                    "result_fluid": {
+                        "fluid": fluid,
+                        "amount": fluidAmount
+                    },
+                    "temperature": temperature,
+                    "use_durability": true
+                })
+            } else {
+                event.custom({
+                    "type": "tfc:heating",
+                    "ingredient": {
+                        "tag": input
+                    },
+                    "result_fluid": {
+                        "fluid": fluid,
+                        "amount": fluidAmount
+                    },
+                    "temperature": temperature
+                })
+            }
+
+        } else {
+            if (useDurability) {
+                event.custom({
+                    "type": "tfc:heating",
+                    "ingredient": {
+                        "item": input
+                    },
+                    "result_fluid": {
+                        "fluid": fluid,
+                        "amount": fluidAmount
+                    },
+                    "temperature": temperature,
+                    "use_durability": true
+                })
+            } else {
+                event.custom({
+                    "type": "tfc:heating",
+                    "ingredient": {
+                        "item": input
+                    },
+                    "result_fluid": {
+                        "fluid": fluid,
+                        "amount": fluidAmount
+                    },
+                    "temperature": temperature
+                })
+            }
+
+        }
+
+    }
+
+    global.addMeltingHeatingFluid = function addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, metal, temperature) {
         let heatcapacity = fluidAmount * 0.02857
         let processingSpeed = Math.ceil(heatcapacity * 100)
         let tagPrefix = ''
@@ -543,9 +642,14 @@ onEvent('recipes', event => {
         }
 
         let heatingLevel = global.getHeatingLevel(temperature)
+        let heatingTemperature = temperature
+        if (global.highmetalrx.test(metal)) {
+            heatingTemperature = 5000
+        }
 
-        event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), tagPrefix + input, temperature)
-        if(temperature <= 2015) {
+        event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), tagPrefix + input, heatingTemperature)
+
+        if (temperature <= 2015) {
             global.addMelting(isTag, input, fluid, fluidAmount, heatingLevel, processingSpeed)
         }
     }
@@ -556,8 +660,14 @@ onEvent('recipes', event => {
         if (isTag) {
             tagPrefix = '#'
         }
-        global.addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, temperature)
-        event.recipes.createCrushing([`${dustCount}x tfc_metalwork:metal/dust/${metal}`], tagPrefix + input)
+        global.addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, metal, temperature)
+
+        if (Number.isInteger(dustCount)) {
+            if (!global.highmetalrx.test(metal)) {
+                event.recipes.createCrushing([`${dustCount}x tfc_metalwork:metal/dust/${metal}`], tagPrefix + input)
+            }
+            event.recipes.immersiveengineeringCrusher(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, tagPrefix + input)
+        }
 
     }
 

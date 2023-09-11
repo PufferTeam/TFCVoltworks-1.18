@@ -145,6 +145,16 @@ onEvent('recipes', event => {
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_terracotta`, `minecraft:${i}_terracotta`));
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_concrete`, `minecraft:${i}_concrete`));
 
+    global.addDamageInputShapeless(1, 'minecraft:glass', 'create:framed_glass', "tfc:chisels", 1)
+    global.addDamageInputShapeless(1, 'minecraft:glass_pane', 'create:framed_glass_pane', "tfc:chisels", 1)
+    global.addDamageInputShapeless(1, 'create:framed_glass', 'create:horizontal_framed_glass', "tfc:chisels", 1)
+    global.addDamageInputShapeless(1, 'create:framed_glass_pane', 'create:horizontal_framed_glass_pane', "tfc:chisels", 1)
+    global.addDamageInputShapeless(1, 'create:horizontal_framed_glass', 'create:vertical_framed_glass', "tfc:chisels", 1)
+    global.addDamageInputShapeless(1, 'create:horizontal_framed_glass_pane', 'create:vertical_framed_glass_pane', "tfc:chisels", 1)
+
+    global.addDamageInputShapeless(3, 'minecraft:glass', 'create:tiled_glass', "tfc:chisels", 1)
+    global.addDamageInputShapeless(3, 'minecraft:glass_pane', 'create:tiled_glass_pane', "tfc:chisels", 1)
+
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:hay_block', 'tfc:thatch')
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:hay_block', 'tfc:thatch')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:stick', '#tfc:firepit_sticks')

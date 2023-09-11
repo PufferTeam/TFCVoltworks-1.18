@@ -273,6 +273,44 @@ onEvent('recipes', event => {
         L: '#tfc:lumber'
     }).id('minecraft:note_block')
 
+    event.remove({ output: 'supplementaries:rope' })
+    event.shaped('3x supplementaries:rope', [
+        'AA ',
+        'A A',
+        ' AA'
+    ], {
+        A: 'tfc:jute_fiber'
+    }).id('supplementaries:rope')
+
+    event.remove({ output: 'quark:rope' })
+    event.shaped('3x quark:rope', [
+        'AAA',
+        'A A',
+        ' A '
+    ], {
+        A: 'tfc:jute_fiber'
+    }).id('quark:rope')
+
+    event.remove({ output: 'minecraft:lead' })
+    event.shaped('2x minecraft:lead', [
+        ' AA',
+        ' AA',
+        'A  '
+    ], {
+        A: '#forge:rope'
+    }).id('minecraft:lead')
+
+    event.remove({ output: 'minecraft:spyglass' })
+    event.shaped('minecraft:spyglass', [
+        'A',
+        'S',
+        'P'
+    ], {
+        A: 'minecraft:glass_pane',
+        S: 'tfc_metalwork:metal/plate/gold',
+        P: 'tfc_metalwork:metal/plate/copper'
+    }).id('minecraft:spyglass')
+
     event.shapeless('minecraft:book', ['#forge:leather', 'minecraft:paper', 'minecraft:paper', 'minecraft:paper']).id('minecraft:book')
 
     event.shaped('minecraft:sculk_sensor', [
@@ -315,6 +353,8 @@ onEvent('recipes', event => {
     event.shapeless('4x minecraft:clay_ball', ['minecraft:clay']).id('minecraft:clay_ball_from_clay')
     event.shapeless('4x minecraft:snowball', ['minecraft:snow_block']).id('minecraft:snowball_from_snow_block')
     event.shapeless('9x minecraft:redstone', ['minecraft:redstone_block']).id('minecraft:redstone_from_redstone_block')
+    event.shapeless('9x tfc:gem/lapis_lazuli', ['minecraft:lapis_block']).id('minecraft:lapis_from_lapis_block')
+
     event.remove({ id: 'tfc:crafting/vanilla/hay' })
     event.shapeless('9x tfc:straw', ['minecraft:hay_block']).id('tfc:crafting/vanilla/hay')
 
@@ -332,5 +372,7 @@ onEvent('recipes', event => {
 
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
+
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:iron_nugget', 'tfc:metal/rod/wrought_iron')
 
 });
