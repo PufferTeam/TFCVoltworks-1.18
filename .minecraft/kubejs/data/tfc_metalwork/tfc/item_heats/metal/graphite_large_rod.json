@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/graphite"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 300,
+  "welding_temperature": 400
+}

@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/osmiridium"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 900,
+  "welding_temperature": 1200
+}

@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/gold"
+  },
+  "heat_capacity": 2.5,
+  "forging_temperature": 636,
+  "welding_temperature": 848
+}

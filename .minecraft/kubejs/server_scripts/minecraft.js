@@ -40,6 +40,22 @@ onEvent('recipes', event => {
         G: 'minecraft:redstone'
     }).id('minecraft:redstone_block_from_redstone')
 
+    event.shaped('minecraft:emerald_block', [
+        'GGG',
+        'GGG',
+        'GGG'
+    ], {
+        G: 'tfc:gem/emerald'
+    }).id('minecraft:emerald_block_from_emerald')
+
+    event.shaped('minecraft:diamond_block', [
+        'GGG',
+        'GGG',
+        'GGG'
+    ], {
+        G: 'tfc:gem/diamond'
+    }).id('minecraft:diamond_block_from_diamond')
+
     event.shaped('minecraft:redstone_torch', [
         'G',
         'S'
@@ -353,7 +369,9 @@ onEvent('recipes', event => {
     event.shapeless('4x minecraft:clay_ball', ['minecraft:clay']).id('minecraft:clay_ball_from_clay')
     event.shapeless('4x minecraft:snowball', ['minecraft:snow_block']).id('minecraft:snowball_from_snow_block')
     event.shapeless('9x minecraft:redstone', ['minecraft:redstone_block']).id('minecraft:redstone_from_redstone_block')
-    event.shapeless('9x tfc:gem/lapis_lazuli', ['minecraft:lapis_block']).id('minecraft:lapis_from_lapis_block')
+    event.shapeless('9x tfc:gem/lapis_lazuli', ['minecraft:lapis_block']).id('tfc:lapis_from_lapis_block')
+    event.shapeless('9x tfc:gem/emerald', ['minecraft:emerald_block']).id('tfc:emerald_from_emerald_block')
+    event.shapeless('9x tfc:gem/diamond', ['minecraft:diamond_block']).id('tfc:diamond_from_diamond_block')
 
     event.remove({ id: 'tfc:crafting/vanilla/hay' })
     event.shapeless('9x tfc:straw', ['minecraft:hay_block']).id('tfc:crafting/vanilla/hay')
@@ -374,5 +392,6 @@ onEvent('recipes', event => {
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:honeycomb', '#tfc:waxing_agents')
 
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:iron_nugget', 'tfc:metal/rod/wrought_iron')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:gold_nugget', 'tfc:metal/rod/gold')
 
 });

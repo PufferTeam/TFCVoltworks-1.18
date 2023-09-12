@@ -36,7 +36,9 @@
         "tfc_ie_addon:tfc_ie_changes/drill",
         "tfc_ie_addon:tfc_ie_changes/blueprint",
         "tfc:mechanics/crops",
-        "tfc:mechanics/pets"
+        "tfc:mechanics/pets",
+        "tfc:mechanics/anvils",
+        "tfc:mechanics/bellows"
       ],
       "bookmarks": [],
       "completedManualQuests": []

@@ -152,8 +152,8 @@ onEvent('recipes', event => {
     global.addDamageInputShapeless(1, 'create:horizontal_framed_glass', 'create:vertical_framed_glass', "tfc:chisels", 1)
     global.addDamageInputShapeless(1, 'create:horizontal_framed_glass_pane', 'create:vertical_framed_glass_pane', "tfc:chisels", 1)
 
-    global.addDamageInputShapeless(3, 'minecraft:glass', 'create:tiled_glass', "tfc:chisels", 1)
-    global.addDamageInputShapeless(3, 'minecraft:glass_pane', 'create:tiled_glass_pane', "tfc:chisels", 1)
+    global.addDamageInputShapeless(3, 'minecraft:glass', 'create:tiled_glass', "tfc:chisels", 3)
+    global.addDamageInputShapeless(3, 'minecraft:glass_pane', 'create:tiled_glass_pane', "tfc:chisels", 3)
 
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:hay_block', 'tfc:thatch')
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:hay_block', 'tfc:thatch')

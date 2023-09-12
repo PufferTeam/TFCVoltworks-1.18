@@ -401,6 +401,37 @@ onEvent('recipes', event => {
     global.tfcMetallumMetalTypes.forEach(i => pressRecipes('tfc_metallum', i))
     global.firmalifeMetalTypes.forEach(i => pressRecipes('firmalife', i))
 
+    function anvilRecipes(mod, metal) {
+        let id = `${mod}:crafting/metal/${metal}_anvil`
+        if(mod == 'tfc') {
+            id = `${mod}:crafting/metal/anvil/${metal}`
+        }
+        event.remove({ id: id})
+
+        if(global.highmetalrx.test(metal)) {
+            event.recipes.createMechanicalCrafting(`${mod}:metal/anvil/${metal}`, [
+                'SSS',
+                ' A ',
+                'AAA'
+            ], {
+                S: `${mod}:metal/double_ingot/${metal}`,
+                A: `${mod}:metal/ingot/${metal}`
+            }).id(id)
+        } else {
+            event.shaped(`${mod}:metal/anvil/${metal}`, [
+                'SSS',
+                ' A ',
+                'AAA'
+            ], {
+                S: `${mod}:metal/double_ingot/${metal}`,
+                A: `${mod}:metal/ingot/${metal}`
+            }).id(id)
+        }
+    }
+
+    global.tier1MetalTypes.forEach(i => anvilRecipes('tfc', i));
+    global.tier1MetallumMetalTypes.forEach(i => anvilRecipes('tfc_metallum', i));
+
     global.highTierMetals.forEach(metal => {
         event.remove({ id: `tfc_metallum:alloy/${metal}` })
         event.remove({ id: `tfc:alloy/${metal}` })

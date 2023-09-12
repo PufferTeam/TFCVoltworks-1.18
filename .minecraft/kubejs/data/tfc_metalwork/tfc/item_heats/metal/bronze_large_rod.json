@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/bronze"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 570,
+  "welding_temperature": 760
+}

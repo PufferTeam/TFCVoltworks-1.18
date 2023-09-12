@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/aluminum"
+  },
+  "heat_capacity": 5,
+  "forging_temperature": 396,
+  "welding_temperature": 528
+}

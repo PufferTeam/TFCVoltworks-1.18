@@ -15,6 +15,10 @@ onEvent('tags.items', event => {
     global.tfcMetallumRods = []
     global.tfcMetallumMetalTypes.forEach(i => global.tfcMetallumRods.push(`tfc_metallum:metal/rod/${i}`));
 
+    global.tfcAnvils = []
+    global.tier1MetalTypes.forEach(i => global.tfcAnvils.push(`tfc:metal/anvil/${i}`));
+    global.tier1MetallumMetalTypes.forEach(i => global.tfcAnvils.push(`tfc_metallum:metal/anvil/${i}`));
+
     global.largeRodsTag = []
     global.tfcGlobalMetalTypes.forEach(i => global.largeRodsTag.push(`forge:large_rods/${i}`));
 
@@ -116,6 +120,7 @@ onEvent('tags.items', event => {
     global.largegeartagrx = new RegExp(global.largeGearsTag.join('|'));
     global.largerodtagrx = new RegExp(global.largeRodsTag.join('|'));
     global.platetagrx = new RegExp(global.platesTag.join('|'));
+    global.anvilrx = new RegExp(global.tfcAnvils.join('|'));
     global.ingottagrx = new RegExp(global.ingotsTag.join('|'));
     global.largerodrx = new RegExp(global.largeRods.join('|'));
     global.laddertagrx = new RegExp(global.laddersTag.join('|'));
@@ -612,7 +617,7 @@ onEvent('recipes', event => {
                     //console.log(`${mod}:heating/metal/${metal}_${toolType}`)
                     heatingTemperature = 5000
 
-                    if (!global.largerodtagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.largeplatetagrx.test(input)) {
+                    if (!global.largerodtagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.largeplatetagrx.test(input) && !global.anvilrx.test(input)) {
                         //console.log(isTag + fluid + fluidAmount + tagPrefix + input + heatingTemperature + mod + metal + toolType)
                         if (isValid) {
                             global.addHeating(isTag, input, fluid, fluidAmount, heatingTemperature, false)
@@ -652,6 +657,19 @@ onEvent('recipes', event => {
                     }
                 }
 
+                if (global.anvilrx.test(input)) {
+                    event.remove({ id: `tfc:heating/metal/${metal}_anvil` })
+                    event.remove({ id: `tfc_metallum:heating/metal/${metal}_anvil` })
+                    if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
+                        fluid = 'tfc:metal/cast_iron'
+                    }
+                    event.recipes.tfc.heating(Fluid.of(fluid, 1000), `${input}`, heatingTemperature).id(`tfc_metalwork:heating/custom/metal/${metal}_${toolType}`)
+
+                    if (temperature <= 2015) {
+                        global.addMelting(isTag, input, fluid, 1000, heatingLevel)
+                    }
+                }
+
                 //console.log(metal + fluid + input)
                 if (metal !== undefined && fluid !== undefined && input !== undefined && !global.doubleingotrx.test(metal) && !global.largeplatetagrx.test(input) && !global.dusttagrx.test(input) && isValid) {
                     let dustCount = 1
@@ -661,6 +679,9 @@ onEvent('recipes', event => {
                     }
                     if (global.largegeartagrx.test(input)) {
                         dustCount = 4
+                    }
+                    if(global.anvilrx.test(input)) {
+                        dustCount = 10
                     }
                     if (Number.isInteger(dustCount)) {
                         if (!global.highmetalrx.test(metal)) {
@@ -706,7 +727,7 @@ onEvent('recipes', event => {
                 if (temperature <= 2015) {
 
                     //console.log(fluid)
-                    if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.meltingrx.test(input) && isValid) {
+                    if (fluid !== undefined && input !== undefined && !global.largerodtagrx.test(input) && !global.largeplatetagrx.test(input) && !global.platetagrx.test(input) && !global.laddertagrx.test(input) && !global.largegeartagrx.test(input) && !global.meltingrx.test(input) && isValid && !global.anvilrx.test(input)) {
                         let processingSpeed = Math.ceil(heatcapacity * 100)
                         if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
                             fluid = 'tfc:metal/cast_iron'

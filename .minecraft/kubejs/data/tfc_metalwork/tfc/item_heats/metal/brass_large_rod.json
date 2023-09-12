@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/brass"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 558,
+  "welding_temperature": 744
+}

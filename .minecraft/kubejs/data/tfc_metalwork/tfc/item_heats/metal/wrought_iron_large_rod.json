@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/wrought_iron"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 921,
+  "welding_temperature": 1228
+}

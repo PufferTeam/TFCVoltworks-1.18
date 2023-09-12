@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/red_steel"
+  },
+  "heat_capacity": 4.286,
+  "forging_temperature": 924,
+  "welding_temperature": 1232
+}

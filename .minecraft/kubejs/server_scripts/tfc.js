@@ -55,20 +55,20 @@ onEvent('recipes', event => {
 
   event.remove({ id: 'tfc:clay_knapping/brick' })
   event.recipes.tfc.clay_knapping('6x tfc:ceramic/unfired_brick', [
-    'XX XX', 
-    '     ', 
-    'XX XX', 
-    '     ', 
+    'XX XX',
+    '     ',
+    'XX XX',
+    '     ',
     'XX XX'
   ]).id('tfc:clay_knapping/brick')
   global.addCompactingTagEItem(`tfc:clay_knapping`, 'tfc:ceramic/unfired_brick', 6)
 
   event.remove({ output: 'supplementaries:flower_box' })
   event.recipes.tfc.clay_knapping('2x kubejs:unfired_flower_box', [
-    'X   X', 
-    'XXXXX', 
-    '     ', 
-    'X   X', 
+    'X   X',
+    'XXXXX',
+    '     ',
+    'X   X',
     'XXXXX'
   ]).id('kubejs:clay_knapping/unfired_flower_box')
   global.addCompactingTagEItem(`tfc:clay_knapping`, 'kubejs:unfired_flower_box', 2)
@@ -77,10 +77,10 @@ onEvent('recipes', event => {
   event.remove({ id: 'tfc:fire_clay_knapping/brick' })
   event.remove({ id: 'woodencog:compacting/brick' })
   event.recipes.tfc.fire_clay_knapping('6x tfc:ceramic/unfired_fire_brick', [
-    'XX XX', 
-    '     ', 
-    'XX XX', 
-    '     ', 
+    'XX XX',
+    '     ',
+    'XX XX',
+    '     ',
     'XX XX'
   ]).id('tfc:fire_clay_knapping/brick')
   global.addCompactingTagEItem(`tfc:fire_clay_knapping`, 'tfc:ceramic/unfired_fire_brick', 6)
@@ -122,8 +122,26 @@ onEvent('recipes', event => {
     S: '#tfc:lumber'
   }).id('minecraft:bowl')
 
-})
+  global.tfcGemTypes.forEach(i => {
 
+    let input = `tfc:ore/${i}`
+    let output = `tfc:gem/${i}`
+    let transitionItem = `kubejs:transition_${i}`
+  
+    const cresults = []
+    const cmethods = []
+  
+    cresults.push(Item.of(`${output}`).withChance(100))
+  
+    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
+    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
+    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
+  
+    event.recipes.createSequencedAssembly(cresults, input, cmethods).transitionalItem(transitionItem).loops(1);
+  
+  })
+
+})
 
 onEvent('server.datapack.first', event => {
   event.addTFCHeat('kubejs:unfired_flower_box', 0.8)

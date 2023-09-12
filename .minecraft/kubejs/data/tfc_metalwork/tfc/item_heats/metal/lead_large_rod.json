@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "tag": "forge:large_rods/lead"
+  },
+  "heat_capacity": 6.818,
+  "forging_temperature": 197,
+  "welding_temperature": 262
+}
