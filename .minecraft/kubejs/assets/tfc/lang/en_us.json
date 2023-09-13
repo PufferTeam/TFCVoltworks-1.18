@@ -25,11 +25,19 @@
     "item.tfc.barrel.tooltip3.condition": "When R-Clicked",
     "item.tfc.barrel.tooltip3.behaviour": "_Opens_ the _Barrel Inventory_.",
 
+    "item.tfc.bookshelf.tooltip.summary": "_Useful way_ to store _books_. Can hold a total of_8_.",
+    "item.tfc.bookshelf.tooltip.condition": "When R-Clicked with a Book",
+    "item.tfc.bookshelf.tooltip.behaviour": "_Adds_ the _Book_ to the bookshelf.",
+    "item.tfc.bookshelf.tooltip2.condition": "When R-Clicked with Empty Hand",
+    "item.tfc.bookshelf.tooltip2.behaviour": "_Removes_ the last added _book_ from the _bookshelf_.",
+
     "item.tfc.vessel.tooltip.summary": "Early game _Alloying_ Container with _4 Slots_ for Items.",
     "item.tfc.vessel.tooltip.condition": "When R-Clicked",
     "item.tfc.vessel.tooltip.behaviour": "_Opens_ the _Vessel_ Content.",
     "item.tfc.vessel.tooltip2.condition": "When R-Clicked with Molten Content",
     "item.tfc.vessel.tooltip2.behaviour": "_Opens_ the _Pouring Interface_ allowing to pour molten metals into _other ceramic molds_.",
+    "item.tfc.vessel.tooltip3.condition": "When R-Clicked with an Item in Inventory",
+    "item.tfc.vessel.tooltip3.behaviour": "_Inserts_ the _Item_ inside of the vessel.",
 
     "item.tfc.firestarter.tooltip.condition": "When Used",
     "item.tfc.firestarter.tooltip.behaviour": "_Tries_ to start a _fire_. Can take _some times_ for the sparkles to light up.",

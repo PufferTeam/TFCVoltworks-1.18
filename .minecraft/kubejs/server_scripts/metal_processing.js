@@ -432,6 +432,14 @@ onEvent('recipes', event => {
     global.tier1MetalTypes.forEach(i => anvilRecipes('tfc', i));
     global.tier1MetallumMetalTypes.forEach(i => anvilRecipes('tfc_metallum', i));
 
+    /*
+    global.tfcMetallumMedTierOres.forEach(ore => {
+        global.oreRarity.forEach(rarity => {
+            event.remove({ id: `tfc_metallum:heating/ore/${rarity}_${ore}` })
+        })
+    })
+    */
+
     global.highTierMetals.forEach(metal => {
         event.remove({ id: `tfc_metallum:alloy/${metal}` })
         event.remove({ id: `tfc:alloy/${metal}` })

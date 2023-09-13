@@ -12,6 +12,13 @@ onEvent('tags.items', event => {
     global.tfcMetallumMetalTypes.forEach(i => global.pileableIngots.push(`forge:ingots/${i}`));
     //console.log(global.pileableIngots)
 
+    global.highTierOres = {}
+    global.tfcMetallumMedTierOres.forEach(ore => {
+        global.oreRarity.forEach(rarity => {
+            global.hightierOres.push(`tfc_metallum:ore/${rarity}_${ore}`) 
+        })
+    })
+
     global.tfcMetallumRods = []
     global.tfcMetallumMetalTypes.forEach(i => global.tfcMetallumRods.push(`tfc_metallum:metal/rod/${i}`));
 
@@ -92,6 +99,7 @@ onEvent('tags.items', event => {
 
     global.anvilCopyWhitelist = [
         'tfc:refined_iron_bloom',
+        'tfc:brass_mechanisms',
         'minecraft:iron_door',
         'firmalife:pie_pan',
         'tfc:metal/ingot/high_carbon_steel'
@@ -134,7 +142,8 @@ onEvent('tags.items', event => {
     global.rottablefoodsrx = new RegExp(global.rottableFoods.join('|'));
     global.meltingrx = new RegExp(global.meltingBlacklist.join('|'));
     global.highmetalrx = new RegExp(global.highTierMetals.join('|'));
-
+    global.highorerx = new RegExp(global.highTierOres.join('|'));
+    
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));
     global.metalworkpartsrx = new RegExp(global.metalworkMetalParts.join('|'));
@@ -301,6 +310,9 @@ onEvent('recipes', event => {
                 case 'tfc:refined_iron_bloom':
                     metal = 'bloom'
                     toolType = 'customp'
+                    break;
+                case 'tfc:brass_mechanisms':
+                    metal = 'brass'
                     break;
                 case 'minecraft:iron_door':
                     metal = 'wrought_iron'
@@ -612,7 +624,6 @@ onEvent('recipes', event => {
                 let heatingLevel = undefined
                 heatingLevel = global.getHeatingLevel(temperature)
 
-
                 if (global.highmetalrx.test(metal) && !global.doubleingotrx.test(metal)) {
                     //console.log(`${mod}:heating/metal/${metal}_${toolType}`)
                     heatingTemperature = 5000
@@ -627,6 +638,15 @@ onEvent('recipes', event => {
                             //event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), tagPrefix + input, heatingTemperature).id(`${mod}:heating/custom/metal/${metal}_${toolType}`).useDurability()
                         }
                     }
+                }
+
+                if(global.highorerx.test(input)) {
+                    let oreResult = input.split('/')
+                    let oreName = oreResult[1]
+                    event.remove({ id: `tfc_metallum:heating/ore/${oreName}` })
+                    heatingTemperature = 5000
+
+                    event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), `${input}`, heatingTemperature).id(`tfc_metallum:heating/custom/ore/${oreName}`)
                 }
 
                 //console.log(input)
@@ -700,7 +720,7 @@ onEvent('recipes', event => {
                                 mFluid = "tfc:metal/cast_iron"
                             }
 
-                            console.log(temperature + metal + mFluid)
+                            //console.log(temperature + metal + mFluid)
 
                             global.addMeltingCrushing(false, `tfc_metalwork:metal/block/${metal}_slab`, mFluid, 200, metal, temperature)
                             global.addMeltingCrushing(false, `tfc_metalwork:metal/cut/${metal}_slab`, mFluid, 200, metal, temperature)
@@ -731,6 +751,10 @@ onEvent('recipes', event => {
                         let processingSpeed = Math.ceil(heatcapacity * 100)
                         if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
                             fluid = 'tfc:metal/cast_iron'
+
+                            if(global.dusttagrx.test(input)) {
+                                fluid = 'tfc:metal/wrought_iron'
+                            }
 
                             event.remove({ id: `tfc_metalwork:heating/metal/wrought_iron_block` })
                             event.remove({ id: `tfc_metalwork:heating/metal/${metal}_${toolType}` })

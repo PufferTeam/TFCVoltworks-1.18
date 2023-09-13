@@ -1,6 +1,9 @@
 {
+    "item.immersiveengineering.hammer.tooltip.condition": "When Used on a Block",
+    "item.immersiveengineering.hammer.tooltip.behaviour": "_Tries_ to assemble a valid _multiblock_. Makes sure to try to click on _different places_ if it doesn't works.",
+
     "gui.immersiveengineering.blastFurnace": "Improved Bloomery",
     "gui.immersiveengineering.blastFurnace.fuel": "Improved Bloomery Fuel",
-    "block.immersiveengineering.blast_furnace": "Improved Bloomery",
+    "block.immersiveengineering.blast_furnace": "Crude Bloomery",
     "block.immersiveengineering.advanced_blast_furnace": "Improved Bloomery"
 }

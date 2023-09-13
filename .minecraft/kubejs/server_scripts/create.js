@@ -2,7 +2,8 @@ onEvent('recipes', event => {
 
     event.remove({ output: 'create:basin' })
     event.shaped('create:basin', [
-        'SAS'
+        'SAS',
+        'SSS'
     ], {
         S: '#forge:plates/cast_iron',
         A: 'tfc:crucible'
@@ -17,6 +18,14 @@ onEvent('recipes', event => {
         S: '#forge:plates/cast_iron',
         A: '#forge:ingots/cast_iron'
     }).id('create:chute')
+
+    event.remove({ output: 'createbigcannons:basin_foundry_lid' })
+    event.shaped('createbigcannons:basin_foundry_lid', [
+        'SAS'
+    ], {
+        S: '#forge:plates/wrought_iron',
+        A: '#forge:ingots/andesite_alloy'
+    }).id('createbigcannons:basin_foundry_lid')
 
     event.remove({ output: 'create:metal_bracket' })
     event.shaped('8x create:metal_bracket', [

@@ -1,0 +1,638 @@
+{
+	id: "2DA3C8216A88A02D"
+	group: ""
+	order_index: 0
+	filename: "getting_started"
+	title: "Getting Started"
+	icon: "tfc:grass/loam"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	images: [
+		{
+			x: -0.5d
+			y: -1.5d
+			width: 1.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "tfc:textures/gui/book/icons/biomes.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+		{
+			x: 0.5d
+			y: -1.5d
+			width: 1.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "tfc:textures/gui/book/icons/rivers.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+		{
+			x: 0.0d
+			y: -1.0d
+			width: 0.5d
+			height: 0.5d
+			rotation: 0.0d
+			image: "tfc:textures/gui/book/icons/thermometer.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+		{
+			x: 0.24081632653062712d
+			y: -2.632653061224488d
+			width: 2.0d
+			height: 2.0d
+			rotation: 0.0d
+			image: "tfc:textures/gui/book/biomes/rolling_hills_with_river.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+	]
+	quests: [
+		{
+			title: "Welcome to TFC Voltworks!"
+			icon: "supplementaries:globe"
+			x: 0.0d
+			y: 0.0d
+			shape: "hexagon"
+			subtitle: "Introduction"
+			description: [
+				"&lWelcome to the modpack!&r If you didn't notice already, this modpack is based on the &lTerraFirmaCraft&r mod."
+				""
+				"To get started, you can &lclick in the book in your inventory&r &o(or claim in item form with this quest)&r which will help you to understand the basics of the mod."
+			]
+			size: 1.5d
+			id: "6F3600C0869C5527"
+			tasks: [{
+				id: "781287DC20F8DAD8"
+				type: "dimension"
+				dimension: "minecraft:overworld"
+			}]
+			rewards: [{
+				id: "7C22811B568E5621"
+				type: "item"
+				item: {
+					id: "patchouli:guide_book"
+					Count: 1b
+					tag: {
+						"patchouli:book": "tfc:field_guide"
+					}
+				}
+			}]
+		}
+		{
+			title: "Caveman Toys"
+			icon: {
+				id: "tfc:stone/axe/sedimentary"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: 0.0d
+			y: 1.5d
+			subtitle: "Your first tools made of stone!"
+			description: [
+				"{image:tfc:textures/item/loose_rock/granite.png width:30 height:30 align:1}"
+				"To make stone tools, &lright click on 2 loose rocks&r and shape the shape of the tool head in the interface."
+				"In addition to the head, you will need an handle which can be made with some sticks you find on the ground."
+				""
+				"&lAxes&r: Used to cut wood"
+				"&lPickaxes&r: Used to break stone"
+				"&lShovels&r: Used to break dirt"
+				"&lKnives&r: Used to get straw"
+				"&lJavelins&r: Early game weapon"
+				"&lHoes&r: Used for agriculture"
+				""
+				"Look in JEI for recipes!"
+			]
+			dependencies: ["6F3600C0869C5527"]
+			id: "305CFBB54FEE5D90"
+			tasks: [
+				{
+					id: "3153B0B88962275B"
+					type: "item"
+					title: "Any #tfc:stone_axes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:stone_axes"
+						}
+					}
+				}
+				{
+					id: "6C10848DE58991F0"
+					type: "item"
+					title: "Any #tfc:stone_pickaxes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:stone_pickaxes"
+						}
+					}
+				}
+				{
+					id: "614A7B24C9B3E10F"
+					type: "item"
+					title: "Any #tfc:stone_shovels"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:stone_shovels"
+						}
+					}
+				}
+				{
+					id: "420D0EC1DDAAB6FC"
+					type: "item"
+					title: "Any #tfc:stone_knives"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:stone_knives"
+						}
+					}
+				}
+				{
+					id: "717CB144B0A2716E"
+					type: "item"
+					title: "Any #tfc:stone_javelins"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:stone_javelins"
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Lumberjack"
+			icon: "tfc:wood/log/oak"
+			x: -0.5d
+			y: 3.0d
+			subtitle: "Cut those damn trees!"
+			description: [
+				"{image:minecraft:textures/block/oak_sapling.png width:30 height:30 align:1}"
+				"&lWood will be needed&r for almost everything through your journey, cut some of these fancy trees with your new axe."
+				""
+				"Don't forget to &lreplant the seeds&r, we don't want deforestation!"
+				""
+				"With some of the logs you got you can also make &lWattle&r which is a useful solid construction block."
+			]
+			dependencies: ["305CFBB54FEE5D90"]
+			id: "59513198E5FB6515"
+			tasks: [{
+				id: "4132A55832F2463B"
+				type: "item"
+				title: "Any #tfc:firepit_logs"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:firepit_logs"
+					}
+				}
+				count: 16L
+			}]
+		}
+		{
+			title: "Plant fibers"
+			x: 0.5d
+			y: 3.0d
+			subtitle: "Hay, do you want some hay?"
+			description: [
+				"{image:tfc:textures/item/straw.png width:30 height:30 align:1}"
+				"To get Straw, &lbreak tall grass with a knife&r, the plant will drop you some straw."
+				""
+				"In your &l2x2 Grid&r, you can make &lThatch Blocks&r which can be used for building. Be warned tho, you can walk through it!"
+			]
+			dependencies: ["305CFBB54FEE5D90"]
+			id: "2E3DD698A4E01DCC"
+			tasks: [{
+				id: "4A1B3BA222AF7750"
+				type: "item"
+				item: "tfc:straw"
+				count: 16L
+			}]
+		}
+		{
+			title: "Pottery"
+			icon: {
+				id: "tfc:ceramic/unfired_vessel"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 1.0d
+			y: 5.5d
+			subtitle: "Can I make my own army with it?"
+			description: [
+				"{image:minecraft:textures/item/clay_ball.png width:30 height:30 align:1}"
+				"To start making some &lpottery&r, you will need to &lright click 5 clay balls&r, and like for the tools you will need to shape what you have!"
+				""
+				"&lVessels&r: Early game Storage, used later for alloying"
+				"&lLarge Vessel&r: Ground Storage, can preserve food."
+				"&lJug&r: Used to drink water"
+				"&lPan&r: Used to pan rivers for ores"
+				"&lTool Molds&r: Allow you to cast basic metal parts"
+				""
+				"&lUnfired Pottery&r doesn't serve any purpose, so you will need to cook it in a &lPit Kiln&r to use it."
+			]
+			dependencies: ["5E5EDD3AB21FCF38"]
+			id: "42976748A3392F8D"
+			tasks: [
+				{
+					id: "5F978AC5312E05BE"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_vessel"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "165BFC18F0C17985"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_large_vessel"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "17D442F062D0BAE0"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_jug"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "6DFD61F679B4C99D"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_pickaxe_head_mold"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "52E06C9E61D325D8"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_propick_head_mold"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "416223A91A8842E7"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_pan"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Gordon Ramsay"
+			icon: "tfc:firepit"
+			x: -0.5d
+			y: 4.5d
+			subtitle: "Starter firepit for food, who likes raw meat?"
+			description: [
+				"{image:tfc:textures/item/firepit.png width:30 height:30 align:1}"
+				""
+				"This early game &lfirepit&r will allow you to cook anything up to a temperature of &l200 degrees&r!"
+				""
+				"To form the firepit drop &l1 Log&r and &l3 Sticks&r and then light up all of that with a &lFire Starter&r"
+				""
+				"Possible &luses cases&r are cooking meat and &llighting-up&r torches!"
+				""
+			]
+			dependencies: ["59513198E5FB6515"]
+			id: "550B66AD03DEC1A8"
+			tasks: [
+				{
+					id: "146834EBDF335BA7"
+					type: "item"
+					item: {
+						id: "tfc:firestarter"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "0C5C58B390A49B6B"
+					type: "item"
+					title: "Any #tfc:firepit_logs"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:firepit_logs"
+						}
+					}
+				}
+				{
+					id: "5643F7C959F975DF"
+					type: "item"
+					title: "Any #tfc:firepit_sticks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:firepit_sticks"
+						}
+					}
+					count: 3L
+				}
+			]
+		}
+		{
+			title: "Underground Kiln"
+			icon: "tfc:grass/loam"
+			x: 0.5d
+			y: 4.5d
+			subtitle: "Don't do it in the sky!"
+			description: [
+				"{image:tfc:textures/gui/book/icons/pit_kiln.png width:30 height:30 align:1}"
+				""
+				"A &lPit Kiln&r is the early way of &lheating up&r materials at&l high temperature&r, with the cost of being slow."
+				""
+				"&l1)&r To form a &lPit Kiln&r, place your unfired pottery in a &l1 block hole&r."
+				"{image:tfc:textures/gui/book/tutorial/pit_kiln_2.png width:100 height:100 align:1}"
+				"&l2)&r Right click with &l8 Straws&r. "
+				"{image:tfc:textures/gui/book/tutorial/pit_kiln_3.png width:100 height:100 align:1}"
+				"&l2)&r Right click with &l8 Logs&r."
+				"{image:tfc:textures/gui/book/tutorial/pit_kiln_4.png width:100 height:100 align:1}"
+				"&l4)&r Light the Kiln with a Fire Starter"
+				"{image:tfc:textures/gui/book/tutorial/pit_kiln_5.png width:100 height:100 align:1}"
+				"Please takes in consideration that the Kiln is &lslow&r and it takes &lmultiples minutes&r for the pottery to be fired."
+			]
+			dependencies: ["2E3DD698A4E01DCC"]
+			id: "5E5EDD3AB21FCF38"
+			tasks: [
+				{
+					id: "50AECCEDF8AEE25D"
+					type: "item"
+					item: {
+						id: "tfc:firestarter"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "060FA167A2E1958B"
+					type: "item"
+					item: "tfc:straw"
+					count: 8L
+				}
+				{
+					id: "73F2A7C78080A4DB"
+					type: "item"
+					title: "Any #tfc:pit_kiln_logs"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:pit_kiln_logs"
+						}
+					}
+					count: 8L
+				}
+			]
+		}
+		{
+			title: "Not quite a lightbulb"
+			x: -1.0d
+			y: 5.5d
+			subtitle: "Finally I can see!"
+			description: [
+				"{image:minecraft:textures/block/torch.png width:30 height:30 align:1}"
+				"A &lTorch&l can be made in a &lFirepit&r and offer lighting for &l24 Hours&r."
+			]
+			dependencies: ["550B66AD03DEC1A8"]
+			id: "7EF256F92C995F26"
+			tasks: [{
+				id: "4A253C717B7E9097"
+				type: "item"
+				item: "tfc:torch"
+			}]
+		}
+		{
+			title: "Natural Agriculture"
+			icon: "tfc:wild_crop/barley"
+			x: -1.0d
+			y: 1.0d
+			subtitle: "Could save you from starvation, you never know."
+			description: [
+				"{image:tfc:textures/block/crop/barley_wild.png width:30 height:30 align:1}"
+				"By &lexploring&r the world you will notice &lWild Crops&r, these can be broken to obtain some food."
+			]
+			dependencies: ["6F3600C0869C5527"]
+			id: "497FB8756F15EF79"
+			tasks: [{
+				id: "7E0034D28AD90BFD"
+				type: "item"
+				title: "Any #tfc:quail_food"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:quail_food"
+					}
+				}
+			}]
+		}
+		{
+			title: "Fired Pottery"
+			icon: {
+				id: "tfc:ceramic/vessel"
+				Count: 1b
+				tag: { }
+				ForgeCaps: {
+					Parent: {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 0.0d
+			y: 6.0d
+			subtitle: "Now it's useful!"
+			description: [
+				"{image:minecraft:textures/item/brick.png width:30 height:30 align:1}"
+				"Now that you &lfired&r these pottery in the &lPit Kiln&r, they can finally be used."
+				""
+				"The &lLarge Vessel&r can be &lplaced in your base&r if you want some storage and you inventory is cluttered!"
+			]
+			dependencies: [
+				"550B66AD03DEC1A8"
+				"42976748A3392F8D"
+			]
+			id: "3AC080415B38DADE"
+			tasks: [
+				{
+					id: "273A910A11247FC2"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/vessel"
+						Count: 1b
+						tag: { }
+						ForgeCaps: {
+							Parent: {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "63C16598D4379E54"
+					type: "item"
+					item: "tfc:ceramic/large_vessel"
+				}
+				{
+					id: "6226AA226DBF9C5A"
+					type: "item"
+					item: "tfc:ceramic/jug"
+				}
+				{
+					id: "4834F6167516D7D3"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/pickaxe_head_mold"
+						Count: 1b
+						tag: { }
+						ForgeCaps: {
+							Parent: {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "03090B3C1F4031BA"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/propick_head_mold"
+						Count: 1b
+						tag: { }
+						ForgeCaps: {
+							Parent: {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
+				{
+					id: "011645E494A2E1B7"
+					type: "item"
+					item: "tfc:pan/empty"
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: 7.0d
+			id: "1AED6D04C6C4425A"
+		}
+		{
+			title: "Wood Piles"
+			icon: "kubejs:oak_firewood"
+			x: -1.5d
+			y: 3.0d
+			subtitle: "Too big to fit in pockets!"
+			description: [
+				"{image:tfc:textures/block/log_pile_front.png width:30 height:30 align:1}"
+				"By &lRight clicking + Shifting&r on the ground with &lLogs&r, you will place a Log pile, which can be used for things such as charcoal making."
+			]
+			dependencies: ["59513198E5FB6515"]
+			id: "3A84C620BB89E1E7"
+			tasks: [{
+				id: "4598EC40B3D69D4D"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Strong Fuel"
+			x: -2.0d
+			y: 4.0d
+			subtitle: "Let it sealed!"
+			description: [
+				"{image:tfc:textures/block/charcoal_pile.png width:30 height:30 align:1}"
+				"&lCharcoal&r is a strong fuel that is mainly used for &lCharcoal Forges&r."
+				""
+				"By lighting up &lunderground&r log piles, you will begin the process of creation of &lCharcoal&r."
+			]
+			dependencies: ["3A84C620BB89E1E7"]
+			id: "44905CB2D47C6540"
+			tasks: [{
+				id: "35133DC0D89DA6B9"
+				type: "item"
+				item: "minecraft:charcoal"
+				count: 16L
+			}]
+		}
+	]
+	quest_links: [ ]
+}

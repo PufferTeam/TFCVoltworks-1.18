@@ -168,6 +168,16 @@ global.tfcRockTypes = [
     'marble'
 ]
 
+global.anvilRockTypes = [
+    'granite',
+    'diorite',
+    'gabbro',
+    'rhyolite',
+    'basalt',
+    'andesite',
+    'dacite'
+]
+
 global.tfcSandstoneTypes = [
     'brown',
     'white',
@@ -323,6 +333,24 @@ global.tfcGlobalMetalTypes = [
 
 ];
 
+global.oreRarity = [
+    'rich',
+    'normal',
+    'poor',
+    'small'
+]
+
+global.tfcMetallumMedTierOres = [
+    'uraninite',
+    'stibnite',
+    'cobaltite',
+    'native_osmium',
+    'native_iridium',
+    'rutile',
+    'monazite',
+    'bauxite'
+]
+
 global.highTierMetals = [
     'stainless_steel'
 ]
@@ -367,6 +395,8 @@ global.tier5MetallumMetalTypes = [
 ];
 global.tier6MetallumMetalTypes.forEach(i => global.tier5MetallumMetalTypes.push(i));
 global.tier4MetallumMetalTypes = [
+    'refined_obsidian',
+    'refined_glowstone',
     'signalum',
     'lumium'
 ];

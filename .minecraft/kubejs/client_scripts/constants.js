@@ -17,6 +17,7 @@ global.categoriesToHide = [
     'minecraft:blasting',
     'minecraft:smelting',
     'minecraft:smithing',
+    'minecraft:compostable',
     'minecraft:smoking',
     'minecraft:stonecutting',
     'minecraft:anvil'

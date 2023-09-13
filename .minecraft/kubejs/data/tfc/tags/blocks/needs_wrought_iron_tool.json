@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ores/uranium",
+    "#forge:ores/antimony",
+    "#forge:ores/osmium",
+    "#forge:ores/aluminum",
+    "#forge:ores/cobalt",
+    "#forge:ores/iridium"
+  ]
+}

@@ -14,6 +14,15 @@ onEvent('tags.items', event => {
         event.add('tfc:pickaxes', `kubejs:stone/pickaxe/${stone}`)
         event.add('tfc:usable_on_tool_rack', `kubejs:stone/pickaxe/${stone}`)
         event.add('tfc:placed_item_whitelist', `kubejs:stone/pickaxe/${stone}`)
+
+        event.add('tfc:stone_pickaxes', `kubejs:stone/pickaxe/${stone}`)
+        event.add('tfc:stone_axes', `tfc:stone/axe/${stone}`)
+        event.add('tfc:stone_shovels', `tfc:stone/shovel/${stone}`)
+        event.add('tfc:stone_knives', `tfc:stone/knife/${stone}`)
+        event.add('tfc:stone_javelins', `tfc:stone/javelin/${stone}`)
+        event.add('tfc:stone_hoes', `tfc:stone/hoe/${stone}`)
+        event.add('tfc:stone_hammers', `tfc:stone/hammer/${stone}`)
+
     });
 
 

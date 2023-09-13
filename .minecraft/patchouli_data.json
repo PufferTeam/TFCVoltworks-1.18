@@ -38,7 +38,19 @@
         "tfc:mechanics/crops",
         "tfc:mechanics/pets",
         "tfc:mechanics/anvils",
-        "tfc:mechanics/bellows"
+        "tfc:mechanics/bellows",
+        "tfc:getting_started/pottery",
+        "tfc:getting_started/firepit",
+        "rosia:tfc_rosia/fire_box",
+        "rosia:tfc_rosia/machines",
+        "rosia:tfc_rosia/purple_steel",
+        "tfc_metallum:metallum_ores/bertrandite",
+        "waterflasks:waterflasks/bladders",
+        "waterflasks:waterflasks/recipes",
+        "tfc:mechanics/sandwiches",
+        "tfc:mechanics/weaving",
+        "tfc:mechanics/lamps",
+        "tfc:mechanics/hydration"
       ],
       "bookmarks": [],
       "completedManualQuests": []
