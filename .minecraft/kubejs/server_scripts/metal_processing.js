@@ -47,6 +47,9 @@ onEvent('tags.items', event => {
     //global.tfcMetalTypes.forEach(i => taggingTools('tfc', i, ''));
     //global.tfcMetallumMetalTypes.forEach(i => taggingTools('tfc', i, ''));
 
+    taggingTools('tfc', 'copper', 'tier1to2_')
+    taggingTools('tfc', 'bronze', 'tier1to2_')
+
     global.tier1MetalTypes.forEach(i => taggingTools('tfc', i, 'tier1_'));
     global.tier2MetalTypes.forEach(i => taggingTools('tfc', i, 'tier2_'));
     global.tier3MetalTypes.forEach(i => taggingTools('tfc', i, 'tier3_'));
@@ -121,6 +124,31 @@ onEvent('tags.items', event => {
         event.add('tfc_metalwork:tiles_slab/copper', `create:${i}_copper_tile_slab`)
         event.add('tfc_metalwork:tiles_stairs/copper', `create:${i}_copper_tile_stairs`)
     })
+
+    function tagOres(mod, ore, metal) {
+        global.oreRarity.forEach(rarity => {
+            event.add(`${mod}:ores/${metal}`, `${mod}:ore/${rarity}_${ore}`)
+        })
+    }
+
+    tagOres('tfc', 'native_copper', 'copper')
+    tagOres('tfc', 'tetrahedrite', 'copper')
+    tagOres('tfc', 'malachite', 'copper')
+
+    tagOres('tfc', 'native_gold', 'gold')
+    tagOres('tfc', 'native_silver', 'silver')
+    tagOres('tfc', 'garnierite', 'nickel')
+    tagOres('tfc', 'cassiterite', 'tin')
+    tagOres('tfc', 'sphalerite', 'zinc')
+    tagOres('tfc', 'bismuthinite', 'bismuth')
+
+    tagOres('tfc', 'hematite', 'wrought_iron')
+    tagOres('tfc', 'limonite', 'wrought_iron')
+    tagOres('tfc', 'magnetite', 'wrought_iron')
+
+    event.add(`${mod}:ores/${metal}`, `${mod}:ore/${rarity}_${ore}`)
+
+
 
 
     event.add(`forge:plates/iron`, 'tfc_metalwork:metal/plate/wrought_iron')
@@ -403,12 +431,12 @@ onEvent('recipes', event => {
 
     function anvilRecipes(mod, metal) {
         let id = `${mod}:crafting/metal/${metal}_anvil`
-        if(mod == 'tfc') {
+        if (mod == 'tfc') {
             id = `${mod}:crafting/metal/anvil/${metal}`
         }
-        event.remove({ id: id})
+        event.remove({ id: id })
 
-        if(global.highmetalrx.test(metal)) {
+        if (global.highmetalrx.test(metal)) {
             event.recipes.createMechanicalCrafting(`${mod}:metal/anvil/${metal}`, [
                 'SSS',
                 ' A ',
@@ -432,14 +460,6 @@ onEvent('recipes', event => {
     global.tier1MetalTypes.forEach(i => anvilRecipes('tfc', i));
     global.tier1MetallumMetalTypes.forEach(i => anvilRecipes('tfc_metallum', i));
 
-    /*
-    global.tfcMetallumMedTierOres.forEach(ore => {
-        global.oreRarity.forEach(rarity => {
-            event.remove({ id: `tfc_metallum:heating/ore/${rarity}_${ore}` })
-        })
-    })
-    */
-
     global.highTierMetals.forEach(metal => {
         event.remove({ id: `tfc_metallum:alloy/${metal}` })
         event.remove({ id: `tfc:alloy/${metal}` })
@@ -451,7 +471,7 @@ onEvent('recipes', event => {
             event.remove({ id: `tfc:heating/metal/${metal}_${toolType}` })
             event.remove({ id: `tfc_metallum:heating/metal/${metal}_${toolType}` })
 
-            if(toolType !== 'ingot') {
+            if (toolType !== 'ingot') {
                 event.remove({ id: `tfc_metallum:casting/${metal}_${toolType}` })
             }
         });

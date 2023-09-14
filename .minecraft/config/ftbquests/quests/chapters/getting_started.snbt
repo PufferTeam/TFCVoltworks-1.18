@@ -69,12 +69,15 @@
 				"&lWelcome to the modpack!&r If you didn't notice already, this modpack is based on the &lTerraFirmaCraft&r mod."
 				""
 				"To get started, you can &lclick in the book in your inventory&r &o(or claim in item form with this quest)&r which will help you to understand the basics of the mod."
+				""
+				"Mechanics here will be roughly explained, but the &lField Guide&r goes into more details if you are stuck."
 			]
 			size: 1.5d
 			id: "6F3600C0869C5527"
 			tasks: [{
 				id: "781287DC20F8DAD8"
 				type: "dimension"
+				title: "Create a new world"
 				dimension: "minecraft:overworld"
 			}]
 			rewards: [{
@@ -106,6 +109,7 @@
 				"To make stone tools, &lright click on 2 loose rocks&r and shape the shape of the tool head in the interface."
 				"In addition to the head, you will need an handle which can be made with some sticks you find on the ground."
 				""
+				"{image:tfc:textures/gui/book/gui/rock_knapping.png width:100 height:100 align:1}"
 				"&lAxes&r: Used to cut wood"
 				"&lPickaxes&r: Used to break stone"
 				"&lShovels&r: Used to break dirt"
@@ -121,7 +125,7 @@
 				{
 					id: "3153B0B88962275B"
 					type: "item"
-					title: "Any #tfc:stone_axes"
+					title: "Any Stone Axes"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -133,7 +137,7 @@
 				{
 					id: "6C10848DE58991F0"
 					type: "item"
-					title: "Any #tfc:stone_pickaxes"
+					title: "Any Stone Pickaxes"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -145,7 +149,7 @@
 				{
 					id: "614A7B24C9B3E10F"
 					type: "item"
-					title: "Any #tfc:stone_shovels"
+					title: "Any Stone Shovels"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -157,7 +161,7 @@
 				{
 					id: "420D0EC1DDAAB6FC"
 					type: "item"
-					title: "Any #tfc:stone_knives"
+					title: "Any Stone Knives"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -169,12 +173,24 @@
 				{
 					id: "717CB144B0A2716E"
 					type: "item"
-					title: "Any #tfc:stone_javelins"
+					title: "Any Stone Javelins"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
 						tag: {
 							value: "tfc:stone_javelins"
+						}
+					}
+				}
+				{
+					id: "1AC671D1315ED50D"
+					type: "item"
+					title: "Any Stone Hoes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:stone_hoes"
 						}
 					}
 				}
@@ -188,6 +204,7 @@
 			subtitle: "Cut those damn trees!"
 			description: [
 				"{image:minecraft:textures/block/oak_sapling.png width:30 height:30 align:1}"
+				""
 				"&lWood will be needed&r for almost everything through your journey, cut some of these fancy trees with your new axe."
 				""
 				"Don't forget to &lreplant the seeds&r, we don't want deforestation!"
@@ -199,7 +216,7 @@
 			tasks: [{
 				id: "4132A55832F2463B"
 				type: "item"
-				title: "Any #tfc:firepit_logs"
+				title: "Any Wooden Logs"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -217,6 +234,7 @@
 			subtitle: "Hay, do you want some hay?"
 			description: [
 				"{image:tfc:textures/item/straw.png width:30 height:30 align:1}"
+				""
 				"To get Straw, &lbreak tall grass with a knife&r, the plant will drop you some straw."
 				""
 				"In your &l2x2 Grid&r, you can make &lThatch Blocks&r which can be used for building. Be warned tho, you can walk through it!"
@@ -243,12 +261,13 @@
 				}
 			}
 			x: 1.0d
-			y: 5.5d
+			y: 6.0d
 			subtitle: "Can I make my own army with it?"
 			description: [
 				"{image:minecraft:textures/item/clay_ball.png width:30 height:30 align:1}"
 				"To start making some &lpottery&r, you will need to &lright click 5 clay balls&r, and like for the tools you will need to shape what you have!"
 				""
+				"{image:tfc:textures/gui/book/gui/clay_knapping.png width:100 height:100 align:1}"
 				"&lVessels&r: Early game Storage, used later for alloying"
 				"&lLarge Vessel&r: Ground Storage, can preserve food."
 				"&lJug&r: Used to drink water"
@@ -256,8 +275,12 @@
 				"&lTool Molds&r: Allow you to cast basic metal parts"
 				""
 				"&lUnfired Pottery&r doesn't serve any purpose, so you will need to cook it in a &lPit Kiln&r to use it."
+				""
 			]
-			dependencies: ["5E5EDD3AB21FCF38"]
+			dependencies: [
+				"5E5EDD3AB21FCF38"
+				"1F671C413CD50D66"
+			]
 			id: "42976748A3392F8D"
 			tasks: [
 				{
@@ -350,8 +373,8 @@
 			title: "Gordon Ramsay"
 			icon: "tfc:firepit"
 			x: -0.5d
-			y: 4.5d
-			subtitle: "Starter firepit for food, who likes raw meat?"
+			y: 5.0d
+			subtitle: "I'm sure your culinary abilities are good, right?"
 			description: [
 				"{image:tfc:textures/item/firepit.png width:30 height:30 align:1}"
 				""
@@ -362,59 +385,31 @@
 				"Possible &luses cases&r are cooking meat and &llighting-up&r torches!"
 				""
 			]
-			dependencies: ["59513198E5FB6515"]
+			dependencies: ["5904278FDDFCBE80"]
+			dependency_requirement: "one_completed"
 			id: "550B66AD03DEC1A8"
-			tasks: [
-				{
-					id: "146834EBDF335BA7"
-					type: "item"
-					item: {
-						id: "tfc:firestarter"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-				{
-					id: "0C5C58B390A49B6B"
-					type: "item"
-					title: "Any #tfc:firepit_logs"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "tfc:firepit_logs"
-						}
-					}
-				}
-				{
-					id: "5643F7C959F975DF"
-					type: "item"
-					title: "Any #tfc:firepit_sticks"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "tfc:firepit_sticks"
-						}
-					}
-					count: 3L
-				}
-			]
+			tasks: [{
+				id: "650EDA1D0358830A"
+				type: "observation"
+				title: "Make a Firepit"
+				icon: "tfc:firepit"
+				timer: 0L
+				observe_type: 0
+				to_observe: "tfc:firepit"
+			}]
 		}
 		{
 			title: "Underground Kiln"
 			icon: "tfc:grass/loam"
 			x: 0.5d
-			y: 4.5d
+			y: 5.0d
 			subtitle: "Don't do it in the sky!"
 			description: [
 				"{image:tfc:textures/gui/book/icons/pit_kiln.png width:30 height:30 align:1}"
 				""
 				"A &lPit Kiln&r is the early way of &lheating up&r materials at&l high temperature&r, with the cost of being slow."
 				""
-				"&l1)&r To form a &lPit Kiln&r, place your unfired pottery in a &l1 block hole&r."
+				"&l1)&r To form a &lPit Kiln&r, place your unfired pottery &o(by clicking on V key)&r in a &l1 block hole&r."
 				"{image:tfc:textures/gui/book/tutorial/pit_kiln_2.png width:100 height:100 align:1}"
 				"&l2)&r Right click with &l8 Straws&r. "
 				"{image:tfc:textures/gui/book/tutorial/pit_kiln_3.png width:100 height:100 align:1}"
@@ -424,48 +419,26 @@
 				"{image:tfc:textures/gui/book/tutorial/pit_kiln_5.png width:100 height:100 align:1}"
 				"Please takes in consideration that the Kiln is &lslow&r and it takes &lmultiples minutes&r for the pottery to be fired."
 			]
-			dependencies: ["2E3DD698A4E01DCC"]
+			dependencies: ["5904278FDDFCBE80"]
 			id: "5E5EDD3AB21FCF38"
-			tasks: [
-				{
-					id: "50AECCEDF8AEE25D"
-					type: "item"
-					item: {
-						id: "tfc:firestarter"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-				{
-					id: "060FA167A2E1958B"
-					type: "item"
-					item: "tfc:straw"
-					count: 8L
-				}
-				{
-					id: "73F2A7C78080A4DB"
-					type: "item"
-					title: "Any #tfc:pit_kiln_logs"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "tfc:pit_kiln_logs"
-						}
-					}
-					count: 8L
-				}
-			]
+			tasks: [{
+				id: "5CE4D4E25CFA8E6F"
+				type: "observation"
+				title: "Make a Pit Kiln"
+				icon: "tfc:dirt/loam"
+				timer: 0L
+				observe_type: 2
+				to_observe: "tfc:pit_kiln[stage=15]"
+			}]
 		}
 		{
 			title: "Not quite a lightbulb"
 			x: -1.0d
-			y: 5.5d
+			y: 6.0d
 			subtitle: "Finally I can see!"
 			description: [
 				"{image:minecraft:textures/block/torch.png width:30 height:30 align:1}"
+				""
 				"A &lTorch&l can be made in a &lFirepit&r and offer lighting for &l24 Hours&r."
 			]
 			dependencies: ["550B66AD03DEC1A8"]
@@ -477,28 +450,28 @@
 			}]
 		}
 		{
-			title: "Natural Agriculture"
+			title: "Food and hunger"
 			icon: "tfc:wild_crop/barley"
 			x: -1.0d
 			y: 1.0d
 			subtitle: "Could save you from starvation, you never know."
 			description: [
 				"{image:tfc:textures/block/crop/barley_wild.png width:30 height:30 align:1}"
+				""
 				"By &lexploring&r the world you will notice &lWild Crops&r, these can be broken to obtain some food."
+				""
+				"You could also &lkill some animals&r but I guess you need some kind of &lweapon&r for that.. well."
 			]
 			dependencies: ["6F3600C0869C5527"]
 			id: "497FB8756F15EF79"
 			tasks: [{
-				id: "7E0034D28AD90BFD"
-				type: "item"
-				title: "Any #tfc:quail_food"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "tfc:quail_food"
-					}
-				}
+				id: "49289D8F9BCF3D7C"
+				type: "observation"
+				title: "Find some Wild Crops"
+				icon: "tfc:wild_crop/barley"
+				timer: 0L
+				observe_type: 1
+				to_observe: "tfc:wild_crops"
 			}]
 		}
 		{
@@ -515,7 +488,7 @@
 				}
 			}
 			x: 0.0d
-			y: 6.0d
+			y: 6.5d
 			subtitle: "Now it's useful!"
 			description: [
 				"{image:minecraft:textures/item/brick.png width:30 height:30 align:1}"
@@ -592,9 +565,36 @@
 			]
 		}
 		{
-			x: 0.0d
-			y: 7.0d
+			title: "Handy but Rusty"
+			icon: {
+				id: "tfc:ore/normal_native_copper"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: -1.0d
+			y: 8.5d
+			subtitle: "The next generation of tools!"
+			description: ["{image:tfc:textures/item/ore/rich_native_copper.png width:30 height:30 align:1}"]
+			dependencies: ["3AC080415B38DADE"]
 			id: "1AED6D04C6C4425A"
+			tasks: [{
+				id: "578E7E7AFAC785ED"
+				type: "item"
+				title: "3x Any Copper Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:ores/copper"
+					}
+				}
+				count: 3L
+			}]
 		}
 		{
 			title: "Wood Piles"
@@ -604,33 +604,507 @@
 			subtitle: "Too big to fit in pockets!"
 			description: [
 				"{image:tfc:textures/block/log_pile_front.png width:30 height:30 align:1}"
+				""
 				"By &lRight clicking + Shifting&r on the ground with &lLogs&r, you will place a Log pile, which can be used for things such as charcoal making."
 			]
 			dependencies: ["59513198E5FB6515"]
 			id: "3A84C620BB89E1E7"
 			tasks: [{
-				id: "4598EC40B3D69D4D"
-				type: "checkmark"
+				id: "0307E8FED61E53BB"
+				type: "observation"
+				title: "Make a Log Pile"
+				icon: "kubejs:oak_firewood"
+				timer: 0L
+				observe_type: 0
+				to_observe: "tfc:log_pile"
 			}]
 		}
 		{
 			title: "Strong Fuel"
 			x: -2.0d
 			y: 4.0d
-			subtitle: "Let it sealed!"
+			subtitle: "Not far from the industrial revolution"
 			description: [
 				"{image:tfc:textures/block/charcoal_pile.png width:30 height:30 align:1}"
+				""
 				"&lCharcoal&r is a strong fuel that is mainly used for &lCharcoal Forges&r."
 				""
 				"By lighting up &lunderground&r log piles, you will begin the process of creation of &lCharcoal&r."
 			]
-			dependencies: ["3A84C620BB89E1E7"]
+			dependencies: [
+				"3A84C620BB89E1E7"
+				"5904278FDDFCBE80"
+			]
 			id: "44905CB2D47C6540"
 			tasks: [{
 				id: "35133DC0D89DA6B9"
 				type: "item"
 				item: "minecraft:charcoal"
 				count: 16L
+			}]
+		}
+		{
+			title: "Rivers and thirst"
+			x: 1.0d
+			y: 1.0d
+			subtitle: "Can we colonize that water?"
+			description: [
+				"{image:tfc:textures/gui/book/biomes/river.png width:100 height:100 align:1}"
+				"You will find quite a few &lRivers&r by &lexploring&r the world. Take in note that these rivers can prove to be &luseful&r. "
+				""
+				"&lRivers&r like lakes are made of &lFresh Water&r which can be safely drinked if you need to replenish your &lthirst&r. Be warned to not drink Ocean &lSalt Water&r tho, it could cause some &lside effects&r."
+				""
+				"Early on, &lrivers&r can be used to find &lOre Deposits&r which can be panned with a &lEmpty Pan&r &o(you will see more about that in the Pottery quest)&r. So be note to note any of these deposits in note when exploring!"
+			]
+			dependencies: ["6F3600C0869C5527"]
+			id: "3084F0E3ED375069"
+			tasks: [{
+				id: "1BA1831C395D8E81"
+				type: "biome"
+				title: "Find a river"
+				icon: "tfc:plant/water_lily"
+				biome: "tfc:river"
+			}]
+		}
+		{
+			title: "Seasons and Temperature"
+			icon: "firmalife:fruit_leaf"
+			x: -1.5d
+			y: 0.0d
+			subtitle: "I hope you don't catch the scurvy"
+			description: [
+				"{image:tfc:textures/gui/book/biomes/canyons.png width:100 height:100 align:1}"
+				"&lSeasons&r are a important mechanic in TerraFirmaCraft. While right now in your state of playing, it might be &l&eSummer&r, the world is going to change and become colder, turn to &l&6Autumn&r, then &l&bWinter&r, &l&2Spring&r and then the cycle will restart."
+				""
+				"Just so you can know, humans and cold, dont go good together so I hope you got something to &lkeep you warm!&r"
+				""
+				"The region you are in will also &laffect temperature&r, so go near the &lequator&r for a &lwarmer&r playthrough."
+				""
+				"&oPlease visit the Field Guide for more information&r"
+			]
+			dependencies: ["6F3600C0869C5527"]
+			id: "4CF5C35B0948A5A6"
+			tasks: [{
+				id: "16BC02DA5277C34F"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Geology and Ores"
+			icon: "tfc:ore/graphite"
+			x: 1.5d
+			y: 0.0d
+			subtitle: "I heard some strange noises roaming below"
+			description: [
+				"{image:tfc:textures/gui/book/biomes/underground_river.png width:100 height:100 align:1}"
+				"The underground and caves is divided into &lrocks layers&r, which are large regions of rocks who will determine what &lores can spawn&r in."
+				""
+				"&lRocks biomes&r can be pretty large, to get a rough idea of what the underground is made in you can search some &lloose rocks&r on the ground, which will tell you what its &lmade of&r."
+				""
+				"If you are lucky, you can also find &lground small ores&r, which are also indicator that there &lpotentially&r some of that ore type below you."
+				""
+				"&oPlease visit the Field Guide for more information&r"
+			]
+			dependencies: ["6F3600C0869C5527"]
+			id: "3452461FF64A0FC2"
+			tasks: [{
+				id: "2185579315E1D2F4"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Invention of fire"
+			x: 0.0d
+			y: 4.0d
+			shape: "hexagon"
+			subtitle: "You are pretty late, it was discovered long ago."
+			description: [
+				"{image:tfc:textures/item/firestarter.png width:30 height:30 align:1}"
+				""
+				"With the help of a &lFirestarter&r you can create some personal fire for &lyourself&r! Better than waiting for lighting, right?"
+				""
+				"To start a fire &lhold right click&r on the turn you want to burn with the &lFirestarter in hand&r. "
+				""
+				"Fire can be &ldangerous&r, and TFC fire can make your entire house &lburn&r, so be careful!"
+			]
+			dependencies: [
+				"59513198E5FB6515"
+				"2E3DD698A4E01DCC"
+			]
+			id: "5904278FDDFCBE80"
+			tasks: [{
+				id: "7D4A2D8336084283"
+				type: "item"
+				item: {
+					id: "tfc:firestarter"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			title: "Agriculture for Zoomers"
+			x: -1.5d
+			y: 2.0d
+			subtitle: "Preferably without the use of pesticides"
+			description: [
+				"{image:tfc:textures/block/crop/potato_6.png width:30 height:30 align:1}"
+				""
+				"While finding Wild Crops in nature can be useful at first, it's certaintly not &lsustainable&r, so you better start &lcultivating&r to make some &lreserves&r for Winter."
+				""
+				"Depending on the &lcrops&r you will need to place the farmland at the correct &lhumidity&r needed for the crop to &lgrow&r"
+			]
+			dependencies: ["305CFBB54FEE5D90"]
+			id: "2EC29665A3C3AF57"
+			tasks: [{
+				id: "2C61F61825E71869"
+				type: "observation"
+				title: "Make some farmland"
+				icon: "tfc:farmland/loam"
+				timer: 0L
+				observe_type: 1
+				to_observe: "tfc:farmland"
+			}]
+			rewards: [{
+				id: "74D78CE77867503F"
+				type: "item"
+				item: "minecraft:clay_ball"
+			}]
+		}
+		{
+			title: "Butcher"
+			icon: "minecraft:beef"
+			x: 1.5d
+			y: 2.0d
+			subtitle: "I hope you aren't vegetarian"
+			description: [
+				"{image:tfc:textures/item/food/pheasant.png width:30 height:30 align:1}"
+				""
+				"To help you &lbalance&r that vegan &lnutritional diet&r of your, what about tasting some meat?"
+				""
+				"Sadly meat doesn't grow on trees, so &lkill some animals&r with your new &lJavelin&r."
+			]
+			dependencies: ["305CFBB54FEE5D90"]
+			id: "1373FEE9DA382C17"
+			tasks: [{
+				id: "5A3C30D469782DA9"
+				type: "item"
+				title: "Any Raw Meat"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:foods/raw_meats"
+					}
+				}
+			}]
+			rewards: [{
+				id: "22D65078BC4DADAB"
+				type: "item"
+				item: "minecraft:bone"
+			}]
+		}
+		{
+			title: "Gold Rush"
+			icon: {
+				id: "tfc:ore/poor_native_gold"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 1.0d
+			y: 7.5d
+			subtitle: "Worth a lot, or is it?"
+			dependencies: ["3AC080415B38DADE"]
+			id: "42CE9BECCD10CBA2"
+			tasks: [{
+				id: "422F3D5C5B4F50D9"
+				type: "item"
+				title: "3x Any Gold Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:ores/gold"
+					}
+				}
+				count: 3L
+			}]
+		}
+		{
+			title: "Copper's Best Friend"
+			icon: {
+				id: "tfc:ore/normal_cassiterite"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 1.0d
+			y: 8.5d
+			subtitle: "Not a good material in itself, but it can pair together."
+			description: ["{image:tfc:textures/item/ore/rich_cassiterite.png width:30 height:30 align:1}"]
+			dependencies: ["3AC080415B38DADE"]
+			id: "105D6172AD2551E3"
+			tasks: [{
+				id: "386A4A017A2470EB"
+				type: "item"
+				title: "3x Any Tin Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:ores/tin"
+					}
+				}
+				count: 3L
+			}]
+		}
+		{
+			title: "Shiny Metal"
+			icon: {
+				id: "tfc:ore/poor_native_silver"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: -1.0d
+			y: 7.5d
+			subtitle: "Worth at least a penny"
+			dependencies: ["3AC080415B38DADE"]
+			id: "0DCDEE8DCC5B7BE2"
+			tasks: [{
+				id: "7FCA4AE0BF864C96"
+				type: "item"
+				title: "3x Any Silver Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:ores/silver"
+					}
+				}
+				count: 3L
+			}]
+		}
+		{
+			title: "Metal Tools"
+			icon: {
+				id: "tfc:metal/pickaxe/copper"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: -1.5d
+			y: 9.5d
+			description: ["{image:tfc:textures/item/metal/pickaxe/copper.png width:30 height:30 align:1}"]
+			dependencies: ["1AED6D04C6C4425A"]
+			id: "4B95D80268ECE942"
+		}
+		{
+			title: "The Bronze Age"
+			icon: {
+				id: "tfc:metal/ingot/bronze"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 0.0d
+			y: 9.5d
+			description: ["{image:tfc:textures/item/metal/ingot/bronze.png width:30 height:30 align:1}"]
+			dependencies: [
+				"1AED6D04C6C4425A"
+				"105D6172AD2551E3"
+				"754AEC58BAB79B5C"
+			]
+			id: "28C1F22F20D13374"
+			tasks: [{
+				id: "5D1A7502B91660A0"
+				type: "item"
+				title: "Any Bronze Metal Item"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:metal_item/bronze"
+					}
+				}
+			}]
+		}
+		{
+			title: "Early Alloying"
+			icon: {
+				id: "tfc:ceramic/black_glazed_vessel"
+				Count: 1b
+				tag: { }
+				ForgeCaps: {
+					Parent: {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 0.0d
+			y: 8.0d
+			subtitle: "Cheap Crucible"
+			description: [
+				"{image:tfc:textures/item/ceramic/vessel.png width:30 height:30 align:1}"
+				""
+				"Now that you know how to make &lfired pottery&r. You can put that &lVessel&r to use by learning &lAlloying&r. "
+				""
+				"To alloy make sure to have &lcorrect proportions and amount&r according to how it says in JEI."
+				""
+				"After that, put your filled vessel in the &lPit Kiln&r until it smelt the ores inside, then you will be able to cast with this interface."
+				"{image:tfc:textures/gui/book/gui/casting.png width:100 height:100 align:1}"
+				"Put the &lempty Mold&r in the slot above to &lfill it&r."
+				""
+				"&oVisit the Field Guide entry for more information&r"
+			]
+			dependencies: ["3AC080415B38DADE"]
+			id: "754AEC58BAB79B5C"
+			tasks: [
+				{
+					id: "34838357F6CAC024"
+					type: "item"
+					title: "Any Vessels"
+					icon: {
+						id: "tfc:ceramic/vessel"
+						Count: 1b
+						tag: { }
+						ForgeCaps: {
+							Parent: {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:fired_vessels"
+						}
+					}
+				}
+				{
+					id: "41902AC44976F327"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			title: "Food Preservation"
+			icon: "tfc:ceramic/large_vessel"
+			x: 2.0d
+			y: 7.0d
+			subtitle: "Rot isn't tasty"
+			description: [
+				"{image:minecraft:textures/item/rotten_flesh.png width:30 height:30 align:1}"
+				""
+				"Every type of food will &lbe unable for consumption&r after a certain date which is indicated in the &lfood tooltip&r."
+				""
+				"To make that process slower and make food &linert for longer&r you can put your food in container like &lLarge Vessels&r, to help you keeping these. "
+				""
+				"Later the process will be even &leasier&r with new mechanics allowing you to counter &lperishment&r."
+			]
+			dependencies: ["3AC080415B38DADE"]
+			id: "39AE156E9F96C085"
+			tasks: [
+				{
+					id: "700D35CEFF7C0351"
+					type: "item"
+					title: "Any Large Vessels"
+					icon: "tfc:ceramic/large_vessel"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:fired_large_vessels"
+						}
+					}
+				}
+				{
+					id: "639DF78142A13302"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			title: "Don't miss any"
+			icon: "tfc:pan/empty"
+			x: -2.0d
+			y: 7.0d
+			subtitle: "Not efficient but can help you at the start"
+			description: [
+				"{image:tfc:textures/gui/book/icons/panning.png width:30 height:30 align:1}"
+				"As &lread&r previously, you can find ores by panning &lOre Deposits&r found in the bottom of rivers. "
+				""
+				"Ore Deposits will look like gravel blocks except with a &lmetallic texture&r on top."
+				""
+				"{image:tfc:textures/gui/book/tutorial/panning.png width:100 height:100 align:1}"
+				"To pan the &lOre Deposit&r, &lright click on it&r with the pan and then &lhold right click&r with that same pan while standing in &lwater&r."
+			]
+			dependencies: ["3AC080415B38DADE"]
+			hide_text_until_complete: false
+			id: "6FD8BE20003E3444"
+			tasks: [
+				{
+					id: "27AE2716359A99B5"
+					type: "item"
+					item: "tfc:pan/empty"
+				}
+				{
+					id: "510DDB4C6513A4AF"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			title: "Clay Hints"
+			icon: "tfc:clay_grass/loam"
+			x: 1.5d
+			y: 4.0d
+			description: [
+				"{image:tfc:textures/block/grass_clay/loam.png width:30 height:30 align:1}"
+				""
+				"Clay can be pretty &lhard&r to find, some plants like the &lAthyrium Fern&r &o(more plants in Guide)&r can indicate the presence of &lclay deposits&r."
+				""
+				"Naturally, clay also will spawn depending on the &lclimate&r so try to search in areas with enough &lhumidity&r for it."
+			]
+			dependencies: ["2E3DD698A4E01DCC"]
+			id: "1F671C413CD50D66"
+			tasks: [{
+				id: "293FF3F4D765F5BA"
+				type: "observation"
+				title: "Find clay"
+				icon: "tfc:clay/loam"
+				timer: 0L
+				observe_type: 1
+				to_observe: "tfc:clay"
 			}]
 		}
 	]

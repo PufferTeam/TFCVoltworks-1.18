@@ -50,7 +50,11 @@
         "tfc:mechanics/sandwiches",
         "tfc:mechanics/weaving",
         "tfc:mechanics/lamps",
-        "tfc:mechanics/hydration"
+        "tfc:mechanics/hydration",
+        "tfc:the_world/wild_crops",
+        "tfc:the_world/geology",
+        "tfc:the_world/ores_and_minerals",
+        "tfc:the_world/flora"
       ],
       "bookmarks": [],
       "completedManualQuests": []

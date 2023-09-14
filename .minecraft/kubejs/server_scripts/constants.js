@@ -77,7 +77,6 @@ global.recipeIdToRemove = [
     'create:splashing/stained_glass',
     'create:splashing/stained_glass_pane',
     'create:splashing/sand',
-    'rosia:alloy/weak_purple_steel',
     'quark:tweaks/crafting/dirty_glass',
     'create:crafting/materials/sand_paper',
 

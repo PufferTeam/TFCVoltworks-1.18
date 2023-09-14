@@ -12,12 +12,13 @@ onEvent('tags.items', event => {
     global.tfcMetallumMetalTypes.forEach(i => global.pileableIngots.push(`forge:ingots/${i}`));
     //console.log(global.pileableIngots)
 
-    global.highTierOres = {}
+    global.highTierOres = []
     global.tfcMetallumMedTierOres.forEach(ore => {
         global.oreRarity.forEach(rarity => {
-            global.hightierOres.push(`tfc_metallum:ore/${rarity}_${ore}`) 
+            global.highTierOres.push(`tfc_metallum:ore/${rarity}_${ore}`) 
         })
     })
+    console.log(global.highTierOres)
 
     global.tfcMetallumRods = []
     global.tfcMetallumMetalTypes.forEach(i => global.tfcMetallumRods.push(`tfc_metallum:metal/rod/${i}`));
@@ -579,8 +580,11 @@ onEvent('recipes', event => {
             modResult = input.split(':')
             let modName = undefined
             let itemName = undefined
+            let preNameResult = undefined
             modName = modResult[0]
             itemName = modResult[1]
+            preNameResult = itemName.split("/")
+
 
             if (modName == 'rosia') {
                 event.remove({ id: `rosia:heating/${itemName}` })
@@ -593,7 +597,9 @@ onEvent('recipes', event => {
 
             if (modName == 'tfc') {
                 event.remove({ id: `tfc:heating/iron_bars` })
-                event.remove({ id: `tfc:heating/${itemName}` })
+                if(preNameResult[0] !== 'ore') {
+                    event.remove({ id: `tfc:heating/${itemName}` })
+                }
             }
 
 
@@ -640,13 +646,15 @@ onEvent('recipes', event => {
                     }
                 }
 
-                if(global.highorerx.test(input)) {
+                if(global.highorerx.test(input) && mod != 'tfc') {
                     let oreResult = input.split('/')
                     let oreName = oreResult[1]
+                    //console.log(oreName)
                     event.remove({ id: `tfc_metallum:heating/ore/${oreName}` })
                     heatingTemperature = 5000
 
-                    event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), `${input}`, heatingTemperature).id(`tfc_metallum:heating/custom/ore/${oreName}`)
+                    //console.log(input)
+                    event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), input, heatingTemperature).id(`tfc_metallum:heating/custom/ore/${oreName}`)
                 }
 
                 //console.log(input)

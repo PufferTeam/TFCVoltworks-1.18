@@ -22,7 +22,6 @@ onEvent('tags.items', event => {
         event.add('tfc:stone_javelins', `tfc:stone/javelin/${stone}`)
         event.add('tfc:stone_hoes', `tfc:stone/hoe/${stone}`)
         event.add('tfc:stone_hammers', `tfc:stone/hammer/${stone}`)
-
     });
 
 
