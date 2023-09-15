@@ -24,6 +24,24 @@ onEvent('tags.items', event => {
         event.add('tfc:stone_hammers', `tfc:stone/hammer/${stone}`)
     });
 
+    global.tfcWoodTypes.forEach(i => event.remove('forge:chests/wooden', `everycomp:q/tfc/${i}_chest`));
+    global.vanillaWoodTypes.forEach(i => {
+        let log = 'log'
+        if(i == 'crimson' || i == 'warped') {
+            log = 'stem'
+        }
+        event.remove('minecraft:logs', `minecraft:${i}_${log}`)
+        event.remove('minecraft:logs_that_burn', `minecraft:${i}_${log}`)
+        event.remove('minecraft:logs', `minecraft:stripped_${i}_${log}`)
+        event.remove('minecraft:logs_that_burn', `minecraft:stripped_${i}_${log}`)
+
+        event.remove('forge:chests/wooden', `quark:${i}_chest`)
+        event.remove('forge:chests/wooden', `quark:${i}_trapped_chest`)
+    });
+    global.quarkWoodTypes.forEach(i => {
+        event.remove('forge:chests/wooden', `quark:${i}_chest`)
+        event.remove('forge:chests/wooden', `quark:${i}_trapped_chest`)
+    });
 
 })
 

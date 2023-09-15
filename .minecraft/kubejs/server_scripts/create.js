@@ -134,6 +134,18 @@ onEvent('recipes', event => {
         A: '#forge:glass/colorless'
     }).id('create:fluid_tank')
 
+    event.remove({ output: 'create:deployer' })
+    event.shaped('create:deployer', [
+        ' P ',
+        'RSR',
+        ' A '
+    ], {
+        S: 'create:andesite_casing',
+        A: 'thermal:drill_head',
+        P: 'create:shaft',
+        R: 'tfc:metal/rod/wrought_iron'
+    }).id('create:deployer')
+
     event.remove({ output: 'create:mechanical_mixer' })
     event.shaped('create:mechanical_mixer', [
         ' P ',

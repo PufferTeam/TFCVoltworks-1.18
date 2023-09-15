@@ -394,7 +394,7 @@
 	"Note Block Mob Sounds" = true
 	"More Banner Layers" = true
 	"Lock Rotation" = true
-	"Hoe Harvesting" = true
+	"Hoe Harvesting" = false
 	"Grab Chickens" = true
 	"Glass Shard" = true
 	"Enhanced Ladders" = true
@@ -402,7 +402,7 @@
 	"Dragon Scales" = true
 	"Double Door Opening" = true
 	"Compasses Work Everywhere" = true
-	"Campfires Boost Elytra" = true
+	"Campfires Boost Elytra" = false
 	"Better Elytra Rocket" = true
 	"Automatic Recipe Unlock" = true
 	"Armed Armor Stands" = true
@@ -532,7 +532,7 @@
 		#A list of recipe names that should NOT be added in by default
 		"Ignored Recipes" = []
 		"Force Limited Crafting" = false
-		"Disable Recipe Book" = false
+		"Disable Recipe Book" = true
 		#If enabled, advancements granting recipes will be stopped from loading, potentially reducing the lagspike on first world join.
 		"Filter Recipe Advancements" = true
 
@@ -1428,13 +1428,13 @@
 					"Is Blacklist" = true
 
 [client]
-	"Variant Animal Textures" = true
+	"Variant Animal Textures" = false
 	"Uses For Curses" = true
 	"Usage Ticker" = true
 	"Soul Candles" = true
 	"Microcrafting Helper" = true
 	"Improved Tooltips" = true
-	"Greener Grass" = true
+	"Greener Grass" = false
 	"Chest Searching" = true
 	"Back Button Keybind" = true
 	"Auto Walk Keybind" = true
@@ -1475,7 +1475,7 @@
 		"Shulker Box Use Colors" = true
 		"Shulker Box Require Shift" = false
 		"Map Require Shift" = false
-		"Show Saturation" = true
+		"Show Saturation" = false
 		"Food Compression Threshold" = 4
 		#The value of each shank of food. Tweak this when using mods like Hardcore Hunger which change that value.
 		"Food Divisor" = 2

@@ -93,7 +93,7 @@
 			}]
 		}
 		{
-			title: "Caveman Toys"
+			title: "Stone Tools"
 			icon: {
 				id: "tfc:stone/axe/sedimentary"
 				Count: 1b
@@ -370,7 +370,7 @@
 			]
 		}
 		{
-			title: "Gordon Ramsay"
+			title: "Fireplace"
 			icon: "tfc:firepit"
 			x: -0.5d
 			y: 5.0d
@@ -432,7 +432,7 @@
 			}]
 		}
 		{
-			title: "Not quite a lightbulb"
+			title: "Early light"
 			x: -1.0d
 			y: 6.0d
 			subtitle: "Finally I can see!"
@@ -450,7 +450,7 @@
 			}]
 		}
 		{
-			title: "Food and hunger"
+			title: "Food and Hunger"
 			icon: "tfc:wild_crop/barley"
 			x: -1.0d
 			y: 1.0d
@@ -460,7 +460,12 @@
 				""
 				"By &lexploring&r the world you will notice &lWild Crops&r, these can be broken to obtain some food."
 				""
-				"You could also &lkill some animals&r but I guess you need some kind of &lweapon&r for that.. well."
+				"Look in your &lcalender&r to track your &lnutrition&r stats."
+				""
+				"You can also find some &lberry bushes&r, like wild crop they will generate in &lthe wild&r."
+				"{image:tfc:textures/gui/book/tutorial/berry_bush.png width:100 height:100 align:1}"
+				"&lFruit Trees&r are also a good source of &lfood&r, easy to obtain too."
+				"{image:tfc:textures/gui/book/tutorial/fruit_tree.png width:100 height:100 align:1}"
 			]
 			dependencies: ["6F3600C0869C5527"]
 			id: "497FB8756F15EF79"
@@ -565,7 +570,7 @@
 			]
 		}
 		{
-			title: "Handy but Rusty"
+			title: "Copper"
 			icon: {
 				id: "tfc:ore/normal_native_copper"
 				Count: 1b
@@ -620,7 +625,7 @@
 			}]
 		}
 		{
-			title: "Strong Fuel"
+			title: "Charcoal Making"
 			x: -2.0d
 			y: 4.0d
 			subtitle: "Not far from the industrial revolution"
@@ -644,7 +649,7 @@
 			}]
 		}
 		{
-			title: "Rivers and thirst"
+			title: "Rivers and Thirst"
 			x: 1.0d
 			y: 1.0d
 			subtitle: "Can we colonize that water?"
@@ -776,8 +781,8 @@
 		{
 			title: "Butcher"
 			icon: "minecraft:beef"
-			x: 1.5d
-			y: 2.0d
+			x: 1.0d
+			y: 6.0d
 			subtitle: "I hope you aren't vegetarian"
 			description: [
 				"{image:tfc:textures/item/food/pheasant.png width:30 height:30 align:1}"
@@ -807,7 +812,7 @@
 			}]
 		}
 		{
-			title: "Gold Rush"
+			title: "Gold"
 			icon: {
 				id: "tfc:ore/poor_native_gold"
 				Count: 1b
@@ -838,7 +843,7 @@
 			}]
 		}
 		{
-			title: "Copper's Best Friend"
+			title: "Tin"
 			icon: {
 				id: "tfc:ore/normal_cassiterite"
 				Count: 1b
@@ -851,7 +856,7 @@
 			}
 			x: 1.0d
 			y: 8.5d
-			subtitle: "Not a good material in itself, but it can pair together."
+			subtitle: "Not a good material in itself"
 			description: ["{image:tfc:textures/item/ore/rich_cassiterite.png width:30 height:30 align:1}"]
 			dependencies: ["3AC080415B38DADE"]
 			id: "105D6172AD2551E3"
@@ -870,7 +875,7 @@
 			}]
 		}
 		{
-			title: "Shiny Metal"
+			title: "Silver"
 			icon: {
 				id: "tfc:ore/poor_native_silver"
 				Count: 1b
@@ -920,6 +925,68 @@
 			description: ["{image:tfc:textures/item/metal/pickaxe/copper.png width:30 height:30 align:1}"]
 			dependencies: ["1AED6D04C6C4425A"]
 			id: "4B95D80268ECE942"
+			tasks: [
+				{
+					id: "1C2AB53A205270CD"
+					type: "item"
+					title: "Any Copper/Bronze Pickaxes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_pickaxes"
+						}
+					}
+				}
+				{
+					id: "040BBB1905489345"
+					type: "item"
+					title: "Any Copper/Bronze Saws"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_saws"
+						}
+					}
+				}
+				{
+					id: "77460C7CF8F42AB7"
+					type: "item"
+					title: "Any Copper/Bronze Pickaxes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_chisels"
+						}
+					}
+				}
+				{
+					id: "220A6386C5C8BEC4"
+					type: "item"
+					title: "Any Copper/Bronze Pickaxes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_propicks"
+						}
+					}
+				}
+				{
+					id: "4DC715CFFC3E1AE6"
+					type: "item"
+					title: "Any Copper/Bronze Hammers"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_hammers"
+						}
+					}
+				}
+			]
 		}
 		{
 			title: "The Bronze Age"
@@ -1054,7 +1121,7 @@
 			]
 		}
 		{
-			title: "Don't miss any"
+			title: "Panning"
 			icon: "tfc:pan/empty"
 			x: -2.0d
 			y: 7.0d
@@ -1106,6 +1173,479 @@
 				observe_type: 1
 				to_observe: "tfc:clay"
 			}]
+		}
+		{
+			title: "Carpenter"
+			icon: "tfc:wood/lumber/oak"
+			x: -3.0d
+			y: 9.5d
+			subtitle: "I like Wood"
+			description: [
+				"{image:tfc:textures/item/metal/saw/copper.png width:30 height:30 align:1}"
+				"With &lMetal Saws&r you can now make &lWooden Lumber&r which can be used for a &lWorkbench&r, which will be very useful."
+				""
+				"You can makes &lplanks&r by placing &llumber in a &l2x2&r grid, and then placing these &lPlanks&r in the grid again to make a &lWorkbench&r."
+				""
+			]
+			dependencies: ["4B95D80268ECE942"]
+			id: "5B45C482001F4039"
+			tasks: [
+				{
+					id: "1DC6BDADD4A6C7CF"
+					type: "item"
+					title: "Any Copper/Bronze Saws"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_saws"
+						}
+					}
+				}
+				{
+					id: "31069A8EF6810288"
+					type: "item"
+					title: "8x Any Wooden Lumbers"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:lumber"
+						}
+					}
+					count: 8L
+				}
+				{
+					id: "09FA60630928A946"
+					type: "item"
+					title: "Any Workbenches"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:workbenches"
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Prospecting and Mining"
+			icon: "tfc:ore/rich_native_copper/granite"
+			x: -1.5d
+			y: 11.0d
+			subtitle: "Not sure if it's cheating"
+			description: [
+				"{image:tfc:textures/item/metal/propick/copper.png width:30 height:30 align:1}"
+				""
+				"&lOres&r are pretty &lhard to find&r, in fact you probably won't find any by just &lmining mindlessly&r. "
+				""
+				"Every &lOre&r will generate in &lveins&r in the appropriate &lstone biome&r &o(see Field Guide for more details)&r."
+				""
+				"While &lveins&r are rare, you can look up for &lsurface indicators&r which may potentially reveal what ores is below your feets."
+				"{image:tfc:textures/gui/book/tutorial/indicators_1.png width:100 height:100 align:1}"
+				""
+				"A &lProspector's Pickaxe&r may also prove to be useful to &llocate the vein&r. By &lright clicking&r with it, the tool will tell you if there is any &lores nearby&r."
+				"{image:tfc:textures/gui/book/tutorial/indicators_2.png width:100 height:100 align:1}"
+				"You will also be careful when &lmining&r because blocks can &lcollapse&r. So use &lsupport beams to keep yourself&r safe in the mines."
+			]
+			dependencies: ["4B95D80268ECE942"]
+			id: "0D0D28454BAE0180"
+			tasks: [
+				{
+					id: "4A5D90ED36ADB06F"
+					type: "item"
+					title: "Any Copper/Bronze Propicks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_propicks"
+						}
+					}
+				}
+				{
+					id: "2B32D2433FFA24A3"
+					type: "item"
+					title: "Any Copper/Bronze Pickaxes"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_pickaxes"
+						}
+					}
+				}
+				{
+					id: "6A3051C0B1650D0B"
+					type: "item"
+					title: "8x Any Support Beams"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:support_beams"
+						}
+					}
+					count: 8L
+				}
+			]
+		}
+		{
+			title: "Chiseling"
+			icon: "tfc:rock/smooth/granite_slab"
+			x: -3.0d
+			y: 11.5d
+			subtitle: "Cut your blocks"
+			description: [
+				"{image:tfc:textures/item/metal/chisel/copper.png width:30 height:30 align:1}"
+				"&lChiseling&r is the art of &lcarving&r full blocks to make them into &lany shape&r you want."
+				""
+				"By holding a &lmetal chisel&r and a &lmetal hammer&r in your &lsecond hand&r, you can start chiseling blocks."
+				"{image:tfc:textures/gui/book/tutorial/chisel_block.png width:100 height:100 align:1}"
+				"To change the &lmode&r, &lpress M&l. There is 3 modes: &lStairs&r, &lSlabs&r and &lSmoothing&r."
+			]
+			dependencies: ["4B95D80268ECE942"]
+			id: "24B575C583C55AD0"
+			tasks: [
+				{
+					id: "7C5559E1C8A45C50"
+					type: "item"
+					title: "Any Copper/Bronze Chisels"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_chisels"
+						}
+					}
+				}
+				{
+					id: "1CE915E4F234B7D6"
+					type: "item"
+					title: "Any Copper/Bronze Hammers"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:tier1to2_hammers"
+						}
+					}
+				}
+				{
+					id: "337644571476F2B3"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			title: "Better Storage"
+			icon: "tfc:wood/chest/oak"
+			x: -3.5d
+			y: 8.5d
+			description: [
+				"{image:tfcbarrels:textures/block/wood/barrel/barrel_bottom_oak.png width:30 height:30 align:1}"
+				""
+				"While a Vessel may be useful at the start, it only has 8 slots, the &lChest&r is here to fix your issue by providing you &lmuch more spaces&r and doesn't require smelting! The &lItem Barrel&r is also an alternative, if you want a more barrel-aesthetic to your chest."
+				""
+				"You can also use &lTool Racks&r, to storage up to &l6 Tools&r in a cool way."
+			]
+			dependencies: ["5B45C482001F4039"]
+			id: "6CDF18DDCAD19129"
+			tasks: [
+				{
+					id: "499EC3DFCF78EBD4"
+					type: "item"
+					title: "Any Wooden Chests"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:chests/wooden"
+						}
+					}
+				}
+				{
+					id: "307DCD46F4FDADAA"
+					type: "item"
+					title: "Any Tool Racks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:tool_racks"
+						}
+					}
+				}
+				{
+					id: "24055A26A875234A"
+					type: "item"
+					title: "Any Wooden Storage Barrels"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfcbarrels:barrels"
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Barrels"
+			icon: "tfc:wood/barrel/oak"
+			x: -4.0d
+			y: 9.5d
+			description: [
+				"{image:tfcbarrels:textures/block/wood/barrel/barrel_side_oak.png width:30 height:30 align:1}"
+				""
+				"&lBarrels&r are a device that can be used for &lFood Preservation&r, but also needed for multiples process like &lLeather Making&r, &lDyeing&r, &lAlcohol&r."
+				""
+				"For a good idea, you should check in &lJEI&r."
+			]
+			dependencies: ["5B45C482001F4039"]
+			id: "67F58C13628894AD"
+			tasks: [{
+				id: "500A8506FB8184DB"
+				type: "item"
+				title: "Any Wooden Barrels"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:barrels"
+					}
+				}
+			}]
+		}
+		{
+			title: "Automated Panning"
+			icon: "tfc:wood/sluice/oak"
+			x: -2.5d
+			y: 8.5d
+			description: [
+				"{image:tfc:textures/gui/book/icons/sluice.png width:30 height:30 align:1}"
+				"&lPanning&r is a very time consuming task, so why not try to &lmake it faster&r? The &lSluice&r will greatly help you achieving that goal."
+				""
+				"To set up a &lSluice&r you will need to place it at the end of a &lwater current&r."
+				"{image:tfc:textures/gui/book/tutorial/sluice_cross.png width:100 height:100 align:1}"
+				"To make use of that &lSluice&r, drop the &lore deposits&r in the water current and let the sluice &lprocess your ores&r."
+				"{image:tfc:textures/gui/book/tutorial/sluice_in_use.png width:100 height:100 align:1}"
+			]
+			dependencies: [
+				"5B45C482001F4039"
+				"6FD8BE20003E3444"
+			]
+			id: "6F352C730275FF29"
+			tasks: [{
+				id: "488B33A959748665"
+				type: "item"
+				title: "Any Sluices"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:sluices"
+					}
+				}
+			}]
+		}
+		{
+			title: "Charcoal Forge"
+			x: -2.0d
+			y: 5.0d
+			description: [
+				"{image:tfc:textures/item/ceramic/fired_mold/ingot_empty.png width:30 height:30 align:1}"
+				""
+				"The &lCharcoal Forge&r is an easy way to &lheat up items&r, being more precise than a &lPit Kiln&r, it is easier to get a item to a &lspecific temperature&r."
+				""
+				"To make a &lCharcoal Forge&r, make a hole in the ground with &lbricks&r, then add &l8 Layers of Charcoal&r and light it up to form the Forge."
+				""
+				"The &lwill need&r to sometimes get &lfilled with new charcoal&r, you can place &lmolds on the right&r if you don't want to lose molten metals."
+				""
+				"{image:tfc:textures/gui/book/gui/charcoal_forge.png width:100 height:100 align:1}"
+				"&o(More information in the Field Guide)&r"
+			]
+			dependencies: ["44905CB2D47C6540"]
+			id: "24385E68A46A4562"
+			tasks: [{
+				id: "1D8CE7DB3FD5E09E"
+				type: "observation"
+				title: "Make a Charcoal Forge"
+				icon: "thermal:charcoal_block"
+				timer: 0L
+				observe_type: 0
+				to_observe: "tfc:charcoal_forge"
+			}]
+		}
+		{
+			title: "Flux"
+			icon: "tfc:powder/flux"
+			x: -4.5d
+			y: 13.0d
+			id: "69B94C5AC9C54BAB"
+			tasks: [{
+				id: "4518286E485C9B88"
+				type: "item"
+				title: "Any #tfc:flux"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:flux"
+					}
+				}
+			}]
+		}
+		{
+			title: "Quern"
+			icon: "tfc:quern"
+			x: -4.5d
+			y: 11.5d
+			description: [
+				"{image:tfc:textures/block/devices/quern/handstone_bottom.png width:30 height:30 align:1}"
+				""
+				"The &lQuern&r is a handy &ldevice&r that allow to &lcrush&r down items."
+				""
+				"To fabricate one, construct the &lQuern Base&r and then add a &lHandstone&r on top of it."
+				""
+				"{image:tfc:textures/gui/book/tutorial/quern_add_item.png width:100 height:100 align:1}"
+				"To start the &lprocess&r, right click on the &lHandsome Handle&r, and take your items on the &lside&r."
+				""
+				"{image:tfc:textures/gui/book/tutorial/quern_handle.png width:100 height:100 align:1}"
+				"{image:tfc:textures/gui/book/tutorial/quern_result.png width:100 height:100 align:1}"
+			]
+			dependencies: [
+				"24B575C583C55AD0"
+				"63E21427598BDC8E"
+			]
+			id: "2599F3734CE64757"
+			tasks: [
+				{
+					id: "554FFE8BB0D81A55"
+					type: "item"
+					item: "tfc:quern"
+				}
+				{
+					id: "28F4CB1A5061E3EA"
+					type: "item"
+					item: {
+						id: "tfc:handstone"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Raw Stone Carving"
+			icon: "tfc:rock/raw/andesite"
+			x: -3.724489795918366d
+			y: 10.53231292517006d
+			description: [
+				"{image:tfc:textures/block/rock/raw/phyllite.png width:30 height:30 align:1}"
+				""
+				"As you probably noticed, you &lcan't straight up mine raw stone&r, if you try, it will give you loose rocks."
+				""
+				"To get a Raw Stone Block &o(which will be required for some recipes&r. Mine around a block until &leach of its face is exposed&r."
+			]
+			dependencies: ["24B575C583C55AD0"]
+			id: "63E21427598BDC8E"
+			tasks: [{
+				id: "10BECE1A91AA747E"
+				type: "item"
+				title: "Any Raw Rocks"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:rock/raw"
+					}
+				}
+			}]
+		}
+		{
+			icon: "tfc:thatch_bed"
+			x: 1.5d
+			y: 3.0d
+			description: [
+				"{image:tfc:textures/block/thatch_bed/foot_end.png width:30 height:30 align:1}"
+				""
+				"A &lThatch Bed&r can be made with a &lLarge Hide&r and &l2 Straw Blocks&r."
+				""
+				"It can help you &lsetting&r your spawnpoint."
+			]
+			dependencies: [
+				"2E3DD698A4E01DCC"
+				"5C7EA4FB7BCF703A"
+			]
+			id: "1CF82F4C609D4BAC"
+			tasks: [{
+				id: "2F9CA6545332F73E"
+				type: "observation"
+				title: "Make a Thatch Bed"
+				icon: "tfc:thatch_bed"
+				timer: 0L
+				observe_type: 0
+				to_observe: "tfc:thatch_bed"
+			}]
+		}
+		{
+			title: "Butcher"
+			icon: {
+				id: "tfc:food/venison"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:food": {
+						traits: [ ]
+						creationDate: 528000L
+					}
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 1.5d
+			y: 2.0d
+			subtitle: "I hope you are not vegetarian"
+			description: [
+				"{image:tfc:textures/item/food/quail.png width:30 height:30 align:1}"
+				""
+				"With your new &lJavelin&r you can start hunting &lanimals&r, which will give you tasty &lMeat&r, that you will be able to &lcook&r after."
+				""
+				"Animals will also drop &lskins&r, depending on the &lsize&r of the animal, you will get &lLarger Hides&r, or &lSmaller ones&r."
+			]
+			dependencies: ["305CFBB54FEE5D90"]
+			id: "5C7EA4FB7BCF703A"
+			tasks: [
+				{
+					id: "743BFA60132F9272"
+					type: "item"
+					title: "Any Raw Meats"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:foods/raw_meats"
+						}
+					}
+				}
+				{
+					id: "216C46D95CF769D2"
+					type: "item"
+					title: "Any Raw Hides"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:raw_hides"
+						}
+					}
+				}
+			]
 		}
 	]
 	quest_links: [ ]

@@ -146,11 +146,6 @@ onEvent('tags.items', event => {
     tagOres('tfc', 'limonite', 'wrought_iron')
     tagOres('tfc', 'magnetite', 'wrought_iron')
 
-    event.add(`${mod}:ores/${metal}`, `${mod}:ore/${rarity}_${ore}`)
-
-
-
-
     event.add(`forge:plates/iron`, 'tfc_metalwork:metal/plate/wrought_iron')
 })
 
