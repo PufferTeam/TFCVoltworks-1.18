@@ -1001,7 +1001,7 @@
 				}
 			}
 			x: 0.0d
-			y: 9.5d
+			y: 10.0d
 			description: ["{image:tfc:textures/item/metal/ingot/bronze.png width:30 height:30 align:1}"]
 			dependencies: [
 				"1AED6D04C6C4425A"
@@ -1017,7 +1017,7 @@
 					id: "itemfilters:tag"
 					Count: 1b
 					tag: {
-						value: "tfc:metal_item/bronze"
+						value: "tfc:metal_item/all_bronzes"
 					}
 				}
 			}]
@@ -1423,6 +1423,7 @@
 			icon: "tfc:wood/sluice/oak"
 			x: -2.5d
 			y: 8.5d
+			subtitle: "More efficient panning"
 			description: [
 				"{image:tfc:textures/gui/book/icons/sluice.png width:30 height:30 align:1}"
 				"&lPanning&r is a very time consuming task, so why not try to &lmake it faster&r? The &lSluice&r will greatly help you achieving that goal."
@@ -1436,6 +1437,7 @@
 				"5B45C482001F4039"
 				"6FD8BE20003E3444"
 			]
+			dependency_requirement: "one_completed"
 			id: "6F352C730275FF29"
 			tasks: [{
 				id: "488B33A959748665"
@@ -1481,8 +1483,8 @@
 		{
 			title: "Flux"
 			icon: "tfc:powder/flux"
-			x: -4.5d
-			y: 13.0d
+			x: -4.0d
+			y: 14.0d
 			id: "69B94C5AC9C54BAB"
 			tasks: [{
 				id: "4518286E485C9B88"
@@ -1542,8 +1544,8 @@
 		{
 			title: "Raw Stone Carving"
 			icon: "tfc:rock/raw/andesite"
-			x: -3.724489795918366d
-			y: 10.53231292517006d
+			x: -3.787414965986393d
+			y: 12.501700680272123d
 			description: [
 				"{image:tfc:textures/block/rock/raw/phyllite.png width:30 height:30 align:1}"
 				""
@@ -1646,6 +1648,111 @@
 					}
 				}
 			]
+		}
+		{
+			title: "Blacksmith"
+			icon: {
+				id: "tfc:metal/anvil/bronze"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 0.5d
+			y: 12.5d
+			dependencies: [
+				"28C1F22F20D13374"
+				"598610C83C63DEE7"
+			]
+			id: "0C145406B956225F"
+			tasks: [{
+				id: "2AD010DDFCBCFB97"
+				type: "item"
+				title: "Any Bronze Anvils"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:bronze_anvils"
+					}
+				}
+			}]
+		}
+		{
+			title: "Primitive Blacksmith"
+			icon: "tfc:rock/anvil/granite"
+			x: -1.5d
+			y: 12.5d
+			dependencies: ["63E21427598BDC8E"]
+			id: "5C12FE7B7CC2D04E"
+			tasks: [{
+				id: "68A22B6EB9EBC329"
+				type: "item"
+				title: "Any Rock Anvils"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:rock_anvils"
+					}
+				}
+			}]
+		}
+		{
+			title: "Cold Blacksmith"
+			icon: {
+				id: "tfc:metal/ingot/copper"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: -0.5d
+			y: 11.0d
+			dependencies: ["1AED6D04C6C4425A"]
+			id: "7152A89AB7C629B8"
+			tasks: [{
+				id: "31F69630652EB8AB"
+				type: "item"
+				title: "Any Copper Items"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:metal_item/copper"
+					}
+				}
+			}]
+		}
+		{
+			title: "Cold Blacksmith"
+			x: -0.5d
+			y: 12.5d
+			dependencies: [
+				"7152A89AB7C629B8"
+				"5C12FE7B7CC2D04E"
+			]
+			id: "598610C83C63DEE7"
+			tasks: [{
+				id: "20191A937221C512"
+				type: "item"
+				item: {
+					id: "tfc:metal/anvil/copper"
+					Count: 1b
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+				}
+			}]
 		}
 	]
 	quest_links: [ ]

@@ -49,6 +49,12 @@ onEvent('tags.items', event => {
 
     taggingTools('tfc', 'copper', 'tier1to2_')
     taggingTools('tfc', 'bronze', 'tier1to2_')
+    taggingTools('tfc', 'bismuth_bronze', 'tier1to2_')
+    taggingTools('tfc', 'black_bronze', 'tier1to2_')
+
+    taggingTools('tfc', 'bronze', 'bronze_')
+    taggingTools('tfc', 'bismuth_bronze', 'bronze_')
+    taggingTools('tfc', 'black_bronze', 'bronze_')
 
     global.tier1MetalTypes.forEach(i => taggingTools('tfc', i, 'tier1_'));
     global.tier2MetalTypes.forEach(i => taggingTools('tfc', i, 'tier2_'));

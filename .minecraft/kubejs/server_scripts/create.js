@@ -141,7 +141,7 @@ onEvent('recipes', event => {
         ' A '
     ], {
         S: 'create:andesite_casing',
-        A: 'thermal:drill_head',
+        A: 'create:brass_hand',
         P: 'create:shaft',
         R: 'tfc:metal/rod/wrought_iron'
     }).id('create:deployer')

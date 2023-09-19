@@ -55,7 +55,9 @@
         "tfc:the_world/geology",
         "tfc:the_world/ores_and_minerals",
         "tfc:the_world/flora",
-        "tfc:mechanics/barrels"
+        "tfc:mechanics/barrels",
+        "tfc_metallum:metallum_ores/kernite",
+        "tfc:mechanics/advanced_building_materials"
       ],
       "bookmarks": [],
       "completedManualQuests": []
