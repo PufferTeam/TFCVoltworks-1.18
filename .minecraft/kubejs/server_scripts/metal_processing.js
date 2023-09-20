@@ -74,6 +74,8 @@ onEvent('tags.items', event => {
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/${i}`, `tfc:metal/sheet/${i}`));
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/iron`, `tfc:metal/sheet/${i}`));
 
+    event.add(`forge:dusts/iron`, 'tfc_metalwork:metal/dust/wrought_iron')
+
     function tagSheetmetal(metal) {
         if (metal == 'wrought_iron') {
             metal = 'iron'
@@ -91,6 +93,9 @@ onEvent('tags.items', event => {
     }
     global.tfcBarTypes.forEach(i => tagBars('tfc', i));
     global.tfcMetallumBarTypes.forEach(i => tagBars('tfc_metallum', i));
+
+    event.add('forge:metal_gates', 'supplementaries:iron_gate')
+    event.add('forge:metal_gates', 'supplementaries:gold_gate')
 
     const knifes = event.get('tfc:knifes').getObjectIds()
 
@@ -341,8 +346,8 @@ onEvent('recipes', event => {
         if (metal == 'wrought_iron') {
             iemetal = 'iron'
         }
-        event.remove({ output: `immersiveengineering:sheetmetal_${metal}` })
-        event.remove({ output: `immersiveengineering:slab_sheetmetal_${metal}` })
+        event.remove({ output: `immersiveengineering:sheetmetal_${iemetal}` })
+        event.remove({ output: `immersiveengineering:slab_sheetmetal_${iemetal}` })
 
         let tier = 3
         tier = global.getTier(iemetal)
@@ -384,7 +389,9 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid(false, 'firmalife:pie_pan', "tfc:metal/cast_iron", 50, 'wrought_iron', 1535)
 
     global.addMeltingHeatingFluid(false, 'minecraft:iron_bars', "tfc:metal/cast_iron", 6, 'wrought_iron', 1535)
+    global.addMeltingHeatingFluid(false, 'supplementaries:iron_gate', "tfc:metal/cast_iron", 62, 'wrought_iron', 1535)
     global.addMeltingHeatingFluid(false, 'quark:gold_bars', "tfc:metal/gold", 6, 'gold', 1060)
+    global.addMeltingHeatingFluid(false, 'supplementaries:gold_gate', "tfc:metal/gold", 62, 'gold', 1060)
     global.addMeltingHeatingFluid(false, 'tfc:steel_bars', "tfc:metal/steel", 6, 'steel', 1540)
     global.addMeltingHeatingFluid(false, 'tfc:black_steel_bars', "tfc:metal/black_steel", 6, 'black_steel', 1485)
     global.addMeltingHeatingFluid(false, 'tfc:red_steel_bars', "tfc:metal/red_steel", 6, 'red_steel', 1540)

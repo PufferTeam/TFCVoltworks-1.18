@@ -34,6 +34,20 @@ onEvent('recipes', event => {
     global.addMixingTagItemFluidEItem('firmalife:sweetener', `tfc:food/${i}_flour`, 'firmalife:yeast_starter', 100, `firmalife:food/${i}_dough`, 4)
   })
 
+  event.remove({ id: `firmalife:crafting/masa_1` })
+  event.remove({ id: `firmalife:crafting/masa_2` })
+  event.remove({ id: `firmalife:crafting/masa_3` })
+  event.remove({ id: `firmalife:crafting/masa_4` })
+  event.remove({ id: `firmalife:crafting/masa_5` })
+  event.remove({ id: `firmalife:crafting/masa_6` })
+  event.remove({ id: `firmalife:crafting/masa_7` })
+  event.remove({ id: `firmalife:crafting/masa_8` })
+
+  global.addFirmaMixingItemFluidEItem(1, `firmalife:food/masa_flour`, 'minecraft:water', 1000, `firmalife:food/masa`, 2)
+  global.addFirmaMixingItemFluidEItem(2, `firmalife:food/masa_flour`, 'minecraft:water', 1000, `firmalife:food/masa`, 4)
+
+  global.addMixingItemFluidEItem(`firmalife:food/masa_flour`, 'minecraft:water', 100, `firmalife:food/masa`, 2, null)
+
   global.tfcSoilsTypes.forEach(i => {
     event.recipes.createMixing(`tfc:mud/${i}`, [`tfc:dirt/${i}`, Fluid.of('minecraft:water', 100)])
     global.addDrying(`tfc:drying_bricks/${i}`, `tfc:mud_brick/${i}`)

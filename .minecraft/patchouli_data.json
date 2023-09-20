@@ -57,7 +57,8 @@
         "tfc:the_world/flora",
         "tfc:mechanics/barrels",
         "tfc_metallum:metallum_ores/kernite",
-        "tfc:mechanics/advanced_building_materials"
+        "tfc:mechanics/advanced_building_materials",
+        "firmalife:firmalife/beekeeping"
       ],
       "bookmarks": [],
       "completedManualQuests": []
