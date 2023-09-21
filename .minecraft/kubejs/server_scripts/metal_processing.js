@@ -373,7 +373,6 @@ onEvent('recipes', event => {
 
     global.tfcMetallumSheetmetalTypes.forEach(i => sheetmetalRecipes('tfc_metallum', i));
 
-
     event.remove({ id: `rosia:casting/invar_fire_ingot` })
     event.remove({ id: `rosia:casting/invar_ingot` })
     event.remove({ id: `rosia:casting/purple_steel_fire_ingot` })
@@ -388,6 +387,24 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid(false, 'minecraft:bucket', "tfc:metal/cast_iron", 200, 'wrought_iron', 1535)
     global.addMeltingHeatingFluid(false, 'firmalife:pie_pan', "tfc:metal/cast_iron", 50, 'wrought_iron', 1535)
 
+    event.remove({ output: 'supplementaries:gold_gate' })
+    event.shaped('2x supplementaries:gold_gate', [
+        'SOS',
+        'SOS'
+    ], {
+        S: 'quark:gold_bars',
+        O: `tfc:metal/rod/gold`
+    }).id('supplementaries:gold_gate')
+
+    event.remove({ output: 'supplementaries:iron_gate' })
+    event.shaped('2x supplementaries:iron_gate', [
+        'SOS',
+        'SOS'
+    ], {
+        S: 'minecraft:iron_bars',
+        O: `tfc:metal/rod/wrought_iron`
+    }).id('supplementaries:iron_gate')
+
     global.addMeltingHeatingFluid(false, 'minecraft:iron_bars', "tfc:metal/cast_iron", 6, 'wrought_iron', 1535)
     global.addMeltingHeatingFluid(false, 'supplementaries:iron_gate', "tfc:metal/cast_iron", 62, 'wrought_iron', 1535)
     global.addMeltingHeatingFluid(false, 'quark:gold_bars', "tfc:metal/gold", 6, 'gold', 1060)
@@ -400,6 +417,8 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid(false, 'tfc_metallum:titanium_bars', "tfc_metallum:metal/titanium", 6, 'titanium', 1700)
     global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_bars', "tfc_metallum:metal/tungsten", 6, 'tungsten', 3400)
     global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 'tungsten_steel', 3690)
+
+    global.addMeltingHeatingFluid(false, 'create:andesite_alloy', "kubejs:raw_andesite_alloy", 25, 'andesite_alloy', 520)
 
     global.addMeltingCrushing(true, 'tfc_metalwork:cut/copper', 'tfc:metal/copper', 400, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:cut_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
@@ -456,7 +475,7 @@ onEvent('recipes', event => {
         } else {
             event.shaped(`${mod}:metal/anvil/${metal}`, [
                 'SSS',
-                ' A ',
+                ' A ', 
                 'AAA'
             ], {
                 S: `${mod}:metal/double_ingot/${metal}`,
@@ -494,11 +513,16 @@ onEvent('server.datapack.first', event => {
     event.addTFCHeat('minecraft:bucket', 5.714, 921)
     event.addTFCHeat('firmalife:pie_pan', 1.428, 921)
 
+    event.addTFCHeat('supplementaries:iron_gate', 0.171)
+    event.addTFCHeat('supplementaries:gold_gate', 0.171)
+
     event.addTFCHeat('tfc_metallum:enderium_bars', 0.171, 1020)
     event.addTFCHeat('tfc_metallum:titanium_bars', 0.171, 1020)
     event.addTFCHeat('tfc_metallum:tungsten_bars', 0.3, 1020)
     event.addTFCHeat('tfc_metallum:tungsten_steel_bars', 0.3, 2214)
     event.addTFCHeat('quark:gold_bars', 0.171)
+
+    event.addTFCHeat('create:andesite_alloy', 33.333)
 
     event.addTFCHeat('#tfc_metalwork:cut/copper', 11.429, 648)
     event.addTFCHeat('#tfc_metalwork:shingles/copper', 11.429, 648)

@@ -80,6 +80,9 @@ global.recipeIdToRemove = [
     'quark:tweaks/crafting/dirty_glass',
     'create:crafting/materials/sand_paper',
 
+    'rosia:alloy/invar',
+    'rosia:alloy/weak_purple_steel',
+
     'thermal:machines/bottler/bottler_honey_bottle',
     'thermal:machines/bottler/bottler_mossy_stone_bricks'
 ];

@@ -141,23 +141,24 @@ onEvent('recipes', event => {
     let input = `tfc:ore/${i}`
     let output = `tfc:gem/${i}`
     let transitionItem = `kubejs:transition_${i}`
-  
+
     const cresults = []
     const cmethods = []
-  
+
     cresults.push(Item.of(`${output}`).withChance(100))
-  
+
     cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
     cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
     cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
-  
+
     event.recipes.createSequencedAssembly(cresults, input, cmethods).transitionalItem(transitionItem).loops(1);
-  
+
   })
 
 })
 
 onEvent('server.datapack.first', event => {
   event.addTFCHeat('kubejs:unfired_flower_box', 0.8)
+  event.addTFCMetal('kubejs:raw_andesite_alloy', 520, 50, 'create:andesite_alloy', 'minecraft:structure_void')
 
 })

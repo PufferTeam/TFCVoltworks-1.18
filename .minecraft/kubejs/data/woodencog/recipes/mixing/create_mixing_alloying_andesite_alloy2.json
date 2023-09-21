@@ -1,0 +1,24 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "fluid": "kubejs:raw_andesite_alloy",
+            "nbt": {},
+            "amount": 55
+        },
+        {
+            "fluid": "tfc:metal/sterling_silver",
+            "nbt": {},
+            "amount": 45
+        }
+    ],
+    "results": [
+        {
+            "fluid": "tfc_metallum:metal/andesite_alloy",
+            "nbt": {},
+            "amount": 100
+        }
+    ],
+    "heatRequirement": "heated",
+    "processingTime": 400
+}
