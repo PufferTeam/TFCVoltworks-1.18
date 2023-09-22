@@ -301,7 +301,7 @@ onEvent('recipes', event => {
         A: 'create:cogwheel',
         P: 'create:andesite_casing'
     }).id('create:millstone')
-    
+
     event.remove({ output: 'create:millstone' })
     event.shaped('create:millstone', [
         'P',
@@ -384,25 +384,26 @@ onEvent('recipes', event => {
     global.framesTypes.forEach(i => {
         let block = undefined
         let isTag = false
-        switch(i) {
+        switch (i) {
             case 'andesite':
+                block = 'kubejs:pitch_treated_wood'
+                break;
             case 'copper':
-                block = 'minecraft:planks'
-                isTag = true
-            break;
+                block = 'kubejs:ash_treated_wood'
+                break;
             case 'brass':
                 block = 'forge:treated_wood'
                 isTag = true
-            break;
+                break;
             case 'railway':
                 block = 'immersiveengineering:sheetmetal_lead'
-            break;
+                break;
             case 'refined_radiance':
                 block = 'immersiveengineering:sheetmetal_aluminum'
-            break;
+                break;
             case 'shadow_steel':
                 block = 'immersiveengineering:sheetmetal_steel'
-            break;
+                break;
         }
         global.addItemApplication(isTag, block, `kubejs:frame/${i}`, `create:${i}_casing`)
     })
@@ -415,5 +416,7 @@ onEvent('recipes', event => {
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'createaddition:iron_wire', 'immersiveengineering:wire_aluminum')
 
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'createaddition:copper_spool', 'immersiveengineering:wirecoil_copper')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'tfc:powder/wood_ash', '#tfc:ash')
 
 });

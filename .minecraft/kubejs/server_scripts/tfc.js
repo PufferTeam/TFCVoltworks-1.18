@@ -160,5 +160,7 @@ onEvent('recipes', event => {
 onEvent('server.datapack.first', event => {
   event.addTFCHeat('kubejs:unfired_flower_box', 0.8)
   event.addTFCMetal('kubejs:raw_andesite_alloy', 520, 50, 'create:andesite_alloy', 'minecraft:structure_void')
+  event.addTFCMetal('kubejs:pitch', 240, 25, 'thermal:rosin', 'minecraft:structure_void')
+  event.addTFCMetal('kubejs:wax', 240, 25, 'firmalife:beeswax', 'minecraft:structure_void')
 
 })

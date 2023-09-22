@@ -436,7 +436,7 @@ onEvent('recipes', event => {
     }
 
     global.addItemApplication = function addItemApplication(isTag, block, input, result) {
-        if(isTag) {
+        if (isTag) {
             event.custom({
                 "type": "create:item_application",
                 "ingredients": [
@@ -685,6 +685,21 @@ onEvent('recipes', event => {
                 "item": output,
                 "count": outputCount
             }
+        })
+    }
+
+    global.addExplosionCrafting = function addExplosionCrafting(input, output, loss_rate) {
+        event.custom({
+            "type": "pneumaticcraft:explosion_crafting",
+            "input": {
+                "item": input
+            },
+            "results": [
+                {
+                    "item": output
+                }
+            ],
+            "loss_rate": loss_rate
         })
     }
 

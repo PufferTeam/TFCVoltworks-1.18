@@ -79,6 +79,8 @@ global.recipeIdToRemove = [
     'create:splashing/sand',
     'quark:tweaks/crafting/dirty_glass',
     'create:crafting/materials/sand_paper',
+    'createaddition:filling/treated_wood_planks',
+    'immersiveengineering:crafting/treated_wood_horizontal',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',
@@ -111,6 +113,8 @@ global.recipeTypeToRemove = [
 
     'mekanism:pigment_extracting',
     'mekanism:painting',
+
+    'pneumaticcraft:explosion_crafting',
 
     'minecraft:campfire_cooking',
     'minecraft:blasting',

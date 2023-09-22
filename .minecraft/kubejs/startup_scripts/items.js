@@ -18,6 +18,12 @@ onEvent('item.registry', event => {
 
     event.create('unfired_flower_box').maxStackSize(64);
 
+    event.create('pitch_treated_lumber').maxStackSize(64);
+
+    event.create('ash_treated_lumber').maxStackSize(64);
+
+    event.create('creosote_treated_lumber').maxStackSize(64);
+
     event.create('brick/bloomery_brick').maxStackSize(64);
 
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    

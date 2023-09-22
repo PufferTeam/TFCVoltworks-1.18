@@ -366,7 +366,6 @@ onEvent('recipes', event => {
 
         let tier = 1;
         mSlabRecipes('immersiveengineering', tier, transitionItem, `immersiveengineering:sheetmetal_colored_${metal}`, `immersiveengineering:slab_sheetmetal_colored_${metal}`, 'slab_', metal, '_sheetmetal')
-
     }
 
     global.colors.forEach(i => coloredSheetmetalRecipes(i));
@@ -419,6 +418,8 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 'tungsten_steel', 3690)
 
     global.addMeltingHeatingFluid(false, 'create:andesite_alloy', "kubejs:raw_andesite_alloy", 25, 'andesite_alloy', 520)
+    global.addMeltingHeatingFluid(false, 'thermal:rosin', "kubejs:pitch", 1000, 'custom', 240)
+    global.addMeltingHeatingFluid(false, 'firmalife:beeswax', "kubejs:wax", 1000, 'custom', 240)
 
     global.addMeltingCrushing(true, 'tfc_metalwork:cut/copper', 'tfc:metal/copper', 400, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:cut_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
@@ -475,7 +476,7 @@ onEvent('recipes', event => {
         } else {
             event.shaped(`${mod}:metal/anvil/${metal}`, [
                 'SSS',
-                ' A ', 
+                ' A ',
                 'AAA'
             ], {
                 S: `${mod}:metal/double_ingot/${metal}`,
@@ -486,6 +487,18 @@ onEvent('recipes', event => {
 
     global.tier1MetalTypes.forEach(i => anvilRecipes('tfc', i));
     global.tier1MetallumMetalTypes.forEach(i => anvilRecipes('tfc_metallum', i));
+
+    global.tfcMetalPartsComplete.forEach(toolType => {
+        if (global.metalworkpartsrx.test(toolType)) {
+            global.addExplosionCrafting(`tfc_metalwork:metal/${toolType}/wrought_iron`, `tfc_metalwork:metal/${toolType}/compressed_iron`, 20)
+        } else {
+            global.addExplosionCrafting(`tfc:metal/${toolType}/wrought_iron`, `tfc_metallum:metal/${toolType}/compressed_iron`, 20)
+        }
+    })
+    global.addExplosionCrafting(`tfc_metalwork:metal/block/wrought_iron_slab`, `tfc_metalwork:metal/block/compressed_iron_slab`, 20)
+    global.addExplosionCrafting(`tfc_metalwork:metal/block/wrought_iron_stairs`, `tfc_metalwork:metal/block/compressed_iron_stairs`, 20)
+    global.addExplosionCrafting(`tfc_metalwork:metal/cut/wrought_iron_slab`, `tfc_metalwork:metal/cut/compressed_iron_slab`, 20)
+    global.addExplosionCrafting(`tfc_metalwork:metal/cut/wrought_iron_stairs`, `tfc_metalwork:metal/cut/compressed_iron_stairs`, 20)
 
     global.highTierMetals.forEach(metal => {
         event.remove({ id: `tfc_metallum:alloy/${metal}` })

@@ -498,6 +498,15 @@ global.tfcToolsTypes = [
 
 global.tfcToolsTypes.forEach(i => global.tfcMetalParts.push(i));
 
+global.tfcMetalPartsComplete = [
+    'ladder',
+    'plate',
+    'large_rod',
+    'large_gear'
+]
+
+global.tfcMetalParts.forEach(i => global.tfcMetalPartsComplete.push(i));
+
 global.rosiaMetalTypes = [
     'purple_steel',
     'invar'
@@ -764,7 +773,6 @@ global.ieOreTypes = [
     'silver',
     'saltpeter',
     'sulfur',
-    'wood',
     'hop_graphite',
     'nickel',
     'uranium',
@@ -777,8 +785,7 @@ global.ieItems = [
     'seed',
     'fertilizer',
     'slag',
-    'coal_coke',
-    'dust_coke',
+    'potion_bucket',
     'hemp_fiber',
     'wooden_barrel',
     'minecart_woodenbarrel',
@@ -966,12 +973,19 @@ global.thermalItems = [
     'oil_sand',
     'oil_red_sand',
     'ender_pearl_dust',
+    'coal_coke_block',
+    'coal_coke',
+    'bitumen_block',
+    'bitumen',
+    'sawdust',
+    'sawdust_block',
+    'bitumen',
+    'bitumen_block',
     'quartz_gear',
     'quartz_dust'
 ]
 
 global.mekanismItems = [
-    'dust_quartz',
     'dust_sulfur',
     'sawdust',
     'salt',

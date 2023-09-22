@@ -8,6 +8,9 @@ onEvent('tags.items', event => {
     event.add('tfc:placed_item_whitelist', 'kubejs:unfired_flower_box')
     event.add('tfc:unfired_pottery', 'kubejs:unfired_flower_box')
 
+    event.add('tfc:ash', 'supplementaries:ash')
+    event.add('tfc:ash', 'tfc:powder/wood_ash')
+
     global.stoneToolsTypes.forEach(i => {
         let result = i.split("/")
         let stone = result[0]
@@ -34,6 +37,8 @@ onEvent('tags.items', event => {
         event.remove('minecraft:logs_that_burn', `minecraft:${i}_${log}`)
         event.remove('minecraft:logs', `minecraft:stripped_${i}_${log}`)
         event.remove('minecraft:logs_that_burn', `minecraft:stripped_${i}_${log}`)
+
+        event.remove('create:vanilla_stripped_logs', `minecraft:stripped_${i}_${log}`)
 
         event.remove('forge:chests/wooden', `quark:${i}_chest`)
         event.remove('forge:chests/wooden', `quark:${i}_trapped_chest`)

@@ -87,9 +87,9 @@
 	"Variant Furnaces" = false
 	"Variant Chests" = false
 	"Variant Bookshelves" = false
-	Thatch = true
+	Thatch = false
 	"Sturdy Stone" = true
-	Stools = true
+	Stools = false
 	"Soul Sandstone" = false
 	Shingles = true
 	"Shear Vines" = true

@@ -308,7 +308,7 @@ onEvent('recipes', event => {
                 addCutRecipes('sandstone', `${mod}:cut_${type}/${name}`)
                 addCuttingRecipes('sandstone', `${mod}:cut_${type}/${name}`)
                 break;
-            
+
             case 'alabaster':
                 addCutRecipes('alabaster', `${mod}:${type}/bricks/${name}`)
                 addCuttingRecipes('alabaster', `${mod}:${type}/bricks/${name}`)
