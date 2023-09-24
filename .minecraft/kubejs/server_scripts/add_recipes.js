@@ -871,6 +871,27 @@ onEvent('recipes', event => {
                 })
                 break;
 
+                case 10:
+                    event.custom({
+                        "type": "tfc:damage_inputs_shapeless_crafting",
+                        "recipe": {
+                            "type": "minecraft:crafting_shapeless",
+                            "ingredients": [
+                                {
+                                    "tag": input_item
+                                },
+                                {
+                                    "tag": tool
+                                }
+                            ],
+                            "result": {
+                                "item": output_item,
+                                "count": count
+                            }
+                        }
+                    })
+                    break;
+
             case 2:
                 event.custom({
                     "type": "tfc:damage_inputs_shapeless_crafting",

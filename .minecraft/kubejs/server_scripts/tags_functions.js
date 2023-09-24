@@ -11,6 +11,10 @@ onEvent('tags.items', event => {
     event.add('tfc:ash', 'supplementaries:ash')
     event.add('tfc:ash', 'tfc:powder/wood_ash')
 
+    event.add('forge:dusts/wood', 'immersiveengineering:sawdust')
+
+    event.add('create:windmill_sails', 'create:sail_frame')
+
     global.stoneToolsTypes.forEach(i => {
         let result = i.split("/")
         let stone = result[0]

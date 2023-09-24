@@ -15,7 +15,7 @@ onEvent('tags.items', event => {
     global.highTierOres = []
     global.tfcMetallumMedTierOres.forEach(ore => {
         global.oreRarity.forEach(rarity => {
-            global.highTierOres.push(`tfc_metallum:ore/${rarity}_${ore}`) 
+            global.highTierOres.push(`tfc_metallum:ore/${rarity}_${ore}`)
         })
     })
     console.log(global.highTierOres)
@@ -144,7 +144,7 @@ onEvent('tags.items', event => {
     global.meltingrx = new RegExp(global.meltingBlacklist.join('|'));
     global.highmetalrx = new RegExp(global.highTierMetals.join('|'));
     global.highorerx = new RegExp(global.highTierOres.join('|'));
-    
+
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));
     global.metalworkpartsrx = new RegExp(global.metalworkMetalParts.join('|'));
@@ -597,7 +597,7 @@ onEvent('recipes', event => {
 
             if (modName == 'tfc') {
                 event.remove({ id: `tfc:heating/iron_bars` })
-                if(preNameResult[0] !== 'ore') {
+                if (preNameResult[0] !== 'ore') {
                     event.remove({ id: `tfc:heating/${itemName}` })
                 }
             }
@@ -646,7 +646,7 @@ onEvent('recipes', event => {
                     }
                 }
 
-                if(global.highorerx.test(input) && mod != 'tfc') {
+                if (global.highorerx.test(input) && mod != 'tfc') {
                     let oreResult = input.split('/')
                     let oreName = oreResult[1]
                     //console.log(oreName)
@@ -708,7 +708,7 @@ onEvent('recipes', event => {
                     if (global.largegeartagrx.test(input)) {
                         dustCount = 4
                     }
-                    if(global.anvilrx.test(input)) {
+                    if (global.anvilrx.test(input)) {
                         dustCount = 10
                     }
                     if (Number.isInteger(dustCount)) {
@@ -760,7 +760,7 @@ onEvent('recipes', event => {
                         if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
                             fluid = 'tfc:metal/cast_iron'
 
-                            if(global.dusttagrx.test(input)) {
+                            if (global.dusttagrx.test(input)) {
                                 fluid = 'tfc:metal/wrought_iron'
                             }
 

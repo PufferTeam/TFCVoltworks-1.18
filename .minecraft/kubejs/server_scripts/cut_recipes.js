@@ -6,6 +6,7 @@ onEvent('recipes', event => {
     global.addChiselCrafting = function addChiselCrafting(input_item, output_item) {
         event.recipes.tfc.chisel(output_item, input_item, 'smooth')
         //event.recipes.tfc.damage_inputs_shapeless_crafting(output_item, [input_item, Item.of('#tfc:chisels').ignoreNBT()])
+        global.addCutting(input_item, output_item)
         global.addDamageInputShapeless(1, input_item, output_item, "tfc:chisels", 1)
     }
 
@@ -67,15 +68,13 @@ onEvent('recipes', event => {
     }
 
     function addBigCutRecipes(catalyst, cutItem, full_block) {
-        let slab = `${full_block}_slab`
-        let stairs = `${full_block}_stairs`
-        let wall = `${full_block}_wall`
-
-        if (full_block == 'minecraft:bricks') {
-            slab = 'brick_slab'
-            stairs = 'brick_stairs'
-            wall = 'brick_wall'
+        let block = full_block
+        if(full_block == 'minecraft:bricks' || full_block == 'minecraft:polished_blackstone_bricks') {
+            block = full_block.substr(0, full_block.length - 1);
         }
+        let slab = `${block}_slab`
+        let stairs = `${block}_stairs`
+        let wall = `${block}_wall`
 
         event.remove({ output: full_block, type: 'minecraft:crafting_shaped' })
 
@@ -125,9 +124,13 @@ onEvent('recipes', event => {
     }
 
     function addCuttingRecipes(type, full_block) {
-        let slab = `${full_block}_slab`
-        let stairs = `${full_block}_stairs`
-        let wall = `${full_block}_wall`
+        let block = full_block
+        if(type == 'bricks') {
+            block = full_block.substr(0, full_block.length - 1);
+        }
+        let slab = `${block}_slab`
+        let stairs = `${block}_stairs`
+        let wall = `${block}_wall`
 
         if (type == 'rockpaved') {
             global.addCutting2Output(full_block, slab)
@@ -138,15 +141,13 @@ onEvent('recipes', event => {
     }
 
     function addCutRecipes(type, full_block) {
-        let slab = `${full_block}_slab`
-        let stairs = `${full_block}_stairs`
-        let wall = `${full_block}_wall`
-
-        if (type == 'bricks') {
-            slab = 'brick_slab'
-            stairs = 'brick_stairs'
-            wall = 'brick_wall'
+        let block = full_block
+        if(type == 'bricks') {
+            block = full_block.substr(0, full_block.length - 1);
         }
+        let slab = `${block}_slab`
+        let stairs = `${block}_stairs`
+        let wall = `${block}_wall`
 
         event.remove({ output: slab, type: 'minecraft:crafting_shaped' })
         event.remove({ output: stairs, type: 'minecraft:crafting_shaped' })
@@ -165,10 +166,14 @@ onEvent('recipes', event => {
         if (type !== 'rock' && type !== 'alabaster' && type !== 'mud_bricks' && type !== 'sandstone' && type !== 'wood') {
             event.recipes.tfc.chisel(stairs, full_block, 'stair')
             event.recipes.tfc.chisel(slab, full_block, 'slab').extraDrop(slab)
+            if(type == 'bricks') {
+                global.addCutting(full_block, stairs)
+                global.addCutting(full_block, slab)
+            }
         }
 
         //Wall
-        if (type == 'rockpaved' || type == 'rock' || type == 'alabaster' || type == 'mud_bricks' || type == 'sandstone' || type == 'bricks') {
+        if (type == 'rockpaved' || type == 'rock' || type == 'alabaster' || type == 'mud_bricks' || type == 'sandstone' || type == 'bricks' || type == 'blackstone') {
             event.recipes.tfc.damage_inputs_shapeless_crafting(`10x ${wall}`, [`6x ${full_block}`, Item.of('#tfc:chisels').ignoreNBT()])
         }
     }
@@ -221,6 +226,10 @@ onEvent('recipes', event => {
             raw = `tfc:alabaster/raw/${block}`
             smooth = `tfc:alabaster/polished/${block}`
         }
+        if(type == 'blackstone') {
+            raw = `minecraft:${block}`
+            smooth = `minecraft:polished_${block}`
+        }
 
         if (type == 'alabaster') {
             //event.recipes.tfc.damage_inputs_shapeless_crafting(smooth, [raw, Item.of('#tfc:chisels').ignoreNBT()])
@@ -237,6 +246,10 @@ onEvent('recipes', event => {
             global.addChiselCrafting(`${smooth}_slab`, `${cut}_slab`)
             global.addChiselCrafting(`${smooth}_stairs`, `${cut}_stairs`)
             global.addChiselCrafting(`${smooth}_wall`, `${cut}_wall`)
+        }
+
+        if(type == 'blackstone') {
+            global.addChiselCrafting(raw, smooth)
         }
     }
 
@@ -268,7 +281,19 @@ onEvent('recipes', event => {
     //global.colors.forEach(i => miscRecipes('tfc', i, 'alabaster', 'polished', 'alabaster'));
 
     addCutRecipes('bricks', 'minecraft:bricks')
+    addCuttingRecipes('bricks', 'minecraft:bricks')
     addBigCutRecipes('tfc:mortar', 'minecraft:brick', 'minecraft:bricks')
+
+    addCutRecipes('blackstone', 'minecraft:blackstone')
+    addCuttingRecipes('blackstone', 'minecraft:blackstone')
+    addCutRecipes('blackstone', 'minecraft:polished_blackstone')
+    addCuttingRecipes('blackstone', 'minecraft:polished_blackstone')
+    addCutRecipes('bricks', 'minecraft:polished_blackstone_bricks')
+    addCuttingRecipes('bricks', 'minecraft:polished_blackstone_bricks')
+
+    addBigCutRecipes('tfc:mortar', 'beneath:blackstone_brick', 'minecraft:polished_blackstone_bricks')
+    addSmallCutRecipes('beneath:blackstone_pebble', 'minecraft:blackstone')
+    addSmoothRecipes('blackstone', 'blackstone')
 
     function chiselRecipes(mod, name, type) {
         switch (type) {

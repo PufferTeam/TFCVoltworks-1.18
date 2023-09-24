@@ -9,7 +9,7 @@
     "item.immersiveengineering.acetaldehyde_bucket": "Acetaldehyde Bucket",
     "item.immersiveengineering.phenolic_resin_bucket": "Phenolic Resin Bucket",
     "item.immersiveengineering.potion_bucket": "%1$s Bucket",
-
+    "block.immersiveengineering.sawdust": "Sawdust",
     "block.immersiveengineering.treated_wood_horizontal": "Creosote Treated Wood",
     "block.immersiveengineering.treated_wood_vertical": "Creosote Treated Wood",
     "block.immersiveengineering.treated_wood_packaged": "Creosote Treated Wood",
@@ -21,7 +21,6 @@
     "block.immersiveengineering.stairs_treated_wood_packaged": "Creosote Treated Wood Stairs",
     "block.immersiveengineering.treated_fence": "Creosote Treated Wood Fence",
     "block.immersiveengineering.treated_scaffold": "Creosote Treated Wood Scaffolding",
-
     "item.immersiveengineering.hammer.tooltip.condition": "When Used on a Block",
     "item.immersiveengineering.hammer.tooltip.behaviour": "_Tries_ to assemble a valid _multiblock_. Makes sure to try to click on _different places_ if it doesn't works.",
     "gui.immersiveengineering.blastFurnace": "Improved Bloomery",

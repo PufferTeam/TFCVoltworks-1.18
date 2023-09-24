@@ -306,7 +306,6 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `cfm:${item}_kitchen_sink_dark`,
                 `cfm:stripped_${item}_kitchen_sink_dark`,
                 `cfm:${item}_hedge`,
-                `dynamictrees:${item}_seed`,
                 `extendedgears:${item}_cogwheel`,
                 `extendedgears:large_${item}_cogwheel`,
                 `create:${item}_window`,
@@ -317,6 +316,11 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `supplementaries:sign_post_${item}`,
                 `applecrates:${item}_crate`
             )
+            if(item !== 'warped' && item !== 'crimson') {
+                global.removeAndHide.push(
+                    `dynamictrees:${item}_seed`
+                )
+            }
         }
 
         if (item != 'oak') {

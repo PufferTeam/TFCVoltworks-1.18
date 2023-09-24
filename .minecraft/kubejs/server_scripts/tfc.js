@@ -13,6 +13,8 @@ onEvent('recipes', event => {
   event.recipes.createMixing(Fluid.of('tfc:salt_water', 125), ['tfc:powder/salt', Fluid.of('minecraft:water', 125)])
   event.recipes.createMixing('tfc:food/boiled_egg', ['minecraft:egg', Fluid.of('minecraft:water', 100)]).heated()
 
+  event.recipes.tfc.pot([Fluid.of('tfc:tallow', 250), 'tfc:dirty_jute_net'], [Fluid.of('minecraft:water', 1000), '4x tfc:food/beef', 'tfc:jute_net'], 9600, 55)
+  
   global.tfcGrains.forEach(i => {
 
     event.remove({ id: `tfc:crafting/dough/${i}_dough_1` })
@@ -162,5 +164,6 @@ onEvent('server.datapack.first', event => {
   event.addTFCMetal('kubejs:raw_andesite_alloy', 520, 50, 'create:andesite_alloy', 'minecraft:structure_void')
   event.addTFCMetal('kubejs:pitch', 240, 25, 'thermal:rosin', 'minecraft:structure_void')
   event.addTFCMetal('kubejs:wax', 240, 25, 'firmalife:beeswax', 'minecraft:structure_void')
+  event.addTFCMetal('create:honey', 240, 25,  'minecraft:structure_void', 'minecraft:structure_void')
 
 })

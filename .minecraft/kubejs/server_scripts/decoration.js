@@ -142,6 +142,8 @@ onEvent('recipes', event => {
 
     }
 
+    addRoofRecipes('mcwroofs', 'bricks', 'minecraft:bricks')
+
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_terracotta`, `minecraft:${i}_terracotta`));
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_concrete`, `minecraft:${i}_concrete`));
 
