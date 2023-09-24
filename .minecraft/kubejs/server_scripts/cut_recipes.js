@@ -166,7 +166,7 @@ onEvent('recipes', event => {
         if (type !== 'rock' && type !== 'alabaster' && type !== 'mud_bricks' && type !== 'sandstone' && type !== 'wood') {
             event.recipes.tfc.chisel(stairs, full_block, 'stair')
             event.recipes.tfc.chisel(slab, full_block, 'slab').extraDrop(slab)
-            if(type == 'bricks') {
+            if(type == 'bricks' || type == 'blackstone') {
                 global.addCutting(full_block, stairs)
                 global.addCutting(full_block, slab)
             }

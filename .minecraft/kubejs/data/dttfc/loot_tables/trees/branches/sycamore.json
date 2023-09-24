@@ -23,7 +23,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stick",
+          "name": "tfc:wood/twig/sycamore",
           "functions": [
             {
               "function": "dynamictrees:multiply_sticks_count"
