@@ -1,5 +1,24 @@
 {
-    "item.minecraft.carved_pumpkin.tooltip.summary": "Carve a _pumpkin_ by using _shears_ on it.",
-    "item.minecraft.carved_pumpkin.tooltip.condition": "Equip as a helmet",
-    "item.minecraft.carved_pumpkin.tooltip.behaviour": "Allows you to look at _Endermen_ without angering them."
-  }
+  "block.minecraft.gravel": "Blackstone Gravel",
+  "block.minecraft.blackstone": "Raw Blackstone",
+  "block.minecraft.blackstone_slab": "Raw Blackstone Slab",
+  "block.minecraft.blackstone_stairs": "Raw Blackstone Stairs",
+  "block.minecraft.blackstone_wall": "Raw Blackstone Wall",
+  "block.minecraft.polished_blackstone_bricks": "Blackstone Bricks",
+  "block.minecraft.polished_blackstone_brick_slab": "Blackstone Brick Slab",
+  "block.minecraft.polished_blackstone_brick_stairs": "Blackstone Brick Stairs",
+  "block.minecraft.polished_blackstone_brick_wall": "Blackstone Brick Wall",
+  "block.minecraft.chiseled_polished_blackstone": "Blackstone Chiseled Bricks",
+  "block.minecraft.cracked_polished_blackstone_bricks": "Blackstone Cracked Bricks",
+  "block.minecraft.gilded_blackstone": "Blackstone Gold Ore",
+  "block.minecraft.polished_blackstone": "Smooth Blackstone",
+  "block.minecraft.polished_blackstone_wall": "Smooth Blackstone Wall",
+  "block.minecraft.polished_blackstone_slab": "Smooth Blackstone Slab",
+  "block.minecraft.polished_blackstone_stairs": "Smooth Blackstone Stairs",
+  "block.minecraft.polished_blackstone_pressure_plate": "Blackstone Pressure Plate",
+  "block.minecraft.polished_blackstone_button": "Blackstone Button",
+
+  "item.minecraft.carved_pumpkin.tooltip.summary": "Carve a _pumpkin_ by using _shears_ on it.",
+  "item.minecraft.carved_pumpkin.tooltip.condition": "Equip as a helmet",
+  "item.minecraft.carved_pumpkin.tooltip.behaviour": "Allows you to look at _Endermen_ without angering them."
+}

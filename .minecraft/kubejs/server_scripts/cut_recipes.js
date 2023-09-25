@@ -36,7 +36,7 @@ onEvent('recipes', event => {
         }
 
         if (type == 'wood' || type == 'rock') {
-            event.remove({ id: `tfc:crafting/${type}/${name}_pressure_plate` })
+            event.remove({ id: `${mod}:crafting/${type}/${name}_pressure_plate` })
             //event.recipes.tfc.damage_inputs_shapeless_crafting(event.shapeless(`16x ${mod}:${type}/${pressureplate}/${name}${suffixpressureplate}`, [`${mod}:${type}/${material}/${name}_slab`, `${mod}:${type}/${material}/${name}_slab`, 'minecraft:redstone', Item.of('#tfc:chisels').ignoreNBT()]))
             global.addDamageInputExtraShapeless(2, `${mod}:${type}/${material}/${name}_slab`, 'minecraft:redstone', `${mod}:${type}/${pressureplate}/${name}${suffixpressureplate}`, "tfc:chisels", 16)
 
@@ -69,7 +69,7 @@ onEvent('recipes', event => {
 
     function addBigCutRecipes(catalyst, cutItem, full_block) {
         let block = full_block
-        if(full_block == 'minecraft:bricks' || full_block == 'minecraft:polished_blackstone_bricks') {
+        if(full_block == 'minecraft:nether_bricks' || full_block == 'minecraft:bricks' || full_block == 'minecraft:polished_blackstone_bricks') {
             block = full_block.substr(0, full_block.length - 1);
         }
         let slab = `${block}_slab`
@@ -132,12 +132,14 @@ onEvent('recipes', event => {
         let stairs = `${block}_stairs`
         let wall = `${block}_wall`
 
-        if (type == 'rockpaved') {
+        if (type == 'rockpaved' || type == 'bricks' || type == 'blackstone' || type == 'netherwood') {
             global.addCutting2Output(full_block, slab)
             global.addCutting(full_block, stairs)
         }
 
-        global.addCutting(full_block, wall)
+        if (type !== 'netherwood') {
+            global.addCutting(full_block, wall)
+        }
     }
 
     function addCutRecipes(type, full_block) {
@@ -166,10 +168,6 @@ onEvent('recipes', event => {
         if (type !== 'rock' && type !== 'alabaster' && type !== 'mud_bricks' && type !== 'sandstone' && type !== 'wood') {
             event.recipes.tfc.chisel(stairs, full_block, 'stair')
             event.recipes.tfc.chisel(slab, full_block, 'slab').extraDrop(slab)
-            if(type == 'bricks' || type == 'blackstone') {
-                global.addCutting(full_block, stairs)
-                global.addCutting(full_block, slab)
-            }
         }
 
         //Wall
@@ -254,10 +252,13 @@ onEvent('recipes', event => {
     }
 
     global.tfcWoodTypes.forEach(i => specialCutRecipes('tfc', i, 'wood', 'planks'));
+    global.netherWoodTypes.forEach(i => specialCutRecipes('beneath', i, 'wood', 'planks'));
     global.tfcRockTypes.forEach(i => specialCutRecipes('tfc', i, 'rock', 'raw'));
 
     global.tfcRockTypes.forEach(i => chiselRecipes('tfc', i, 'rock'));
     global.tfcWoodTypes.forEach(i => chiselRecipes('tfc', i, 'wood'));
+    global.netherWoodTypes.forEach(i => chiselRecipes('beneath', i, 'netherwood'));
+
     global.tfcSoilsTypes.forEach(i => chiselRecipes('tfc', i, 'mud_bricks'));
     global.colors.forEach(i => chiselRecipes('tfc', i, 'alabaster'));
     global.tfcSandstoneTypes.forEach(i => chiselRecipes('tfc', i, 'sandstone'));
@@ -268,6 +269,7 @@ onEvent('recipes', event => {
     global.tfcSoilsTypes.forEach(i => addSmallCutRecipes(`tfc:mud_brick/${i}`, `tfc:mud_bricks/${i}`));
     global.tfcRockTypes.forEach(i => addSmallCutRecipes(`tfc:rock/loose/${i}`, `tfc:rock/cobble/${i}`));
     global.tfcWoodTypes.forEach(i => addSmallCutRecipes(`tfc:wood/lumber/${i}`, `tfc:wood/planks/${i}`));
+    global.netherWoodTypes.forEach(i => addSmallCutRecipes(`beneath:wood/lumber/${i}`, `beneath:wood/planks/${i}`));
 
     global.tfcRockTypes.forEach(i => addSpecialRockRecipes('bricks', i));
     global.tfcRockTypes.forEach(i => addSpecialRockRecipes('cobble', i));
@@ -283,6 +285,10 @@ onEvent('recipes', event => {
     addCutRecipes('bricks', 'minecraft:bricks')
     addCuttingRecipes('bricks', 'minecraft:bricks')
     addBigCutRecipes('tfc:mortar', 'minecraft:brick', 'minecraft:bricks')
+
+    addCutRecipes('bricks', 'minecraft:nether_bricks')
+    addCuttingRecipes('bricks', 'minecraft:nether_bricks')
+    addBigCutRecipes('tfc:mortar', 'minecraft:nether_brick', 'minecraft:nether_bricks')
 
     addCutRecipes('blackstone', 'minecraft:blackstone')
     addCuttingRecipes('blackstone', 'minecraft:blackstone')
@@ -318,6 +324,11 @@ onEvent('recipes', event => {
 
             case 'wood':
                 addCutRecipes('wood', `${mod}:${type}/planks/${name}`)
+                break;
+
+            case 'netherwood':
+                addCutRecipes('netherwood', `${mod}:wood/planks/${name}`)
+                addCuttingRecipes('netherwood', `${mod}:wood/planks/${name}`)
                 break;
 
             case 'mud_bricks':

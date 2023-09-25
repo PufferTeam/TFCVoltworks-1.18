@@ -14,6 +14,9 @@ onEvent('recipes', event => {
 
         global.addTimeCutting(`${mod}:wood/planks/${name}`, `${mod}:wood/lumber/${name}`, 4, 25)
 
+        global.addSawmill(`${mod}:wood/log/${name}`, `${mod}:wood/stripped_log/${name}`, `${mod}:wood/lumber/${name}`, 16, 1600)
+        global.addSawmill(`${mod}:wood/wood/${name}`, `${mod}:wood/stripped_wood/${name}`, `${mod}:wood/lumber/${name}`, 16, 1600)
+
         event.remove({ mod: 'createbigcannons', type: 'create:cutting' })
         event.remove({ mod: 'botania', type: 'create:cutting' })
         event.remove({ mod: 'create', type: 'create:cutting' })
@@ -26,7 +29,7 @@ onEvent('recipes', event => {
     }
 
     global.tfcWoodTypes.forEach(i => strippingRecipes('tfc', i));
-
+    global.netherWoodTypes.forEach(i => strippingRecipes('beneath', i));
 
     function addCustomWood(mod, name, fluid) {
         let lumber = `${mod}:${name}treated_lumber`

@@ -138,6 +138,17 @@ onEvent('recipes', event => {
     S: '#tfc:lumber'
   }).id('minecraft:bowl')
 
+  event.remove({ output: 'beneath:crimson_thatch' })
+  event.shaped('beneath:crimson_thatch', [
+      'AA',
+      'AA'
+  ], {
+      A: 'beneath:crimson_straw'
+  }).id('beneath:crafting/crimson_thatch')
+
+  global.addDamageInputShapeless(1, 'beneath:nether_pebble', 'minecraft:nether_brick', "tfc:chisels", 1)
+
+
   global.tfcGemTypes.forEach(i => {
 
     let input = `tfc:ore/${i}`

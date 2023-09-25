@@ -116,6 +116,14 @@ global.recipeTypeToRemove = [
 
     'pneumaticcraft:explosion_crafting',
 
+    'thermal:press',
+    'thermal:crystallizer',
+    'thermal:smelter',
+    'thermal:insolator',
+    'thermal:centrifuge',
+    'thermal:pulverizer',
+    'thermal:tree_extractor',
+
     'minecraft:campfire_cooking',
     'minecraft:blasting',
     'minecraft:smelting',

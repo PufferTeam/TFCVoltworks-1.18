@@ -6,7 +6,6 @@ onEvent('recipes', event => {
 
     global.tfcWoodTypes.forEach(i => decorationRecipes(i));
 
-
     function decorationRecipes(wood) {
         event.remove({ id: `supplementaries:hanging_sign_tfc/${wood}` })
         event.remove({ id: `supplementaries:sign_post_tfc/${wood}` });

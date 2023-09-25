@@ -67,6 +67,14 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
         )
     }
 
+    if(type == 'netherwood') {
+        global.removeAndHide.push(
+            `${mod}:wood/fallen_leaves/${item}`,
+            `${mod}:wood/leaves/${item}`,
+            `${mod}:wood/sapling/${item}`
+        );
+    }
+
     if (type == 'tfcwood') {
         global.removeAndHide.push(
             `everycomp:q/tfc/wood/planks/${item}_post`,
@@ -444,6 +452,8 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
 }
 
 global.vanillaWoodTypes.forEach(i => removeAndHide('', '', i, 'wood', 'minecraft', true, null, null));
+
+global.netherWoodTypes.forEach(i => removeAndHide('', '', i, 'netherwood', 'beneath', true, null, null));
 
 global.quarkWoodTypes.forEach(i => removeAndHide('', '', i, 'wood', 'quark', true, null, null));
 

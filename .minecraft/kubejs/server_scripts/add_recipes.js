@@ -748,6 +748,39 @@ onEvent('recipes', event => {
         })
     }
 
+    global.addSawmill = function addSawmill(input, strippedInput, output, outputCount, energy) {
+        event.custom({
+            "type": "immersiveengineering:sawmill",
+            "secondaries": [
+                {
+                    "output": {
+                        "item": "immersiveengineering:sawdust"
+                    },
+                    "stripping": true
+                },
+                {
+                    "output": {
+                        "item": "immersiveengineering:sawdust"
+                    },
+                    "stripping": false
+                }
+            ],
+            "result": {
+                "item": output,
+                "count": outputCount
+            },
+            "energy": energy,
+            "input": [
+                {
+                    "item": input
+                }
+            ],
+            "stripped": {
+                "item": strippedInput
+            }
+        })
+    }
+
     global.addGravity = function addGravity(type, block) {
         event.custom({
             "type": type,
@@ -871,26 +904,26 @@ onEvent('recipes', event => {
                 })
                 break;
 
-                case 10:
-                    event.custom({
-                        "type": "tfc:damage_inputs_shapeless_crafting",
-                        "recipe": {
-                            "type": "minecraft:crafting_shapeless",
-                            "ingredients": [
-                                {
-                                    "tag": input_item
-                                },
-                                {
-                                    "tag": tool
-                                }
-                            ],
-                            "result": {
-                                "item": output_item,
-                                "count": count
+            case 10:
+                event.custom({
+                    "type": "tfc:damage_inputs_shapeless_crafting",
+                    "recipe": {
+                        "type": "minecraft:crafting_shapeless",
+                        "ingredients": [
+                            {
+                                "tag": input_item
+                            },
+                            {
+                                "tag": tool
                             }
+                        ],
+                        "result": {
+                            "item": output_item,
+                            "count": count
                         }
-                    })
-                    break;
+                    }
+                })
+                break;
 
             case 2:
                 event.custom({
