@@ -64,7 +64,7 @@
 	flag = true
 	stone_tile = false
 	goblet = true
-	raked_gravel = true
+	raked_gravel = false
 	statue = true
 	iron_gate = true
 	feather_block = true
