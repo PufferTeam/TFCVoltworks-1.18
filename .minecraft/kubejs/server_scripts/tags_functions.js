@@ -4,6 +4,7 @@ onEvent('tags.items', event => {
     global.tfcSaplings.forEach(i => event.add('quark:seed_pouch_holdable', i));
     global.waxingAgents.forEach(i => event.add('tfc:waxing_agents', i));
     global.tfcWoodTypes.forEach(i => event.add('quark:seed_pouch_holdable', `dttfc:${i}_seed`));
+    global.tfcWoodTypes.forEach(i => event.add('tfc:flammable_lumber', `tfc:wood/lumber/${i}`));
 
     event.add('tfc:placed_item_whitelist', 'kubejs:unfired_flower_box')
     event.add('tfc:unfired_pottery', 'kubejs:unfired_flower_box')
@@ -13,7 +14,8 @@ onEvent('tags.items', event => {
 
     event.add('forge:dusts/wood', 'immersiveengineering:sawdust')
 
-    event.add('create:windmill_sails', 'create:sail_frame')
+    event.remove('create:windmill_sails', 'create:sail_frame')
+    event.remove('forge:storage_blocks/gold', 'minecraft:gold_block')
 
     global.stoneToolsTypes.forEach(i => {
         let result = i.split("/")

@@ -42,7 +42,7 @@ onEvent('recipes', event => {
         'AA'
     ], {
         S: '#forge:rods/cast_iron',
-        A: '#tfc:lumber'
+        A: 'kubejs:pitch_treated_lumber'
     }).id('create:wooden_bracket')
 
     event.remove({ id: 'create:crafting/kinetics/linear_chassis' })
@@ -123,6 +123,24 @@ onEvent('recipes', event => {
         S: '#forge:rods/andesite_alloy',
         A: '#minecraft:planks'
     }).id('create:piston_extension_pole')
+
+    event.remove({ output: 'create:gantry_shaft' })
+    event.shaped('8x create:gantry_shaft', [
+        'S',
+        'A',
+        'S'
+    ], {
+        S: '#forge:rods/andesite_alloy',
+        A: 'minecraft:redstone'
+    }).id('create:gantry_shaft')
+
+    event.remove({ output: 'create:belt_connector' })
+    event.shaped('8x create:belt_connector', [
+        'SSS',
+        'SSS'
+    ], {
+        S: '#forge:leather'
+    }).id('create:belt_connector')
 
     event.remove({ output: 'create:fluid_tank' })
     event.shaped('3x create:fluid_tank', [

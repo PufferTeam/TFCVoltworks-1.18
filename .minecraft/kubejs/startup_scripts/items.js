@@ -18,9 +18,17 @@ onEvent('item.registry', event => {
 
     event.create('unfired_flower_box').maxStackSize(64);
 
+    event.create('treated_stick').maxStackSize(32);
+
     event.create('pitch_treated_lumber').maxStackSize(64);
 
+    event.create('pitch_treated_stick').maxStackSize(32);
+
+    event.create('pitch_treated_waterwheel_segment').maxStackSize(16);
+
     event.create('ash_treated_lumber').maxStackSize(64);
+
+    event.create('ash_treated_stick').maxStackSize(32);
 
     event.create('creosote_treated_lumber').maxStackSize(64);
 

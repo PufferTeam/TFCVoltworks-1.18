@@ -33,12 +33,16 @@ onEvent('recipes', event => {
 
     function addCustomWood(mod, name, fluid) {
         let lumber = `${mod}:${name}treated_lumber`
+        let stick = `${mod}:${name}treated_stick`
         let wood = `${mod}:${name}treated_wood`
         switch (name) {
             case 'creosote_':
                 wood = 'immersiveengineering:treated_wood_horizontal'
                 break;
         }
+
+        global.addDamageInputShapeless(1, lumber, stick, "tfc:saws", 2)
+
         global.addDamageInputShapeless(1, wood, lumber, "tfc:saws", 4)
         global.addTimeCutting(wood, lumber, 4, 25)
 
@@ -74,7 +78,7 @@ onEvent('recipes', event => {
     addCustomWood('kubejs', 'ash_', null)
     addCustomWood('kubejs', 'creosote_', 'immersiveengineering:creosote')
 
-    global.addDamageInputShapeless(10, 'tfc:lumber', 'minecraft:stick', "tfc:saws", 2)
+    global.addDamageInputShapeless(10, 'tfc:flammable_lumber', 'minecraft:stick', "tfc:saws", 2)
 
     event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', '#tfc:ash']).id('kubejs:ash_treated_lumber_made_with_ash')
     event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', '#tfc:ash', '#tfc:ash', '#tfc:ash', '#tfc:ash']).id('kubejs:ash_treated_wood_made_with_ash')

@@ -80,6 +80,10 @@ global.recipeIdToRemove = [
     'quark:tweaks/crafting/dirty_glass',
     'create:crafting/materials/sand_paper',
     'createaddition:filling/treated_wood_planks',
+    'create:mixing/lava_from_cobble',
+    'woodencog:crafting/kinetics/windmill_bearing',
+    'woodencog:crafting/kinetics/item_drain',
+    'create:crafting/logistics/redstone_contact',
     'immersiveengineering:crafting/treated_wood_horizontal',
     'immersiveengineering:crafting/sawdust',
 

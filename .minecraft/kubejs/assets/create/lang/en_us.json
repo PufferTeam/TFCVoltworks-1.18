@@ -11,6 +11,8 @@
 	"block.create.andesite_ladder": "Igneous Ladder",
 	"block.create.andesite_tunnel": "Igneous Tunnel",
 
+	"block.create.wooden_bracket": "Wooden Bracket",
+
 	"item.create.andesite_alloy": "Raw Igneous Alloy",
 
 	"_": "->------------------------]  Advancements  [------------------------<-",
