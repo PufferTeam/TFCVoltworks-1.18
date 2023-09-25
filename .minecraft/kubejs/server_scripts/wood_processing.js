@@ -33,15 +33,20 @@ onEvent('recipes', event => {
 
     function addCustomWood(mod, name, fluid) {
         let lumber = `${mod}:${name}treated_lumber`
-        let stick = `${mod}:${name}treated_stick`
+        let stick = `kubejs:${name}treated_stick`
+        let largeStick = `kubejs:${name}treated_large_stick`
         let wood = `${mod}:${name}treated_wood`
         switch (name) {
             case 'creosote_':
-                wood = 'immersiveengineering:treated_wood_horizontal'
+                wood = 'immersiveengineering:treated_wood_horizontal',
+                stick = 'immersiveengineering:stick_treated'
                 break;
         }
 
+        event.remove({ output: stick })
         global.addDamageInputShapeless(1, lumber, stick, "tfc:saws", 2)
+
+        event.shapeless(largeStick, [stick, stick]).id(largeStick)
 
         global.addDamageInputShapeless(1, wood, lumber, "tfc:saws", 4)
         global.addTimeCutting(wood, lumber, 4, 25)

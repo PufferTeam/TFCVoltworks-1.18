@@ -10,8 +10,8 @@ onEvent('item.registry', event => {
     global.tfcGlobalMetalTypes.forEach(i => {
         event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1)
         event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1)
-    });    
-    
+    });
+
     event.create('transition_bloom', 'create:sequenced_assembly').maxStackSize(1);
 
     event.create('transition_high_carbon_steel', 'create:sequenced_assembly').maxStackSize(1);
@@ -20,27 +20,41 @@ onEvent('item.registry', event => {
 
     event.create('treated_stick').maxStackSize(32);
 
+    event.create('treated_large_stick').maxStackSize(32);
+
     event.create('pitch_treated_lumber').maxStackSize(64);
+
+    event.create('pitch_treated_small_gear').maxStackSize(64);
+
+    event.create('pitch_treated_large_gear').maxStackSize(64);
 
     event.create('pitch_treated_stick').maxStackSize(32);
 
+    event.create('pitch_treated_large_stick').maxStackSize(32);
+
     event.create('pitch_treated_waterwheel_segment').maxStackSize(16);
+
+    event.create('pitch_treated_tough_fabric').maxStackSize(16);
 
     event.create('ash_treated_lumber').maxStackSize(64);
 
     event.create('ash_treated_stick').maxStackSize(32);
 
+    event.create('ash_treated_large_stick').maxStackSize(32);
+
     event.create('creosote_treated_lumber').maxStackSize(64);
+
+    event.create('creosote_treated_large_stick').maxStackSize(64);
 
     event.create('brick/bloomery_brick').maxStackSize(64);
 
-    global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
-    
-    global.tfcGemTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));    
+    global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));
 
-    global.colors.forEach(i => event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1));    
+    global.tfcGemTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));
 
-    global.framesTypes.forEach(i => event.create('frame/' + i).maxStackSize(64));    
+    global.colors.forEach(i => event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1));
+
+    global.framesTypes.forEach(i => event.create('frame/' + i).maxStackSize(64));
 
     global.stoneToolsTypes.forEach(i => {
         let result = i.split('/')
