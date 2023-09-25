@@ -57,5 +57,7 @@ onEvent('tags.items', event => {
 })
 
 onEvent('tags.blocks', event => {
+    event.remove('create:windmill_sails', 'create:sail_frame')
+
     global.tfcGrass.forEach(i => event.add('minecraft:dirt', i));
 })

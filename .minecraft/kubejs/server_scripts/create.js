@@ -134,6 +134,42 @@ onEvent('recipes', event => {
         A: 'minecraft:redstone'
     }).id('create:gantry_shaft')
 
+    event.remove({ output: 'create:water_wheel' })
+    event.shaped('create:water_wheel', [
+        ' A ',
+        'ASA',
+        ' A '
+    ], {
+        S: 'create:large_cogwheel',
+        A: 'kubejs:pitch_treated_waterwheel_segment'
+    }).id('create:water_wheel')
+
+    event.remove({ output: 'create:large_water_wheel' })
+    event.shaped('create:large_water_wheel', [
+        'AAA',
+        'ASA',
+        'AAA'
+    ], {
+        S: 'create:water_wheel',
+        A: 'kubejs:pitch_treated_waterwheel_segment'
+    }).id('create:large_water_wheel')
+
+    event.remove({ output: 'create:item_vault' })
+    event.shaped('3x create:item_vault', [
+        ' S ',
+        'AAA',
+        ' S '
+    ], {
+        S: 'tfc_metalwork:metal/plate/lead',
+        A: '#tfcbarrels:barrels'
+    }).id('create:item_vault')
+
+    event.remove({ output: 'create:cogwheel' })
+    event.shapeless('create:cogwheel', ['create:shaft', 'kubejs:pitch_treated_small_gear']).id('create:cogwheel')
+    
+    event.remove({ output: 'create:large_cogwheel' })
+    event.shapeless('create:large_cogwheel', ['create:shaft', 'kubejs:pitch_treated_large_gear']).id('create:large_cogwheel')
+
     event.remove({ output: 'create:belt_connector' })
     event.shaped('8x create:belt_connector', [
         'SSS',

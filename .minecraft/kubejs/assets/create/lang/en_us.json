@@ -12,6 +12,8 @@
 	"block.create.andesite_tunnel": "Igneous Tunnel",
 
 	"block.create.wooden_bracket": "Pitch Treated Bracket",
+	"block.create.metal_bracket": "Cast Iron Bracket",
+	"block.create.metal_girder": "Cast Iron Girder",
 
 	"item.create.andesite_alloy": "Raw Igneous Alloy",
 

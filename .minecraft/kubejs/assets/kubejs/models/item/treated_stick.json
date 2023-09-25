@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "kubejs:treated_stick"
+    "layer0": "kubejs:item/treated_stick"
   }
 } 
