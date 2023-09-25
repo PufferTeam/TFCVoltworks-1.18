@@ -37,6 +37,7 @@ onEvent('recipes', event => {
 
         if (type == 'wood' || type == 'rock') {
             event.remove({ id: `${mod}:crafting/${type}/${name}_pressure_plate` })
+            event.remove({ id: `${mod}:crafting/${type}/${name}_button` })
             //event.recipes.tfc.damage_inputs_shapeless_crafting(event.shapeless(`16x ${mod}:${type}/${pressureplate}/${name}${suffixpressureplate}`, [`${mod}:${type}/${material}/${name}_slab`, `${mod}:${type}/${material}/${name}_slab`, 'minecraft:redstone', Item.of('#tfc:chisels').ignoreNBT()]))
             global.addDamageInputExtraShapeless(2, `${mod}:${type}/${material}/${name}_slab`, 'minecraft:redstone', `${mod}:${type}/${pressureplate}/${name}${suffixpressureplate}`, "tfc:chisels", 16)
 

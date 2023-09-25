@@ -81,6 +81,7 @@ global.recipeIdToRemove = [
     'create:crafting/materials/sand_paper',
     'createaddition:filling/treated_wood_planks',
     'immersiveengineering:crafting/treated_wood_horizontal',
+    'immersiveengineering:crafting/sawdust',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',

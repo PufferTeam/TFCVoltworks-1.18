@@ -1014,7 +1014,6 @@ global.vanillaItems = [
     'soul_lantern',
     'mycelium',
     'iron_trapdoor',
-    'magma_block',
     'fern',
     'seagrass',
     'dead_bush',
