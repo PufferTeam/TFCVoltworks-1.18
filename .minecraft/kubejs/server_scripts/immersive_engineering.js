@@ -1,7 +1,7 @@
 onEvent('recipes', event => {
 
     event.remove({ output: 'immersiveengineering:hemp_fabric' })
-    event.shaped('immersiveengineering:hemp_fabric', [
+    event.shaped('4x immersiveengineering:hemp_fabric', [
         ' S ',
         'SOS',
         ' S '
@@ -9,6 +9,16 @@ onEvent('recipes', event => {
         S: '#tfc:high_quality_cloth',
         O: 'immersiveengineering:stick_treated'
     }).id('immersiveengineering:hemp_fabric')
+
+    event.remove({ output: 'kubejs:pitch_treated_tough_fabric' })
+    event.shaped('4x kubejs:pitch_treated_tough_fabric', [
+        ' S ',
+        'SOS',
+        ' S '
+    ], {
+        S: '#tfc:high_quality_cloth',
+        O: 'kubejs:pitch_treated_stick'
+    }).id('kubejs:pitch_treated_tough_fabric')
 
     event.remove({ output: 'immersiveengineering:wirecoil_structure_rope' })
     event.shaped('4x immersiveengineering:wirecoil_structure_rope', [

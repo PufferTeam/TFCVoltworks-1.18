@@ -99,7 +99,7 @@ onEvent('recipes', event => {
     ], {
         S: 'kubejs:pitch_treated_large_stick',
         A: 'kubejs:pitch_treated_lumber'
-    }).id('kubejs:pitch_treated_small_gear')
+    }).id('kubejs:pitch_treated_large_gear')
 
     event.shaped('kubejs:pitch_treated_waterwheel_segment', [
         ' A ',
