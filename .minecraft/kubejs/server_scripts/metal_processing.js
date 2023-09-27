@@ -489,7 +489,7 @@ onEvent('recipes', event => {
     global.tier1MetallumMetalTypes.forEach(i => anvilRecipes('tfc_metallum', i));
 
     global.tfcMetalPartsComplete.forEach(toolType => {
-        if (global.metalworkpartsrx.test(toolType)) {
+        if (global.metalworkpartsrx.test(toolType) && toolType !== 'chestplate' && toolType !== 'unfinished_chestplate') {
             global.addExplosionCrafting(`tfc_metalwork:metal/${toolType}/wrought_iron`, `tfc_metalwork:metal/${toolType}/compressed_iron`, 20)
         } else {
             global.addExplosionCrafting(`tfc:metal/${toolType}/wrought_iron`, `tfc_metallum:metal/${toolType}/compressed_iron`, 20)
