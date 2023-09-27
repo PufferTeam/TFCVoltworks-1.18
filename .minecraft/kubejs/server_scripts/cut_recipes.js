@@ -297,7 +297,7 @@ onEvent('recipes', event => {
     addCuttingRecipes('blackstone', 'minecraft:polished_blackstone')
     addCutRecipes('bricks', 'minecraft:polished_blackstone_bricks')
     addCuttingRecipes('bricks', 'minecraft:polished_blackstone_bricks')
-    addChiselCrafting('minecraft:polished_blackstone_bricks', 'minecraft:chiseled_polished_blackstone')
+    global.addChiselCrafting('minecraft:polished_blackstone_bricks', 'minecraft:chiseled_polished_blackstone')
 
     addBigCutRecipes('tfc:mortar', 'beneath:blackstone_brick', 'minecraft:polished_blackstone_bricks')
     addSmallCutRecipes('beneath:blackstone_pebble', 'minecraft:blackstone')
