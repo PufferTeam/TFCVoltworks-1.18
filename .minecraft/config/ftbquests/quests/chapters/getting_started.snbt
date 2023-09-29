@@ -260,7 +260,7 @@
 					}
 				}
 			}
-			x: 1.0d
+			x: 1.5d
 			y: 6.0d
 			subtitle: "Can I make my own army with it?"
 			description: [
@@ -277,10 +277,7 @@
 				"&lUnfired Pottery&r doesn't serve any purpose, so you will need to cook it in a &lPit Kiln&r to use it."
 				""
 			]
-			dependencies: [
-				"5E5EDD3AB21FCF38"
-				"1F671C413CD50D66"
-			]
+			dependencies: ["1F671C413CD50D66"]
 			id: "42976748A3392F8D"
 			tasks: [
 				{
@@ -419,7 +416,10 @@
 				"{image:tfc:textures/gui/book/tutorial/pit_kiln_5.png width:100 height:100 align:1}"
 				"Please takes in consideration that the Kiln is &lslow&r and it takes &lmultiples minutes&r for the pottery to be fired."
 			]
-			dependencies: ["5904278FDDFCBE80"]
+			dependencies: [
+				"5904278FDDFCBE80"
+				"42976748A3392F8D"
+			]
 			id: "5E5EDD3AB21FCF38"
 			tasks: [{
 				id: "5CE4D4E25CFA8E6F"
@@ -776,39 +776,6 @@
 				id: "74D78CE77867503F"
 				type: "item"
 				item: "minecraft:clay_ball"
-			}]
-		}
-		{
-			title: "Butcher"
-			icon: "minecraft:beef"
-			x: 1.0d
-			y: 6.0d
-			subtitle: "I hope you aren't vegetarian"
-			description: [
-				"{image:tfc:textures/item/food/pheasant.png width:30 height:30 align:1}"
-				""
-				"To help you &lbalance&r that vegan &lnutritional diet&r of your, what about tasting some meat?"
-				""
-				"Sadly meat doesn't grow on trees, so &lkill some animals&r with your new &lJavelin&r."
-			]
-			dependencies: ["305CFBB54FEE5D90"]
-			id: "1373FEE9DA382C17"
-			tasks: [{
-				id: "5A3C30D469782DA9"
-				type: "item"
-				title: "Any Raw Meat"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "tfc:foods/raw_meats"
-					}
-				}
-			}]
-			rewards: [{
-				id: "22D65078BC4DADAB"
-				type: "item"
-				item: "minecraft:bone"
 			}]
 		}
 		{
