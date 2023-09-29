@@ -341,8 +341,6 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
 
         if (item != 'oak') {
             global.removeAndHide.push(
-                `smallships:${item}_cog`,
-                `smallships:${item}_brigg`,
                 `vs_eureka:${item}_ship_helm`,
                 `storagedrawers:${item}_full_drawers_1`,
                 `storagedrawers:${item}_full_drawers_2`,
@@ -351,6 +349,14 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `storagedrawers:${item}_half_drawers_2`,
                 `storagedrawers:${item}_half_drawers_4`,
                 `storagedrawers:${item}_trim`
+            )
+        }
+
+        if(item == 'dark_oak' || item == 'jungle') {
+            global.removeAndHide.push(
+                `smallships:${item}_cog`,
+                `smallships:${item}_brigg`,
+                `smallships:${item}_galley`
             )
         }
 

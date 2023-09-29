@@ -145,7 +145,7 @@ onEvent('recipes', event => {
 
     function addCutRecipes(type, full_block) {
         let block = full_block
-        if(type == 'bricks' || type == 'shingles') {
+        if(type == 'bricks') {
             block = full_block.substr(0, full_block.length - 1);
         }
         let slab = `${block}_slab`
@@ -279,7 +279,9 @@ onEvent('recipes', event => {
     global.tfcSandstoneTypes.forEach(i => addSmoothRecipes('sandstone', i));
     global.colors.forEach(i => addSmoothRecipes('alabaster', i));
     global.colors.forEach(i => addCutRecipes('shingles', `quark:${i}_shingles`));
+    global.colors.forEach(i => addCuttingRecipes('shingles', `quark:${i}_shingles`));
     addCutRecipes('shingles', `quark:shingles`)
+    addCuttingRecipes('shingles', `quark:shingles`)
 
     global.colors.forEach(i => miscAlabasterRecipes('tfc', i));
     //Add Alabaster
@@ -293,7 +295,7 @@ onEvent('recipes', event => {
     addCuttingRecipes('bricks', 'minecraft:nether_bricks')
     addBigCutRecipes('tfc:mortar', 'minecraft:nether_brick', 'minecraft:nether_bricks')
     global.addChiselCrafting('minecraft:nether_bricks', 'minecraft:chiseled_nether_bricks')
-    
+
     global.addChiselCrafting('minecraft:basalt', 'minecraft:polished_basalt')
 
     addCutRecipes('blackstone', 'minecraft:blackstone')
