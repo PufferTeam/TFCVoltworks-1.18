@@ -82,11 +82,11 @@
 [building]
 	"Wooden Posts" = false
 	"Vertical Slabs" = false
-	"Vertical Planks" = false
-	"Variant Ladders" = false
+	"Vertical Planks" = true
+	"Variant Ladders" = true
 	"Variant Furnaces" = false
 	"Variant Chests" = false
-	"Variant Bookshelves" = false
+	"Variant Bookshelves" = true
 	Thatch = false
 	"Sturdy Stone" = true
 	Stools = false

@@ -86,6 +86,11 @@ global.recipeIdToRemove = [
     'create:crafting/logistics/redstone_contact',
     'immersiveengineering:crafting/treated_wood_horizontal',
     'immersiveengineering:crafting/sawdust',
+    'create:crafting/materials/andesite_alloy',
+    'create:mixing/andesite_alloy',
+    'create:crafting/materials/andesite_alloy_from_zinc',
+    'create:mixing/andesite_alloy_from_zinc',
+    'quark:building/crafting/oak_ladder',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',

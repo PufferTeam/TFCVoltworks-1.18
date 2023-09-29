@@ -4,115 +4,164 @@ onEvent('tags.blocks', event => {
 
 onEvent('recipes', event => {
 
-    global.tfcWoodTypes.forEach(i => decorationRecipes(i));
-
-    function decorationRecipes(wood) {
+    function decorationRecipes(mod, wood) {
         event.remove({ id: `supplementaries:hanging_sign_tfc/${wood}` })
         event.remove({ id: `supplementaries:sign_post_tfc/${wood}` });
+        let signPost = `supplementaries:tfc/sign_post_${wood}`
+        let hangingSign = `supplementaries:tfc/hanging_sign_${wood}`
+        let ladder = `everycomp:q/tfc/${wood}_ladder`
+        let upgradedFence = `everycomp:cfm/tfc/${wood}_upgraded_fence`
+        let upgradedGate = `everycomp:cfm/tfc/${wood}_upgraded_gate`
+        let verticalPlanks = `everycomp:q/tfc/vertical_${wood}_planks`
+        let bookshelf = `everycomp:q/tfc/${wood}_bookshelf`
 
-        event.shaped(`supplementaries:tfc/sign_post_${wood}`, [
+        if(mod == 'beneath') {
+            signPost = `supplementaries:sign_post_${wood}`
+            hangingSign = `supplementaries:hanging_sign_${wood}`
+            ladder = `quark:${wood}_ladder`
+            upgradedFence = `cfm:${wood}_upgraded_fence`
+            upgradedGate = `cfm:${wood}_upgraded_gate`
+            verticalPlanks = `quark:vertical_${wood}_planks`
+            bookshelf = `quark:${wood}_bookshelf`
+        }
+
+        event.remove({ output: signPost });
+        event.shaped(`3x ${signPost}`, [
             'SSS',
             ' A '
         ], {
             A: '#tfc:firepit_sticks',
-            S: `tfc:wood/lumber/${wood}`
+            S: `${mod}:wood/lumber/${wood}`
         }).id(`supplementaries:sign_post_tfc/${wood}`)
 
-        event.remove({ id: `firmalife:crafting/wood/${wood}_shelf` });
-        event.shaped(`firmalife:wood/food_shelf/${wood}`, [
-            'AA',
-            'SS',
-            'AA'
+        event.remove({ output: hangingSign });
+        event.shaped(`2x ${hangingSign}`, [
+            'BAB',
+            'SSS',
+            'SSS'
         ], {
-            A: `tfc:wood/lumber/${wood}`,
-            S: '#tfc:firepit_sticks'
-        }).id(`firmalife:crafting/wood/${wood}_shelf`)
+            A: '#tfc:firepit_sticks',
+            B: '#forge:string',
+            S: `${mod}:wood/lumber/${wood}`
+        }).id(`supplementaries:hanging_sign_tfc/${wood}`)
 
-        event.remove({ id: `firmalife:crafting/wood/${wood}_jarbnet` });
-        event.shaped(`firmalife:wood/jarbnet/${wood}`, [
-            'AAL',
-            'SS ',
-            'AAL'
-        ], {
-            A: `tfc:wood/lumber/${wood}`,
-            L: `tfc:wood/log/${wood}`,
-            S: '#tfc:firepit_sticks'
-        }).id(`firmalife:crafting/wood/${wood}_jarbnet`)
-
-        event.remove({ id: `firmalife:crafting/wood/${wood}_hanger` });
-        event.shaped(`firmalife:wood/hanger/${wood}`, [
+        event.remove({ output: bookshelf });
+        event.shaped(bookshelf, [
+            'SSS',
             'AAA',
-            ' L ',
-            ' L '
+            'SSS'
         ], {
-            A: `tfc:wood/lumber/${wood}`,
-            L: '#forge:string'
-        }).id(`firmalife:crafting/wood/${wood}_hanger`)
+            A: 'minecraft:book',
+            S: `${mod}:wood/lumber/${wood}`
+        }).id(bookshelf)
 
-        event.shaped(`16x everycomp:q/tfc/${wood}_ladder`, [
+        if(mod == 'tfc') {
+            event.remove({ id: `firmalife:crafting/wood/${wood}_shelf` });
+            event.shaped(`firmalife:wood/food_shelf/${wood}`, [
+                'AA',
+                'SS',
+                'AA'
+            ], {
+                A: `${mod}:wood/lumber/${wood}`,
+                S: '#tfc:firepit_sticks'
+            }).id(`firmalife:crafting/wood/${wood}_shelf`)
+    
+            event.remove({ id: `firmalife:crafting/wood/${wood}_jarbnet` });
+            event.shaped(`firmalife:wood/jarbnet/${wood}`, [
+                'AAL',
+                'SS ',
+                'AAL'
+            ], {
+                A: `${mod}:wood/lumber/${wood}`,
+                L: `${mod}:wood/log/${wood}`,
+                S: '#tfc:firepit_sticks'
+            }).id(`firmalife:crafting/wood/${wood}_jarbnet`)
+    
+            event.remove({ id: `firmalife:crafting/wood/${wood}_hanger` });
+            event.shaped(`firmalife:wood/hanger/${wood}`, [
+                'AAA',
+                ' L ',
+                ' L '
+            ], {
+                A: `${mod}:wood/lumber/${wood}`,
+                L: '#forge:string'
+            }).id(`firmalife:crafting/wood/${wood}_hanger`)
+        }
+
+        event.remove({ output: ladder });
+        event.shaped(`16x ${ladder}`, [
             'SSS',
             ' S ',
             'SSS'
         ], {
-            S: `tfc:wood/lumber/${wood}`
-        }).id(`everycomp:crafting/wood/${wood}_ladder`)
+            S: `${mod}:wood/lumber/${wood}`
+        }).id(ladder)
 
-        event.remove({ id: `everycomp:cfm/tfc/${wood}_upgraded_fence` });
-        event.shaped(`8x everycomp:cfm/tfc/${wood}_upgraded_fence`, [
+        event.remove({ output: upgradedFence });
+        event.shaped(`8x ${upgradedFence}`, [
             'SFS',
             'SFS'
         ], {
-            S: `tfc:wood/log/${wood}`,
-            F: `tfc:wood/planks/${wood}_fence`
-        }).id(`everycomp:cfm/tfc/${wood}_upgraded_fence`)
+            S: `${mod}:wood/log/${wood}`,
+            F: `${mod}:wood/planks/${wood}_fence`
+        }).id(upgradedFence)
 
-        event.remove({ id: `everycomp:cfm/tfc/${wood}_upgraded_gate` });
-        event.shaped(`2x everycomp:cfm/tfc/${wood}_upgraded_gate`, [
+        event.remove({ output: upgradedGate });
+        event.shaped(`2x ${upgradedGate}`, [
             'SFS',
             'SFS'
         ], {
-            S: `tfc:wood/log/${wood}`,
-            F: `tfc:wood/planks/${wood}_fence_gate`
-        }).id(`everycomp:cfm/tfc/${wood}_upgraded_gate`)
+            S: `${mod}:wood/log/${wood}`,
+            F: `${mod}:wood/planks/${wood}_fence_gate`
+        }).id(upgradedGate)
 
-        event.shapeless(`tfc:wood/planks/${wood}`, [`everycomp:q/tfc/vertical_${wood}_planks`]).id(`tfc:wood/planks/${wood}_from_vertical`)
-        event.shapeless(`everycomp:q/tfc/vertical_${wood}_planks`, [`tfc:wood/planks/${wood}`]).id(`everycomp:wood/planks/${wood}_from_horizontal`)
+        event.remove({ output: verticalPlanks });
+        event.shapeless(`${mod}:wood/planks/${wood}`, [verticalPlanks]).id(`${mod}:wood/planks/${wood}_from_horizontal`)
+        event.shapeless(verticalPlanks, [`${mod}:wood/planks/${wood}`]).id(`${verticalPlanks}_from_horizontal`)
 
     }
 
+    global.tfcWoodTypes.forEach(i => decorationRecipes('tfc', i));
+    global.netherWoodTypes.forEach(i => decorationRecipes('beneath', i));
+
     function addRoofRecipes(mod, name, full_block) {
 
+        event.remove({ output: `${mod}:${name}_attic_roof` });
         event.shaped(`2x ${mod}:${name}_attic_roof`, [
             ' B',
             'BA'
         ], {
             B: full_block,
             A: '#forge:glass/colorless'
-        })
+        }).id(`${mod}:${name}_attic_roof`)
 
+        event.remove({ output: `${mod}:${name}_roof` });
         event.shaped(`2x ${mod}:${name}_roof`, [
             ' B',
             'BA'
         ], {
             B: full_block,
             A: '#forge:rods/wooden'
-        })
+        }).id(`${mod}:${name}_roof`)
 
+        event.remove({ output: `${mod}:${name}_top_roof` });
         event.shaped(`2x ${mod}:${name}_top_roof`, [
             'BAB'
         ], {
             B: full_block,
             A: '#forge:rods/wooden'
-        })
+        }).id(`${mod}:${name}_top_roof`)
 
+        event.remove({ output: `${mod}:${name}_lower_roof` });
         event.shaped(`4x ${mod}:${name}_lower_roof`, [
             ' BB',
             'BBA'
         ], {
             B: full_block,
             A: '#forge:rods/wooden'
-        })
+        }).id(`${mod}:${name}_lower_roof`)
 
+        event.remove({ output: `${mod}:${name}_steep_roof` });
         event.shaped(`4x ${mod}:${name}_steep_roof`, [
             ' B',
             'BB',
@@ -120,16 +169,18 @@ onEvent('recipes', event => {
         ], {
             B: full_block,
             A: '#forge:rods/wooden'
-        })
+        }).id(`${mod}:${name}_steep_roof`)
 
+        event.remove({ output: `${mod}:${name}_upper_lower_roof` });
         event.shaped(`3x ${mod}:${name}_upper_lower_roof`, [
             '  B',
             'BBA'
         ], {
             B: full_block,
             A: '#forge:rods/wooden'
-        })
+        }).id(`${mod}:${name}_upper_lower_roof`)
 
+        event.remove({ output: `${mod}:${name}_upper_steep_roof` });
         event.shaped(`3x ${mod}:${name}_upper_steep_roof`, [
             ' B',
             ' B',
@@ -137,15 +188,16 @@ onEvent('recipes', event => {
         ], {
             B: full_block,
             A: '#forge:rods/wooden'
-        })
+        }).id(`${mod}:${name}_upper_steep_roof`)
 
     }
 
     addRoofRecipes('mcwroofs', 'bricks', 'minecraft:bricks')
 
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_terracotta`, `minecraft:${i}_terracotta`));
-    global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_concrete`, `minecraft:${i}_concrete`));
-
+    global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_concrete`, `quark:${i}_shingles`));
+    addRoofRecipes('mcwroofs', 'granite', 'quark:shingles')
+    
     global.addDamageInputShapeless(1, 'minecraft:glass', 'create:framed_glass', "tfc:chisels", 1)
     global.addDamageInputShapeless(1, 'minecraft:glass_pane', 'create:framed_glass_pane', "tfc:chisels", 1)
     global.addDamageInputShapeless(1, 'create:framed_glass', 'create:horizontal_framed_glass', "tfc:chisels", 1)

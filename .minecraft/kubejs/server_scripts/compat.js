@@ -493,11 +493,9 @@ onEvent('recipes', event => {
 
         sresults.push(Item.of(`${count}x ${output}`).withChance(100))
 
-        smethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:knives']).keepHeldItem());
-        smethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:knives']).keepHeldItem());
-        smethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:knives']).keepHeldItem());
+        smethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:knives']));
 
-        event.recipes.createSequencedAssembly(sresults, input, smethods).transitionalItem(transitionItem).loops(1);
+        event.recipes.createSequencedAssembly(sresults, input, smethods).transitionalItem(transitionItem).loops(3);
     });
 
 

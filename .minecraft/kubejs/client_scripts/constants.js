@@ -5,6 +5,8 @@ global.itemsToHide = [
 ]
 
 global.itemsToShow = [
+    'quark:crimson_ladder',
+    'quark:warped_ladder',
     'create:refined_radiance_casing',
     'create:shadow_steel_casing',
     'create:refined_radiance',

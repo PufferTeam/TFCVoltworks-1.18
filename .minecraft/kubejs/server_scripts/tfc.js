@@ -160,11 +160,9 @@ onEvent('recipes', event => {
 
     cresults.push(Item.of(`${output}`).withChance(100))
 
-    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
-    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
-    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']).keepHeldItem());
+    cmethods.push(event.recipes.createDeploying(transitionItem, [transitionItem, '#tfc:chisels']));
 
-    event.recipes.createSequencedAssembly(cresults, input, cmethods).transitionalItem(transitionItem).loops(1);
+    event.recipes.createSequencedAssembly(cresults, input, cmethods).transitionalItem(transitionItem).loops(3);
 
   })
 

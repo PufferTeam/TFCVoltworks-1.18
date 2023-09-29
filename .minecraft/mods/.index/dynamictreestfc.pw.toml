@@ -1,14 +1,14 @@
 name = "Dynamic Trees TFC"
-filename = "dttfc-1.18.2-1.0.0-rc2.jar"
+filename = "dttfc-1.0.0-alpha5.jar"
 side = "both"
 
 [download]
 mode = "metadata:curseforge"
 url = ""
 hash-format = "sha1"
-hash = "b9f07915d7de0624e9d25f8f6c92a96e09f943c6"
+hash = "ffca075f26cff94648783f6677ba856a6bf32094"
 
 [update]
 [update.curseforge]
-file-id = 4588239
+file-id = 4766345
 project-id = 362368

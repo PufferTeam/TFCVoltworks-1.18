@@ -249,7 +249,7 @@ onEvent('recipes', event => {
         'LSL',
         'LLL'
     ], {
-        S: 'tfc:powder/diamond',
+        S: 'tfc:gem/diamond',
         L: '#tfc:lumber'
     }).id('minecraft:jukebox')
 
@@ -269,7 +269,7 @@ onEvent('recipes', event => {
         'LSL',
         'LLL'
     ], {
-        S: 'tfc:powder/emerald',
+        S: 'tfc:gem/emerald',
         L: '#tfc:lumber'
     }).id('supplementaries:speaker_block')
 
@@ -386,6 +386,24 @@ onEvent('recipes', event => {
 
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:warped_planks', 'beneath:wood/planks/warped')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:warped_planks', 'beneath:wood/planks/warped')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:crimson_planks', 'beneath:wood/planks/crimson')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:crimson_planks', 'beneath:wood/planks/crimson')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:warped_stem', 'beneath:wood/log/warped')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:warped_stem', 'beneath:wood/log/warped')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:crimson_stem', 'beneath:wood/log/crimson')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:crimson_stem', 'beneath:wood/log/crimson')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:stripped_warped_stem', 'beneath:wood/stripped_log/warped')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:stripped_warped_stem', 'beneath:wood/stripped_log/warped')
+
+    event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:stripped_crimson_stem', 'beneath:wood/stripped_log/crimson')
+    event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:stripped_crimson_stem', 'beneath:wood/stripped_log/crimson')
 
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:slime_ball', 'tfc:glue')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:slime_ball', 'tfc:glue')
