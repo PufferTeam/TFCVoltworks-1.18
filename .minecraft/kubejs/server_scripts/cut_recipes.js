@@ -133,12 +133,12 @@ onEvent('recipes', event => {
         let stairs = `${block}_stairs`
         let wall = `${block}_wall`
 
-        if (type == 'rockpaved' || type == 'bricks' || type == 'blackstone' || type == 'netherwood') {
+        if (type == 'rockpaved' || type == 'bricks' || type == 'blackstone' || type == 'netherwood' || type == 'shingles') {
             global.addCutting2Output(full_block, slab)
             global.addCutting(full_block, stairs)
         }
 
-        if (type !== 'netherwood') {
+        if (type !== 'netherwood' && type !== 'shingles') {
             global.addCutting(full_block, wall)
         }
     }
