@@ -39,10 +39,22 @@ onEvent('tags.items', event => {
         if(i == 'crimson' || i == 'warped') {
             log = 'stem'
         }
-        event.remove('minecraft:logs', `minecraft:${i}_${log}`)
-        event.remove('minecraft:logs_that_burn', `minecraft:${i}_${log}`)
-        event.remove('minecraft:logs', `minecraft:stripped_${i}_${log}`)
-        event.remove('minecraft:logs_that_burn', `minecraft:stripped_${i}_${log}`)
+        let wood = 'wood'
+        if(i == 'crimson' || i == 'warped') {
+            wood = 'hyphae'
+        }
+
+        global.woodTagList.forEach(tag => {
+            event.remove(tag, `minecraft:${i}_${log}`)
+            event.remove(tag, `minecraft:stripped_${i}_${log}`)
+            event.remove(tag, `minecraft:${i}_${wood}`)
+            event.remove(tag, `minecraft:stripped_${i}_${wood}`)
+        })
+
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:${i}_${log}`)
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:stripped_${i}_${log}`)
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:${i}_${wood}`)
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:stripped_${i}_${wood}`)
 
         event.remove('create:vanilla_stripped_logs', `minecraft:stripped_${i}_${log}`)
 
@@ -58,6 +70,30 @@ onEvent('tags.items', event => {
 
 onEvent('tags.blocks', event => {
     event.remove('create:windmill_sails', 'create:sail_frame')
+
+    global.vanillaWoodTypes.forEach(i => {
+        let log = 'log'
+        if(i == 'crimson' || i == 'warped') {
+            log = 'stem'
+        }
+        let wood = 'wood'
+        if(i == 'crimson' || i == 'warped') {
+            wood = 'hyphae'
+        }
+        global.woodTagList.forEach(tag => {
+            event.remove(tag, `minecraft:${i}_${log}`)
+            event.remove(tag, `minecraft:stripped_${i}_${log}`)
+            event.remove(tag, `minecraft:${i}_${wood}`)
+            event.remove(tag, `minecraft:stripped_${i}_${wood}`)
+        })
+
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:${i}_${log}`)
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:stripped_${i}_${log}`)
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:${i}_${wood}`)
+        event.remove(`minecraft:${i}_${log}s`, `minecraft:stripped_${i}_${wood}`)
+
+        event.remove('create:vanilla_stripped_logs', `minecraft:stripped_${i}_${log}`)
+    });
 
     global.tfcGrass.forEach(i => event.add('minecraft:dirt', i));
 })

@@ -102,7 +102,7 @@
 				}
 			}
 			x: 0.0d
-			y: 1.5d
+			y: 2.0d
 			subtitle: "Your first tools made of stone!"
 			description: [
 				"{image:tfc:textures/item/loose_rock/granite.png width:30 height:30 align:1}"
@@ -200,7 +200,7 @@
 			title: "Lumberjack"
 			icon: "tfc:wood/log/oak"
 			x: -0.5d
-			y: 3.0d
+			y: 3.5d
 			subtitle: "Cut those damn trees!"
 			description: [
 				"{image:minecraft:textures/block/oak_sapling.png width:30 height:30 align:1}"
@@ -230,7 +230,7 @@
 		{
 			title: "Plant fibers"
 			x: 0.5d
-			y: 3.0d
+			y: 3.5d
 			subtitle: "Hay, do you want some hay?"
 			description: [
 				"{image:tfc:textures/item/straw.png width:30 height:30 align:1}"
@@ -260,8 +260,8 @@
 					}
 				}
 			}
-			x: 1.0d
-			y: 6.0d
+			x: 1.5d
+			y: 5.5d
 			subtitle: "Can I make my own army with it?"
 			description: [
 				"{image:minecraft:textures/item/clay_ball.png width:30 height:30 align:1}"
@@ -277,10 +277,7 @@
 				"&lUnfired Pottery&r doesn't serve any purpose, so you will need to cook it in a &lPit Kiln&r to use it."
 				""
 			]
-			dependencies: [
-				"5E5EDD3AB21FCF38"
-				"1F671C413CD50D66"
-			]
+			dependencies: ["1F671C413CD50D66"]
 			id: "42976748A3392F8D"
 			tasks: [
 				{
@@ -373,7 +370,7 @@
 			title: "Fireplace"
 			icon: "tfc:firepit"
 			x: -0.5d
-			y: 5.0d
+			y: 6.0d
 			subtitle: "I'm sure your culinary abilities are good, right?"
 			description: [
 				"{image:tfc:textures/item/firepit.png width:30 height:30 align:1}"
@@ -402,7 +399,7 @@
 			title: "Underground Kiln"
 			icon: "tfc:grass/loam"
 			x: 0.5d
-			y: 5.0d
+			y: 6.0d
 			subtitle: "Don't do it in the sky!"
 			description: [
 				"{image:tfc:textures/gui/book/icons/pit_kiln.png width:30 height:30 align:1}"
@@ -419,7 +416,10 @@
 				"{image:tfc:textures/gui/book/tutorial/pit_kiln_5.png width:100 height:100 align:1}"
 				"Please takes in consideration that the Kiln is &lslow&r and it takes &lmultiples minutes&r for the pottery to be fired."
 			]
-			dependencies: ["5904278FDDFCBE80"]
+			dependencies: [
+				"5904278FDDFCBE80"
+				"42976748A3392F8D"
+			]
 			id: "5E5EDD3AB21FCF38"
 			tasks: [{
 				id: "5CE4D4E25CFA8E6F"
@@ -433,8 +433,8 @@
 		}
 		{
 			title: "Early light"
-			x: -1.0d
-			y: 6.0d
+			x: -2.0d
+			y: 6.5d
 			subtitle: "Finally I can see!"
 			description: [
 				"{image:minecraft:textures/block/torch.png width:30 height:30 align:1}"
@@ -493,7 +493,8 @@
 				}
 			}
 			x: 0.0d
-			y: 6.5d
+			y: 7.5d
+			shape: "hexagon"
 			subtitle: "Now it's useful!"
 			description: [
 				"{image:minecraft:textures/item/brick.png width:30 height:30 align:1}"
@@ -503,7 +504,7 @@
 			]
 			dependencies: [
 				"550B66AD03DEC1A8"
-				"42976748A3392F8D"
+				"5E5EDD3AB21FCF38"
 			]
 			id: "3AC080415B38DADE"
 			tasks: [
@@ -582,7 +583,7 @@
 				}
 			}
 			x: -1.0d
-			y: 8.5d
+			y: 10.0d
 			subtitle: "The next generation of tools!"
 			description: ["{image:tfc:textures/item/ore/rich_native_copper.png width:30 height:30 align:1}"]
 			dependencies: ["3AC080415B38DADE"]
@@ -604,8 +605,8 @@
 		{
 			title: "Wood Piles"
 			icon: "kubejs:oak_firewood"
-			x: -1.5d
-			y: 3.0d
+			x: -2.5d
+			y: 3.5d
 			subtitle: "Too big to fit in pockets!"
 			description: [
 				"{image:tfc:textures/block/log_pile_front.png width:30 height:30 align:1}"
@@ -626,8 +627,8 @@
 		}
 		{
 			title: "Charcoal Making"
-			x: -2.0d
-			y: 4.0d
+			x: -1.5d
+			y: 4.5d
 			subtitle: "Not far from the industrial revolution"
 			description: [
 				"{image:tfc:textures/block/charcoal_pile.png width:30 height:30 align:1}"
@@ -719,8 +720,8 @@
 		}
 		{
 			title: "Invention of fire"
-			x: 0.0d
-			y: 4.0d
+			x: 0.0028911564625673236d
+			y: 4.72159863945577d
 			shape: "hexagon"
 			subtitle: "You are pretty late, it was discovered long ago."
 			description: [
@@ -751,8 +752,8 @@
 		}
 		{
 			title: "Agriculture for Zoomers"
-			x: -1.5d
-			y: 2.0d
+			x: -1.5209183673469582d
+			y: 2.2869047619047507d
 			subtitle: "Preferably without the use of pesticides"
 			description: [
 				"{image:tfc:textures/block/crop/potato_6.png width:30 height:30 align:1}"
@@ -779,39 +780,6 @@
 			}]
 		}
 		{
-			title: "Butcher"
-			icon: "minecraft:beef"
-			x: 1.0d
-			y: 6.0d
-			subtitle: "I hope you aren't vegetarian"
-			description: [
-				"{image:tfc:textures/item/food/pheasant.png width:30 height:30 align:1}"
-				""
-				"To help you &lbalance&r that vegan &lnutritional diet&r of your, what about tasting some meat?"
-				""
-				"Sadly meat doesn't grow on trees, so &lkill some animals&r with your new &lJavelin&r."
-			]
-			dependencies: ["305CFBB54FEE5D90"]
-			id: "1373FEE9DA382C17"
-			tasks: [{
-				id: "5A3C30D469782DA9"
-				type: "item"
-				title: "Any Raw Meat"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "tfc:foods/raw_meats"
-					}
-				}
-			}]
-			rewards: [{
-				id: "22D65078BC4DADAB"
-				type: "item"
-				item: "minecraft:bone"
-			}]
-		}
-		{
 			title: "Gold"
 			icon: {
 				id: "tfc:ore/poor_native_gold"
@@ -823,8 +791,8 @@
 					}
 				}
 			}
-			x: 1.0d
-			y: 7.5d
+			x: -1.0d
+			y: 9.0d
 			subtitle: "Worth a lot, or is it?"
 			dependencies: ["3AC080415B38DADE"]
 			id: "42CE9BECCD10CBA2"
@@ -855,7 +823,7 @@
 				}
 			}
 			x: 1.0d
-			y: 8.5d
+			y: 10.0d
 			subtitle: "Not a good material in itself"
 			description: ["{image:tfc:textures/item/ore/rich_cassiterite.png width:30 height:30 align:1}"]
 			dependencies: ["3AC080415B38DADE"]
@@ -886,8 +854,8 @@
 					}
 				}
 			}
-			x: -1.0d
-			y: 7.5d
+			x: 1.0d
+			y: 9.0d
 			subtitle: "Worth at least a penny"
 			dependencies: ["3AC080415B38DADE"]
 			id: "0DCDEE8DCC5B7BE2"
@@ -920,8 +888,8 @@
 					}
 				}
 			}
-			x: -1.5d
-			y: 9.5d
+			x: -2.0d
+			y: 11.5d
 			description: ["{image:tfc:textures/item/metal/pickaxe/copper.png width:30 height:30 align:1}"]
 			dependencies: ["1AED6D04C6C4425A"]
 			id: "4B95D80268ECE942"
@@ -1001,7 +969,7 @@
 				}
 			}
 			x: 0.0d
-			y: 10.0d
+			y: 11.0d
 			description: ["{image:tfc:textures/item/metal/ingot/bronze.png width:30 height:30 align:1}"]
 			dependencies: [
 				"1AED6D04C6C4425A"
@@ -1036,7 +1004,8 @@
 				}
 			}
 			x: 0.0d
-			y: 8.0d
+			y: 9.5d
+			shape: "hexagon"
 			subtitle: "Cheap Crucible"
 			description: [
 				"{image:tfc:textures/item/ceramic/vessel.png width:30 height:30 align:1}"
@@ -1087,7 +1056,7 @@
 			title: "Food Preservation"
 			icon: "tfc:ceramic/large_vessel"
 			x: 2.0d
-			y: 7.0d
+			y: 8.0d
 			subtitle: "Rot isn't tasty"
 			description: [
 				"{image:minecraft:textures/item/rotten_flesh.png width:30 height:30 align:1}"
@@ -1124,7 +1093,7 @@
 			title: "Panning"
 			icon: "tfc:pan/empty"
 			x: -2.0d
-			y: 7.0d
+			y: 8.0d
 			subtitle: "Not efficient but can help you at the start"
 			description: [
 				"{image:tfc:textures/gui/book/icons/panning.png width:30 height:30 align:1}"
@@ -1154,7 +1123,7 @@
 			title: "Clay Hints"
 			icon: "tfc:clay_grass/loam"
 			x: 1.5d
-			y: 4.0d
+			y: 4.5d
 			description: [
 				"{image:tfc:textures/block/grass_clay/loam.png width:30 height:30 align:1}"
 				""
@@ -1177,8 +1146,8 @@
 		{
 			title: "Carpenter"
 			icon: "tfc:wood/lumber/oak"
-			x: -3.0d
-			y: 9.5d
+			x: -3.5d
+			y: 10.5d
 			subtitle: "I like Wood"
 			description: [
 				"{image:tfc:textures/item/metal/saw/copper.png width:30 height:30 align:1}"
@@ -1233,7 +1202,7 @@
 			title: "Prospecting and Mining"
 			icon: "tfc:ore/rich_native_copper/granite"
 			x: -1.5d
-			y: 11.0d
+			y: 12.5d
 			subtitle: "Not sure if it's cheating"
 			description: [
 				"{image:tfc:textures/item/metal/propick/copper.png width:30 height:30 align:1}"
@@ -1295,7 +1264,7 @@
 			title: "Chiseling"
 			icon: "tfc:rock/smooth/granite_slab"
 			x: -3.0d
-			y: 11.5d
+			y: 12.5d
 			subtitle: "Cut your blocks"
 			description: [
 				"{image:tfc:textures/item/metal/chisel/copper.png width:30 height:30 align:1}"
@@ -1341,8 +1310,8 @@
 		{
 			title: "Better Storage"
 			icon: "tfc:wood/chest/oak"
-			x: -3.5d
-			y: 8.5d
+			x: -4.0d
+			y: 9.5d
 			description: [
 				"{image:tfcbarrels:textures/block/wood/barrel/barrel_bottom_oak.png width:30 height:30 align:1}"
 				""
@@ -1394,8 +1363,8 @@
 		{
 			title: "Barrels"
 			icon: "tfc:wood/barrel/oak"
-			x: -4.0d
-			y: 9.5d
+			x: -4.5d
+			y: 10.5d
 			description: [
 				"{image:tfcbarrels:textures/block/wood/barrel/barrel_side_oak.png width:30 height:30 align:1}"
 				""
@@ -1421,8 +1390,8 @@
 		{
 			title: "Automated Panning"
 			icon: "tfc:wood/sluice/oak"
-			x: -2.5d
-			y: 8.5d
+			x: -3.0d
+			y: 9.5d
 			subtitle: "More efficient panning"
 			description: [
 				"{image:tfc:textures/gui/book/icons/sluice.png width:30 height:30 align:1}"
@@ -1454,8 +1423,8 @@
 		}
 		{
 			title: "Charcoal Forge"
-			x: -2.0d
-			y: 5.0d
+			x: -1.5d
+			y: 5.5d
 			description: [
 				"{image:tfc:textures/item/ceramic/fired_mold/ingot_empty.png width:30 height:30 align:1}"
 				""
@@ -1481,29 +1450,10 @@
 			}]
 		}
 		{
-			title: "Flux"
-			icon: "tfc:powder/flux"
-			x: -4.0d
-			y: 14.0d
-			id: "69B94C5AC9C54BAB"
-			tasks: [{
-				id: "4518286E485C9B88"
-				type: "item"
-				title: "Any #tfc:flux"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "tfc:flux"
-					}
-				}
-			}]
-		}
-		{
 			title: "Quern"
 			icon: "tfc:quern"
 			x: -4.5d
-			y: 11.5d
+			y: 12.5d
 			description: [
 				"{image:tfc:textures/block/devices/quern/handstone_bottom.png width:30 height:30 align:1}"
 				""
@@ -1545,7 +1495,7 @@
 			title: "Raw Stone Carving"
 			icon: "tfc:rock/raw/andesite"
 			x: -3.787414965986393d
-			y: 12.501700680272123d
+			y: 13.501700680272123d
 			description: [
 				"{image:tfc:textures/block/rock/raw/phyllite.png width:30 height:30 align:1}"
 				""
@@ -1570,8 +1520,8 @@
 		}
 		{
 			icon: "tfc:thatch_bed"
-			x: 1.5d
-			y: 3.0d
+			x: 2.5d
+			y: 3.5d
 			description: [
 				"{image:tfc:textures/block/thatch_bed/foot_end.png width:30 height:30 align:1}"
 				""
@@ -1602,7 +1552,7 @@
 				ForgeCaps: {
 					"tfc:food": {
 						traits: [ ]
-						creationDate: 528000L
+						creationDate: -9223372036854775808L
 					}
 					"tfc:item_heat": {
 						heat: 0.0f
@@ -1610,8 +1560,8 @@
 					}
 				}
 			}
-			x: 1.5d
-			y: 2.0d
+			x: 1.5362244897958988d
+			y: 2.172619047619037d
 			subtitle: "I hope you are not vegetarian"
 			description: [
 				"{image:tfc:textures/item/food/quail.png width:30 height:30 align:1}"
@@ -1662,7 +1612,7 @@
 				}
 			}
 			x: 0.5d
-			y: 12.5d
+			y: 14.0d
 			dependencies: [
 				"28C1F22F20D13374"
 				"598610C83C63DEE7"
@@ -1684,8 +1634,9 @@
 		{
 			title: "Primitive Blacksmith"
 			icon: "tfc:rock/anvil/granite"
-			x: -1.5d
-			y: 12.5d
+			x: -2.0d
+			y: 14.0d
+			description: ["{image:tfc:textures/block/rock/anvil/andesite.png width:30 height:30 align:1}"]
 			dependencies: ["63E21427598BDC8E"]
 			id: "5C12FE7B7CC2D04E"
 			tasks: [{
@@ -1702,7 +1653,7 @@
 			}]
 		}
 		{
-			title: "Cold Blacksmith"
+			title: "The Copper Age"
 			icon: {
 				id: "tfc:metal/ingot/copper"
 				Count: 1b
@@ -1714,7 +1665,8 @@
 				}
 			}
 			x: -0.5d
-			y: 11.0d
+			y: 12.0d
+			description: ["{image:tfc:textures/item/metal/ingot/copper.png width:30 height:30 align:1}"]
 			dependencies: ["1AED6D04C6C4425A"]
 			id: "7152A89AB7C629B8"
 			tasks: [{
@@ -1733,7 +1685,7 @@
 		{
 			title: "Cold Blacksmith"
 			x: -0.5d
-			y: 12.5d
+			y: 14.0d
 			dependencies: [
 				"7152A89AB7C629B8"
 				"5C12FE7B7CC2D04E"
@@ -1744,6 +1696,55 @@
 				type: "item"
 				item: {
 					id: "tfc:metal/anvil/copper"
+					Count: 1b
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+				}
+			}]
+		}
+		{
+			title: "The Create Age"
+			x: 2.5d
+			y: 9.5d
+			description: ["{image:create:textures/item/andesite_alloy.png width:30 height:30 align:1}"]
+			dependencies: [
+				"0DCDEE8DCC5B7BE2"
+				"105D6172AD2551E3"
+			]
+			dependency_requirement: "one_completed"
+			id: "5D47DF274C125D61"
+			tasks: [{
+				id: "5BD77F358A256637"
+				type: "item"
+				item: {
+					id: "tfc_metallum:metal/ingot/andesite_alloy"
+					Count: 1b
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 2.5d
+			y: 14.0d
+			dependencies: [
+				"0C145406B956225F"
+				"5D47DF274C125D61"
+			]
+			id: "11718433B6FEDCF4"
+			tasks: [{
+				id: "78926B5982658CE7"
+				type: "item"
+				item: {
+					id: "tfc_metallum:metal/rod/andesite_alloy"
 					Count: 1b
 					ForgeCaps: {
 						"tfc:item_heat": {

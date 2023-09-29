@@ -142,6 +142,18 @@ global.recipeTypeToRemove = [
     'minecraft:stonecutting'
 ];
 
+global.woodTagList = [
+    'tfc:firepit_fuel',
+    'firmalife:oven_fuel',
+    'minecraft:non_flammable_wood',
+    'minecraft:logs',
+    'tfc:pit_kiln_logs',
+    'tfc:firepit_logs',
+    'tfc:log_pile_logs',
+    'tfc:logs_that_log',
+    'rosia:fire_box_fuel'
+];
+
 //--------------------------------------------------------------
 //Config
 //--------------------------------------------------------------
