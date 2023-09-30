@@ -7,9 +7,11 @@
     "item.kubejs.frame.refined_radiance": "Radiant Frame",
     "item.kubejs.frame.shadow_steel": "Shadow Frame",
 
+    "block.kubejs.brick.coke_oven_bricks": "Coke Bricks",
     "block.kubejs.brick.bloomery_bricks": "Bloomery Bricks",
     "block.kubejs.brick.bloomery_bricks_reinforced": "Reinforced Bloomery Bricks",
     "block.kubejs.brick.fire_bricks_reinforced": "Reinforced Fire Bricks",
+    "item.kubejs.brick.coke_oven_brick": "Coke Brick",
     "item.kubejs.brick.bloomery_brick": "Bloomery Brick",
 
     "item.kubejs.stone.pickaxe.igneous_extrusive": "Stone Pickaxe",

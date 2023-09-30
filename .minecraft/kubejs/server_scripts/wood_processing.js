@@ -112,8 +112,8 @@ onEvent('recipes', event => {
 
     global.addDamageInputShapeless(10, 'tfc:flammable_lumber', 'minecraft:stick', "tfc:saws", 2)
 
-    event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', '#tfc:ash']).id('kubejs:ash_treated_lumber_made_with_ash')
-    event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', '#tfc:ash', '#tfc:ash', '#tfc:ash', '#tfc:ash']).id('kubejs:ash_treated_wood_made_with_ash')
+    event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', 'supplementaries:ash_brick']).id('kubejs:ash_treated_lumber_made_with_ash')
+    event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', 'supplementaries:ash_brick', 'supplementaries:ash_brick', 'supplementaries:ash_brick', 'supplementaries:ash_brick']).id('kubejs:ash_treated_wood_made_with_ash')
 
 })
 

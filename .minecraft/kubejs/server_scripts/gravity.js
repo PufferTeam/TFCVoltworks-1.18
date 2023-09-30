@@ -44,15 +44,11 @@ onEvent('tags.blocks', event => {
     function tagInsulation(mod, name, block) {
         event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}_slab`)
         event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}_stairs`)
-        event.add(`tfc:bloomery_insulation`, `${mod}/${block}/${name}_slab`)
-        event.add(`tfc:bloomery_insulation`, `${mod}/${block}/${name}_stairs`)
         if (mod == 'tfc:rock') {
             event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}_wall`)
-            event.add(`tfc:bloomery_insulation`, `${mod}/${block}/${name}_wall`)
         }
         if(mod == 'kubejs:rock') {
             event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}`)
-            event.add(`tfc:bloomery_insulation`, `${mod}/${block}/${name}`)
         }
     }
 })

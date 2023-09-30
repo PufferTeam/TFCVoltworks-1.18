@@ -71,7 +71,7 @@
 	flint_block = true
 	urn = true
 	ash = true
-	ash_bricks = false
+	ash_bricks = true
 	doormat = true
 	flower_box = true
 	blackstone_tile = false

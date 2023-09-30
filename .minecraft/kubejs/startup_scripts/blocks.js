@@ -15,5 +15,6 @@ onEvent('block.registry', event => {
 
     event.create(`brick/bloomery_bricks`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
     event.create(`brick/bloomery_bricks_reinforced`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
-    event.create(`brick/fire_bricks_reinforced`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_reinforced`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true) 
+    event.create(`brick/coke_oven_bricks`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 })

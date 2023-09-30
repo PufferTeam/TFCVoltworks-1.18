@@ -46,6 +46,8 @@ onEvent('item.registry', event => {
 
     event.create('creosote_treated_large_stick').maxStackSize(64);
 
+    event.create('brick/coke_oven_brick').maxStackSize(64);
+
     event.create('brick/bloomery_brick').maxStackSize(64);
 
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));
