@@ -151,11 +151,10 @@ onEvent('recipes', event => {
         event.remove({ output: 'create:brown_toolbox' })
         event.shaped('create:brown_toolbox', [
             ' S ',
-            'ABA',
+            'SBS',
             'LLL'
         ], {
-            S: 'sewingkit:leather_strip',
-            A: 'sewingkit:leather_sheet',
+            S: '#forge:leather',
             B: '#forge:sheets/brass',
             L: '#tfc:lumber'
         }).id('create:brown_toolbox')

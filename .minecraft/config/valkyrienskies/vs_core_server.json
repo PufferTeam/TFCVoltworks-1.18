@@ -8,7 +8,7 @@
   "shipLoadDistance" : 128.0,
   "shipUnloadDistance" : 196.0,
   "physics" : {
-    "lodDetail" : 512,
+    "lodDetail" : 4096,
     "subSteps" : 20,
     "iterations" : 2,
     "solver" : "GAUSS_SEIDEL",

@@ -1,6 +1,6 @@
 {
   "FTBChunks" : {
-    "shipsProtectedByClaims" : false,
+    "shipsProtectedByClaims" : true,
     "shipsProtectionOutOfBuildHeight" : false
   },
   "ComputerCraft" : {
@@ -11,8 +11,8 @@
   "enableMovementChecks" : false,
   "preventFluidEscapingShip" : true,
   "explosionBlastForce" : 500000.0,
-  "allowMobSpawns" : false,
-  "aiOnShips" : false,
+  "allowMobSpawns" : true,
+  "aiOnShips" : true,
   "miniShipSize" : 0.5,
   "minScaling" : 0.25,
   "$schema" : "schemas/vs_server.schema.json"
