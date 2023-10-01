@@ -1,3 +1,21 @@
+onEvent('item.registry.tool_tiers', event => {
+    global.stoneToolsTypes.forEach(i => {
+        let result = i.split('/')
+        let stone = result[0]
+        let damage = result[1]
+
+        event.add('custom_' + stone, tier => {
+            tier.uses = damage
+            tier.speed = 1.0
+            tier.attackDamageBonus = 0
+            tier.level = 0
+            tier.enchantmentValue = 15
+            tier.repairIngredient = '#forge:cobblestone'
+        })
+
+    });
+})
+
 onEvent('item.registry', event => {
 
     //event.create('firewood').maxStackSize(64)
@@ -62,7 +80,7 @@ onEvent('item.registry', event => {
         let result = i.split('/')
         let stone = result[0]
         let damage = result[1]
-        event.create('stone/pickaxe/' + stone, 'pickaxe').tier('wood').maxDamage(damage)
+        event.create('stone/pickaxe/' + stone, 'pickaxe').tier('custom_' + stone).maxDamage(damage)
         event.create('stone/pickaxe_head/' + stone).maxStackSize(64)
     });
 

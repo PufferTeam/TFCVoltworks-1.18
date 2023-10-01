@@ -506,6 +506,7 @@
 				"550B66AD03DEC1A8"
 				"5E5EDD3AB21FCF38"
 			]
+			dependency_requirement: "all_started"
 			id: "3AC080415B38DADE"
 			tasks: [
 				{
@@ -975,7 +976,10 @@
 				"1AED6D04C6C4425A"
 				"105D6172AD2551E3"
 				"754AEC58BAB79B5C"
+				"42CE9BECCD10CBA2"
+				"0DCDEE8DCC5B7BE2"
 			]
+			dependency_requirement: "one_completed"
 			id: "28C1F22F20D13374"
 			tasks: [{
 				id: "5D1A7502B91660A0"
@@ -1021,6 +1025,7 @@
 				"&oVisit the Field Guide entry for more information&r"
 			]
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			id: "754AEC58BAB79B5C"
 			tasks: [
 				{
@@ -1068,6 +1073,7 @@
 				"Later the process will be even &leasier&r with new mechanics allowing you to counter &lperishment&r."
 			]
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			id: "39AE156E9F96C085"
 			tasks: [
 				{
@@ -1105,6 +1111,7 @@
 				"To pan the &lOre Deposit&r, &lright click on it&r with the pan and then &lhold right click&r with that same pan while standing in &lwater&r."
 			]
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			hide_text_until_complete: false
 			id: "6FD8BE20003E3444"
 			tasks: [
@@ -1157,6 +1164,7 @@
 				""
 			]
 			dependencies: ["4B95D80268ECE942"]
+			dependency_requirement: "all_started"
 			id: "5B45C482001F4039"
 			tasks: [
 				{
@@ -1219,6 +1227,7 @@
 				"You will also be careful when &lmining&r because blocks can &lcollapse&r. So use &lsupport beams to keep yourself&r safe in the mines."
 			]
 			dependencies: ["4B95D80268ECE942"]
+			dependency_requirement: "all_started"
 			id: "0D0D28454BAE0180"
 			tasks: [
 				{
@@ -1275,6 +1284,7 @@
 				"To change the &lmode&r, &lpress M&l. There is 3 modes: &lStairs&r, &lSlabs&r and &lSmoothing&r."
 			]
 			dependencies: ["4B95D80268ECE942"]
+			dependency_requirement: "all_started"
 			id: "24B575C583C55AD0"
 			tasks: [
 				{
@@ -1715,7 +1725,6 @@
 				"0DCDEE8DCC5B7BE2"
 				"105D6172AD2551E3"
 			]
-			dependency_requirement: "one_completed"
 			id: "5D47DF274C125D61"
 			tasks: [{
 				id: "5BD77F358A256637"

@@ -66,15 +66,6 @@ onEvent('recipes', event => {
         S: '#tfc:firepit_sticks'
     }).id('minecraft:redstone_torch')
 
-    event.remove({ id: 'tfc:crafting/vanilla/ladder' })
-    event.shaped('16x minecraft:ladder', [
-        'SSS',
-        ' S ',
-        'SSS'
-    ], {
-        S: '#tfc:firepit_sticks'
-    }).id('minecraft:ladder_from_sticks')
-
     event.remove({ id: 'tfc:crafting/vanilla/redstone/piston' })
     event.shaped('minecraft:piston', [
         ' L ',

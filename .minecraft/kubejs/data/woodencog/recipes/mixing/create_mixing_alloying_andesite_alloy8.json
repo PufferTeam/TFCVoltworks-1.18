@@ -2,14 +2,19 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "fluid": "kubejs:raw_andesite_alloy",
+            "fluid": "tfc:metal/silver",
             "nbt": {},
-            "amount": 60
+            "amount": 40
         },
         {
             "fluid": "tfc:metal/tin",
             "nbt": {},
-            "amount": 40
+            "amount": 45
+        },
+        {
+            "fluid": "kubejs:raw_andesite_alloy",
+            "nbt": {},
+            "amount": 15
         }
     ],
     "results": [

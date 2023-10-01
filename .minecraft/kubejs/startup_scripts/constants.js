@@ -1117,6 +1117,7 @@ global.vanillaItems = [
     'wheat_seeds',
     'pumpkin_seeds',
     'iron_horse_armor',
+    'ladder',
     'golden_horse_armor',
     'beetroot_seeds',
     'fishing_rod',
