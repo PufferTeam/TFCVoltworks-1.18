@@ -60,6 +60,8 @@ onEvent('tags.items', event => {
 
         event.remove('forge:chests/wooden', `quark:${i}_chest`)
         event.remove('forge:chests/wooden', `quark:${i}_trapped_chest`)
+
+        event.remove(`minecraft:planks`, `minecraft:${i}_planks`)
     });
     global.quarkWoodTypes.forEach(i => {
         event.remove('forge:chests/wooden', `quark:${i}_chest`)
@@ -93,6 +95,9 @@ onEvent('tags.blocks', event => {
         event.remove(`minecraft:${i}_${log}s`, `minecraft:stripped_${i}_${wood}`)
 
         event.remove('create:vanilla_stripped_logs', `minecraft:stripped_${i}_${log}`)
+
+        event.remove(`minecraft:planks`, `minecraft:${i}_planks`)
+
     });
 
     global.tfcGrass.forEach(i => event.add('minecraft:dirt', i));

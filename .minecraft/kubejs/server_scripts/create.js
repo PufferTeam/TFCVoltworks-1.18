@@ -24,7 +24,7 @@ onEvent('recipes', event => {
         'SAS'
     ], {
         S: '#forge:plates/wrought_iron',
-        A: '#forge:ingots/andesite_alloy'
+        A: 'tfc_metalwork:metal/plate/andesite_alloy'
     }).id('createbigcannons:basin_foundry_lid')
 
     event.remove({ output: 'create:metal_bracket' })

@@ -33,6 +33,9 @@ onEvent('tags.items', event => {
     global.laddersTag = []
     global.tfcGlobalMetalTypes.forEach(i => global.laddersTag.push(`tfc_metalwork:metal_ladders/${i}`));
 
+    global.ladders = []
+    global.tfcGlobalMetalTypes.forEach(i => global.ladders.push(`tfc_metalwork:metal/ladder/${i}`));
+
     global.platesTag = []
     global.tfcGlobalMetalTypes.forEach(i => global.platesTag.push(`forge:plates/${i}`));
 
@@ -102,6 +105,7 @@ onEvent('tags.items', event => {
         'tfc:refined_iron_bloom',
         'tfc:brass_mechanisms',
         'minecraft:iron_door',
+        'waterflasks:unfinished_iron_flask',
         'firmalife:pie_pan',
         'tfc:metal/ingot/high_carbon_steel'
     ]
@@ -133,6 +137,7 @@ onEvent('tags.items', event => {
     global.ingottagrx = new RegExp(global.ingotsTag.join('|'));
     global.largerodrx = new RegExp(global.largeRods.join('|'));
     global.laddertagrx = new RegExp(global.laddersTag.join('|'));
+    global.ladderrx = new RegExp(global.ladders.join('|'));
     global.rodrx = new RegExp(global.tfcMetallumRods.join('|'));
     global.nameblacklistrx = new RegExp(global.nameBlacklist.join('|'));
     global.doubleingotrx = new RegExp(global.doubleIngotBlacklist.join('|'));
@@ -245,6 +250,16 @@ onEvent('recipes', event => {
                 "draw_third_last"
             ]).tier(tier).id(`tfc_metalwork:anvil/${metal}_large_rod`)
         }
+
+        if(global.ladderrx.test(output)) {
+            let input = anvilRecipe.input.item;
+            event.remove({ id: `tfc_metalwork:anvil/${metal}_ladder` })
+            event.recipes.tfc.anvil(`16x ${output}`, `${input}`, [
+                "bend_last",
+                "bend_second_last",
+                "hit_any"
+            ]).tier(tier).id(`tfc_metalwork:anvil/${metal}_ladder`)         
+        }
     });
 
     event.forEachRecipe({ type: "tfc:anvil" }, recipe => {
@@ -316,6 +331,7 @@ onEvent('recipes', event => {
                     metal = 'brass'
                     break;
                 case 'minecraft:iron_door':
+                case 'waterflasks:unfinished_iron_flask':
                     metal = 'wrought_iron'
                     break;
                 case 'firmalife:pie_pan':
@@ -456,6 +472,10 @@ onEvent('recipes', event => {
 
                 if (toolType == 'large_rod' || toolType == 'rod') {
                     count = 2
+                }
+
+                if(toolType == 'ladder') {
+                    count = 16
                 }
 
                 //console.log(count + 'of output')
@@ -647,6 +667,8 @@ onEvent('recipes', event => {
                 if (global.highorerx.test(input) && mod != 'tfc') {
                     let oreResult = input.split('/')
                     let oreName = oreResult[1]
+                    let oreNameDivided = oreName.split('/')
+                    let completeOreName = oreNameDivided[1]
                     //console.log(oreName)
                     event.remove({ id: `tfc_metallum:heating/ore/${oreName}` })
                     heatingTemperature = 5000
@@ -656,8 +678,7 @@ onEvent('recipes', event => {
                 }
 
                 //console.log(input)
-                if (global.largerodtagrx.test(input) || global.platetagrx.test(input) || global.laddertagrx.test(input)) {
-                    event.remove({ id: `tfc_metalwork:heating/metal/${metal}_ladder` })
+                if (global.largerodtagrx.test(input) || global.platetagrx.test(input)) {
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_large_rod` })
                     event.remove({ id: `tfc_metalwork:heating/metal/${metal}_plate` })
                     if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
@@ -668,6 +689,19 @@ onEvent('recipes', event => {
 
                     if (temperature <= 2015) {
                         global.addMelting(isTag, input, fluid, 100, heatingLevel)
+                    }
+                }
+
+                if (global.laddertagrx.test(input)) {
+                    event.remove({ id: `tfc_metalwork:heating/metal/${metal}_ladder` })
+                    if (fluid == 'tfc:metal/wrought_iron' && isMetalworkPart) {
+                        fluid = 'tfc:metal/cast_iron'
+                    }
+
+                    event.recipes.tfc.heating(Fluid.of(fluid, 6), `#${input}`, heatingTemperature).id(`tfc_metalwork:heating/custom/metal/${metal}_${toolType}`)
+
+                    if (temperature <= 2015) {
+                        global.addMelting(isTag, input, fluid, 6, heatingLevel)
                     }
                 }
 
@@ -697,10 +731,10 @@ onEvent('recipes', event => {
                 }
 
                 //console.log(metal + fluid + input)
-                if (metal !== undefined && fluid !== undefined && input !== undefined && !global.doubleingotrx.test(metal) && !global.largeplatetagrx.test(input) && !global.dusttagrx.test(input) && isValid) {
+                if (metal !== undefined && fluid !== undefined && input !== undefined && !global.doubleingotrx.test(metal) && !global.largeplatetagrx.test(input) && !global.dusttagrx.test(input) && !global.laddertagrx.test(input) && isValid) {
                     let dustCount = 1
                     dustCount = fluidAmount / 100
-                    if (global.largerodtagrx.test(input) || global.platetagrx.test(input) || global.laddertagrx.test(input)) {
+                    if (global.largerodtagrx.test(input) || global.platetagrx.test(input)) {
                         dustCount = 1
                     }
                     if (global.largegeartagrx.test(input)) {

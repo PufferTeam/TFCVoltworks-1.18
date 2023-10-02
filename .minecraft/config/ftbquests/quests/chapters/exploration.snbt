@@ -1,0 +1,20 @@
+{
+	id: "2418F85DA06C0107"
+	group: ""
+	order_index: 1
+	filename: "exploration"
+	title: "Exploration"
+	icon: "tfc:wood/sapling/maple"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		x: -2.0d
+		y: -1.5d
+		id: "52D45202FDE3DA49"
+		tasks: [{
+			id: "2F983FBA1BFC296C"
+			type: "item"
+		}]
+	}]
+	quest_links: [ ]
+}

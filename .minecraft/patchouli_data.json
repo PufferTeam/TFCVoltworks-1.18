@@ -4,6 +4,14 @@
   "bookData": {
     "tfc:field_guide": {
       "viewedEntries": [
+        "tfc:the_world/wild_fruits",
+        "tfc:the_world/waterways",
+        "tfc:the_world/biomes",
+        "tfc:the_world/wild_crops",
+        "tfships:tfships/shipbuilding",
+        "tfc:mechanics/lamps",
+        "tfc:the_world/geology",
+        "tfc:mechanics/bloomery"
       ],
       "bookmarks": [],
       "completedManualQuests": []

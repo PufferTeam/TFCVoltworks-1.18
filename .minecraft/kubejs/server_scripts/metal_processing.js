@@ -75,6 +75,7 @@ onEvent('tags.items', event => {
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/iron`, `tfc:metal/sheet/${i}`));
 
     event.add(`forge:dusts/iron`, 'tfc_metalwork:metal/dust/wrought_iron')
+    event.add(`forge:gears/iron`, 'tfc_metalwork:metal/small_gear/wrought_iron')
 
     function tagSheetmetal(metal) {
         if (metal == 'wrought_iron') {

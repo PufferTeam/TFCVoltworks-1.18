@@ -68,6 +68,10 @@ onEvent('item.registry', event => {
 
     event.create('brick/bloomery_brick').maxStackSize(64);
 
+    event.create('powder/alumina').maxStackSize(64);
+
+    event.create('underclay_ball').maxStackSize(64);
+
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));
 
     global.tfcGemTypes.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));

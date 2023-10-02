@@ -91,6 +91,10 @@ global.recipeIdToRemove = [
     'create:crafting/materials/andesite_alloy_from_zinc',
     'create:mixing/andesite_alloy_from_zinc',
     'quark:building/crafting/oak_ladder',
+    'thermal:machines/smelter/smelter_iron_armor',
+    'thermal:machines/smelter/smelter_iron_tools',
+    'thermal:machines/smelter/smelter_gold_armor',
+    'thermal:machines/smelter/smelter_gold_tools',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',
