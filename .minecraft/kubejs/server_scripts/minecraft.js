@@ -369,12 +369,6 @@ onEvent('recipes', event => {
     event.remove({ id: 'tfc:crafting/vanilla/hay' })
     event.shapeless('9x tfc:straw', ['minecraft:hay_block']).id('tfc:crafting/vanilla/hay')
 
-    global.vanillaWoodTypes.forEach(i => {
-        event.remove({ id: `smallships:${i}_cog` })
-        event.remove({ id: `smallships:${i}_brigg` })
-        event.remove({ id: `smallships:${i}_galley` })
-    });
-
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:gold_ingot', 'tfc:metal/ingot/gold')
 

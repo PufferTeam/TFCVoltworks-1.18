@@ -1,0 +1,61 @@
+type = menu
+
+customization-meta {
+  identifier = de.keksuccino.drippyloadingscreen.customization.DrippyOverlayScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  orientation = top-left
+  hidden = false
+  original_pos_size_calculation = true
+  x = 151
+  width = 338
+  action = deep_customization_element:drippy_overlay_logo
+  actionid = eb3b48da-e9ee-4e4b-b818-91c1d2d9a5081696267975568
+  y = 127
+  height = 84
+}
+
+customization {
+  orientation = top-left
+  hidden = false
+  x = -1000000
+  width = 0
+  action = deep_customization_element:drippy_overlay_background
+  actionid = 9abd01f1-95a4-450d-8a4f-a02f35fd88301696267975576
+  y = -1000000
+  height = 0
+}
+
+customization {
+  orientation = top-left
+  hidden = false
+  original_pos_size_calculation = true
+  x = 151
+  width = 338
+  action = deep_customization_element:drippy_overlay_progress_bar
+  actionid = 4860f911-956a-4f6f-b8f4-beccdc4d11251696267975576
+  y = 277
+  height = 10
+}
+
+customization {
+  path = kubejs/assets/minecraft/textures/gui/title/pufferteam.png
+  orientation = top-centered
+  x = -123
+  width = 244
+  action = addtexture
+  actionid = 4c5130a6-f5f3-43d7-9561-c336507b9d011696268253509
+  y = 32
+  height = 42
+}
+

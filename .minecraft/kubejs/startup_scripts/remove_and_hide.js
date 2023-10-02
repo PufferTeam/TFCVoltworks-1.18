@@ -352,14 +352,6 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
             )
         }
 
-        if(item == 'dark_oak' || item == 'jungle') {
-            global.removeAndHide.push(
-                `smallships:${item}_cog`,
-                `smallships:${item}_brigg`,
-                `smallships:${item}_galley`
-            )
-        }
-
         if (item != 'spruce') {
             global.removeAndHide.push(
                 `railways:track_${item}`,
