@@ -134,11 +134,6 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
             )
         }
 
-        if (mod == 'tconstruct') {
-            global.removeAndHide.push(
-                `${mod}:${item}_reinforcement`
-            )
-        }
 
         if (mod != 'immersiveengineering') {
             global.removeAndHide.push(
@@ -468,6 +463,8 @@ global.tfcWoodTypes.forEach(i => removeAndHide('', '', i, 'tfcwood', 'tfc', true
 global.vanillaRockTypes.forEach(i => removeAndHide('', '', i, 'rock', 'minecraft', true, null, null));
 
 global.vanillaOreTypes.forEach(i => removeAndHide('', '', i, 'ore', 'minecraft', false, null, null));
+
+global.botaniaMetalTypes.forEach(i => removeAndHide('', '', i, 'ore', 'botania', false, null, null));
 
 global.thermalOreTypes.forEach(i => removeAndHide('', '', i, 'ore', 'thermal', false, null, null));
 

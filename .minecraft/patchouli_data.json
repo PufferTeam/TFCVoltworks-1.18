@@ -2,6 +2,20 @@
   "bookGuiScale": 0,
   "clickedVisualize": false,
   "bookData": {
+    "botania:lexicon": {
+      "viewedEntries": [
+        "botania:basics/welcome"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "dynamictrees:guide": {
+      "viewedEntries": [
+        "dynamictrees:trees/overworld_trees"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
     "tfc:field_guide": {
       "viewedEntries": [
         "tfc:the_world/wild_fruits",
@@ -11,7 +25,8 @@
         "tfships:tfships/shipbuilding",
         "tfc:mechanics/lamps",
         "tfc:the_world/geology",
-        "tfc:mechanics/bloomery"
+        "tfc:mechanics/bloomery",
+        "tfc_metallum:metallum_metals/nickel_silver"
       ],
       "bookmarks": [],
       "completedManualQuests": []

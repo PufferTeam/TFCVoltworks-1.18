@@ -1,0 +1,14 @@
+name = "Gravitational Modulating Additional Unit"
+filename = "GravitationalModulatingAdditionalUnit-1.18.2-1.9.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "30fb5fde3c66dcf164a683df3fdb751563b0a407"
+
+[update]
+[update.curseforge]
+file-id = 4193164
+project-id = 656136

@@ -535,6 +535,12 @@ global.tfcGemTypes = [
     'topaz'
 ]
 
+global.botaniaMetalTypes = [
+    'manasteel',
+    'terrasteel',
+    'elementium'
+]
+
 global.tfcMetalTypes = [
     'bismuth',
     'bismuth_bronze',

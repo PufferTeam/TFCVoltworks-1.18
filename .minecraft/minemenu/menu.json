@@ -1,0 +1,100 @@
+{
+  "main": {
+    "0": {
+      "title": "Open World Map",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:map\"}"
+      },
+      "action": {
+        "key": {
+          "key": "gui.xaero_open_map",
+          "toggle": false
+        }
+      }
+    },
+    "1": {
+      "title": "Open Quest Book",
+      "icon": {
+        "stack": "{Count:1b,id:\"ftbquests:book\"}"
+      },
+      "action": {
+        "command": {
+          "command": "/ftbquests open_book",
+          "clipboard": false
+        }
+      }
+    },
+    "3": {
+      "title": "New Waypoint",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:writable_book\"}"
+      },
+      "action": {
+        "key": {
+          "key": "gui.xaero_new_waypoint",
+          "toggle": false
+        }
+      }
+    },
+    "4": {
+      "title": "Stack Food",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:apple\"}"
+      },
+      "action": {
+        "key": {
+          "key": "tfc.key.stack_food",
+          "toggle": false
+        }
+      }
+    },
+    "5": {
+      "title": "Cycle Tool Mode",
+      "icon": {
+        "stack": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"tfc:metal/chisel/copper\",tag:{Damage:0}}"
+      },
+      "action": {
+        "key": {
+          "key": "tfc.key.cycle_chisel_mode",
+          "toggle": false
+        }
+      }
+    },
+    "6": {
+      "title": "Place Item",
+      "icon": {
+        "stack": "{Count:1b,ForgeCaps:{\"tfc:item_heat\":{heat:0.0f,ticks:0L}},id:\"tfc:ceramic/unfired_vessel\"}"
+      },
+      "action": {
+        "key": {
+          "key": "tfc.key.place_block",
+          "toggle": false
+        }
+      }
+    },
+    "7": {
+      "title": "Open Waypoint Screen",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:flower_banner_pattern\"}"
+      },
+      "action": {
+        "key": {
+          "key": "gui.xaero_waypoints_key",
+          "toggle": false
+        }
+      }
+    },
+    "9": {
+      "title": "Open Field Guide",
+      "icon": {
+        "stack": "{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"tfc:field_guide\"}}"
+      },
+      "action": {
+        "command": {
+          "command": "/open-patchouli-book @s tfc:field_guide",
+          "clipboard": false
+        }
+      }
+    }
+  }
+}

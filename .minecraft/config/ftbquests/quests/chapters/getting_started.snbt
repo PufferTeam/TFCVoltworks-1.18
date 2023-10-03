@@ -212,6 +212,7 @@
 				"With some of the logs you got you can also make &lWattle&r which is a useful solid construction block."
 			]
 			dependencies: ["305CFBB54FEE5D90"]
+			dependency_requirement: "all_started"
 			id: "59513198E5FB6515"
 			tasks: [{
 				id: "4132A55832F2463B"
@@ -240,6 +241,7 @@
 				"In your &l2x2 Grid&r, you can make &lThatch Blocks&r which can be used for building. Be warned tho, you can walk through it!"
 			]
 			dependencies: ["305CFBB54FEE5D90"]
+			dependency_requirement: "all_started"
 			id: "2E3DD698A4E01DCC"
 			tasks: [{
 				id: "4A1B3BA222AF7750"
@@ -364,6 +366,20 @@
 						}
 					}
 				}
+				{
+					id: "42293067BFEB2E81"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/unfired_saw_blade_mold"
+						Count: 1b
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
 			]
 		}
 		{
@@ -420,6 +436,7 @@
 				"5904278FDDFCBE80"
 				"42976748A3392F8D"
 			]
+			dependency_requirement: "all_started"
 			id: "5E5EDD3AB21FCF38"
 			tasks: [{
 				id: "5CE4D4E25CFA8E6F"
@@ -569,6 +586,21 @@
 					type: "item"
 					item: "tfc:pan/empty"
 				}
+				{
+					id: "23F00CAD19D7425A"
+					type: "item"
+					item: {
+						id: "tfc:ceramic/saw_blade_mold"
+						Count: 1b
+						tag: { }
+						ForgeCaps: {
+							Parent: {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+					}
+				}
 			]
 		}
 		{
@@ -588,6 +620,7 @@
 			subtitle: "The next generation of tools!"
 			description: ["{image:tfc:textures/item/ore/rich_native_copper.png width:30 height:30 align:1}"]
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			id: "1AED6D04C6C4425A"
 			tasks: [{
 				id: "578E7E7AFAC785ED"
@@ -764,6 +797,7 @@
 				"Depending on the &lcrops&r you will need to place the farmland at the correct &lhumidity&r needed for the crop to &lgrow&r"
 			]
 			dependencies: ["305CFBB54FEE5D90"]
+			dependency_requirement: "all_started"
 			id: "2EC29665A3C3AF57"
 			tasks: [{
 				id: "2C61F61825E71869"
@@ -796,6 +830,7 @@
 			y: 9.0d
 			subtitle: "Worth a lot, or is it?"
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			id: "42CE9BECCD10CBA2"
 			tasks: [{
 				id: "422F3D5C5B4F50D9"
@@ -828,6 +863,7 @@
 			subtitle: "Not a good material in itself"
 			description: ["{image:tfc:textures/item/ore/rich_cassiterite.png width:30 height:30 align:1}"]
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			id: "105D6172AD2551E3"
 			tasks: [{
 				id: "386A4A017A2470EB"
@@ -859,6 +895,7 @@
 			y: 9.0d
 			subtitle: "Worth at least a penny"
 			dependencies: ["3AC080415B38DADE"]
+			dependency_requirement: "all_started"
 			id: "0DCDEE8DCC5B7BE2"
 			tasks: [{
 				id: "7FCA4AE0BF864C96"
@@ -971,7 +1008,19 @@
 			}
 			x: 0.0d
 			y: 11.0d
-			description: ["{image:tfc:textures/item/metal/ingot/bronze.png width:30 height:30 align:1}"]
+			description: [
+				"{image:tfc:textures/item/metal/ingot/bronze.png width:30 height:30 align:1}"
+				""
+				"&lBronze&r is the &learly game&r alloy you are going to need to progress. Being &lStronger&r than Copper, it is ideal to make your &ltools with it&r."
+				""
+				"There &rthree types&r of bronze &lavalaible&r, all using mainly Copper:"
+				""
+				"&lBronze&r: Made from Copper and Tin."
+				"&lBlack Bronze&r: Made from Copper, Gold and Silver."
+				"&lBismuth Bronze&r: Made from Copper, Zinc and Bismuth."
+				""
+				"Choose the Bronze you can do depending on what you find."
+			]
 			dependencies: [
 				"1AED6D04C6C4425A"
 				"105D6172AD2551E3"
@@ -1016,7 +1065,8 @@
 				""
 				"Now that you know how to make &lfired pottery&r. You can put that &lVessel&r to use by learning &lAlloying&r. "
 				""
-				"To alloy make sure to have &lcorrect proportions and amount&r according to how it says in JEI."
+				"To alloy make sure to have &lcorrect proportions and amount&r according to how it says in JEI. "
+				"If you alloy and ores inside the vessel &ldon't add up&r to the proportions of any alloy, you are going to waste it."
 				""
 				"After that, put your filled vessel in the &lPit Kiln&r until it smelt the ores inside, then you will be able to cast with this interface."
 				"{image:tfc:textures/gui/book/gui/casting.png width:100 height:100 align:1}"
@@ -1121,7 +1171,19 @@
 					item: "tfc:pan/empty"
 				}
 				{
-					id: "510DDB4C6513A4AF"
+					id: "1569E8337B1BC399"
+					type: "item"
+					title: "Any Ore Deposits"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tfc:ore_deposits"
+						}
+					}
+				}
+				{
+					id: "5726CE9EB25DEECC"
 					type: "checkmark"
 				}
 			]
@@ -1416,7 +1478,6 @@
 				"5B45C482001F4039"
 				"6FD8BE20003E3444"
 			]
-			dependency_requirement: "one_completed"
 			id: "6F352C730275FF29"
 			tasks: [{
 				id: "488B33A959748665"
@@ -1581,6 +1642,7 @@
 				"Animals will also drop &lskins&r, depending on the &lsize&r of the animal, you will get &lLarger Hides&r, or &lSmaller ones&r."
 			]
 			dependencies: ["305CFBB54FEE5D90"]
+			dependency_requirement: "all_started"
 			id: "5C7EA4FB7BCF703A"
 			tasks: [
 				{
@@ -1646,7 +1708,13 @@
 			icon: "tfc:rock/anvil/granite"
 			x: -2.0d
 			y: 14.0d
-			description: ["{image:tfc:textures/block/rock/anvil/andesite.png width:30 height:30 align:1}"]
+			description: [
+				"{image:tfc:textures/block/rock/anvil/andesite.png width:30 height:30 align:1}"
+				""
+				"&lRock Anvils&r are the &lfirst&r you are going to make, they will be useful to forge &lcopper double ingots&r."
+				""
+				"To make one, &lright click&r on a &ligneous&r rock with a &lStone Hammer&r."
+			]
 			dependencies: ["63E21427598BDC8E"]
 			id: "5C12FE7B7CC2D04E"
 			tasks: [{
