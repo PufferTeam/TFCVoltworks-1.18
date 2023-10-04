@@ -14,6 +14,12 @@ largeVessels.forEach(i => event.add('tfc:placed_item_whitelist', i))
 unfiredPottery.forEach(i => event.add('tfc:placed_item_whitelist', i))
 molds.forEach(i => event.add('tfc:placed_item_whitelist', i))
 
+global.extraPotteryItems = [
+
+]
+
+global.extraPotteryItems.forEach(i => event.add('tfc:placed_item_whitelist', i))
+
 })
 
 onEvent('recipes', event => {

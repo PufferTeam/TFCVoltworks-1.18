@@ -434,6 +434,14 @@ onEvent('recipes', event => {
     global.addMeltingCrushing(true, 'tfc_metalwork:tiles_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:tiles_stairs/copper', 'tfc:metal/copper', 300, 'copper', 1080)
 
+    function gemMelting(input, fluid, metal, fluidAmount) {
+        global.addMeltingHeatingFluid(false, input, fluid, fluidAmount, metal, 1900)
+    }
+    global.tfcGemTypes.forEach(i => gemMelting(`tfc:ore/${i}`, `kubejs:${i}`, i, 25))
+    global.tfcGemTypes.forEach(i => gemMelting(`tfc:gem/${i}`, `kubejs:${i}`, i, 25))
+    global.tfcGemTypes.forEach(i => gemMelting(`tfc:powder/${i}`, `kubejs:${i}`, i, 25))
+    gemMelting('tfc:ore/cryolite', 'kubejs:cryolite', 'cryolite', 25)
+
     function wireRecipes(mod, metal) {
         event.remove({ id: `immersiveengineering:crafting/wire_${metal}` })
 
@@ -537,6 +545,14 @@ onEvent('server.datapack.first', event => {
     event.addTFCHeat('quark:gold_bars', 0.171)
 
     event.addTFCHeat('create:andesite_alloy', 33.333)
+
+    function gemHeating(input) {
+        event.addTFCHeat(input, 3.333)
+    }
+    global.tfcGemTypes.forEach(i => gemHeating(`tfc:ore/${i}`))
+    global.tfcGemTypes.forEach(i => gemHeating(`tfc:gem/${i}`))
+    global.tfcGemTypes.forEach(i => gemHeating(`tfc:powder/${i}`))
+    gemHeating('tfc:ore/cryolite')
 
     event.addTFCHeat('#tfc_metalwork:cut/copper', 11.429, 648)
     event.addTFCHeat('#tfc_metalwork:shingles/copper', 11.429, 648)

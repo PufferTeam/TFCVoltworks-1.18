@@ -18,7 +18,11 @@ onEvent('tags.items', event => {
             global.highTierOres.push(`tfc_metallum:ore/${rarity}_${ore}`)
         })
     })
-    console.log(global.highTierOres)
+    //console.log(global.highTierOres)
+
+    global.gemMetals = []
+    global.tfcGemTypes.forEach(i => global.gemMetals.push(i))
+    global.gemMetals.push('cryolite')
 
     global.tfcMetallumRods = []
     global.tfcMetallumMetalTypes.forEach(i => global.tfcMetallumRods.push(`tfc_metallum:metal/rod/${i}`));
@@ -149,6 +153,7 @@ onEvent('tags.items', event => {
     global.meltingrx = new RegExp(global.meltingBlacklist.join('|'));
     global.highmetalrx = new RegExp(global.highTierMetals.join('|'));
     global.highorerx = new RegExp(global.highTierOres.join('|'));
+    global.gemrx = new RegExp(global.gemMetals.join('|'));
 
     //console.log(global.ingotrx)
     global.foodrx = new RegExp(global.rawFood.join('|'));

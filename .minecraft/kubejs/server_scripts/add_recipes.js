@@ -643,7 +643,7 @@ onEvent('recipes', event => {
 
         let heatingLevel = global.getHeatingLevel(temperature)
         let heatingTemperature = temperature
-        if (global.highmetalrx.test(metal)) {
+        if (global.highmetalrx.test(metal) || global.gemrx.test(input)) {
             heatingTemperature = 5000
         }
 

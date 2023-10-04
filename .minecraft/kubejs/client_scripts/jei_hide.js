@@ -14,3 +14,17 @@ onEvent('jei.remove.categories', event => {
     
     global.categoriesToHide.forEach(i => event.remove([i]));
 })
+
+onEvent('rei.hide.items', event => {
+    global.removeAndHide.forEach(i => event.hide([Item.of(i).ignoreNBT()]));
+    global.itemsToHide.forEach(i => event.hide([Item.of(i).ignoreNBT()]));
+
+});
+
+onEvent('rei.hide.fluids', event => {
+    global.removeAndHideFluid.forEach(i => event.hide(i));
+})
+
+onEvent('rei.remove.categories', event => {    
+    global.categoriesToHide.forEach(i => event.remove([i]));
+})

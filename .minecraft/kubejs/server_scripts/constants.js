@@ -95,6 +95,7 @@ global.recipeIdToRemove = [
     'thermal:machines/smelter/smelter_iron_tools',
     'thermal:machines/smelter/smelter_gold_armor',
     'thermal:machines/smelter/smelter_gold_tools',
+    'mekanism:charcoal',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',

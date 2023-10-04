@@ -53,7 +53,7 @@ onEvent('recipes', event => {
     ], {
         S: '#minecraft:planks',
         A: '#tfc:pit_kiln_logs',
-        R: '#forge:plates/andesite_alloy'
+        R: '#forge:rods/andesite_alloy'
     }).id('create:linear_chassis')
 
     event.remove({ output: 'create:radial_chassis' })
@@ -64,7 +64,7 @@ onEvent('recipes', event => {
     ], {
         S: '#minecraft:planks',
         A: '#tfc:pit_kiln_logs',
-        R: '#forge:plates/andesite_alloy'
+        R: '#forge:rods/andesite_alloy'
     }).id('create:radial_chassis')
 
     event.remove({ output: 'create:metal_girder' })
