@@ -1,0 +1,11 @@
+cd @mods
+DEL adaptive_performance_tweaks_1.18.2-3.21.0.jar
+DEL textrues_embeddium_options-0.1.1+mc1.18.2.jar
+DEL rubidium-extra-0.4.18+mc1.18.2-build.86.jar
+DEL ReAuth-1.18-Forge-4.0.7.jar
+DEL oculus-mc1.18.2-1.6.4.jar
+DEL oculus-flywheel-compat-1.18.2-0.2.1.jar
+DEL torohealth-1.18-forge-2.jar
+DEL notenoughanimations-forge-1.6.0-mc1.18.2.jar
+DEL notenoughcrashes-4.2.0+1.18.2-forge.jar
+DEL LegendaryTooltips-1.18.2-1.3.1.jar
