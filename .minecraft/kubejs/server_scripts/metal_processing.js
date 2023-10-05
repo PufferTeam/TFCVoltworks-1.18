@@ -265,7 +265,7 @@ onEvent('recipes', event => {
         let result = output.split(':')
         let name = result[1]
         let mod = result[0]
-        console.log(output)
+        //console.log(output)
 
         if (outputCut == null) {
             outputCut = output
