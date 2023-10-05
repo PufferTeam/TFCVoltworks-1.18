@@ -78,8 +78,8 @@ onEvent('tags.items', event => {
     event.add(`forge:gears/iron`, 'tfc_metalwork:metal/small_gear/wrought_iron')
 
     function tagSheetmetal(item) {
-        if (metal == 'immersiveengineering:sheetmetal_wrought_iron') {
-            metal = 'immersiveengineering:sheetmetal_iron'
+        if (item == 'immersiveengineering:sheetmetal_wrought_iron') {
+            item = 'immersiveengineering:sheetmetal_iron'
         }
         event.add(`forge:metal_sheetmetals`, item)
     }
