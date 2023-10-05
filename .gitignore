@@ -38,6 +38,8 @@
 !.minecraft/kubejs/server_scripts/**
 !.minecraft/kubejs/startup_scripts/**
 !.minecraft/delete-client-mods.bat
+.minecraft/usercache.json
+.minecraft/config/oculus.properties
 
 # unignore resourcepacks
 !.minecraft/resourcepacks/**
