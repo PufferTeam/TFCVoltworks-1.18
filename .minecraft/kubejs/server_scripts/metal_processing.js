@@ -558,7 +558,7 @@ onEvent('server.datapack.first', event => {
 
     function gemHeating(input) {
         event.addTFCHeat(input, 3.333)
-        event.addTFCMetal(`kubejs:${input}`, 2000, 3.333, 'minecraft:structure_void', 'minecraft:structure_void')
+        event.addTFCMetal(input, 2000, 3.333, 'minecraft:structure_void', 'minecraft:structure_void')
     }
     global.tfcGemTypes.forEach(i => gemHeating(`tfc:ore/${i}`))
     global.tfcGemTypes.forEach(i => gemHeating(`tfc:gem/${i}`))
