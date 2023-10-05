@@ -1,4 +1,4 @@
-cd @mods
+cd mods
 DEL adaptive_performance_tweaks_1.18.2-3.21.0.jar
 DEL textrues_embeddium_options-0.1.1+mc1.18.2.jar
 DEL rubidium-extra-0.4.18+mc1.18.2-build.86.jar
