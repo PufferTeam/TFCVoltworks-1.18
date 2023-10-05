@@ -30,11 +30,15 @@ onEvent('item.registry', event => {
         event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1)
     });
 
+    event.create('glass_jug', 'tfc:fluid_container')
+
     event.create('transition_bloom', 'create:sequenced_assembly').maxStackSize(1);
 
     event.create('transition_high_carbon_steel', 'create:sequenced_assembly').maxStackSize(1);
 
     event.create('unfired_flower_box').maxStackSize(64);
+
+    event.create('large_stick').maxStackSize(32);
 
     event.create('treated_stick').maxStackSize(32);
 

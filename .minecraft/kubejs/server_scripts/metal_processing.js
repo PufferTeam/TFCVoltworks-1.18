@@ -77,15 +77,16 @@ onEvent('tags.items', event => {
     event.add(`forge:dusts/iron`, 'tfc_metalwork:metal/dust/wrought_iron')
     event.add(`forge:gears/iron`, 'tfc_metalwork:metal/small_gear/wrought_iron')
 
-    function tagSheetmetal(metal) {
-        if (metal == 'wrought_iron') {
-            metal = 'iron'
+    function tagSheetmetal(item) {
+        if (metal == 'immersiveengineering:sheetmetal_wrought_iron') {
+            metal = 'immersiveengineering:sheetmetal_iron'
         }
-        event.add(`forge:metal_sheetmetals`, `immersiveengineering:sheetmetal_${metal}`)
+        event.add(`forge:metal_sheetmetals`, item)
     }
 
-    global.tfcSheetmetalTypes.forEach(i => tagSheetmetal(i));
-    global.tfcMetallumSheetmetalTypes.forEach(i => tagSheetmetal(i));
+    global.tfcSheetmetalTypes.forEach(i => tagSheetmetal(`immersiveengineering:sheetmetal_${i}`));
+    global.tfcMetallumSheetmetalTypes.forEach(i => tagSheetmetal(`immersiveengineering:sheetmetal_${i}`));
+    global.customSheetmetalTypes.forEach(i => tagSheetmetal(`kubejs:sheetmetal/${i}`));
 
     function tagBars(mod, metal) {
         let barItem = global.getValidBar(mod, metal)
@@ -207,7 +208,7 @@ onEvent('recipes', event => {
             "hit_any",
             "upset_any"
         ]).tier(tier).id(`${mod}:anvil/${namePrefix}${name}${nameSuffix}`)
-        console.log(name)
+        //console.log(name)
         event.recipes.createSequencedAssembly(output, input, methodsCut).transitionalItem(transitionItem).loops(1);
     }
 
@@ -347,19 +348,28 @@ onEvent('recipes', event => {
         if (metal == 'wrought_iron') {
             iemetal = 'iron'
         }
-        event.remove({ output: `immersiveengineering:sheetmetal_${iemetal}` })
-        event.remove({ output: `immersiveengineering:slab_sheetmetal_${iemetal}` })
+
+        let sheetmetal = `immersiveengineering:sheetmetal_${iemetal}`
+        let sheetmetalSlab = `immersiveengineering:slab_sheetmetal_${iemetal}`
+
+        if(mod == 'kubejs') {
+            sheetmetal = `kubejs:sheetmetal/${iemetal}`
+            sheetmetalSlab = `kubejs:sheetmetal/${iemetal}_slab`
+        }
+        event.remove({ output: sheetmetal })
+        event.remove({ output: sheetmetalSlab })
 
         let tier = 3
         tier = global.getTier(iemetal)
 
-        mCutRecipes('immersiveengineering', tier, transitionItem, `tfc_metalwork:metal/plate/${metal}`, `immersiveengineering:sheetmetal_${iemetal}`, '', iemetal, '_sheetmetal')
-        mSlabRecipes('immersiveengineering', tier, transitionItem, `immersiveengineering:sheetmetal_${iemetal}`, `immersiveengineering:slab_sheetmetal_${iemetal}`, 'slab_', iemetal, '_sheetmetal')
+        mCutRecipes('immersiveengineering', tier, transitionItem, `tfc_metalwork:metal/plate/${metal}`, sheetmetal, '', iemetal, '_sheetmetal')
+        mSlabRecipes('immersiveengineering', tier, transitionItem, sheetmetal, sheetmetalSlab, 'slab_', iemetal, '_sheetmetal')
 
     }
 
     global.tfcSheetmetalTypes.forEach(i => sheetmetalRecipes('tfc', i));
     global.tfcMetallumSheetmetalTypes.forEach(i => sheetmetalRecipes('tfc_metallum', i));
+    global.customSheetmetalTypes.forEach(i => sheetmetalRecipes('kubejs', i));
 
     function coloredSheetmetalRecipes(metal) {
         event.remove({ output: `immersiveengineering:slab_sheetmetal_colored_${metal}` })
@@ -548,6 +558,7 @@ onEvent('server.datapack.first', event => {
 
     function gemHeating(input) {
         event.addTFCHeat(input, 3.333)
+        event.addTFCMetal(`kubejs:${input}`, 2000, 3.333, 'minecraft:structure_void', 'minecraft:structure_void')
     }
     global.tfcGemTypes.forEach(i => gemHeating(`tfc:ore/${i}`))
     global.tfcGemTypes.forEach(i => gemHeating(`tfc:gem/${i}`))

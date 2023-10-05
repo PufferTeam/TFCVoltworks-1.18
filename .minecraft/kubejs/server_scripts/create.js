@@ -378,8 +378,73 @@ onEvent('recipes', event => {
         P: 'create:mechanical_drill'
     }).id('create_mechanical_extruder:mechanical_extruder')
 
-    let transitionItem = 'kubejs:transition_wrought_iron'
+    let transitionItem = 'kubejs:transition_andesite_alloy'
+    const andesiteFrame = []
+    andesiteFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_double_ingots`]).keepHeldItem())
+    andesiteFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_hammers`]))
+    andesiteFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_double_sheets`]).keepHeldItem())
+    event.recipes.tfc.anvil('4x kubejs:frame/andesite', 'tfc_metalwork:metal/large_rod/andesite_alloy', [
+        "shrink_last",
+        "hit_second_last",
+        "bend_third_last"
+    ]).tier(2).id(`kubejs:anvil/frame/andesite`)
+    event.recipes.createSequencedAssembly('4x kubejs:frame/andesite', 'tfc_metalwork:metal/large_rod/andesite_alloy', andesiteFrame).transitionalItem(transitionItem).loops(1);
 
+    transitionItem = 'kubejs:transition_copper'
+    const copperFrame = []
+    copperFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_double_ingots`]).keepHeldItem())
+    copperFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_hammers`]))
+    copperFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_double_sheets`]).keepHeldItem())
+    event.recipes.tfc.anvil('4x kubejs:frame/copper', 'tfc_metalwork:metal/large_rod/copper', [
+        "shrink_last",
+        "hit_second_last",
+        "bend_third_last"
+    ]).tier(2).id(`kubejs:anvil/frame/copper`)
+    event.recipes.createSequencedAssembly('4x kubejs:frame/copper', 'tfc_metalwork:metal/large_rod/copper', copperFrame).transitionalItem(transitionItem).loops(1);
+
+    transitionItem = 'kubejs:transition_brass'
+    const brassFrame = []
+    brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:frame/andesite']))
+    brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_rods`]).keepHeldItem())
+    brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_hammers`]))
+    brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_chisels`]))
+    brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
+    event.recipes.createSequencedAssembly('4x kubejs:frame/brass', 'tfc_metalwork:metal/large_rod/brass', brassFrame).transitionalItem(transitionItem).loops(1);
+
+    transitionItem = 'kubejs:transition_rose_gold'
+    const railwayFrame = []
+    railwayFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:frame/brass']))
+    railwayFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_rods`]).keepHeldItem())
+    railwayFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    railwayFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_hammers`]))
+    railwayFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_chisels`]))
+    railwayFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
+    event.recipes.createSequencedAssembly('4x kubejs:frame/railway', 'tfc_metalwork:metal/large_rod/rose_gold', railwayFrame).transitionalItem(transitionItem).loops(1);
+
+    transitionItem = 'kubejs:transition_refined_obsidian'
+    const shadowFrame = []
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:frame/brass']))
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:shadow_steel']))
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_rods`]).keepHeldItem())
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_ingots`]).keepHeldItem())
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_hammers`]))
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_chisels`]))
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_sheets`]).keepHeldItem())
+    event.recipes.createSequencedAssembly('4x kubejs:frame/shadow_steel', 'tfc_metalwork:metal/large_rod/refined_obsidian', shadowFrame).transitionalItem(transitionItem).loops(1);
+
+    transitionItem = 'kubejs:transition_refined_glowstone'
+    const radiantFrame = []
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:frame/brass']))
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:refined_radiance']))
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_rods`]).keepHeldItem())
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_ingots`]).keepHeldItem())
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_hammers`]))
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_chisels`]))
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_sheets`]).keepHeldItem())
+    event.recipes.createSequencedAssembly('4x kubejs:frame/refined_radiance', 'tfc_metalwork:metal/large_rod/refined_glowstone', radiantFrame).transitionalItem(transitionItem).loops(1);
+
+    transitionItem = 'kubejs:transition_wrought_iron'
     event.remove({ output: 'thermal:saw_blade' })
     const sawBlade = []
     sawBlade.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'thermal:saw_blade']).keepHeldItem())
@@ -461,6 +526,18 @@ onEvent('recipes', event => {
         }
         global.addItemApplication(isTag, block, `kubejs:frame/${i}`, `create:${i}_casing`)
     })
+
+    function casingCrafting(isTag, mod, block, metal) {
+        global.addItemApplication(isTag, block, `kubejs:frame/${metal}`, `${mod}:${metal}_casing`)
+
+    }
+
+    casingCrafting(false, 'create', 'kubejs:pitch_treated_wood', 'andesite')
+    casingCrafting(false, 'create', 'kubejs:ash_treated_wood', 'copper')
+    casingCrafting(true, 'create', 'forge:treated_wood', 'brass')
+    casingCrafting(false, 'create', 'immersiveengineering:sheetmetal_lead', 'railway')
+    casingCrafting(false, 'create', 'immersiveengineering:sheetmetal_aluminum', 'refined_radiance')
+    casingCrafting(false, 'create', 'immersiveengineering:sheetmetal_aluminum', 'shadow_steel')
 
     global.addDamageInputShapeless(1, 'create:sticky_mechanical_piston', 'create:mechanical_piston', "tfc:knives", 1)
 

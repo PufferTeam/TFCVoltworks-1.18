@@ -610,6 +610,10 @@ global.firmalifeMetalTypes = [
 ];
 global.firmalifeMetalTypes.forEach(i => global.tfcGlobalMetalTypes.push(i));
 
+global.customSheetmetalTypes = [
+    'black_steel'
+]
+
 global.tfcBarTypes = [
     'wrought_iron',
     'gold',
