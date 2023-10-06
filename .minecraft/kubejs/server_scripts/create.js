@@ -424,25 +424,25 @@ onEvent('recipes', event => {
 
     transitionItem = 'kubejs:transition_refined_obsidian'
     const shadowFrame = []
-    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:frame/brass']))
+    shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:shadow_steel']))
     shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:shadow_steel']))
     shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_rods`]).keepHeldItem())
     shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_ingots`]).keepHeldItem())
     shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_hammers`]))
     shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_chisels`]))
     shadowFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_sheets`]).keepHeldItem())
-    event.recipes.createSequencedAssembly('4x kubejs:frame/shadow_steel', 'tfc_metalwork:metal/large_rod/refined_obsidian', shadowFrame).transitionalItem(transitionItem).loops(1);
+    event.recipes.createSequencedAssembly('2x kubejs:frame/shadow_steel', 'tfc_metalwork:metal/large_rod/refined_obsidian', shadowFrame).transitionalItem(transitionItem).loops(1);
 
     transitionItem = 'kubejs:transition_refined_glowstone'
     const radiantFrame = []
-    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:frame/brass']))
+    radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:refined_radiance']))
     radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'create:refined_radiance']))
     radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_rods`]).keepHeldItem())
     radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_ingots`]).keepHeldItem())
     radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_hammers`]))
     radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_chisels`]))
     radiantFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier5_double_sheets`]).keepHeldItem())
-    event.recipes.createSequencedAssembly('4x kubejs:frame/refined_radiance', 'tfc_metalwork:metal/large_rod/refined_glowstone', radiantFrame).transitionalItem(transitionItem).loops(1);
+    event.recipes.createSequencedAssembly('2x kubejs:frame/refined_radiance', 'tfc_metalwork:metal/large_rod/refined_glowstone', radiantFrame).transitionalItem(transitionItem).loops(1);
 
     transitionItem = 'kubejs:transition_wrought_iron'
     event.remove({ output: 'thermal:saw_blade' })

@@ -30,7 +30,7 @@ onEvent('item.registry', event => {
         event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1)
     });
 
-    event.create('glass_jug', 'tfc:fluid_container')
+    event.create('glass_jug', 'tfc:fluid_container').capacity(250)
 
     event.create('transition_bloom', 'create:sequenced_assembly').maxStackSize(1);
 
