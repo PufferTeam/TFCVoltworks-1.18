@@ -45,3 +45,5 @@
 !.minecraft/resourcepacks/**
 .minecraft/resourcepacks/Quark Programmer Art.zip
 .minecraft/resourcepacks/*.zip
+
+instance.cfg

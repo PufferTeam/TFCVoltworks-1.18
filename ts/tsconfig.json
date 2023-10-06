@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "skipLibCheck": false,
+        "noEmit": true,
+        "checkJs": true,
+        "noImplicitAny": true,
+        "newLine": "lf",
+        "lib": ["ES2015"],
+        "outDir": "../.minecraft/kubejs/",
+        "types": ["bun-types"],
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "moduleDetection": "force",
+        "forceConsistentCasingInFileNames": true,
+    }
+}
