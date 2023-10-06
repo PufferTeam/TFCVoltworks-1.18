@@ -568,7 +568,7 @@ onEvent('server.datapack.first', event => {
         event.addTFCMetal(input, 2000, 3.333, 'minecraft:structure_void', 'minecraft:structure_void')
     }
     global.tfcGemTypes.forEach(i => gemMetal(`kubejs:${i}`))
-    gemHeating('kubejs:cryolite')
+    gemMetal('kubejs:cryolite')
 
 
     event.addTFCHeat('#tfc_metalwork:cut/copper', 11.429, 648)

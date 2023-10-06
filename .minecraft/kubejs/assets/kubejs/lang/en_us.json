@@ -14,8 +14,8 @@
     "item.kubejs.brick.coke_oven_brick": "Coke Brick",
     "item.kubejs.brick.bloomery_brick": "Bloomery Brick",
     "item.kubejs.powder.alumina": "Alumina Oxide",
-    "block.kubejs.sheetmetal.black_steel": "Black Steel",
-    "block.kubejs.sheetmetal.black_steel_slab": "Black Steel Slab",
+    "block.kubejs.sheetmetal.black_steel": "Black Steel Sheetmetal",
+    "block.kubejs.sheetmetal.black_steel_slab": "Black Steel Sheetmetal Slab",
 
     "item.kubejs.stone.pickaxe.igneous_extrusive": "Stone Pickaxe",
     "item.kubejs.stone.pickaxe.igneous_intrusive": "Stone Pickaxe",
