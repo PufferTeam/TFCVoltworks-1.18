@@ -8,12 +8,16 @@
     "item.kubejs.frame.shadow_steel": "Shadow Frame",
 
     "block.kubejs.brick.coke_oven_bricks": "Coke Bricks",
+    "item.kubejs.brick.unfired_ash_brick": "Unfired Fly Ash Brick",
+    "item.kubejs.brick.unfired_bloomery_brick": "Unfired Bloomery Brick",
+    "item.kubejs.brick.unfired_coke_oven_brick": "Unfired Coke Brick",
     "block.kubejs.brick.bloomery_bricks": "Bloomery Bricks",
     "block.kubejs.brick.bloomery_bricks_reinforced": "Reinforced Bloomery Bricks",
     "block.kubejs.brick.fire_bricks_reinforced": "Reinforced Fire Bricks",
     "item.kubejs.brick.coke_oven_brick": "Coke Brick",
     "item.kubejs.brick.bloomery_brick": "Bloomery Brick",
     "item.kubejs.powder.alumina": "Alumina Oxide",
+    "item.kubejs.powder.gypsum": "Gypsum Powder",
     "block.kubejs.sheetmetal.black_steel": "Black Steel Sheetmetal",
     "block.kubejs.sheetmetal.black_steel_slab": "Black Steel Sheetmetal Slab",
 

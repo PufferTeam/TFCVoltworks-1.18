@@ -146,6 +146,17 @@ onEvent('recipes', event => {
     A: 'beneath:crimson_straw'
   }).id('beneath:crafting/crimson_thatch')
 
+  event.remove({ id: 'tfc:crafting/stick_bunch' })
+  event.shapeless('tfc:stick_bunch', ['#tfc:firepit_sticks', '#tfc:firepit_sticks', '#tfc:firepit_sticks', '#tfc:firepit_sticks']).id('tfc:crafting/stick_bunch')
+
+  event.remove({ id: 'tfc:crafting/stick_bundle' })
+  event.shapeless('tfc:stick_bundle', ['tfc:stick_bunch', 'tfc:stick_bunch', 'tfc:stick_bunch', 'tfc:stick_bunch']).id('tfc:crafting/stick_bundle')
+
+  event.remove({ id: 'tfc:crafting/stick_from_bunch' })
+  event.shapeless('4x tfc:stick_bunch', ['tfc:stick_bunch']).id('tfc:crafting/stick_from_bunch')
+
+  event.remove({ id: 'tfc:crafting/stick_from_bundle' })
+  event.shapeless('16x minecraft:stick', ['tfc:stick_bundle']).id('tfc:crafting/stick_from_bundle')
 
   global.tfcGemTypes.forEach(i => {
 

@@ -64,6 +64,8 @@ global.removeAndHide = [
     'tfc_metalwork:metal/cut/copper',
     'tfc_metalwork:metal/cut/copper_slab',
     'tfc_metalwork:metal/cut/copper_stairs',
+    'tfc:powder/coke',
+    'supplementaries:ash_bricks_vertical_slab',
     'botania:pebble',
     'rosia:copper_wire',
     'rosia:copper_coil',
@@ -103,7 +105,6 @@ global.removeAndHide = [
     'pneumaticcraft:ingot_iron_compressed',
     'tfc:metal/bucket/red_steel',
     'tfc:metal/bucket/blue_steel',
-    'vs_clockwork:universal_joint',
     'create:bar_of_chocolate',
     'create:tree_fertilizer',
     'create:sweet_roll',
@@ -809,10 +810,12 @@ global.ieItems = [
     'minecart_woodenbarrel',
     'gunpowder_barrel',
     'dust_wood',
-    'crate',
-    'minecart_woodencrate',
-    'reinforced_crate',
-    'minecart_reinforcedcrate'
+    'blastbrick',
+    'blastbrick_reinforced',
+    'slab_blastbrick',
+    'slab_blastbrick_reinforced',
+    'cokebrick',
+    'slab_cokebrick'
 ]
 
 global.caItems = [

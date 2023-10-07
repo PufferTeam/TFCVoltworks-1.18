@@ -1203,13 +1203,10 @@
 			dependencies: ["2E3DD698A4E01DCC"]
 			id: "1F671C413CD50D66"
 			tasks: [{
-				id: "293FF3F4D765F5BA"
-				type: "observation"
-				title: "Find clay"
-				icon: "tfc:clay/loam"
-				timer: 0L
-				observe_type: 1
-				to_observe: "tfc:clay"
+				id: "4637F3FEF3BDF8E7"
+				type: "item"
+				item: "minecraft:clay_ball"
+				count: 5L
 			}]
 		}
 		{

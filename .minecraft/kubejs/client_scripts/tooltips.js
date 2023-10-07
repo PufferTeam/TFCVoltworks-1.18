@@ -127,6 +127,24 @@ onEvent('item.tooltip', event => {
       .addInformation(tooltip);
   });
 
+  function rockTooltip(mod, metal) {
+    event.addAdvanced(`${mod}:rock/anvil/${metal}`, (item, _, tooltip) => {
+      new ItemDescription(Palette.Yellow)
+        .withSummary(Component.translate('item.tfc.anvil.tooltip.summary'))
+        .withSummary(Component.translate('item.kubejs.none'))
+
+        .withBehaviour(Component.translate('item.tfc.anvil.tooltip.condition').string,
+          Component.translate('item.tfc.anvil.tooltip.behaviour').string)
+
+        .withBehaviour(Component.translate('item.tfc.anvil.tooltip2.condition').string,
+          Component.translate('item.tfc.anvil.tooltip2.behaviour').string)
+
+        .createTabs()
+        .addInformation(tooltip);
+    });
+  }
+  global.anvilRockTypes.forEach(i => rockTooltip('tfc', i));
+
   function metalTooltip(mod, metal) {
     event.addAdvanced(`${mod}:metal/anvil/${metal}`, (item, _, tooltip) => {
       new ItemDescription(Palette.Yellow)

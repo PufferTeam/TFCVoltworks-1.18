@@ -72,7 +72,15 @@ onEvent('item.registry', event => {
 
     event.create('brick/bloomery_brick').maxStackSize(64);
 
-    event.create('powder/alumina').maxStackSize(64);
+    event.create('brick/unfired_ash_brick').maxStackSize(64);
+
+    event.create('brick/unfired_bloomery_brick').maxStackSize(64);
+
+    event.create('brick/unfired_coke_oven_brick').maxStackSize(64);
+
+    event.create('powder/gypsum').maxStackSize(32);
+
+    event.create('powder/alumina').maxStackSize(32);
 
     event.create('underclay_ball').maxStackSize(64);
 

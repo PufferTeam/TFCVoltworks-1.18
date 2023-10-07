@@ -68,10 +68,10 @@ onEvent('recipes', event => {
     }).id('create:radial_chassis')
 
     event.remove({ output: 'create:metal_girder' })
-    event.shaped('16x create:metal_girder', [
+    event.shaped('32x create:metal_girder', [
         ' A ',
         'SSS',
-        ' A '
+        ' A ' 
     ], {
         S: '#forge:rods/cast_iron',
         A: '#forge:plates/cast_iron'
@@ -126,11 +126,12 @@ onEvent('recipes', event => {
 
     event.remove({ output: 'create:gantry_shaft' })
     event.shaped('8x create:gantry_shaft', [
-        'S',
-        'A',
-        'S'
+        'BSB',
+        ' A ',
+        'BSB'
     ], {
         S: '#forge:rods/andesite_alloy',
+        B: 'kubejs:pitch_treated_lumber',
         A: 'minecraft:redstone'
     }).id('create:gantry_shaft')
 
