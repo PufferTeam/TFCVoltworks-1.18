@@ -3,7 +3,7 @@
 	group: ""
 	order_index: 0
 	filename: "getting_started"
-	title: "Getting Started"
+	title: "Stone Age"
 	icon: "tfc:stone/javelin_head/metamorphic"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
@@ -977,18 +977,6 @@
 						Count: 1b
 						tag: {
 							value: "forge:tier1to2_propicks"
-						}
-					}
-				}
-				{
-					id: "4DC715CFFC3E1AE6"
-					type: "item"
-					title: "Any Copper/Bronze Hammers"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "forge:tier1to2_hammers"
 						}
 					}
 				}

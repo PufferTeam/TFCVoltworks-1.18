@@ -38,6 +38,7 @@ onEvent('tags.items', event => {
         event.add(`forge:${tier}lamps`, `${mod}:metal/lamp/${metal}`)
         event.add(`forge:${tier}anvil`, `${mod}:metal/anvil/${metal}`)
 
+        event.add(`forge:${tier}sheets`, `${mod}:metal/sheet/${metal}`)
         event.add(`forge:${tier}rods`, `${mod}:metal/rod/${metal}`)
         event.add(`forge:${tier}double_sheets`, `${mod}:metal/double_sheet/${metal}`)
         event.add(`forge:${tier}double_ingots`, `${mod}:metal/double_ingot/${metal}`)
@@ -51,6 +52,13 @@ onEvent('tags.items', event => {
     taggingTools('tfc', 'bronze', 'tier1to2_')
     taggingTools('tfc', 'bismuth_bronze', 'tier1to2_')
     taggingTools('tfc', 'black_bronze', 'tier1to2_')
+
+    global.stoneToolsTypes.forEach(i => {
+        let result = i.split("/")
+        let stone = result[0]
+
+        event.add(`forge:tier1to2_hammers`, `tfc:stone/hammer/${stone}`)
+    });
 
     taggingTools('tfc', 'bronze', 'bronze_')
     taggingTools('tfc', 'bismuth_bronze', 'bronze_')
@@ -76,6 +84,9 @@ onEvent('tags.items', event => {
 
     event.add(`forge:dusts/iron`, 'tfc_metalwork:metal/dust/wrought_iron')
     event.add(`forge:gears/iron`, 'tfc_metalwork:metal/small_gear/wrought_iron')
+    event.add(`forge:rods/iron`, 'tfc:metal/rod/wrought_iron')
+    event.add(`forge:dusts/diamond`, 'tfc:powder/diamond')
+    event.add(`forge:dusts/emerald`, 'tfc:powder/emerald')
 
     function tagSheetmetal(item) {
         if (item == 'immersiveengineering:sheetmetal_wrought_iron') {
@@ -216,8 +227,8 @@ onEvent('recipes', event => {
         const methodsSlab = []
         methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `${output}`]).keepHeldItem());
         methodsSlab.push(event.recipes.createCutting(transitionItem, transitionItem))
-        methodsSlab.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-        methodsSlab.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+        methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_sheets`]).keepHeldItem())
+        methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_sheets`]).keepHeldItem())
         methodsSlab.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_double_ingots`]).keepHeldItem())
         event.recipes.tfc.anvil(`2x ${output}`, input, [
             "bend_last",
@@ -232,8 +243,8 @@ onEvent('recipes', event => {
         methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `${output}`]).keepHeldItem());
         methodsStairs.push(event.recipes.createCutting(transitionItem, transitionItem))
         methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_hammers`]))
-        methodsStairs.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-        methodsStairs.push(event.recipes.createPressing(transitionItem, [transitionItem]));
+        methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_sheets`]).keepHeldItem())
+        methodsStairs.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_sheets`]).keepHeldItem())
         event.recipes.tfc.anvil(output, input, [
             "hit_not_last",
             "draw_any",
@@ -565,11 +576,10 @@ onEvent('server.datapack.first', event => {
     gemHeating('tfc:ore/cryolite')
 
     function gemMetal(input) {
-        event.addTFCMetal(input, 2000, 3.333, 'minecraft:structure_void', 'minecraft:structure_void')
+        event.addTFCMetal(input, 2000, 0.10, 'minecraft:structure_void', 'minecraft:structure_void')
     }
     global.tfcGemTypes.forEach(i => gemMetal(`kubejs:${i}`))
     gemMetal('kubejs:cryolite')
-
 
     event.addTFCHeat('#tfc_metalwork:cut/copper', 11.429, 648)
     event.addTFCHeat('#tfc_metalwork:shingles/copper', 11.429, 648)

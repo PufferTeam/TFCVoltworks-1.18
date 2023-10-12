@@ -256,14 +256,14 @@ onEvent('recipes', event => {
             ]).tier(tier).id(`tfc_metalwork:anvil/${metal}_large_rod`)
         }
 
-        if(global.ladderrx.test(output)) {
+        if (global.ladderrx.test(output)) {
             let input = anvilRecipe.input.item;
             event.remove({ id: `tfc_metalwork:anvil/${metal}_ladder` })
             event.recipes.tfc.anvil(`16x ${output}`, `${input}`, [
                 "bend_last",
                 "bend_second_last",
                 "hit_any"
-            ]).tier(tier).id(`tfc_metalwork:anvil/${metal}_ladder`)         
+            ]).tier(tier).id(`tfc_metalwork:anvil/${metal}_ladder`)
         }
     });
 
@@ -426,52 +426,43 @@ onEvent('recipes', event => {
                 }
 
                 for (let i in order) {
-                    let recipeType = undefined;
                     let deployingItem = undefined;
                     let keepHeldItem = false;
 
                     switch (order[i]) {
                         case 'draw':
-                            recipeType = 'pressing'
+                            deployingItem = 'sheets'
+                            keepHeldItem = true
                             break;
 
                         case 'hit':
-                            recipeType = 'deploying'
                             deployingItem = 'hammers'
                             break;
 
                         case 'upset':
-                            recipeType = 'deploying'
                             deployingItem = 'rods'
                             keepHeldItem = true
                             break;
 
                         case 'punch':
-                            recipeType = 'deploying'
                             deployingItem = 'chisels'
                             break;
 
                         case 'bend':
-                            recipeType = 'deploying'
                             deployingItem = 'double_ingots'
                             keepHeldItem = true
                             break;
 
                         case 'shrink':
-                            recipeType = 'deploying'
                             deployingItem = 'double_sheets'
                             keepHeldItem = true
                             break;
                     }
 
-                    if (recipeType == 'pressing') {
-                        methods.push(event.recipes.createPressing(transitionItem, [transitionItem]));
-                    } else if (recipeType == 'deploying') {
-                        if (keepHeldItem) {
-                            methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]).keepHeldItem())
-                        } else {
-                            methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]))
-                        }
+                    if (keepHeldItem) {
+                        methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]).keepHeldItem())
+                    } else {
+                        methods.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier${tier}_${deployingItem}`]))
                     }
                 }
 
@@ -479,7 +470,7 @@ onEvent('recipes', event => {
                     count = 2
                 }
 
-                if(toolType == 'ladder') {
+                if (toolType == 'ladder') {
                     count = 16
                 }
 
@@ -672,11 +663,13 @@ onEvent('recipes', event => {
                 if (global.highorerx.test(input) && mod != 'tfc') {
                     let oreResult = input.split('/')
                     let oreName = oreResult[1]
-                    let oreNameDivided = oreName.split('/')
-                    let completeOreName = oreNameDivided[1]
                     //console.log(oreName)
                     event.remove({ id: `tfc_metallum:heating/ore/${oreName}` })
                     heatingTemperature = 5000
+                    if(fluid == 'tfc_metallum:metal/aluminum') {
+                        fluid = 'kubejs:cast_aluminum'
+                        heatingTemperature = temperature
+                    }
 
                     //console.log(input)
                     event.recipes.tfc.heating(Fluid.of(fluid, fluidAmount), input, heatingTemperature).id(`tfc_metallum:heating/custom/ore/${oreName}`)

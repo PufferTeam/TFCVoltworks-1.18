@@ -175,6 +175,30 @@ onEvent('recipes', event => {
 
     }
 
+    global.addFillingItemFluidEItem = function addFillingItemFluidEItem(input, fluid, fluidCount, output, outputCount, heated) {
+        event.custom({
+            "type": "create:filling",
+            "ingredients": [
+                {
+                    "type": "tfc:not_rotten",
+                    "ingredient": {
+                        "item": input
+                    }
+                },
+                {
+                    "fluid": fluid,
+                    "amount": fluidCount
+                }
+            ],
+            "results": [
+                {
+                    "item": output,
+                    "count": outputCount
+                }
+            ]
+          })
+    }
+
     global.addMixingTagTagFluidTagEFluid = function addMixingTagTagFluidTagEFluid(input1, input2, fluid, fluidCount, output, outputCount, heatingLevel) {
         event.custom({
             "type": "create:mixing",
@@ -513,22 +537,41 @@ onEvent('recipes', event => {
         })
     }
 
-    global.addTimeCutting = function addTimeCutting(input, output, count, time) {
-        event.custom({
-            "type": "create:cutting",
-            "ingredients": [
-                {
-                    "item": input
-                }
-            ],
-            "results": [
-                {
-                    "item": output,
-                    "count": count
-                }
-            ],
-            "processingTime": time
-        })
+    global.addTimeCutting = function addTimeCutting(isTag, input, output, count, time) {
+        if(isTag) {
+            event.custom({
+                "type": "create:cutting",
+                "ingredients": [
+                    {
+                        "tag": input
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": count
+                    }
+                ],
+                "processingTime": time
+            })
+        } else {
+            event.custom({
+                "type": "create:cutting",
+                "ingredients": [
+                    {
+                        "item": input
+                    }
+                ],
+                "results": [
+                    {
+                        "item": output,
+                        "count": count
+                    }
+                ],
+                "processingTime": time
+            })
+        }
+
     }
 
     global.addMelting = function addMelting(isTag, input, fluid, fluid_amount, heat, time) {
@@ -633,6 +676,20 @@ onEvent('recipes', event => {
 
     }
 
+    global.addQuerningAndMilling = function addQuerningAndMilling(isTag, input, output, outputCount) {
+        let tagPrefix = ''
+        if (isTag) {
+            tagPrefix = '#'
+        }
+
+        if(isTag) {
+            event.recipes.tfc.quern(`${outputCount}x ${output}`, tagPrefix + input)
+        } else {
+            global.addQuerning(input, output, outputCount)
+        }
+        global.addMilling(isTag, input, output, outputCount, 50, true)
+    }
+
     global.addMeltingHeatingFluid = function addMeltingHeatingFluid(isTag, input, fluid, fluidAmount, metal, temperature) {
         let heatcapacity = fluidAmount * 0.02857
         let processingSpeed = Math.ceil(heatcapacity * 100)
@@ -669,6 +726,28 @@ onEvent('recipes', event => {
             event.recipes.immersiveengineeringCrusher(`${dustCount}x tfc_metalwork:metal/dust/${metal}`, tagPrefix + input)
         }
 
+    }
+
+    global.addMechanicalExtruder = function addMechanicalExtruder(inputFluid, inputFluid2, catalyst, output) {
+        event.custom({
+            "type": "create_mechanical_extruder:extruding",
+            "ingredients": [
+              {
+                "fluid": inputFluid,
+                "amount": 1000
+              },
+              {
+                "fluid": inputFluid2,
+                "amount": 1000
+              }
+            ],
+            "catalyst": {
+              "item": catalyst 
+            },
+            "result": {
+              "item": output
+            }
+        })
     }
 
     global.addRolling = function addRolling(input, output, outputCount) {
@@ -1014,7 +1093,18 @@ onEvent('recipes', event => {
                 break;
         }
 
+    }
 
+    global.addCuttingDamageInputShapeless = function addCuttingDamageInputShapeless(input_number, input_item, output_item, tool, count) {
+        global.addDamageInputShapeless(input_number, input_item, output_item, tool, count)
+
+        if(input_number == count) {
+            global.addCutting(input_item, output_item, 1)
+        }
+
+        if(input_number == 2 && count == 4) {
+            global.addCutting2Output(input_item, output_item)
+        }
     }
 
 });

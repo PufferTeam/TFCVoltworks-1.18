@@ -198,15 +198,24 @@ onEvent('recipes', event => {
     global.colors.forEach(i => addRoofRecipes('mcwroofs', `${i}_concrete`, `quark:${i}_shingles`));
     addRoofRecipes('mcwroofs', 'granite', 'quark:shingles')
     
-    global.addDamageInputShapeless(1, 'minecraft:glass', 'create:framed_glass', "tfc:chisels", 1)
-    global.addDamageInputShapeless(1, 'minecraft:glass_pane', 'create:framed_glass_pane', "tfc:chisels", 1)
-    global.addDamageInputShapeless(1, 'create:framed_glass', 'create:horizontal_framed_glass', "tfc:chisels", 1)
-    global.addDamageInputShapeless(1, 'create:framed_glass_pane', 'create:horizontal_framed_glass_pane', "tfc:chisels", 1)
-    global.addDamageInputShapeless(1, 'create:horizontal_framed_glass', 'create:vertical_framed_glass', "tfc:chisels", 1)
-    global.addDamageInputShapeless(1, 'create:horizontal_framed_glass_pane', 'create:vertical_framed_glass_pane', "tfc:chisels", 1)
+    global.addCuttingDamageInputShapeless(1, 'minecraft:glass', 'create:framed_glass', "tfc:chisels", 1)
+    global.addCuttingDamageInputShapeless(1, 'minecraft:glass_pane', 'create:framed_glass_pane', "tfc:chisels", 1)
+    global.addCuttingDamageInputShapeless(1, 'create:framed_glass', 'create:horizontal_framed_glass', "tfc:chisels", 1)
+    global.addCuttingDamageInputShapeless(1, 'create:framed_glass_pane', 'create:horizontal_framed_glass_pane', "tfc:chisels", 1)
+    global.addCuttingDamageInputShapeless(1, 'create:horizontal_framed_glass', 'create:vertical_framed_glass', "tfc:chisels", 1)
+    global.addCuttingDamageInputShapeless(1, 'create:horizontal_framed_glass_pane', 'create:vertical_framed_glass_pane', "tfc:chisels", 1)
 
-    global.addDamageInputShapeless(3, 'minecraft:glass', 'create:tiled_glass', "tfc:chisels", 3)
-    global.addDamageInputShapeless(3, 'minecraft:glass_pane', 'create:tiled_glass_pane', "tfc:chisels", 3)
+    global.addCuttingDamageInputShapeless(3, 'minecraft:glass', 'create:tiled_glass', "tfc:chisels", 3)
+    global.addCuttingDamageInputShapeless(3, 'minecraft:glass_pane', 'create:tiled_glass_pane', "tfc:chisels", 3)
+
+    event.remove({ output: 'cfm:rock_path' })
+    event.shaped('16x cfm:rock_path', [
+        'OS',
+        'SO'
+    ], {
+        S: '#tfc:rock/raw',
+        O: '#forge:cobblestone'
+    }).id('cfm:rock_path')
 
     event.replaceInput({ type: 'minecraft:crafting_shaped' }, 'minecraft:hay_block', 'tfc:thatch')
     event.replaceInput({ type: 'minecraft:crafting_shapeless' }, 'minecraft:hay_block', 'tfc:thatch')

@@ -27,8 +27,76 @@ onEvent('recipes', event => {
         ' S '
     ], {
         S: 'tfc:jute_fiber',
-        O: '#tfc:firepit_sticks'
+        O: 'kubejs:creosote_treated_large_stick'
     }).id('immersiveengineering:wirecoil_structure_rope')
+
+    event.remove({ output: 'immersiveengineering:wirecoil_copper' })
+    event.shaped('2x immersiveengineering:wirecoil_copper', [
+        ' S ',
+        'SOS',
+        ' S '
+    ], {
+        S: 'immersiveengineering:wire_copper',
+        O: 'kubejs:creosote_treated_large_stick'
+    }).id('immersiveengineering:wirecoil_copper')
+
+    event.remove({ output: 'immersiveengineering:wirecoil_electrum' })
+    event.shaped('2x immersiveengineering:wirecoil_electrum', [
+        ' S ',
+        'SOS',
+        ' S '
+    ], {
+        S: 'immersiveengineering:wire_electrum',
+        O: 'kubejs:creosote_treated_large_stick'
+    }).id('immersiveengineering:wirecoil_electrum')
+
+    event.remove({ output: 'immersiveengineering:wirecoil_steel' })
+    event.shaped('2x immersiveengineering:wirecoil_steel', [
+        ' S ',
+        'AOA',
+        ' S '
+    ], {
+        S: 'immersiveengineering:wire_steel',
+        A: 'immersiveengineering:wire_aluminum',
+        O: 'kubejs:creosote_treated_large_stick'
+    }).id('immersiveengineering:wirecoil_steel')
+
+    event.remove({ output: 'immersiveengineering:wirecoil_structure_steel' })
+    event.shaped('4x immersiveengineering:wirecoil_structure_steel', [
+        ' S ',
+        'SOS',
+        ' S '
+    ], {
+        S: 'immersiveengineering:wire_steel',
+        O: 'kubejs:creosote_treated_large_stick'
+    }).id('immersiveengineering:wirecoil_structure_steel')
+
+    function technicalCrafting(tier, frame) {
+        let block = `immersiveengineering:${tier}_engineering`
+        let blockAssembly = `kubejs:${tier}_engineering_assembly`
+        let mechanical = `kubejs:${tier}_mechanical_block`
+        let mechanicalAssembly = `kubejs:${tier}_mechanical_assembly`
+        if(tier == 'thermionic') {
+            block = `kubejs:${tier}_engineering_block`
+        }
+        if(tier == 'redstone') {
+            block = `immersiveengineering:rs_engineering`
+        }
+
+        global.addItemApplication(false, blockAssembly, frame, block)
+
+        if(tier !== 'thermionic' && tier !== 'redstone') {
+            global.addItemApplication(false, mechanicalAssembly, frame, mechanical)
+        }
+    }
+
+    technicalCrafting('light', 'kubejs:frame/iron')
+    technicalCrafting('heavy', 'kubejs:frame/steel')
+    technicalCrafting('redstone', 'kubejs:frame/iron')
+    technicalCrafting('thermionic', 'kubejs:frame/aluminum')
+
+    global.addItemApplication(false, 'tfc:fire_bricks', 'firmalife:metal/rod/stainless_steel', 'kubejs:brick/fire_bricks_reinforced')
+    global.addItemApplication(false, 'kubejs:brick/bloomery_bricks', 'tfc:metal/rod/steel', 'kubejs:brick/bloomery_bricks_reinforced')
 
     let transitionItem = 'kubejs:transition_steel'
 

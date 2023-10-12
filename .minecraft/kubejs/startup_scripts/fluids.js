@@ -1,8 +1,18 @@
 onEvent('fluid.registry', event => {
+    event.create('magmatic_lava')
+    .thickTexture(0x753A0F)
+    .bucketColor(0x753A0F)
+    .displayName('Magmatic Lava')
+
     event.create('raw_andesite_alloy')
     .thickTexture(0xF0F0F0)
     .bucketColor(0xF0F0F0)
     .displayName('Raw Igneous Alloy')
+
+    event.create('cast_aluminum')
+    .thickTexture(0xF0F0F0)
+    .bucketColor(0xF0F0F0)
+    .displayName('Cast Aluminum')
 
     event.create('pitch')
     .thinTexture(0x63492B)

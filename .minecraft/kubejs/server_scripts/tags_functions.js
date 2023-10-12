@@ -17,6 +17,8 @@ onEvent('tags.items', event => {
     event.remove('create:windmill_sails', 'create:sail_frame')
     event.remove('forge:storage_blocks/gold', 'minecraft:gold_block')
 
+    event.remove('forge:ingots/brick', 'supplementaries:ash_brick')
+
     global.stoneToolsTypes.forEach(i => {
         let result = i.split("/")
         let stone = result[0]

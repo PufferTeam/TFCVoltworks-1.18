@@ -1,0 +1,13 @@
+{
+	id: "6B09EE9DF1EE422E"
+	group: ""
+	order_index: 2
+	filename: "electricity"
+	title: "Electricity"
+	icon: "immersiveengineering:wirecoil_copper"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	hide_quest_details_until_startable: true
+	quests: [ ]
+	quest_links: [ ]
+}

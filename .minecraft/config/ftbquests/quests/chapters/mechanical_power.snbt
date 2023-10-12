@@ -1,0 +1,22 @@
+{
+	id: "41D11B322D23855A"
+	group: ""
+	order_index: 1
+	filename: "mechanical_power"
+	title: "Mechanical Power"
+	icon: "kubejs:pitch_treated_large_gear"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		title: "The First Casing"
+		x: 0.0d
+		y: 0.0d
+		id: "63A9146A9DE74D67"
+		tasks: [{
+			id: "30562284B1C4178C"
+			type: "item"
+			item: "create:andesite_casing"
+		}]
+	}]
+	quest_links: [ ]
+}

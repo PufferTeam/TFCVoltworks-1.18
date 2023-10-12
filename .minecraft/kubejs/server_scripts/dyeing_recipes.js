@@ -189,9 +189,11 @@ onEvent('recipes', event => {
             S: '#tfc:high_quality_cloth',
             L: '#tfc:firepit_sticks'
         }).id('supplementaries:flag_white')
-        global.dyeItem('_', '', colors, 'brass_flywheel', 'extendedflywheels:', null, 'forge:flywheels/brass_painted_flywheels', 'extendedflywheels:flywheel', 'brown');
-        global.dyeItem('_', '', colors, 'steel_flywheel', 'extendedflywheels:', null, 'forge:flywheels/steel_painted_flywheels', 'extendedflywheels:steelflywheel', 'brown');
-        global.dyeItem('_', '', colors, 'iron_flywheel', 'extendedflywheels:', null, 'forge:flywheels/iron_painted_flywheels', 'extendedflywheels:ironflywheel', 'brown');
+        if(!global.isNewCreate) {
+            global.dyeItem('_', '', colors, 'brass_flywheel', 'extendedflywheels:', null, 'forge:flywheels/brass_painted_flywheels', 'extendedflywheels:flywheel', 'brown');
+            global.dyeItem('_', '', colors, 'steel_flywheel', 'extendedflywheels:', null, 'forge:flywheels/steel_painted_flywheels', 'extendedflywheels:steelflywheel', 'brown');
+            global.dyeItem('_', '', colors, 'iron_flywheel', 'extendedflywheels:', null, 'forge:flywheels/iron_painted_flywheels', 'extendedflywheels:ironflywheel', 'brown');
+        }
         global.dyeItem('_', '', colors, 'conductor_cap', 'railways:', null, 'railways:conductor_caps', 'railways:white_conductor_cap', null);
         global.dyeItem('', '_', colors, 'sheetmetal_colored', 'immersiveengineering:', null, null, 'immersiveengineering:sheetmetal_colored_white', null);
         global.dyeItem('_', '', colors, 'seat', 'create:', null, 'create:seats', 'create:white_seat', null);
@@ -251,9 +253,11 @@ onEvent('tags.items', event => {
         event.add('tfc:colored_stained_glass_pane', 'minecraft:white_stained_glass_pane')
         event.add('tfc:colored_glazed_terracotta', 'minecraft:white_glazed_terracotta')
         event.add('tfc:colored_banner', 'minecraft:white_banner')
-        event.add('forge:flywheels/brass_painted_flywheels', 'extendedflywheels:flywheel')
-        event.add('forge:flywheels/steel_painted_flywheels', 'extendedflywheels:steelflywheel')
-        event.add('forge:flywheels/iron_painted_flywheels', 'extendedflywheels:ironflywheel')
+        if(!global.isNewCreate) {
+            event.add('forge:flywheels/brass_painted_flywheels', 'extendedflywheels:flywheel')
+            event.add('forge:flywheels/steel_painted_flywheels', 'extendedflywheels:steelflywheel')
+            event.add('forge:flywheels/iron_painted_flywheels', 'extendedflywheels:ironflywheel')
+        }
 
         if (prefix != '' && suffix == '') {
             event.add(`tfc:colored_${item}`, `${mod}${color}${prefix}${item}${suffix}`)

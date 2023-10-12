@@ -1,5 +1,8 @@
 {
 
+    "block.tfc.fire_bricks": "Blast Bricks",
+    "item.tfc.ceramic.fire_brick": "Blast Brick",
+
     "item.tfc.anvil.tooltip.summary": "Essential block to _forge metal items_.",
     "item.tfc.anvil.tooltip.condition": "When R-Clicked + Shifted with an hammer",
     "item.tfc.anvil.tooltip.behaviour": "_Welds_ the two items inside the anvil if it's at _welding temperature_.",

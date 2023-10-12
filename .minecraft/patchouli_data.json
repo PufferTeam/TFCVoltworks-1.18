@@ -1,6 +1,6 @@
 {
   "bookGuiScale": 0,
-  "clickedVisualize": false,
+  "clickedVisualize": true,
   "bookData": {
     "botania:lexicon": {
       "viewedEntries": [
@@ -26,7 +26,11 @@
         "tfc:mechanics/lamps",
         "tfc:the_world/geology",
         "tfc:mechanics/bloomery",
-        "tfc_metallum:metallum_metals/nickel_silver"
+        "tfc_metallum:metallum_metals/nickel_silver",
+        "tfc:the_world/ores_and_minerals",
+        "rosia:tfc_rosia/charcoal_kiln",
+        "tfc:mechanics/blast_furnace",
+        "firmalife:firmalife/planters"
       ],
       "bookmarks": [],
       "completedManualQuests": []

@@ -6,13 +6,13 @@ onEvent('recipes', event => {
         global.addDamageInputShapeless(1, `${mod}:wood/log/${name}`, `${mod}:wood/stripped_log/${name}`, "tfc:axes", 1)
         global.addDamageInputShapeless(1, `${mod}:wood/wood/${name}`, `${mod}:wood/stripped_wood/${name}`, "tfc:axes", 1)
 
-        global.addTimeCutting(`${mod}:wood/log/${name}`, `${mod}:wood/stripped_log/${name}`, 1, 50)
-        global.addTimeCutting(`${mod}:wood/wood/${name}`, `${mod}:wood/stripped_wood/${name}`, 1, 50)
+        global.addTimeCutting(false, `${mod}:wood/log/${name}`, `${mod}:wood/stripped_log/${name}`, 1, 50)
+        global.addTimeCutting(false, `${mod}:wood/wood/${name}`, `${mod}:wood/stripped_wood/${name}`, 1, 50)
 
-        global.addTimeCutting(`${mod}:wood/stripped_log/${name}`, `${mod}:wood/lumber/${name}`, 8, 50)
-        global.addTimeCutting(`${mod}:wood/stripped_wood/${name}`, `${mod}:wood/lumber/${name}`, 8, 50)
+        global.addTimeCutting(false, `${mod}:wood/stripped_log/${name}`, `${mod}:wood/lumber/${name}`, 8, 50)
+        global.addTimeCutting(false, `${mod}:wood/stripped_wood/${name}`, `${mod}:wood/lumber/${name}`, 8, 50)
 
-        global.addTimeCutting(`${mod}:wood/planks/${name}`, `${mod}:wood/lumber/${name}`, 4, 25)
+        global.addTimeCutting(false, `${mod}:wood/planks/${name}`, `${mod}:wood/lumber/${name}`, 4, 25)
 
         global.addSawmill(`${mod}:wood/log/${name}`, `${mod}:wood/stripped_log/${name}`, `${mod}:wood/lumber/${name}`, 16, 1600)
         global.addSawmill(`${mod}:wood/wood/${name}`, `${mod}:wood/stripped_wood/${name}`, `${mod}:wood/lumber/${name}`, 16, 1600)
@@ -44,12 +44,13 @@ onEvent('recipes', event => {
         }
 
         event.remove({ output: stick })
+        global.addTimeCutting(false, lumber, stick, 2, 25)
         global.addDamageInputShapeless(1, lumber, stick, "tfc:saws", 2)
 
         event.shapeless(largeStick, [stick, stick]).id(largeStick)
 
         global.addDamageInputShapeless(1, wood, lumber, "tfc:saws", 4)
-        global.addTimeCutting(wood, lumber, 4, 25)
+        global.addTimeCutting(false, wood, lumber, 4, 25)
 
         if (mod == 'kubejs') {
             event.shaped(`1x ${wood}`, [
@@ -77,6 +78,9 @@ onEvent('recipes', event => {
         }
 
     }
+
+    event.recipes.tfc.barrel_sealed(['kubejs:pitch_treated_lumber'], [Fluid.of(`kubejs:pitch`, 125), '#tfc:lumber'], 4000).id(`tfc:barrel/pitch_treated_lumber`)
+    event.recipes.tfc.barrel_sealed(['kubejs:pitch_treated_wood'], [Fluid.of(`kubejs:pitch`, 500), '#minecraft:planks'], 16000).id(`tfc:barrel/pitch_treated_wood`)
 
     addCustomWood('firmalife', '', 'kubejs:wax')
     addCustomWood('kubejs', 'pitch_', 'kubejs:pitch')
@@ -110,10 +114,31 @@ onEvent('recipes', event => {
         A: 'kubejs:pitch_treated_lumber'
     }).id('kubejs:pitch_treated_waterwheel_segment')
 
+    event.remove({ output: 'immersiveengineering:waterwheel_segment' })
+    event.shaped('immersiveengineering:waterwheel_segment', [
+        ' A ',
+        'ABA',
+        'BAB'
+    ], {
+        B: '#forge:treated_wood',
+        A: 'kubejs:creosote_treated_lumber'
+    }).id('immersiveengineering:creosote_treated_waterwheel_segment')
+
+    event.remove({ output: 'immersiveengineering:treated_fence' })
+    event.shaped('8x immersiveengineering:treated_fence', [
+        'BAB',
+        'BAB'
+    ], {
+        B: '#forge:treated_wood',
+        A: 'kubejs:creosote_treated_lumber'
+    }).id('immersiveengineering:creosote_treated_fence')
+
+
+    global.addTimeCutting(true, 'tfc:flammable_lumber', 'minecraft:stick', 2, 25)
     global.addDamageInputShapeless(10, 'tfc:flammable_lumber', 'minecraft:stick', "tfc:saws", 2)
 
-    event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', 'supplementaries:ash_brick']).id('kubejs:ash_treated_lumber_made_with_ash')
-    event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', 'supplementaries:ash_brick', 'supplementaries:ash_brick', 'supplementaries:ash_brick', 'supplementaries:ash_brick']).id('kubejs:ash_treated_wood_made_with_ash')
+    event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', 'kubejs:powder/fly_ash']).id('kubejs:ash_treated_lumber_made_with_ash')
+    event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash']).id('kubejs:ash_treated_wood_made_with_ash')
 
 })
 

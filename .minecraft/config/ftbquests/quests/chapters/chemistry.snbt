@@ -1,0 +1,12 @@
+{
+	id: "1FDF57783C61C025"
+	group: ""
+	order_index: 3
+	filename: "chemistry"
+	title: "Industrialization"
+	icon: "mekanismgenerators:turbine_blade"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [ ]
+	quest_links: [ ]
+}

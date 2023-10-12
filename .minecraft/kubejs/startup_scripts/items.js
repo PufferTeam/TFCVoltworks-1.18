@@ -36,6 +36,12 @@ onEvent('item.registry', event => {
 
     event.create('transition_high_carbon_steel', 'create:sequenced_assembly').maxStackSize(1);
 
+    event.create('clinker_flour').maxStackSize(64);
+
+    event.create('abyss_flour').maxStackSize(64);
+
+    event.create('void_cream').maxStackSize(64);
+
     event.create('unfired_flower_box').maxStackSize(64);
 
     event.create('large_stick').maxStackSize(32);
@@ -72,13 +78,37 @@ onEvent('item.registry', event => {
 
     event.create('brick/bloomery_brick').maxStackSize(64);
 
+    event.create('powder/fly_ash').maxStackSize(32);
+
     event.create('brick/unfired_ash_brick').maxStackSize(64);
+
+    event.create('powder/bloomery').maxStackSize(32);
 
     event.create('brick/unfired_bloomery_brick').maxStackSize(64);
 
+    event.create('powder/coke_oven').maxStackSize(32);
+
     event.create('brick/unfired_coke_oven_brick').maxStackSize(64);
 
+    event.create('powder/fire').maxStackSize(32);
+
+    event.create('brick/unfired_fire_brick').maxStackSize(64);
+
+    event.create('brick/tfcfire_brick').maxStackSize(64);
+
     event.create('powder/gypsum').maxStackSize(32);
+
+    event.create('powder/bauxite').maxStackSize(32);
+
+    event.create('powder/cryolite').maxStackSize(32);
+
+    event.create('powder/bituminous_coal').maxStackSize(32);
+
+    event.create('powder/lignite').maxStackSize(32);
+
+    event.create('powder/cursecoal').maxStackSize(32);
+
+    event.create('powder/ender_pearl').maxStackSize(32);
 
     event.create('powder/alumina').maxStackSize(32);
 
@@ -91,6 +121,10 @@ onEvent('item.registry', event => {
     global.colors.forEach(i => event.create('transition_' + i + '_block', 'create:sequenced_assembly').maxStackSize(1));
 
     global.framesTypes.forEach(i => event.create('frame/' + i).maxStackSize(64));
+
+    event.create('frame/iron').maxStackSize(64)
+    event.create('frame/steel').maxStackSize(64)
+    event.create('frame/aluminum').maxStackSize(64)
 
     global.stoneToolsTypes.forEach(i => {
         let result = i.split('/')

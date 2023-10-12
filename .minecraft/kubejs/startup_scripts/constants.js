@@ -32,6 +32,7 @@ global.limitedColors = [
 ]
 
 global.removeAndHide = [
+    'kubejs:powder/alumina',
     'framedblocks:framed_torch',
     'framedblocks:framed_soul_torch',
     'framedblocks:framed_redstone_torch',
@@ -868,8 +869,7 @@ global.mekanismOreTypes = [
     'steel',
     'bronze',
     'lead',
-    'uranium',
-    'fluorite'
+    'uranium'
 ]
 
 global.modFluids = [

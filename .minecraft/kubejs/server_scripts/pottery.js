@@ -15,7 +15,21 @@ unfiredPottery.forEach(i => event.add('tfc:placed_item_whitelist', i))
 molds.forEach(i => event.add('tfc:placed_item_whitelist', i))
 
 global.extraPotteryItems = [
-
+    'tfc:ceramic/pot',
+    'minecraft:flower_pot',
+    'supplementaries:flower_box',
+    'tfcchannelcasting:mold_table',
+    'tfc:crucible',
+    'tfc:ceramic/fire_brick',
+    'minecraft:brick',
+    'kubejs:brick/unfired_ash_brick',
+    'kubejs:brick/unfired_bloomery_brick',
+    'kubejs:brick/unfired_coke_oven_brick',
+    'kubejs:brick/bloomery_brick',
+    'kubejs:brick/coke_oven_brick',
+    'kubejs:brick/tfcfire_brick',
+    'kubejs:brick/unfired_fire_brick',
+    'supplementaries:ash_brick'
 ]
 
 global.extraPotteryItems.forEach(i => event.add('tfc:placed_item_whitelist', i))

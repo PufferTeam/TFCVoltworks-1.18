@@ -12,6 +12,14 @@ onEvent('recipes', event => {
     ], {
         G: 'tfc:plant/moss'
     }).id('minecraft:moss_block_from_moss')
+    
+    event.shaped('minecraft:lever', [
+        'S',
+        'G'
+    ], {
+        G: '#tfc:rock_knapping',
+        S: '#tfc:firepit_sticks'
+    }).id('minecraft:lever')
 
     event.shaped('minecraft:glowstone', [
         'GG',

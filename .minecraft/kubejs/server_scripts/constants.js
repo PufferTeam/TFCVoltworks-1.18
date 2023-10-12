@@ -96,9 +96,20 @@ global.recipeIdToRemove = [
     'thermal:machines/smelter/smelter_gold_armor',
     'thermal:machines/smelter/smelter_gold_tools',
     'mekanism:charcoal',
+    'woodencog:crafting/kinetics/steam_whistle',
+    'woodencog:crafting/kinetics/analog_lever',
+    'create:crafting/kinetics/spout',
+    'woodencog:crafting/kinetis/adjustable_chain_gearshift',
+    'supplementaries:strings',
+    'immersiveengineering:crafting/string',
+    'create:crafting/sequenced_assembly/sturdy_sheet',
+    'woodencog:crafting/sequenced_assembly/sturdy_sheet',
+    'create:mechanical_crafting/crushing_wheel',
+    'woodencog:crafting/mechanical_crafting/crushing_wheel',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',
+    'rosia:blast_furnace/purple_steel',
 
     'thermal:machines/bottler/bottler_honey_bottle',
     'thermal:machines/bottler/bottler_mossy_stone_bricks'

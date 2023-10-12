@@ -1,0 +1,14 @@
+name = "Modpack Configuration Checker"
+filename = "Modpack+Configuration+Checker-1.18.x-v1.9.5.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "505fd862ed931fc93688c1579b5e5a1b0a6b383a"
+
+[update]
+[update.curseforge]
+file-id = 3549706
+project-id = 292992

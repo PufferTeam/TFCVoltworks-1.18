@@ -1,0 +1,12 @@
+{
+	id: "61C3B21907F235C6"
+	group: ""
+	order_index: 4
+	filename: "antimatter"
+	title: "Antimatter"
+	icon: "mekanism:pellet_antimatter"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [ ]
+	quest_links: [ ]
+}
