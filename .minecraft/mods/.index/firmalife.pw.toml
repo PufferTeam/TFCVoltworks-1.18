@@ -1,14 +1,14 @@
 name = "Firmalife"
-filename = "firmalife-1.2.17.jar"
+filename = "firmalife-1.2.18.jar"
 side = "both"
 
 [download]
 mode = "metadata:curseforge"
 url = ""
 hash-format = "sha1"
-hash = "f0cc7bf43ed9fb5fae7f6a82aec1d7b2072968b3"
+hash = "c455f89c7ec25e890bd4f53cb85ae9aee8ed06c1"
 
 [update]
 [update.curseforge]
-file-id = 4765736
+file-id = 4788653
 project-id = 453394

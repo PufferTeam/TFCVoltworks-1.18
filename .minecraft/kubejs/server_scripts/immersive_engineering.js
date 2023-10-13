@@ -76,7 +76,7 @@ onEvent('recipes', event => {
         let blockAssembly = `kubejs:${tier}_engineering_assembly`
         let mechanical = `kubejs:${tier}_mechanical_block`
         let mechanicalAssembly = `kubejs:${tier}_mechanical_assembly`
-        if(tier == 'thermionic') {
+        if(tier == 'thermionic' || tier == 'ponderous' || tier == 'electric') {
             block = `kubejs:${tier}_engineering_block`
         }
         if(tier == 'redstone') {
@@ -85,14 +85,17 @@ onEvent('recipes', event => {
 
         global.addItemApplication(false, blockAssembly, frame, block)
 
-        if(tier !== 'thermionic' && tier !== 'redstone') {
+        if(tier !== 'thermionic' && tier !== 'redstone' && tier !== 'electric') {
             global.addItemApplication(false, mechanicalAssembly, frame, mechanical)
         }
     }
 
     technicalCrafting('light', 'kubejs:frame/iron')
     technicalCrafting('heavy', 'kubejs:frame/steel')
+    technicalCrafting('ponderous', 'kubejs:frame/aluminum')
+    
     technicalCrafting('redstone', 'kubejs:frame/iron')
+    technicalCrafting('electric', 'kubejs:frame/steel')
     technicalCrafting('thermionic', 'kubejs:frame/aluminum')
 
     global.addItemApplication(false, 'tfc:fire_bricks', 'firmalife:metal/rod/stainless_steel', 'kubejs:brick/fire_bricks_reinforced')

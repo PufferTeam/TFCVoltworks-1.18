@@ -106,6 +106,7 @@ global.recipeIdToRemove = [
     'woodencog:crafting/sequenced_assembly/sturdy_sheet',
     'create:mechanical_crafting/crushing_wheel',
     'woodencog:crafting/mechanical_crafting/crushing_wheel',
+    'tfc:quern/cryolite',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',

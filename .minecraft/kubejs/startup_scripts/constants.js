@@ -32,7 +32,6 @@ global.limitedColors = [
 ]
 
 global.removeAndHide = [
-    'kubejs:powder/alumina',
     'framedblocks:framed_torch',
     'framedblocks:framed_soul_torch',
     'framedblocks:framed_redstone_torch',
@@ -68,6 +67,7 @@ global.removeAndHide = [
     'tfc:powder/coke',
     'supplementaries:ash_bricks_vertical_slab',
     'botania:pebble',
+    'createaddition:diamond_grit',
     'rosia:copper_wire',
     'rosia:copper_coil',
     'rosia:purple_steel_rifle',
@@ -804,7 +804,6 @@ global.ieOreTypes = [
 global.ieItems = [
     'seed',
     'fertilizer',
-    'slag',
     'potion_bucket',
     'hemp_fiber',
     'wooden_barrel',

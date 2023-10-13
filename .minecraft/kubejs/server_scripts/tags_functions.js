@@ -5,6 +5,8 @@ onEvent('tags.items', event => {
     global.waxingAgents.forEach(i => event.add('tfc:waxing_agents', i));
     global.tfcWoodTypes.forEach(i => event.add('quark:seed_pouch_holdable', `dttfc:${i}_seed`));
     global.tfcWoodTypes.forEach(i => event.add('tfc:flammable_lumber', `tfc:wood/lumber/${i}`));
+    global.anvilRockTypes.forEach(i => event.add('tfc:rock_magma_blocks', `tfc:rock/magma/${i}`));
+    event.add('tfc:rock_magma_blocks', 'minecraft:magma_block')
 
     event.add('tfc:placed_item_whitelist', 'kubejs:unfired_flower_box')
     event.add('tfc:unfired_pottery', 'kubejs:unfired_flower_box')

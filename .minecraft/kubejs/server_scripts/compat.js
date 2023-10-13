@@ -66,10 +66,16 @@ onEvent('tags.items', event => {
         'minecraft:stick',
         'tfc:glass_shard'
     ];
+    
     global.heatingTagBlacklist = [
         'forge:sand',
         'forge:rods/wooden'
     ]
+
+    global.quernBlacklist = [
+        'tfc:ore/cryolite'
+    ]
+
     global.meltingBlacklist = [
         'minecraft:iron_bars',
         'tfc:steel_bars',
@@ -148,6 +154,7 @@ onEvent('tags.items', event => {
     global.ingotrx = new RegExp(global.pileableIngots.join('|'));
     global.bonuswhitelistrx = new RegExp(global.forgingBonusWhitelist.join('|'));
     global.anvilblacklistrx = new RegExp(global.anvilCopyBlacklist.join('|'));
+    global.quernblacklistrx = new RegExp(global.quernBlacklist.join('|'));
     global.anvilwhitelistrx = new RegExp(global.anvilCopyWhitelist.join('|'));
     global.rottablefoodsrx = new RegExp(global.rottableFoods.join('|'));
     global.meltingrx = new RegExp(global.meltingBlacklist.join('|'));
@@ -191,7 +198,7 @@ onEvent('recipes', event => {
         }
         //console.log(output)
         //console.log(outputCount)
-        if (output !== undefined && input !== undefined && !global.ingotrx.test(input)) {
+        if (output !== undefined && input !== undefined && !global.ingotrx.test(input) && !global.quernblacklistrx.test(input)) {
             //console.log(input)
             global.addMilling(isTag, input, output, outputCount, time, modifiers)
         }
@@ -513,7 +520,6 @@ onEvent('recipes', event => {
 
         event.recipes.createSequencedAssembly(sresults, input, smethods).transitionalItem(transitionItem).loops(3);
     });
-
 
     event.forEachRecipe({ type: "tfc:heating" }, recipe => {
         const heatingRecipe = JSON.parse(recipe.json);

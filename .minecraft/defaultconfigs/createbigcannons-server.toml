@@ -73,6 +73,10 @@
 		#After the fuze has been in the air for the specified arming time, it will detonate when it gets close enough to a block or entity.
 		#Range: > 0
 		proximityFuzeArmingTime = 20
+		#.
+		#How many blocks the Impact Fuze can hit before breaking. Set to -1 to never break.
+		#Range: > -1
+		impactFuzeDurability = 3
 
 	#.
 	#Grouped Munitions
@@ -116,7 +120,7 @@
 		#.
 		#The amount of fluid in millibuckets (mB) required to spawn a Fluid Blob on Fluid Shell detonation.
 		#Any remaining fluid after spawning will be rounded up to one additional projectile.
-		#Range: > 125
+		#Range: > 25
 		millibucketsPerFluidBlob = 250
 		#.
 		#How much Fluid Blobs spread on release.
@@ -124,7 +128,7 @@
 		fluidBlobSpread = 1.0
 		#.
 		#How many millibuckets (mB) of fluid in a Fluid Blob are required to increase its area of effect (AOE) by one block in each direction.
-		#Range: > 125
+		#Range: > 25
 		millibucketsPerAreaOfEffectRadius = 125
 		#.
 		#The chance of a fluid blob affecting a block in its area of effect (AOE). 0 is 0% (never), 1 is 100% (always).
@@ -143,6 +147,46 @@
 		#Range: 0.0 ~ 3.4028234663852886E38
 		flakDamage = 10.0
 
+	#.
+	#Propellant
+	[munitions.propellant]
+		#.
+		#How much a single Powder Charge adds to the muzzle velocity of a projectile in meters per game tick. (1 m/gt = 20 m/s)
+		#Range: 0.5 ~ 4.0
+		powderChargeStrength = 1.0
+		#.
+		#How much stress a single Powder Charge exerts on a cannon.
+		#Range: 0.0 ~ 3.4028234663852886E38
+		powderChargeStress = 1.0
+		#.
+		#How much each Powder Charge-equivalent propellant used affects the spread of a fired projectile.
+		#Range: 0.0 ~ 3.4028234663852886E38
+		addedSpread = 2.0
+		#.
+		#How much each power level of a Big Cartridge adds to the muzzle velocity of a projectile in meters per game tick. (1 m/gt = 20 m/s)
+		#Range: 0.5 ~ 4.0
+		bigCartridgeStrength = 1.0
+		#.
+		#How much stress each power level of a Big Cartridge exerts on a cannon.
+		#Range: 0.0 ~ 3.4028234663852886E38
+		bigCartridgeStress = 0.5
+		#.
+		#The maximum amount of power a Big Cartridge can store.
+		#Range: 1 ~ 8
+		maxBigCartridgePower = 4
+
+	#.
+	#Deflection
+	[munitions.deflectChances]
+		#.
+		#The chance that a big cannon projectile deflects. 0 is 0% (never), 1 is 100% (always).
+		#Range: 0.0 ~ 1.0
+		bigCannonProjectileDeflectionChance = 0.8999999761581421
+		#.
+		#The chance that an autocannon projectile deflects. 0 is 0% (never), 1 is 100% (always).
+		#Range: 0.0 ~ 1.0
+		autocannonProjectileDeflectionChance = 0.20000000298023224
+
 #.
 #These values affect the characteristics of cannon materials and cannon structures
 [cannons]
@@ -150,10 +194,6 @@
 	#Maximum length of cannons that can be built.
 	#Range: > 3
 	maxCannonLength = 64
-	#.
-	#How much each Powder Charges used affects the spread of a fired projectile.
-	#Range: 0.0 ~ 3.4028234663852886E38
-	powderChargeSpread = 2.0
 	#.
 	#How much each cannon barrel reduces the spread of a fired projectile passing through.
 	#Range: 0.0 ~ 3.4028234663852886E38

@@ -10,9 +10,34 @@ onEvent('fluid.registry', event => {
     .displayName('Raw Igneous Alloy')
 
     event.create('cast_aluminum')
-    .thickTexture(0xF0F0F0)
-    .bucketColor(0xF0F0F0)
+    .thickTexture(0x9C6A4F)
+    .bucketColor(0x9C6A4F)
     .displayName('Cast Aluminum')
+
+    event.create('alumina')
+    .thickTexture(0xEEEEEE)
+    .bucketColor(0xEEEEEE)
+    .displayName('Alumina')
+
+    event.create('ashwater')
+    .thinTexture(0x978B82)
+    .bucketColor(0x978B82)
+    .displayName('Smouldering Mix')
+
+    event.create('cinderwater')
+    .thinTexture(0x9D8375)
+    .bucketColor(0x9D8375)
+    .displayName('Cinderwater')
+
+    event.create('clinkerwater')
+    .thinTexture(0x6C6C6C)
+    .bucketColor(0x6C6C6C)
+    .displayName('Clinkerwater')
+
+    event.create('firewater')
+    .thinTexture(0x9D8375)
+    .bucketColor(0x9D8375)
+    .displayName('Flakwater')
 
     event.create('pitch')
     .thinTexture(0x63492B)

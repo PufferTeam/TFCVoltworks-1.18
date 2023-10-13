@@ -40,7 +40,7 @@ onEvent('item.registry', event => {
 
     event.create('abyss_flour').maxStackSize(64);
 
-    event.create('void_cream').maxStackSize(64);
+    event.create('void_shard').maxStackSize(64);
 
     event.create('unfired_flower_box').maxStackSize(64);
 

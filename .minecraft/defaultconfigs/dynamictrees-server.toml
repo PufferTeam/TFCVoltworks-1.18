@@ -70,7 +70,7 @@
 	#If enabled then trees will fall over when harvested
 	enableFallingTrees = false
 	#If enabled then trees will harm living entities when falling
-	enableFallingTreeDamage = false 
+	enableFallingTreeDamage = false
 	#Multiplier for damage incurred by a falling tree
 	#Range: 0.0 ~ 100.0
 	fallingTreeDamageMultiplier = 1.0

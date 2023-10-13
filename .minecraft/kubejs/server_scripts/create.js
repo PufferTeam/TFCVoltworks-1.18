@@ -558,12 +558,12 @@ onEvent('recipes', event => {
     hand.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_hammers`]))
     hand.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_rods`]).keepHeldItem())
     hand.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier2_hammers`]))
-    event.recipes.tfc.anvil('2x create:brass_hand', '#forge:ingots/brass', [
+    event.recipes.tfc.anvil('4x create:brass_hand', '#forge:ingots/brass', [
         "hit_last",
         "upset_second_last",
         "hit_third_last"
     ]).tier(2).id(`tfc:anvil/part/brass_hand`)
-    event.recipes.createSequencedAssembly('2x create:brass_hand', '#forge:ingots/brass', hand).transitionalItem(transitionItem).loops(1);
+    event.recipes.createSequencedAssembly('4x create:brass_hand', '#forge:ingots/brass', hand).transitionalItem(transitionItem).loops(1);
 
     event.remove({ output: 'create:encased_chain_drive' })
     event.shapeless('create:encased_chain_drive', ['create:andesite_casing', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron', 'tfc:metal/chain/wrought_iron']).id('create:encased_chain_drive')
@@ -583,8 +583,11 @@ onEvent('recipes', event => {
 
     global.anvilRockTypes.forEach(i => {
         global.addItemApplication(false, `tfc:rock/hardened/${i}`, 'minecraft:magma_cream', `tfc:rock/magma/${i}`)
-        global.addMechanicalExtruder('minecraft:lava', 'minecraft:water', `tfc:rock/magma/${i}`, `tfc:rock/raw/${i}`)
+        global.addMechanicalExtruder('minecraft:lava', 'minecraft:water', `tfc:rock/magma/${i}`, `tfc:rock/loose/${i}`)
     });
+
+    global.addItemApplication(false, 'minecraft:bedrock', 'kubejs:void_shard', 'kubejs:cracked_bedrock')
+    global.addMechanicalExtruder('minecraft:lava', 'minecraft:water', 'kubejs:cracked_bedrock', 'kubejs:abyss_flour')
 
     global.addDamageInputShapeless(1, 'create:sticky_mechanical_piston', 'create:mechanical_piston', "tfc:knives", 1)
 

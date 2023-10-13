@@ -37,7 +37,7 @@
 	hydrotreater_timeModifier = 1.0
 
 [Generation]
-	#List of Portable Generator fuels. Format: fluid_name, mb_used_per_tick, flux_produced_per_tick
+	#List of Portable Generator fuels. Format: fluid_name, mb_used_per_second, flux_produced_per_tick
 	generator_fuels = ["immersivepetroleum:naphtha, 9, 256", "immersivepetroleum:gasoline, 6, 256", "immersivepetroleum:benzene, 6, 256"]
 
 [Miscellaneous]
