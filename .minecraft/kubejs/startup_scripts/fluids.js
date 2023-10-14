@@ -9,6 +9,11 @@ onEvent('fluid.registry', event => {
     .bucketColor(0xF0F0F0)
     .displayName('Raw Igneous Alloy')
 
+    event.create('molten_bioplastic')
+    .thickTexture(0x786544)
+    .bucketColor(0x786544)
+    .displayName('Molten Bio Plastic')
+
     event.create('cast_aluminum')
     .thickTexture(0x9C6A4F)
     .bucketColor(0x9C6A4F)
@@ -35,8 +40,8 @@ onEvent('fluid.registry', event => {
     .displayName('Clinkerwater')
 
     event.create('firewater')
-    .thinTexture(0x9D8375)
-    .bucketColor(0x9D8375)
+    .thinTexture(0x916B5C)
+    .bucketColor(0x916B5C)
     .displayName('Flakwater')
 
     event.create('pitch')

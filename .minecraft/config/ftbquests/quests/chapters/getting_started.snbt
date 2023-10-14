@@ -1797,10 +1797,12 @@
 		{
 			x: 2.5d
 			y: 14.0d
+			shape: "hexagon"
 			dependencies: [
 				"0C145406B956225F"
 				"5D47DF274C125D61"
 			]
+			size: 1.5d
 			id: "11718433B6FEDCF4"
 			tasks: [{
 				id: "78926B5982658CE7"

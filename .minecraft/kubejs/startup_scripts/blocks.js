@@ -32,6 +32,12 @@ onEvent('block.registry', event => {
     event.create('electric_engineering_block').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
     event.create('electric_engineering_assembly').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
 
+    event.create('mechanic_box').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
+    event.create('mechanic_motor_box').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
+    event.create('mechanic_piston_box').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
+    event.create('mechanic_pump_box').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
+    event.create('mechanic_tuyere_box').material('metal').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true) 
+
     event.create('pitch_treated_wood').material('wood').hardness(0.5).tagBlock('minecraft:mineable/axe')
     event.create('ash_treated_wood').material('wood').hardness(0.5).tagBlock('minecraft:mineable/axe')
 

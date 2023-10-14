@@ -36,6 +36,24 @@ onEvent('item.registry', event => {
 
     event.create('transition_high_carbon_steel', 'create:sequenced_assembly').maxStackSize(1);
 
+    event.create('electric_motor').maxStackSize(64);
+
+    event.create('electric_piston').maxStackSize(64);
+
+    event.create('electric_pump').maxStackSize(64);
+
+    event.create('thermionic_emitter').maxStackSize(64);
+
+    event.create('thermionic_sensor').maxStackSize(64);
+
+    event.create('robotic_arm').maxStackSize(64);
+
+    event.create('industrial_electronic_component').maxStackSize(64);
+
+    event.create('bioplastic_sheet').maxStackSize(64);
+
+    event.create('assembled_pcb').maxStackSize(64);
+
     event.create('clinker_flour').maxStackSize(64);
 
     event.create('abyss_flour').maxStackSize(64);

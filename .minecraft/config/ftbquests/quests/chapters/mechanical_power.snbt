@@ -7,16 +7,1039 @@
 	icon: "kubejs:pitch_treated_large_gear"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	quests: [{
-		title: "The First Casing"
-		x: 0.0d
-		y: 0.0d
-		id: "63A9146A9DE74D67"
-		tasks: [{
-			id: "30562284B1C4178C"
-			type: "item"
-			item: "create:andesite_casing"
-		}]
-	}]
+	quests: [
+		{
+			title: "The First Casing"
+			x: 0.0d
+			y: 1.0d
+			description: ["{image:create:textures/block/andesite_casing.png width:30 height:30 align:1}"]
+			dependencies: [
+				"3172EB3F010E0561"
+				"09B1639DC641263D"
+			]
+			id: "63A9146A9DE74D67"
+			tasks: [{
+				id: "30562284B1C4178C"
+				type: "item"
+				item: "create:andesite_casing"
+			}]
+		}
+		{
+			title: "Mechanical Power Transfer"
+			x: 3.0d
+			y: -0.5d
+			dependencies: ["09B1639DC641263D"]
+			id: "5A2CE0C291DD7F86"
+			tasks: [{
+				id: "4D55A68BD6517A68"
+				type: "item"
+				item: "create:shaft"
+				count: 8L
+			}]
+		}
+		{
+			x: 1.5d
+			y: -0.5d
+			dependencies: ["3172EB3F010E0561"]
+			id: "09B1639DC641263D"
+			tasks: [{
+				id: "012B13C2B6B7BBD3"
+				type: "item"
+				item: "kubejs:pitch_treated_wood"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.5d
+			shape: "hexagon"
+			size: 1.5d
+			id: "3172EB3F010E0561"
+			tasks: [{
+				id: "4C73D478B38426EE"
+				type: "item"
+				item: {
+					id: "tfc_metallum:metal/rod/andesite_alloy"
+					Count: 1b
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+				}
+			}]
+		}
+		{
+			title: "Bloomery"
+			icon: "tfc:bloomery"
+			x: 0.0d
+			y: 4.5d
+			dependencies: [
+				"63A9146A9DE74D67"
+				"30CDA0D2E599A1D6"
+				"3E8286A8B4B1787B"
+			]
+			id: "0A919D6D7246DD4E"
+			tasks: [
+				{
+					id: "5B746F3ABBB447BA"
+					type: "item"
+					item: "tfc:bloomery"
+				}
+				{
+					id: "5A559CD0EF8C7BDA"
+					type: "item"
+					item: "kubejs:brick/bloomery_bricks"
+					count: 4L
+				}
+			]
+		}
+		{
+			title: "The Iron Age"
+			icon: {
+				id: "tfc:metal/ingot/wrought_iron"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 0.0d
+			y: 6.0d
+			dependencies: ["0A919D6D7246DD4E"]
+			id: "61B0EE4037A7C9D5"
+			tasks: [{
+				id: "7A95CB536C58D17B"
+				type: "item"
+				title: "Any Wrought Iron Metal Item"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:metal_item/wrought_iron"
+					}
+				}
+			}]
+		}
+		{
+			title: "Iron"
+			icon: {
+				id: "tfc:ore/rich_magnetite"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 1.5d
+			y: 4.5d
+			id: "3E8286A8B4B1787B"
+			tasks: [{
+				id: "23DA0A514F1EF160"
+				type: "item"
+				title: "Any Iron Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:ores/wrought_iron"
+					}
+				}
+				count: 3L
+			}]
+		}
+		{
+			x: -1.5d
+			y: 4.5d
+			dependencies: [
+				"7247D8390E676405"
+				"557BF9A6E9982A5B"
+			]
+			id: "30CDA0D2E599A1D6"
+			tasks: [{
+				id: "1761265CD9FD7DE8"
+				type: "item"
+				item: "kubejs:powder/bloomery"
+			}]
+		}
+		{
+			title: "Cogs"
+			icon: "create:large_cogwheel"
+			x: 3.0d
+			y: 1.0d
+			dependencies: ["5A2CE0C291DD7F86"]
+			id: "6041BF9EEE1517A7"
+			tasks: [
+				{
+					id: "3EF67CBB1C1F727F"
+					type: "item"
+					item: "create:cogwheel"
+				}
+				{
+					id: "2CEC0AA4FBD565EA"
+					type: "item"
+					item: "create:large_cogwheel"
+				}
+			]
+		}
+		{
+			x: 1.5d
+			y: 2.0d
+			dependencies: [
+				"63A9146A9DE74D67"
+				"6041BF9EEE1517A7"
+			]
+			id: "008DFC35B975BC1F"
+			tasks: [
+				{
+					id: "716E55600BC12936"
+					type: "item"
+					item: "create:clutch"
+				}
+				{
+					id: "1FBD393864FCB6D4"
+					type: "item"
+					item: "create:gearshift"
+				}
+			]
+		}
+		{
+			x: 1.5d
+			y: 1.0d
+			dependencies: [
+				"6041BF9EEE1517A7"
+				"63A9146A9DE74D67"
+			]
+			id: "2C46820159ED47FF"
+			tasks: [
+				{
+					id: "6FFC2B753CBE8F08"
+					type: "item"
+					item: "create:gearbox"
+				}
+				{
+					id: "56BEC7EB9624047A"
+					type: "item"
+					item: "create:vertical_gearbox"
+				}
+			]
+		}
+		{
+			title: "Waterwheels"
+			icon: "create:large_water_wheel"
+			x: 4.5d
+			y: -1.0d
+			dependencies: ["5A2CE0C291DD7F86"]
+			id: "34EE8DDAF0768B3B"
+			tasks: [
+				{
+					id: "74448EB01E12096D"
+					type: "item"
+					item: "create:water_wheel"
+				}
+				{
+					id: "1D1D74594993130A"
+					type: "item"
+					item: "create:large_water_wheel"
+				}
+			]
+		}
+		{
+			title: "Windmills"
+			icon: "create:white_sail"
+			x: 4.5d
+			y: 0.0d
+			dependencies: ["5A2CE0C291DD7F86"]
+			id: "5E7810C8CA43D664"
+			tasks: [
+				{
+					id: "6778FAEE0702E843"
+					type: "item"
+					item: "create:white_sail"
+					count: 8L
+				}
+				{
+					id: "05A2F669EF9BE0D0"
+					type: "item"
+					item: "create:windmill_bearing"
+				}
+			]
+		}
+		{
+			title: "Movements Actors"
+			icon: "create:gantry_carriage"
+			x: -1.5428571428571445d
+			y: 0.18826530612244596d
+			dependencies: ["63A9146A9DE74D67"]
+			id: "68FEACF34D37197D"
+			tasks: [
+				{
+					id: "20DD48CA9729ECB3"
+					type: "item"
+					item: "create:mechanical_bearing"
+				}
+				{
+					id: "41EFEADA534766F3"
+					type: "item"
+					item: "create:gantry_carriage"
+				}
+				{
+					id: "50A47458E7206873"
+					type: "item"
+					item: "create:rope_pulley"
+				}
+				{
+					id: "0777CA529A499D03"
+					type: "item"
+					item: "create:mechanical_piston"
+				}
+				{
+					id: "603225D4B9592EBB"
+					type: "item"
+					item: "create:cart_assembler"
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: 2.0d
+			dependencies: ["63A9146A9DE74D67"]
+			id: "1A78C04335C135F3"
+			tasks: [{
+				id: "2D816D1A5B2A08BE"
+				type: "item"
+				item: "create:millstone"
+			}]
+		}
+		{
+			title: "Item Transportation"
+			icon: "create:andesite_tunnel"
+			x: -0.6857142857142833d
+			y: 2.4331632653061206d
+			dependencies: ["63A9146A9DE74D67"]
+			id: "67B939A1DA294B01"
+			tasks: [
+				{
+					id: "2B9D642174421085"
+					type: "item"
+					item: "create:belt_connector"
+				}
+				{
+					id: "71A1778E25549628"
+					type: "item"
+					item: "create:andesite_funnel"
+				}
+				{
+					id: "754E0F25D0EA1989"
+					type: "item"
+					item: "create:andesite_tunnel"
+				}
+				{
+					id: "4F26E8B7CE84F0C8"
+					type: "item"
+					item: "create:item_vault"
+				}
+			]
+		}
+		{
+			title: "Item Storage"
+			icon: "create:portable_storage_interface"
+			x: -1.0d
+			y: -0.5d
+			dependencies: ["63A9146A9DE74D67"]
+			id: "76B0565669A9E53D"
+			tasks: [
+				{
+					id: "1E30B10C80EEED51"
+					type: "item"
+					item: "create:portable_storage_interface"
+				}
+				{
+					id: "051845C50C2A186F"
+					type: "item"
+					item: "create:portable_fluid_interface"
+				}
+			]
+		}
+		{
+			x: -2.5d
+			y: 1.0d
+			description: ["{image:create:textures/block/copper_casing.png width:30 height:30 align:1}"]
+			dependencies: [
+				"63A9146A9DE74D67"
+				"293C20304598209E"
+			]
+			id: "7CD83FA3A3D4B0CF"
+			tasks: [{
+				id: "0769110A3AB1EC01"
+				type: "item"
+				item: "create:copper_casing"
+			}]
+		}
+		{
+			title: "Fluid Transportation"
+			icon: "create:mechanical_pump"
+			x: -3.5d
+			y: 1.0d
+			dependencies: ["7CD83FA3A3D4B0CF"]
+			id: "42DB6360CEA81341"
+			tasks: [
+				{
+					id: "54A4B39FDB041D37"
+					type: "item"
+					item: "create:fluid_pipe"
+				}
+				{
+					id: "7254E6883C38E779"
+					type: "item"
+					item: "create:mechanical_pump"
+				}
+				{
+					id: "0E787351BF4BE483"
+					type: "item"
+					item: "create:hose_pulley"
+				}
+				{
+					id: "33F2A895E76860E6"
+					type: "item"
+					item: "create:fluid_tank"
+				}
+				{
+					id: "2B2F58A4F471A8C2"
+					type: "item"
+					item: "create:spout"
+				}
+				{
+					id: "36F71562677091B2"
+					type: "item"
+					item: "create:item_drain"
+				}
+			]
+		}
+		{
+			x: -2.5d
+			y: 4.0d
+			id: "7247D8390E676405"
+			tasks: [{
+				id: "611FFE34E35BF47F"
+				type: "item"
+				item: "kubejs:powder/fly_ash"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 3.0d
+			dependencies: ["7247D8390E676405"]
+			id: "293C20304598209E"
+			tasks: [{
+				id: "677D819E8F80CE28"
+				type: "item"
+				item: "kubejs:ash_treated_wood"
+			}]
+		}
+		{
+			title: "Visit the Nether"
+			icon: "beneath:nether_pebble"
+			x: -1.0d
+			y: 3.5d
+			id: "557BF9A6E9982A5B"
+			tasks: [{
+				id: "4910AF83A4D608BF"
+				type: "dimension"
+				dimension: "minecraft:the_nether"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 5.5d
+			dependencies: [
+				"7247D8390E676405"
+				"64BF4DF909D4F88E"
+			]
+			id: "32DACD39D981B764"
+			tasks: [{
+				id: "4F1574433CE00499"
+				type: "item"
+				item: "kubejs:powder/coke_oven"
+			}]
+		}
+		{
+			title: "Kinetics Appliances"
+			icon: "create:mechanical_drill"
+			x: 1.5d
+			y: 6.0d
+			dependencies: ["61B0EE4037A7C9D5"]
+			id: "0607ED4682736894"
+			tasks: [
+				{
+					id: "28A675F3246B76F7"
+					type: "item"
+					item: "create:mechanical_drill"
+				}
+				{
+					id: "3CFE9B6BFC463587"
+					type: "item"
+					item: "create:mechanical_saw"
+				}
+				{
+					id: "15161B700D56C109"
+					type: "item"
+					item: "create:mechanical_plough"
+				}
+				{
+					id: "03C77225332102B7"
+					type: "item"
+					item: "create:mechanical_harvester"
+				}
+				{
+					id: "25311EB32EB47FDB"
+					type: "item"
+					item: "create:mechanical_press"
+				}
+				{
+					id: "395BF84FC5B85E21"
+					type: "item"
+					item: "create:mechanical_mixer"
+				}
+				{
+					id: "2BB39C7E34293875"
+					type: "item"
+					item: "create_mechanical_extruder:mechanical_extruder"
+				}
+				{
+					id: "4DDB9BA410F54685"
+					type: "item"
+					item: "create:encased_fan"
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: 9.0d
+			dependencies: [
+				"5B88AFCD2F85EB43"
+				"73C765BC345FB03E"
+				"61B0EE4037A7C9D5"
+			]
+			id: "6C6C9A18E7B7F919"
+			tasks: [{
+				id: "6316A97CF1528AD7"
+				type: "item"
+				item: "create:brass_casing"
+			}]
+		}
+		{
+			title: "Coke Oven"
+			x: -2.1513605442177095d
+			y: 6.754591836734676d
+			dependencies: ["32DACD39D981B764"]
+			id: "7F61D15C89CC9E92"
+			tasks: [{
+				id: "5EF988A85A45F273"
+				type: "observation"
+				title: "Make a Coke Oven"
+				icon: "immersiveengineering:coke_oven"
+				timer: 0L
+				observe_type: 0
+				to_observe: "immersiveengineering:coke_oven"
+			}]
+		}
+		{
+			x: -1.2452380952381077d
+			y: 7.4076530612244795d
+			dependencies: ["7F61D15C89CC9E92"]
+			id: "5B88AFCD2F85EB43"
+			tasks: [{
+				id: "4901CBC3B69152EE"
+				type: "item"
+				title: "Any Creosote Treated Wood"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:treated_wood"
+					}
+				}
+			}]
+		}
+		{
+			title: "The Brass Age"
+			icon: {
+				id: "tfc:metal/ingot/brass"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 2.5d
+			y: 9.0d
+			dependencies: ["7B505F402BD8E2C7"]
+			id: "73C765BC345FB03E"
+			tasks: [{
+				id: "1C6D66F0D62F4E11"
+				type: "item"
+				title: "Any Brass Metal Items"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:metal_item/brass"
+					}
+				}
+			}]
+		}
+		{
+			title: "Zinc"
+			icon: {
+				id: "tfc:ore/normal_sphalerite"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 1.5d
+			y: 7.5d
+			id: "7B505F402BD8E2C7"
+			tasks: [{
+				id: "24E12FF87F40C1ED"
+				type: "item"
+				title: "Any #tfc:ores/zinc"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:ores/zinc"
+					}
+				}
+			}]
+		}
+		{
+			title: "Advanced Item Transportation"
+			icon: "create:brass_funnel"
+			x: 1.0d
+			y: 8.5d
+			dependencies: ["6C6C9A18E7B7F919"]
+			id: "0977E0DCF873ED8C"
+			tasks: [
+				{
+					id: "6315FDE25E37D6EF"
+					type: "item"
+					item: "create:brass_funnel"
+				}
+				{
+					id: "26D848161B0E4B00"
+					type: "item"
+					item: "create:brass_tunnel"
+				}
+				{
+					id: "3E99D1FA68A27936"
+					type: "item"
+					item: "create:mechanical_arm"
+				}
+			]
+		}
+		{
+			title: "The Cast Iron Age"
+			icon: {
+				id: "tfc:metal/ingot/cast_iron"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 2.5d
+			y: 3.5d
+			dependencies: ["3E8286A8B4B1787B"]
+			id: "2FA9000DF6EFE513"
+			tasks: [{
+				id: "0F2061906D1DF0E5"
+				type: "item"
+				title: "Any Cast Iron Item"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:metal_item/cast_iron"
+					}
+				}
+			}]
+		}
+		{
+			x: 3.5d
+			y: 6.0d
+			dependencies: [
+				"2FA9000DF6EFE513"
+				"73C765BC345FB03E"
+			]
+			id: "1A57760C8DF4EDA6"
+			tasks: [{
+				id: "1AA0448D611616B5"
+				type: "item"
+				item: "create:deployer"
+			}]
+		}
+		{
+			title: "Metal Containers"
+			icon: "create:chute"
+			x: 0.5d
+			y: 2.5d
+			dependencies: [
+				"2FA9000DF6EFE513"
+				"63A9146A9DE74D67"
+			]
+			id: "11EB7DED2E03B49F"
+			tasks: [
+				{
+					id: "2911749ABD150481"
+					type: "item"
+					item: "create:chute"
+				}
+				{
+					id: "3A80498BE78AF28C"
+					type: "item"
+					item: "create:basin"
+				}
+				{
+					id: "0D28CF67DCF83127"
+					type: "item"
+					item: "minecraft:hopper"
+				}
+				{
+					id: "0313AE7DFC8BBE08"
+					type: "item"
+					item: "create:depot"
+				}
+				{
+					id: "3FBC493732C53FB7"
+					type: "item"
+					item: "create:weighted_ejector"
+				}
+			]
+		}
+		{
+			x: -2.0d
+			y: 9.5d
+			dependencies: ["6C6C9A18E7B7F919"]
+			id: "16D62852028A8FFD"
+			tasks: [{
+				id: "0B15A28D0B64F364"
+				type: "item"
+				item: "create:railway_casing"
+			}]
+		}
+		{
+			title: "Automation"
+			x: 2.5d
+			y: 6.0d
+			dependencies: [
+				"1A57760C8DF4EDA6"
+				"0607ED4682736894"
+			]
+			dependency_requirement: "one_started"
+			id: "63477D982E4314EB"
+			tasks: [{
+				id: "213AA1338E6B3E73"
+				type: "checkmark"
+			}]
+		}
+		{
+			x: 2.5d
+			y: 11.0d
+			dependencies: ["3A2483A9B3B2E86D"]
+			id: "291B1BA8A6098040"
+			tasks: [{
+				id: "64A374949BF44902"
+				type: "item"
+				item: "tfc:fire_clay"
+			}]
+		}
+		{
+			title: "Intelligent Contraption"
+			icon: "create:sequenced_gearshift"
+			x: -1.2465986394557902d
+			y: 8.549829931972766d
+			dependencies: ["6C6C9A18E7B7F919"]
+			id: "3BFDADCB062B9E6F"
+			tasks: [
+				{
+					id: "696D9F22A4764AD4"
+					type: "item"
+					item: "create:sequenced_gearshift"
+				}
+				{
+					id: "69F4C76D0EBE2DD5"
+					type: "item"
+					item: "create:rotation_speed_controller"
+				}
+				{
+					id: "1E0DDA071A6E3662"
+					type: "item"
+					item: "create:clockwork_bearing"
+				}
+				{
+					id: "7FE11B501F4EC410"
+					type: "item"
+					item: "create:content_observer"
+				}
+			]
+		}
+		{
+			title: "Wi-Fi"
+			icon: "create:linked_controller"
+			x: 1.0d
+			y: 9.5d
+			dependencies: ["6C6C9A18E7B7F919"]
+			id: "22273539D7B47A37"
+			tasks: [
+				{
+					id: "1D542CD977BEC1B5"
+					type: "item"
+					item: "create:redstone_link"
+				}
+				{
+					id: "426FCC4737A4E774"
+					type: "item"
+					item: "create:linked_controller"
+				}
+				{
+					id: "23C4A4A2DEE3C2BC"
+					type: "item"
+					item: "create:display_board"
+				}
+				{
+					id: "0B5DB1B91CC9CA4A"
+					type: "item"
+					item: "create:display_link"
+				}
+			]
+		}
+		{
+			title: "Blast Furnace"
+			icon: "tfc:blast_furnace"
+			x: 0.0d
+			y: 11.5d
+			dependencies: [
+				"2DD886EBC77027F4"
+				"4ABCA54CDEABE04D"
+			]
+			id: "059298AE5384CD5E"
+			tasks: [
+				{
+					id: "209C78A2BEE0DB3F"
+					type: "item"
+					item: "tfc:blast_furnace"
+				}
+				{
+					id: "4C0BD72FC307D9A8"
+					type: "item"
+					item: "tfc:fire_bricks"
+					count: 4L
+				}
+			]
+		}
+		{
+			x: 0.011224489795928605d
+			y: 10.193367346938764d
+			dependencies: ["6C6C9A18E7B7F919"]
+			id: "4ABCA54CDEABE04D"
+			tasks: [{
+				id: "5606D13E96BD59F7"
+				type: "item"
+				item: "create:mechanical_crafter"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 11.5d
+			dependencies: ["291B1BA8A6098040"]
+			id: "2DD886EBC77027F4"
+			tasks: [{
+				id: "7644157797A54296"
+				type: "item"
+				item: "kubejs:powder/fire"
+			}]
+		}
+		{
+			title: "Trains"
+			icon: "create:track_station"
+			x: -1.5d
+			y: 10.5d
+			dependencies: [
+				"16D62852028A8FFD"
+				"4ABCA54CDEABE04D"
+			]
+			id: "0828BDDA4E139744"
+			tasks: [
+				{
+					id: "0EABE06E46A5FC22"
+					type: "item"
+					item: "create:track_station"
+				}
+				{
+					id: "2901B1AB0E5E7868"
+					type: "item"
+					item: "create:controls"
+				}
+				{
+					id: "5F3D14DD1D8E8838"
+					type: "item"
+					item: "create:track"
+				}
+			]
+		}
+		{
+			title: "Physics"
+			icon: "vs_clockwork:gravitron"
+			x: -3.0d
+			y: 9.5d
+			dependencies: ["16D62852028A8FFD"]
+			id: "505F979818BC06CA"
+		}
+		{
+			title: "Planes"
+			icon: "vs_clockwork:wing"
+			x: -4.0d
+			y: 9.0d
+			dependencies: ["505F979818BC06CA"]
+			id: "4335FA0CFB1F2D1D"
+		}
+		{
+			title: "Ships"
+			icon: "vs_eureka:oak_ship_helm"
+			x: -4.0d
+			y: 10.0d
+			dependencies: ["505F979818BC06CA"]
+			id: "464A463F910394F6"
+		}
+		{
+			title: "Creativity"
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -5.0d
+			y: 9.5d
+			dependencies: ["505F979818BC06CA"]
+			id: "1D1E4C52ACEF797C"
+			tasks: [{
+				id: "2E508AAE0AA58CE8"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "The Steel Age"
+			icon: {
+				id: "tfc:metal/ingot/steel"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: 0.0d
+			y: 12.5d
+			dependencies: ["059298AE5384CD5E"]
+			id: "05C277836D744136"
+			tasks: [{
+				id: "7714534EF8B4ED9A"
+				type: "item"
+				title: "Any Steel Metal Item"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc:metal_item/steel"
+					}
+				}
+			}]
+		}
+		{
+			title: "Kaolinite"
+			icon: "tfc:ore/kaolinite"
+			x: 2.5d
+			y: 10.0d
+			id: "3A2483A9B3B2E86D"
+			tasks: [{
+				id: "07FA0A19FE0EBD96"
+				type: "item"
+				item: "tfc:ore/kaolinite"
+				count: 3L
+			}]
+		}
+		{
+			title: "Graphite"
+			icon: "tfc:ore/graphite"
+			x: -1.5d
+			y: 5.5d
+			id: "64BF4DF909D4F88E"
+			tasks: [{
+				id: "0B90DFFDF6C9E0AA"
+				type: "item"
+				item: "tfc:ore/graphite"
+				count: 3L
+			}]
+		}
+		{
+			title: "Improved Bloomery"
+			icon: "immersiveengineering:advanced_blast_furnace"
+			x: -1.0d
+			y: 12.5d
+			dependencies: ["05C277836D744136"]
+			id: "2407D9638517BFE5"
+			tasks: [{
+				id: "19B245D9C859A343"
+				type: "observation"
+				title: "Make an Improved Bloomery"
+				icon: "immersiveengineering:advanced_blast_furnace"
+				timer: 0L
+				observe_type: 0
+				to_observe: "immersiveengineering:advanced_blast_furnace"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 11.0d
+			dependencies: ["291B1BA8A6098040"]
+			id: "7DB6653C384599B9"
+			tasks: [{
+				id: "618F65D612E30439"
+				type: "item"
+				item: "tfcchannelcasting:mold_table"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 6.0d
+			id: "45FE5420FDDD686F"
+			tasks: [{
+				id: "164253FEA47A5E9C"
+				type: "item"
+				item: "compressedcreativity:compressed_iron_casing"
+			}]
+		}
+		{
+			x: 0.9214285714285708d
+			y: 6.777380952380938d
+			dependencies: ["61B0EE4037A7C9D5"]
+			id: "7C068ADC01D070A8"
+			tasks: [{
+				id: "520324090854B7E0"
+				type: "item"
+				item: "create:crushing_wheel"
+			}]
+		}
+	]
 	quest_links: [ ]
 }
