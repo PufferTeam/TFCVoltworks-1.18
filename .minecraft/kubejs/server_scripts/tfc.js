@@ -88,15 +88,27 @@ onEvent('recipes', event => {
 
   event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/fly_ash'], ['#tfc:ash', 'kubejs:powder/gypsum', 'tfc:powder/charcoal', Fluid.of('tfc:limewater', 1000)])
   event.recipes.createMixing('2x kubejs:powder/fly_ash', ['#tfc:ash', 'kubejs:powder/gypsum', 'tfc:powder/charcoal', Fluid.of('tfc:limewater', 100)])
+  event.recipes.tfc.barrel_instant([Fluid.of('kubejs:ashwater', 500)], 'kubejs:powder/fly_ash', Fluid.of('minecraft:water', 500))
+  event.recipes.createMixing(Fluid.of('kubejs:ashwater', 500), ['kubejs:powder/fly_ash', Fluid.of('minecraft:water', 500)])
+  event.recipes.createFilling('kubejs:brick/unfired_ash_brick', ['tfc:ceramic/unfired_brick', Fluid.of('kubejs:ashwater', 125)])
 
   event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/coke_oven'], ['kubejs:powder/fly_ash', 'tfc:powder/graphite', 'kubejs:clinker_flour', Fluid.of('tfc:limewater', 1000)])
   event.recipes.createMixing('2x kubejs:powder/coke_oven', ['kubejs:powder/fly_ash', 'tfc:powder/graphite', 'kubejs:clinker_flour', Fluid.of('tfc:limewater', 100)])
+  event.recipes.tfc.barrel_instant([Fluid.of('kubejs:clinkerwater', 500)], 'kubejs:powder/coke_oven', Fluid.of('minecraft:water', 500))
+  event.recipes.createMixing(Fluid.of('kubejs:clinkerwater', 500), ['kubejs:powder/coke_oven', Fluid.of('minecraft:water', 500)])
+  event.recipes.createFilling('kubejs:brick/unfired_coke_oven_brick', ['tfc:ceramic/unfired_brick', Fluid.of('kubejs:clinkerwater', 125)])
 
   event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/bloomery'], ['kubejs:powder/fly_ash', 'rosia:magnetite_powder', 'create:cinder_flour', Fluid.of('tfc:limewater', 1000)])
   event.recipes.createMixing('2x kubejs:powder/bloomery', ['kubejs:powder/fly_ash', 'rosia:magnetite_powder', 'create:cinder_flour', Fluid.of('tfc:limewater', 100)])
+  event.recipes.tfc.barrel_instant([Fluid.of('kubejs:cinderwater', 500)], 'kubejs:powder/bloomery', Fluid.of('minecraft:water', 500))
+  event.recipes.createMixing(Fluid.of('kubejs:cinderwater', 500), ['kubejs:powder/bloomery', Fluid.of('minecraft:water', 500)])
+  event.recipes.createFilling('kubejs:brick/unfired_bloomery_brick', ['tfc:ceramic/unfired_brick', Fluid.of('kubejs:cinderwater', 125)])
 
-  //event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/fire'], ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 1000)])
+  event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/fire'], ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 1000)])
   event.recipes.createMixing('2x kubejs:powder/fire', ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 100)])
+  event.recipes.tfc.barrel_instant([Fluid.of('kubejs:firewater', 500)], 'kubejs:powder/fire', Fluid.of('minecraft:water', 500))
+  event.recipes.createMixing(Fluid.of('kubejs:firewater', 500), ['kubejs:powder/fire', Fluid.of ('minecraft:water', 500)])
+  event.recipes.createFilling('kubejs:brick/unfired_fire_brick', ['tfc:ceramic/unfired_fire_brick', Fluid.of('kubejs:firewater', 125)])
 
   event.remove({ output: 'create:rose_quartz' })
   event.recipes.firmalife.mixing_bowl(['create:rose_quartz'], ['minecraft:quartz', 'tfc_metalwork:metal/dust/gold', 'create:cinder_flour', '2x minecraft:redstone', Fluid.of('tfc:lye', 1000)])
@@ -273,7 +285,8 @@ onEvent('recipes', event => {
 
   })
 
-  event.recipes.tfc.pot(Fluid.of('kubejs:pitch', 100), [Fluid.of('tfc:tannin', 60), 'thermal:rosin'], 50, 500)
+  event.recipes.createMixing(Fluid.of('kubejs:pitch', 200), ['thermal:rosin', Fluid.of('tfc:tannin', 200)]).heated()
+  event.recipes.tfc.pot(Fluid.of('kubejs:pitch', 1000), [Fluid.of('tfc:tannin', 1000), '5x thermal:rosin'], 50, 500)
 
 })
 

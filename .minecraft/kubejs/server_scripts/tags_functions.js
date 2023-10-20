@@ -110,19 +110,73 @@ onEvent('tags.blocks', event => {
 })
 
 onEvent('tags.fluids', event => {
+
+    global.extraTagFluidsWater = [
+        'mekanism:hydrogen',
+        'mekanism:oxygen',
+        'mekanism:chlorine',
+        'mekanism:sulfur_dioxide',
+        'mekanism:sulfur_trioxide',
+        'mekanism:sulfuric_acid',
+        'mekanism:hydrogen_chloride',
+        'mekanism:hydrofluoric_acid',
+        'mekanism:uranium_oxide',
+        'mekanism:uranium_hexafluoride',
+        'mekanism:sodium',
+        'mekanism:lithium',
+        'mekanism:brine',
+        'mekanism:steam',
+        'mekanism:heavy_water',
+        'mekanism:nutritional_paste',
+        'mekanismgenerators:bioethanol',
+        'mekanism:ethene'
+    ]
+
+    global.extraTagFluidsLava = [
+        'mekanism:superheated_sodium',
+        'mekanismgenerators:deuterium',
+        'mekanismgenerators:fusion_fuel',
+        'mekanismgenerators:tritium'
+    ]
+
+    global.extraTagFluidsWater.forEach(i => {
+        global.tagFluids.push(`${i}/minecraft:water/no`)
+    });
+
+    global.extraTagFluidsLava.forEach(i => {
+        global.tagFluids.push(`${i}/minecraft:lava/no`)
+    });
     
     global.fluidsToAdd.forEach(i => {
         let result = i.split('/')
         let name = result[0]
 
-        event.add(`forge:${name}`, `kubejs:${name}`)
+        global.tagFluids.push(`kubejs:${name}/minecraft:water`)
     });
 
-    global.gasesToAdd.forEach(i => {
+    global.tagFluids.forEach(i => {
         let result = i.split('/')
         let name = result[0]
+        let tag = result[1]
+        let selfTag = result[2]
+        let nameCut = name.split(':')
+        let nameResult = nameCut[0] + ':flowing_' + nameCut[1]
+        let nameTag = 'forge:' + nameCut[1]
 
-        event.add(`forge:${name}`, `kubejs:flowing_${name}`)
+        if(name == 'pneumaticcraft:plastic') {
+            nameResult = 'pneumaticcraft:plastic_flowing'
+        }
+
+        if(tag == 'minecraft:water' || tag == 'minecraft:lava') {
+            event.add(tag, nameResult)
+
+            if(selfTag !== 'no') {
+                event.add(nameTag, nameResult)
+                event.add(nameTag, name)
+            }
+        }
+
+        event.add(tag, name)
     });
 
 });
