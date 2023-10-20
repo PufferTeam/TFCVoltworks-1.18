@@ -106,7 +106,7 @@
 					}
 				}
 			}
-			x: 0.0d
+			x: -0.5d
 			y: 6.0d
 			dependencies: ["0A919D6D7246DD4E"]
 			id: "61B0EE4037A7C9D5"
@@ -864,7 +864,10 @@
 		{
 			x: 1.5d
 			y: 11.5d
-			dependencies: ["291B1BA8A6098040"]
+			dependencies: [
+				"291B1BA8A6098040"
+				"5C2341A8E599ED5E"
+			]
 			id: "2DD886EBC77027F4"
 			tasks: [{
 				id: "7644157797A54296"
@@ -981,8 +984,8 @@
 		{
 			title: "Graphite"
 			icon: "tfc:ore/graphite"
-			x: -1.5d
-			y: 5.5d
+			x: -4.0d
+			y: 4.0d
 			id: "64BF4DF909D4F88E"
 			tasks: [{
 				id: "0B90DFFDF6C9E0AA"
@@ -1020,8 +1023,9 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -5.5d
 			y: 6.0d
+			dependencies: ["0CFDE8C08D324623"]
 			id: "45FE5420FDDD686F"
 			tasks: [{
 				id: "164253FEA47A5E9C"
@@ -1038,6 +1042,82 @@
 				id: "520324090854B7E0"
 				type: "item"
 				item: "create:crushing_wheel"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 13.5d
+			id: "00DE7D7F5FC44E3A"
+			tasks: [{
+				id: "502DCF127C01960C"
+				type: "item"
+				item: "immersiveengineering:slag_glass"
+			}]
+		}
+		{
+			title: "The Compressed Age"
+			icon: {
+				id: "tfc_metallum:metal/ingot/compressed_iron"
+				Count: 1b
+				ForgeCaps: {
+					"tfc:item_heat": {
+						heat: 0.0f
+						ticks: 0L
+					}
+				}
+			}
+			x: -4.0d
+			y: 6.0d
+			dependencies: [
+				"61B0EE4037A7C9D5"
+				"293EC352BC816864"
+				"0FC33B069F3A4CFB"
+			]
+			id: "0CFDE8C08D324623"
+			tasks: [{
+				id: "6F30C2A355EFC4A0"
+				type: "item"
+				title: "Any Compressed Iron Metal Item"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tfc_metallum:metal_item/compressed_iron"
+					}
+				}
+			}]
+		}
+		{
+			x: -4.0d
+			y: 7.5d
+			dependencies: ["5B88AFCD2F85EB43"]
+			id: "293EC352BC816864"
+			tasks: [{
+				id: "4ED19403E371E930"
+				type: "item"
+				item: "tfc:powderkeg"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 5.0d
+			dependencies: ["64BF4DF909D4F88E"]
+			id: "0FC33B069F3A4CFB"
+			tasks: [{
+				id: "2D3EA03DA7341F52"
+				type: "item"
+				item: "minecraft:gunpowder"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 10.5d
+			dependencies: ["291B1BA8A6098040"]
+			id: "5C2341A8E599ED5E"
+			tasks: [{
+				id: "6A5E7C31432A6C38"
+				type: "item"
+				item: "create:basin"
 			}]
 		}
 	]

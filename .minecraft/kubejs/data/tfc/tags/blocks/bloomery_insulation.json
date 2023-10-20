@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": true,
+  "values": [
+    "kubejs:brick/bloomery_bricks",
+    "kubejs:brick/bloomery_bricks_reinforced"
+  ]
+}

@@ -196,7 +196,7 @@ onEvent('recipes', event => {
                     "count": outputCount
                 }
             ]
-          })
+        })
     }
 
     global.addMixingTagTagFluidTagEFluid = function addMixingTagTagFluidTagEFluid(input1, input2, fluid, fluidCount, output, outputCount, heatingLevel) {
@@ -538,7 +538,7 @@ onEvent('recipes', event => {
     }
 
     global.addTimeCutting = function addTimeCutting(isTag, input, output, count, time) {
-        if(isTag) {
+        if (isTag) {
             event.custom({
                 "type": "create:cutting",
                 "ingredients": [
@@ -676,13 +676,156 @@ onEvent('recipes', event => {
 
     }
 
+    global.addMoldBottling = function addMoldBottling(mold, fluid, output) {
+        event.custom({
+            "type": "immersiveengineering:bottling_machine",
+            "results": [
+                {
+                    "item": output
+                },
+                {
+                    "item": mold
+                }
+            ],
+            "input": {
+                "item": mold
+            },
+            "fluid": {
+                "tag": fluid,
+                "amount": 250
+            }
+        })
+    }
+
+    global.addMoldBottlingInputs = function addMoldBottlingInputs(mold, extraInput, extraInputCount, fluid, output) {
+        event.custom({
+            "type": "immersiveengineering:bottling_machine",
+            "results": [
+                {
+                    "item": output
+                },
+                {
+                    "item": mold
+                }
+            ],
+            "inputs": [
+                {
+                    "item": mold
+                },
+                {
+                    "count": extraInputCount,
+                    "base_ingredient": {
+                        "item": extraInput
+                    }
+                }
+            ],
+            "fluid": {
+                "tag": fluid,
+                "amount": 250
+            }
+        })
+    }
+
+    global.addThermoPlantFluidItemEFluid = function addThermoPlantFluidItemEFluid(item_input, fluid_input, fluid_input_amount, fluid_output, fluid_output_amount, pressure, speed) {
+        event.custom({
+            "type": "pneumaticcraft:thermo_plant",
+            "item_input": {
+                "item": item_input
+            },
+            "fluid_input": {
+                "type": "pneumaticcraft:fluid",
+                "tag": fluid_input,
+                "amount": fluid_input_amount
+            },
+            "fluid_output": {
+                "fluid": fluid_output,
+                "amount": fluid_output_amount
+            },
+            "pressure": pressure,
+            "speed": speed
+        })
+    }
+
+    global.addFluidMixer = function addFluidMixer(input, input_amount, input2, input2_amount, output, output_amount, pressure, time) {
+        event.custom({
+            "type": "pneumaticcraft:fluid_mixer",
+            "input1": {
+                "type": "pneumaticcraft:fluid",
+                "tag": input,
+                "amount": input_amount
+            },
+            "input2": {
+                "type": "pneumaticcraft:fluid",
+                "tag": input2,
+                "amount": input2_amount
+            },
+            "fluid_output": {
+                "fluid": output,
+                "amount": output_amount
+            },
+            "pressure": pressure,
+            "time": time
+        })
+    }
+
+    global.addExtraShapeless = function addExtraShapeless(input, result1, result1count, result2, tool) {
+        event.custom({
+            "type": "tfc:extra_products_shapeless_crafting",
+            "extra_products": [
+                {
+                    "item": result2
+                }
+            ],
+            "recipe": {
+                "type": "tfc:damage_inputs_shapeless_crafting",
+                "recipe": {
+                    "type": "minecraft:crafting_shapeless",
+                    "ingredients": [
+                        {
+                            "item": input
+                        },
+                        {
+                            "tag": tool
+                        }
+                    ],
+                    "result": {
+                        "item": result1,
+                        "count": result1count
+                    }
+                }
+            }
+        })
+    }
+
+    global.addRotary = function addRotary(fluidInput, fluidOutput, gas) {
+        event.custom({
+            "type": "mekanism:rotary",
+            "fluidInput": {
+                "amount": 1,
+                "tag": fluidInput
+            },
+            "gasOutput": {
+                "gas": gas,
+                "amount": 1
+            },
+            "gasInput": {
+                "amount": 1,
+                "gas": gas
+            },
+            "fluidOutput": {
+                "fluid": fluidOutput,
+                "amount": 1
+            }
+        })
+    }
+
     global.addQuerningAndMilling = function addQuerningAndMilling(isTag, input, output, outputCount) {
         let tagPrefix = ''
         if (isTag) {
             tagPrefix = '#'
         }
 
-        if(isTag) {
+        if (isTag) {
             event.recipes.tfc.quern(`${outputCount}x ${output}`, tagPrefix + input)
         } else {
             global.addQuerning(input, output, outputCount)
@@ -732,20 +875,20 @@ onEvent('recipes', event => {
         event.custom({
             "type": "create_mechanical_extruder:extruding",
             "ingredients": [
-              {
-                "fluid": inputFluid,
-                "amount": 1000
-              },
-              {
-                "fluid": inputFluid2,
-                "amount": 1000
-              }
+                {
+                    "fluid": inputFluid,
+                    "amount": 1000
+                },
+                {
+                    "fluid": inputFluid2,
+                    "amount": 1000
+                }
             ],
             "catalyst": {
-              "item": catalyst 
+                "item": catalyst
             },
             "result": {
-              "item": output
+                "item": output
             }
         })
     }
@@ -1098,11 +1241,11 @@ onEvent('recipes', event => {
     global.addCuttingDamageInputShapeless = function addCuttingDamageInputShapeless(input_number, input_item, output_item, tool, count) {
         global.addDamageInputShapeless(input_number, input_item, output_item, tool, count)
 
-        if(input_number == count) {
+        if (input_number == count) {
             global.addCutting(input_item, output_item, 1)
         }
 
-        if(input_number == 2 && count == 4) {
+        if (input_number == 2 && count == 4) {
             global.addCutting2Output(input_item, output_item)
         }
     }

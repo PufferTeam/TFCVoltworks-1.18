@@ -5,6 +5,7 @@ onEvent('server.datapack.first', event => {
 onEvent('recipes', event => {
 
     global.addMelting(true, 'forge:cobblestone', 'minecraft:lava', 50, 'superheated', 500)
+    global.addMelting(true, 'tfc:rock_magma_blocks', 'kubejs:magmatic_lava', 50, 'superheated', 1200)
 
     event.shaped('minecraft:moss_block', [
         'GG',

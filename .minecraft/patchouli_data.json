@@ -31,7 +31,8 @@
         "rosia:tfc_rosia/charcoal_kiln",
         "tfc:mechanics/blast_furnace",
         "firmalife:firmalife/planters",
-        "tfc:mechanics/powderkegs"
+        "tfc:mechanics/powderkegs",
+        "rosia:tfc_rosia/steam_generator"
       ],
       "bookmarks": [],
       "completedManualQuests": []

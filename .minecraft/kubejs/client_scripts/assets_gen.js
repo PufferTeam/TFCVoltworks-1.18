@@ -36,6 +36,30 @@ onEvent('client.generate_assets', event => {
             })
         })
 
+        global.gasesToAdd.forEach(i => {
+            let result = i.split('/')
+            let name = result[0]
+            let isLiquid = result[2]
+            let displayName = global.getCapitalizedWord(name)
+
+            if(isLiquid == 'true') {
+                event.addLang(`gas.kubejs.${name}`, `${displayName}`)
+            } else {
+                event.addLang(`gas.kubejs.${name}`, `Gaseous ${displayName}`)
+            }
+        })
+
+        global.fluidsToAdd.forEach(i => {
+            let result = i.split('/')
+            let name = result[0]
+
+            event.addModel('item', `kubejs:${name}_bucket`, m => {
+                m.loader('forge:bucket')
+                m.parent('forge:item/bucket')
+                m.fluid(`kubejs:${name}`)
+            })
+        })
+
         /*
         global.framesTypes.forEach(i => {
             event.addModel('item', 'kubejs:' + i + '_frame', m => {

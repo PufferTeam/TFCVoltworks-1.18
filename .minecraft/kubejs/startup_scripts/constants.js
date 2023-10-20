@@ -113,6 +113,7 @@ global.removeAndHide = [
     'create:honeyed_apple',
     'create:empty_blaze_burner',
     'create:blaze_burner',
+    'create:red_sand_paper',
     'minecraft:barrier'
 ]
 
@@ -301,6 +302,13 @@ global.tfcSaplings = [
     'firmalife:plant/fig_sapling'
 ]
 
+global.resinWoodTypes = [
+    'acacia',
+    'pine',
+    'spruce',
+    'birch'
+]
+
 global.tfcWoodTypes = [
     'acacia',
     'ash',
@@ -356,6 +364,7 @@ global.oreRarity = [
 global.tfcMetallumMedTierOres = [
     'uraninite',
     'stibnite',
+    'bertrandite',
     'cobaltite',
     'native_osmium',
     'native_iridium',
@@ -806,8 +815,6 @@ global.ieItems = [
     'fertilizer',
     'potion_bucket',
     'hemp_fiber',
-    'wooden_barrel',
-    'minecart_woodenbarrel',
     'gunpowder_barrel',
     'dust_wood',
     'blastbrick',
@@ -881,6 +888,7 @@ global.modFluids = [
     'pneumaticcraft:gasoline',
     'pneumaticcraft:ethanol',
     'pneumaticcraft:biodiesel',
+    'pneumaticcraft:kerosene',
     'pneumaticcraft:lubricant',
     'pneumaticcraft:vegetable_oil',
     'thermal:crude_oil',

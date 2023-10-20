@@ -79,12 +79,18 @@ onEvent('recipes', event => {
 
     }
 
-    event.recipes.tfc.barrel_sealed(['kubejs:pitch_treated_lumber'], [Fluid.of(`kubejs:pitch`, 125), '#tfc:lumber'], 4000).id(`tfc:barrel/pitch_treated_lumber`)
-    event.recipes.tfc.barrel_sealed(['kubejs:pitch_treated_wood'], [Fluid.of(`kubejs:pitch`, 500), '#minecraft:planks'], 16000).id(`tfc:barrel/pitch_treated_wood`)
+    event.recipes.tfc.barrel_sealed(['firmalife:treated_lumber'], [Fluid.of(`kubejs:wax`, 125), '#tfc:lumber'], 4000).id(`firmalife:barrel/wax_treated_lumber`)
+    event.recipes.tfc.barrel_sealed(['firmalife:treated_wood'], [Fluid.of(`kubejs:wax`, 500), '#minecraft:planks'], 16000).id(`firmalife:barrel/wax_treated_wood`)
+
+    event.recipes.tfc.barrel_sealed(['kubejs:pitch_treated_lumber'], [Fluid.of(`kubejs:pitch`, 125), '#tfc:lumber'], 4000).id(`kubejs:barrel/pitch_treated_lumber`)
+    event.recipes.tfc.barrel_sealed(['kubejs:pitch_treated_wood'], [Fluid.of(`kubejs:pitch`, 500), '#minecraft:planks'], 16000).id(`kubejs:barrel/pitch_treated_wood`)
+
+    event.recipes.tfc.barrel_sealed(['kubejs:ash_treated_lumber'], [Fluid.of(`kubejs:ashwater`, 125), '#tfc:lumber'], 4000).id(`kubejs:barrel/ash_treated_lumber`)
+    event.recipes.tfc.barrel_sealed(['kubejs:ash_treated_wood'], [Fluid.of(`kubejs:ashwater`, 500), '#minecraft:planks'], 16000).id(`kubejs:barrel/ash_treated_wood`)
 
     addCustomWood('firmalife', '', 'kubejs:wax')
     addCustomWood('kubejs', 'pitch_', 'kubejs:pitch')
-    addCustomWood('kubejs', 'ash_', null)
+    addCustomWood('kubejs', 'ash_', 'kubejs:ashwater')
     addCustomWood('kubejs', 'creosote_', 'immersiveengineering:creosote')
 
     event.shaped('kubejs:pitch_treated_small_gear', [
@@ -137,8 +143,8 @@ onEvent('recipes', event => {
     global.addTimeCutting(true, 'tfc:flammable_lumber', 'minecraft:stick', 2, 25)
     global.addDamageInputShapeless(10, 'tfc:flammable_lumber', 'minecraft:stick', "tfc:saws", 2)
 
-    event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', 'kubejs:powder/fly_ash']).id('kubejs:ash_treated_lumber_made_with_ash')
-    event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash']).id('kubejs:ash_treated_wood_made_with_ash')
+    //event.shapeless('kubejs:ash_treated_lumber', ['kubejs:pitch_treated_lumber', 'kubejs:powder/fly_ash']).id('kubejs:ash_treated_lumber_made_with_ash')
+    //event.shapeless('kubejs:ash_treated_wood', ['kubejs:pitch_treated_wood', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash', 'kubejs:powder/fly_ash']).id('kubejs:ash_treated_wood_made_with_ash')
 
 })
 

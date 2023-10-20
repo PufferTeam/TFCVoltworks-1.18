@@ -674,7 +674,7 @@ onEvent('recipes', event => {
                     heatingTemperature = 5000
                     if(fluid == 'tfc_metallum:metal/aluminum') {
                         fluid = 'kubejs:cast_aluminum'
-                        heatingTemperature = temperature
+                        //heatingTemperature = temperature
                     }
 
                     //console.log(input)

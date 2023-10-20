@@ -38,7 +38,6 @@ onEvent('tags.blocks', event => {
     
     function addDirectInsulation(input) {
         event.add('tfc:forge_insulation', input)
-        event.add('tfc:bloomery_insulation', input)
     }
 
     function tagInsulation(mod, name, block) {

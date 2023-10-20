@@ -417,6 +417,26 @@ onEvent('recipes', event => {
         R: 'create:large_cogwheel'
     }).id('create:crushing_wheel')
 
+    event.recipes.createMechanicalCrafting('32x create:track', [
+        'CPC',
+        'CSC',
+        'CPC'
+    ], {
+        C: '#tfc:brick',
+        P: 'tfc:metal/rod/wrought_iron',
+        S: 'tfc_metalwork:metal/large_rod/cast_iron'
+    }).id('create:track')
+
+    event.recipes.createMechanicalCrafting('32x railways:track_spruce', [
+        'CPC',
+        'CSC',
+        'CPC'
+    ], {
+        C: 'kubejs:pitch_treated_lumber',
+        P: 'tfc:metal/rod/wrought_iron',
+        S: 'tfc_metalwork:metal/large_rod/cast_iron'
+    }).id('railways:track_spruce')
+
     event.remove({ output: 'create_mechanical_extruder:mechanical_extruder' })
     event.shaped('create_mechanical_extruder:mechanical_extruder', [
         ' S ',
@@ -461,6 +481,16 @@ onEvent('recipes', event => {
     brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_chisels`]))
     brassFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
     event.recipes.createSequencedAssembly('4x kubejs:frame/brass', 'tfc_metalwork:metal/large_rod/brass', brassFrame).transitionalItem(transitionItem).loops(1);
+
+    transitionItem = 'kubejs:transition_compressed_iron'
+    const cIronFrame = []
+    cIronFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'tfc_metallum:metal/rod/andesite_alloy']))
+    cIronFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_rods`]).keepHeldItem())
+    cIronFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
+    cIronFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_hammers`]))
+    cIronFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_chisels`]))
+    cIronFrame.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_sheets`]).keepHeldItem())
+    event.recipes.createSequencedAssembly('4x kubejs:frame/compressed_iron', 'tfc_metalwork:metal/large_rod/compressed_iron', cIronFrame).transitionalItem(transitionItem).loops(1);
 
     transitionItem = 'kubejs:transition_rose_gold'
     const railwayFrame = []
@@ -603,6 +633,7 @@ onEvent('recipes', event => {
     casingCrafting(false, 'create', 'kubejs:pitch_treated_wood', 'andesite')
     casingCrafting(false, 'create', 'kubejs:ash_treated_wood', 'copper')
     casingCrafting(true, 'create', 'forge:treated_wood', 'brass')
+    casingCrafting(false, 'compressedcreativity', 'beneath:wood/planks/crimson', 'compressed_iron')
     casingCrafting(false, 'create', 'kubejs:sturdy_sheet', 'railway')
     casingCrafting(false, 'create', 'immersiveengineering:sheetmetal_aluminum', 'refined_radiance')
     casingCrafting(false, 'create', 'immersiveengineering:sheetmetal_steel', 'shadow_steel')

@@ -8,6 +8,8 @@ onEvent('tags.items', event => {
     global.anvilRockTypes.forEach(i => event.add('tfc:rock_magma_blocks', `tfc:rock/magma/${i}`));
     event.add('tfc:rock_magma_blocks', 'minecraft:magma_block')
 
+    global.tfcRockTypes.forEach(i => event.add('tfc:brick', `tfc:brick/${i}`));
+
     event.add('tfc:placed_item_whitelist', 'kubejs:unfired_flower_box')
     event.add('tfc:unfired_pottery', 'kubejs:unfired_flower_box')
 
@@ -106,3 +108,21 @@ onEvent('tags.blocks', event => {
 
     global.tfcGrass.forEach(i => event.add('minecraft:dirt', i));
 })
+
+onEvent('tags.fluids', event => {
+    
+    global.fluidsToAdd.forEach(i => {
+        let result = i.split('/')
+        let name = result[0]
+
+        event.add(`forge:${name}`, `kubejs:${name}`)
+    });
+
+    global.gasesToAdd.forEach(i => {
+        let result = i.split('/')
+        let name = result[0]
+
+        event.add(`forge:${name}`, `kubejs:flowing_${name}`)
+    });
+
+});

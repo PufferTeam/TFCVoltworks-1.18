@@ -14,6 +14,16 @@ onEvent('fluid.registry', event => {
     .bucketColor(0x786544)
     .displayName('Molten Bio Plastic')
 
+    event.create('molten_duroplast')
+    .thickTexture(0xC88A32)
+    .bucketColor(0xC88A32)
+    .displayName('Molten Duroplast')
+
+    event.create('molten_fiberpolymer')
+    .thickTexture(0x55948D)
+    .bucketColor(0x55948D)
+    .displayName('Molten Fiber Reinforced Polymer')
+
     event.create('cast_aluminum')
     .thickTexture(0x9C6A4F)
     .bucketColor(0x9C6A4F)
@@ -24,10 +34,25 @@ onEvent('fluid.registry', event => {
     .bucketColor(0xEEEEEE)
     .displayName('Alumina')
 
+    event.create('mercury')
+    .thickTexture(0xAAAAAA)
+    .bucketColor(0xAAAAAA)
+    .displayName('Mercury')
+
+    event.create('phenol')
+    .thinTexture(0x948655)
+    .bucketColor(0x948655)
+    .displayName('Phenol')
+
+    event.create('tar')
+    .thinTexture(0x302D23)
+    .bucketColor(0x302D23)
+    .displayName('Tar')
+
     event.create('ashwater')
     .thinTexture(0x978B82)
     .bucketColor(0x978B82)
-    .displayName('Smouldering Mix')
+    .displayName('Ashwater')
 
     event.create('cinderwater')
     .thinTexture(0x9D8375)
@@ -108,4 +133,28 @@ onEvent('fluid.registry', event => {
     .thickTexture(0xF1AB51)
     .bucketColor(0xF1AB51)
     .displayName('Topaz')
+
+    global.fluidsToAdd.forEach(i => {
+        let result = i.split('/')
+        let name = result[0]
+        let color = result[1]
+        let cutColor = '#' + color.slice(2)
+        let fluidColor = global.getColor(cutColor)
+        let isLiquid = result[2]
+        console.log(isLiquid)
+        console.log('color' + color)
+        let displayName = 'ERROR'
+        if(isLiquid == 'true') {
+            displayName = "Liquid " + global.getCapitalizedWord(name)
+        } else {
+            displayName = global.getCapitalizedWord(name)
+        }
+    
+        console.log(name + color + displayName)
+
+        event.create(name)
+        .thinTexture(fluidColor)
+        .bucketColor(fluidColor)
+        .displayName(displayName)
+    });
 })

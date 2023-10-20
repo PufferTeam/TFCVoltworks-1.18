@@ -1,8 +1,11 @@
 {
+    "gas.kubejs.example_gas": "Example Gas",
+
     "item.kubejs.none": "    ",
     "item.kubejs.frame.andesite": "Igneous Frame",
     "item.kubejs.frame.copper": "Copper Frame",
     "item.kubejs.frame.brass": "Brass Frame",
+    "item.kubejs.frame.compressed_iron": "Compressed Iron Frame",
     "item.kubejs.frame.railway": "Train Frame",
     "item.kubejs.frame.refined_radiance": "Radiant Frame",
     "item.kubejs.frame.shadow_steel": "Shadow Frame",
@@ -29,6 +32,9 @@
     "item.kubejs.powder.alumina": "Alumina Powder",
     "item.kubejs.powder.gypsum": "Gypsum Powder",
     "item.kubejs.powder.bauxite": "Bauxite Powder",
+    "item.kubejs.powder.bismuthinite": "Bismuthinite Powder",
+    "item.kubejs.powder.cassiterite": "Cassiterite Powder",
+    "item.kubejs.powder.garnierite": "Garnierite Powder",
     "item.kubejs.powder.cryolite": "Cryolite Powder",
     "item.kubejs.powder.bituminous_coal": "Bituminous Coal Powder",
     "item.kubejs.powder.lignite": "Lignite Powder",

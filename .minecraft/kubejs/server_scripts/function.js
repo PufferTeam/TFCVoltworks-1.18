@@ -32,17 +32,6 @@ global.getValidBar = function getValidBar(mod, metal) {
     return barItem
 }
 
-global.getCapitalizedWord = function getCapitalizedWord(str) {
-    let arr = str.split("_");
-
-    for (var i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-    }
-
-    const str2 = arr.join(" ");
-    return str2
-}
-
 global.getTier = function getTier(metal) {
     let tier = 3
     switch (metal) {

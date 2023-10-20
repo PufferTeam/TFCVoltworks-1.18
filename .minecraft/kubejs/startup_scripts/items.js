@@ -36,6 +36,18 @@ onEvent('item.registry', event => {
 
     event.create('transition_high_carbon_steel', 'create:sequenced_assembly').maxStackSize(1);
 
+    event.create('iron_mechanisms').maxStackSize(64);
+    event.create('light_mechanism').maxStackSize(64);
+    event.create('incomplete_light_mechanism', 'create:sequenced_assembly').maxStackSize(1);
+
+    event.create('steel_mechanisms').maxStackSize(64);
+    event.create('heavy_mechanism').maxStackSize(64);
+    event.create('incomplete_heavy_mechanism', 'create:sequenced_assembly').maxStackSize(1);
+
+    event.create('stainless_steel_mechanisms').maxStackSize(64);
+    event.create('ponderous_mechanism').maxStackSize(64);
+    event.create('incomplete_ponderous_mechanism', 'create:sequenced_assembly').maxStackSize(1);
+
     event.create('electric_motor').maxStackSize(64);
 
     event.create('electric_piston').maxStackSize(64);
@@ -50,7 +62,11 @@ onEvent('item.registry', event => {
 
     event.create('industrial_electronic_component').maxStackSize(64);
 
+    event.create('stainless_steel_mechanical_component').maxStackSize(64);
+
     event.create('bioplastic_sheet').maxStackSize(64);
+
+    event.create('fiber_reinforced_polymer').maxStackSize(64);
 
     event.create('assembled_pcb').maxStackSize(64);
 
@@ -118,6 +134,12 @@ onEvent('item.registry', event => {
 
     event.create('powder/bauxite').maxStackSize(32);
 
+    event.create('powder/bismuthinite').maxStackSize(32);
+
+    event.create('powder/cassiterite').maxStackSize(32);
+
+    event.create('powder/garnierite').maxStackSize(32);
+
     event.create('powder/cryolite').maxStackSize(32);
 
     event.create('powder/bituminous_coal').maxStackSize(32);
@@ -143,6 +165,7 @@ onEvent('item.registry', event => {
     event.create('frame/iron').maxStackSize(64)
     event.create('frame/steel').maxStackSize(64)
     event.create('frame/aluminum').maxStackSize(64)
+    event.create('frame/compressed_iron').maxStackSize(64)
 
     global.stoneToolsTypes.forEach(i => {
         let result = i.split('/')

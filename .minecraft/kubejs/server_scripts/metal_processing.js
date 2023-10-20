@@ -82,11 +82,22 @@ onEvent('tags.items', event => {
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/${i}`, `tfc:metal/sheet/${i}`));
     global.tfcMetalTypes.forEach(i => event.remove(`forge:plates/iron`, `tfc:metal/sheet/${i}`));
 
+    function tagMissingMetalItem(mod, metal) {
+        global.metalworkMetalParts.forEach(part => {
+            event.add(`${mod}:metal_item/${metal}`, `tfc_metalwork:metal/${part}/${metal}`)
+        });
+    }
+
+    global.tfcMetalTypes.forEach(i => tagMissingMetalItem('tfc', i));
+    global.tfcMetallumMetalTypes.forEach(i => tagMissingMetalItem('tfc_metallum', i));
+
     event.add(`forge:dusts/iron`, 'tfc_metalwork:metal/dust/wrought_iron')
     event.add(`forge:gears/iron`, 'tfc_metalwork:metal/small_gear/wrought_iron')
     event.add(`forge:rods/iron`, 'tfc:metal/rod/wrought_iron')
     event.add(`forge:dusts/diamond`, 'tfc:powder/diamond')
     event.add(`forge:dusts/emerald`, 'tfc:powder/emerald')
+    event.add(`forge:dusts/saltpeter`, 'tfc:powder/saltpeter')
+    event.add(`forge:dusts/sulfur`, 'tfc:powder/sulfur')
 
     function tagSheetmetal(item) {
         if (item == 'immersiveengineering:sheetmetal_wrought_iron') {
@@ -440,7 +451,7 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 'tungsten_steel', 3690)
 
     global.addMeltingHeatingFluid(false, 'create:andesite_alloy', "kubejs:raw_andesite_alloy", 25, 'andesite_alloy', 520)
-    global.addMeltingHeatingFluid(false, 'thermal:rosin', "kubejs:pitch", 1000, 'custom', 240)
+    global.addMeltingHeatingFluid(false, 'thermal:rosin', "thermal:resin", 1000, 'custom', 240)
     global.addMeltingHeatingFluid(false, 'firmalife:beeswax', "kubejs:wax", 1000, 'custom', 240)
 
     global.addMeltingCrushing(true, 'tfc_metalwork:cut/copper', 'tfc:metal/copper', 400, 'copper', 1080)
@@ -525,6 +536,7 @@ onEvent('recipes', event => {
             global.addExplosionCrafting(`tfc:metal/${toolType}/wrought_iron`, `tfc_metallum:metal/${toolType}/compressed_iron`, 20)
         }
     })
+
     global.addExplosionCrafting(`tfc_metalwork:metal/block/wrought_iron_slab`, `tfc_metalwork:metal/block/compressed_iron_slab`, 20)
     global.addExplosionCrafting(`tfc_metalwork:metal/block/wrought_iron_stairs`, `tfc_metalwork:metal/block/compressed_iron_stairs`, 20)
     global.addExplosionCrafting(`tfc_metalwork:metal/cut/wrought_iron_slab`, `tfc_metalwork:metal/cut/compressed_iron_slab`, 20)
