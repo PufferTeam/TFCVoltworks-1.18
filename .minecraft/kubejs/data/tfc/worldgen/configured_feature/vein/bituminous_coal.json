@@ -18,11 +18,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/shale"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:shale_underclay"
           }
         ]
@@ -33,11 +33,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/claystone"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:claystone_underclay"
           }
         ]
@@ -48,11 +48,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/limestone"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:limestone_underclay"
           }
         ]
@@ -63,11 +63,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/conglomerate"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:conglomerate_underclay"
           }
         ]
@@ -78,11 +78,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/dolomite"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:dolomite_underclay"
           }
         ]
@@ -93,11 +93,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/chert"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:chert_underclay"
           }
         ]
@@ -108,11 +108,11 @@
         ],
         "with": [
           {
-            "weight": 90,
+            "weight": 80,
             "block": "tfc:ore/bituminous_coal/chalk"
           },
           {
-            "weight": 10,
+            "weight": 20,
             "block": "kubejs:chalk_underclay"
           }
         ]
