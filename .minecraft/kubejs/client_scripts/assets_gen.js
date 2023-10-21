@@ -1,6 +1,6 @@
 onEvent('client.generate_assets', event => {
     global.tfcRockTypes.forEach(i => {
-        event.addModel('block', i + '_underclay', m => {
+        event.addModel('block', 'kubejs:' + i + '_underclay', m => {
             m.parent('tfc:block/ore')
             m.textures({
                 all: `tfc:block/rock/raw/${i}`,

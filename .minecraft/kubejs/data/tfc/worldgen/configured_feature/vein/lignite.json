@@ -18,11 +18,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/shale"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:shale_underclay"
           }
         ]
@@ -33,11 +33,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/claystone"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:claystone_underclay"
           }
         ]
@@ -48,11 +48,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/limestone"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:limestone_underclay"
           }
         ]
@@ -63,11 +63,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/conglomerate"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:conglomerate_underclay"
           }
         ]
@@ -78,11 +78,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/dolomite"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:dolomite_underclay"
           }
         ]
@@ -93,11 +93,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/chert"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:chert_underclay"
           }
         ]
@@ -108,11 +108,11 @@
         ],
         "with": [
           {
-            "weight": 75,
+            "weight": 90,
             "block": "tfc:ore/lignite/chalk"
           },
           {
-            "weight": 25,
+            "weight": 10,
             "block": "kubejs:chalk_underclay"
           }
         ]
