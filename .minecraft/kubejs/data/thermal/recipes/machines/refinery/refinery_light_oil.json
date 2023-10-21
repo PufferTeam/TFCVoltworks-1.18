@@ -1,0 +1,18 @@
+{
+  "type": "thermal:refinery",
+  "ingredient": {
+    "fluid": "kubejs:light_oil",
+    "amount": 100
+  },
+  "result": [
+    {
+      "fluid": "thermal:refined_fuel",
+      "amount": 50
+    },
+    {
+      "item": "tfc:powder/sulfur",
+      "chance": 0.10
+    }
+  ],
+  "energy": 6000
+}

@@ -1,19 +1,21 @@
 {
-    "type": "mekanism:rotary",
-    "fluidInput": {
-        "amount": 1,
-        "tag": "forge:chlorine"
+    "type": "pneumaticcraft:refinery",
+    "input": {
+      "type": "pneumaticcraft:fluid",
+      "tag": "forge:crude_oil",
+      "amount": 10
     },
-    "gasOutput": {
-        "gas": "mekanism:chlorine",
-        "amount": 1
+    "temperature": {
+      "min_temp": 373
     },
-    "gasInput": {
-        "amount": 1,
-        "gas": "mekanism:chlorine"
-    },
-    "fluidOutput": {
-        "fluid": "mekanism:chlorine",
-        "amount": 1
-    }
-}
+    "results": [
+      {
+        "fluid": "pneumaticcraft:diesel",
+        "amount": 4
+      },
+      {
+        "fluid": "pneumaticcraft:lpg",
+        "amount": 2
+      }
+    ]
+  }

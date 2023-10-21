@@ -17,6 +17,7 @@ onEvent('tags.items', event => {
     event.add('tfc:ash', 'tfc:powder/wood_ash')
 
     event.add('forge:dusts/wood', 'immersiveengineering:sawdust')
+    event.add('forge:dusts/mercury', 'kubejs:mercury_dust')
 
     event.remove('create:windmill_sails', 'create:sail_frame')
     event.remove('forge:storage_blocks/gold', 'minecraft:gold_block')
@@ -79,6 +80,9 @@ onEvent('tags.items', event => {
 onEvent('tags.blocks', event => {
     event.remove('create:windmill_sails', 'create:sail_frame')
 
+    event.remove('minecraft:needs_diamond_tool', 'minecraft:obsidian')
+    event.add('tfc:needs_copper_tool', 'minecraft:obsidian')
+
     global.vanillaWoodTypes.forEach(i => {
         let log = 'log'
         if(i == 'crimson' || i == 'warped') {
@@ -112,6 +116,26 @@ onEvent('tags.blocks', event => {
 onEvent('tags.fluids', event => {
 
     global.extraTagFluidsWater = [
+        'immersivepetroleum:crudeoil',
+        'immersivepetroleum:diesel_sulfur',
+        'immersivepetroleum:diesel',
+        'immersivepetroleum:lubricant',
+        'immersivepetroleum:gasoline',
+        'immersivepetroleum:naphtha',
+        'immersivepetroleum:naphtha_cracked',
+        'immersivepetroleum:lubricant_cracked',
+        'immersivepetroleum:kerosene',
+        'immersivepetroleum:gasoline_additives',
+        'immersivepetroleum:napalm',
+        'immersiveengineering:creosote',
+        'immersiveengineering:plantoil',
+        'immersiveengineering:ethanol',
+        'immersiveengineering:biodiesel',
+        'immersiveengineering:concrete',
+        'immersiveengineering:herbicide',
+        'immersiveengineering:redstone_acid',
+        'immersiveengineering:acetaldehyde',
+        'immersiveengineering:phenolic_resin',
         'mekanism:hydrogen',
         'mekanism:oxygen',
         'mekanism:chlorine',
@@ -165,6 +189,11 @@ onEvent('tags.fluids', event => {
 
         if(name == 'pneumaticcraft:plastic') {
             nameResult = 'pneumaticcraft:plastic_flowing'
+        }
+
+        console.log(nameCut[0])
+        if(nameCut[0] == 'immersiveengineering' || nameCut[0] == 'immersivepetroleum') {
+            nameResult = nameCut[0] + ':' + nameCut[1] + '_flowing'
         }
 
         if(tag == 'minecraft:water' || tag == 'minecraft:lava') {

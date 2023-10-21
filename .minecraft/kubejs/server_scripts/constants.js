@@ -139,6 +139,9 @@ global.recipeIdToRemove = [
     'immersiveengineering:refinery/acetaldehyde',
     'immersiveengineering:bottling/duroplast_plate',
     'immersiveengineering:refinery/resin',
+    'immersivepetroleum:hydrotreater/propylene_plastic',
+    'immersivepetroleum:hydrotreater/ethylene_plastic',
+    'create:crafting/kinetics/white_sailfrom_conversion',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',
@@ -169,6 +172,10 @@ global.recipeTypeToRemove = [
     'immersiveengineering:crusher',
     'immersiveengineering:metal_press',
     'immersiveengineering:arc_furnace',
+    'immersiveengineering:squeezer',
+    'immersiveengineering:fermenter',
+
+    'immersivepetroleum:distillation',
 
     'mekanism:pigment_extracting',
     'mekanism:painting',

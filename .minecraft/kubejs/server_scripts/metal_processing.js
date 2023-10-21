@@ -451,8 +451,8 @@ onEvent('recipes', event => {
     global.addMeltingHeatingFluid(false, 'tfc_metallum:tungsten_steel_bars', "tfc_metallum:metal/tungsten_steel", 6, 'tungsten_steel', 3690)
 
     global.addMeltingHeatingFluid(false, 'create:andesite_alloy', "kubejs:raw_andesite_alloy", 25, 'andesite_alloy', 520)
-    global.addMeltingHeatingFluid(false, 'thermal:rosin', "thermal:resin", 1000, 'custom', 240)
-    global.addMeltingHeatingFluid(false, 'firmalife:beeswax', "kubejs:wax", 1000, 'custom', 240)
+    global.addMeltingHeatingFluid(false, 'thermal:rosin', "thermal:resin", 125, 'custom', 240)
+    global.addMeltingHeatingFluid(false, 'firmalife:beeswax', "kubejs:wax", 125, 'custom', 240)
 
     global.addMeltingCrushing(true, 'tfc_metalwork:cut/copper', 'tfc:metal/copper', 400, 'copper', 1080)
     global.addMeltingCrushing(true, 'tfc_metalwork:cut_slab/copper', 'tfc:metal/copper', 200, 'copper', 1080)

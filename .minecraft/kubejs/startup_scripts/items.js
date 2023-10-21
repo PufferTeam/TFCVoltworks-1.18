@@ -74,6 +74,14 @@ onEvent('item.registry', event => {
 
     event.create('abyss_flour').maxStackSize(64);
 
+    event.create('thermoplastic_starch').maxStackSize(64);
+
+    event.create('polydimethylsiloxane_pulp').maxStackSize(64);
+
+    event.create('mercury_dust').maxStackSize(64);
+
+    event.create('compacted_sawdust').maxStackSize(64);
+
     event.create('void_shard').maxStackSize(64);
 
     event.create('unfired_flower_box').maxStackSize(64);

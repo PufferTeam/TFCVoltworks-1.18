@@ -1,5 +1,12 @@
 onEvent('recipes', event => {
 
+    global.addSqueezer('immersiveengineering:plantoil', 40, 'tfc:seeds', 3000)
+
+    global.addFermenter('immersiveengineering:ethanol', 50, 'tfc:foods/fruits', 6400)
+    global.addFermenter('immersiveengineering:ethanol', 80, 'tfc:foods/vegetables', 6400)
+    global.addFermenter('immersiveengineering:ethanol', 150, 'tfc:foods/dairy', 6400)
+    global.addFermenter('immersiveengineering:ethanol', 60, 'tfc:foods/grains', 6400)
+
     event.remove({ output: 'immersiveengineering:hemp_fabric' })
     event.shaped('4x immersiveengineering:hemp_fabric', [
         ' S ',

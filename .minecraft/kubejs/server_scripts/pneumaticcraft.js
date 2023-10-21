@@ -7,6 +7,6 @@ onEvent('recipes', event => {
 
     global.addFluidMixer('forge:acetaldehyde', 12, 'forge:phenol', 8, 'immersiveengineering:phenolic_resin', 8, 5.0, 250)
 
-    global.addThermoPlantFluidItemEFluid('tfc_metalwork:metal/dust/silver', 'forge:ethanol', 500, 'immersiveengineering:acetaldehyde', 500, 2.0, 0.5)
+    global.addThermoPlantFluidItemEFluid('kubejs:mercury_dust', 'forge:acetylene', 500, 'immersiveengineering:acetaldehyde', 500, 2.0, 0.5)
 
 })

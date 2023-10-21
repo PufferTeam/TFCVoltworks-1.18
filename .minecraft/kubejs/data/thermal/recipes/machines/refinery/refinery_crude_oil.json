@@ -1,0 +1,22 @@
+{
+  "type": "thermal:refinery",
+  "ingredient": {
+    "fluid_tag": "forge:crude_oil",
+    "amount": 100
+  },
+  "result": [
+    {
+      "fluid": "kubejs:heavy_oil_sulfur",
+      "amount": 5
+    },
+    {
+      "fluid": "kubejs:light_oil_sulfur",
+      "amount": 15
+    },
+    {
+      "item": "immersivepetroleum:bitumen",
+      "chance": 0.10
+    }
+  ],
+  "energy": 6000
+}

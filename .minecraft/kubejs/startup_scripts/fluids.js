@@ -1,5 +1,85 @@
 onEvent('fluid.registry', event => {
     global.tagFluids = []
+
+    //Oil
+    event.create('natural_gas_cracked')
+    .stillTexture('kubejs:block/fluid/natural_gas_cracked_still')
+    .flowingTexture('kubejs:block/fluid/natural_gas_cracked_flow')
+    .bucketColor(0x302D23)
+    .displayName('Cracked Natural Gas')
+    global.tagFluids.push('kubejs:natural_gas_cracked/minecraft:water')
+
+    event.create('natural_gas_sulfur')
+    .stillTexture('kubejs:block/fluid/natural_gas_sulfur_still')
+    .flowingTexture('kubejs:block/fluid/natural_gas_sulfur_flow')
+    .bucketColor(0x302D23)
+    .displayName('Sulfurized Natural Gas')
+    global.tagFluids.push('kubejs:natural_gas_sulfur/minecraft:water')
+
+    event.create('natural_gas')
+    .stillTexture('kubejs:block/fluid/natural_gas_still')
+    .flowingTexture('kubejs:block/fluid/natural_gas_flow')
+    .bucketColor(0x302D23)
+    .displayName('Natural Gas')
+    global.tagFluids.push('kubejs:natural_gas/minecraft:water')
+
+    event.create('light_oil_cracked')
+    .stillTexture('kubejs:block/fluid/light_oil_cracked_still')
+    .flowingTexture('kubejs:block/fluid/light_oil_cracked_flow')
+    .bucketColor(0x302D23)
+    .displayName('Cracked Light Oil')
+    global.tagFluids.push('kubejs:light_oil_cracked/minecraft:water')
+
+    event.create('light_oil_sulfur')
+    .stillTexture('kubejs:block/fluid/light_oil_sulfur_still')
+    .flowingTexture('kubejs:block/fluid/light_oil_sulfur_flow')
+    .bucketColor(0x302D23)
+    .displayName('Sulfurized Light Oil')
+    global.tagFluids.push('kubejs:light_oil_sulfur/minecraft:water')
+
+    event.create('light_oil')
+    .stillTexture('kubejs:block/fluid/light_oil_still')
+    .flowingTexture('kubejs:block/fluid/light_oil_flow')
+    .bucketColor(0x302D23)
+    .displayName('Light Oil')
+    global.tagFluids.push('kubejs:light_oil/minecraft:water')
+
+    event.create('heavy_oil_cracked')
+    .stillTexture('kubejs:block/fluid/heavy_oil_cracked_still')
+    .flowingTexture('kubejs:block/fluid/heavy_oil_cracked_flow')
+    .bucketColor(0x302D23)
+    .displayName('Cracked Heavy Oil')
+    global.tagFluids.push('kubejs:heavy_oil_cracked/minecraft:water')
+
+    event.create('heavy_oil_sulfur')
+    .stillTexture('kubejs:block/fluid/heavy_oil_sulfur_still')
+    .flowingTexture('kubejs:block/fluid/heavy_oil_sulfur_flow')
+    .bucketColor(0x302D23)
+    .displayName('Sulfurized Heavy Oil')
+    global.tagFluids.push('kubejs:heavy_oil_sulfur/minecraft:water')
+
+    event.create('heavy_oil')
+    .stillTexture('kubejs:block/fluid/heavy_oil_still')
+    .flowingTexture('kubejs:block/fluid/heavy_oil_flow')
+    .bucketColor(0x302D23)
+    .displayName('Heavy Oil')
+    global.tagFluids.push('kubejs:heavy_oil/minecraft:water')
+
+    event.create('lubricant_sulfur')
+    .stillTexture('kubejs:block/fluid/lubricant_sulfur_still')
+    .flowingTexture('kubejs:block/fluid/lubricant_sulfur_flow')
+    .bucketColor(0x302D23)
+    .displayName('Sulfurized Lubricant')
+    global.tagFluids.push('kubejs:lubricant_sulfur/minecraft:water')
+
+    event.create('naphtha_sulfur')
+    .stillTexture('kubejs:block/fluid/naphtha_sulfur_still')
+    .flowingTexture('kubejs:block/fluid/naphtha_sulfur_flow')
+    .bucketColor(0x302D23)
+    .displayName('Sulfurized Naphtha')
+    global.tagFluids.push('kubejs:naphtha_sulfur/minecraft:water')
+
+    //Normal
     event.create('magmatic_lava')
     .thickTexture(0x753A0F)
     .bucketColor(0x753A0F)
@@ -52,8 +132,8 @@ onEvent('fluid.registry', event => {
     global.tagFluids.push('kubejs:alumina/tfc:molten_metals')
 
     event.create('mercury')
-    .thickTexture(0xAAAAAA)
-    .bucketColor(0xAAAAAA)
+    .thinTexture(0xE0E0E0)
+    .bucketColor(0xE0E0E0)
     .displayName('Mercury')
     global.tagFluids.push('kubejs:mercury/minecraft:water')
 
@@ -62,6 +142,12 @@ onEvent('fluid.registry', event => {
     .bucketColor(0x948655)
     .displayName('Phenol')
     global.tagFluids.push('kubejs:phenol/minecraft:water')
+
+    event.create('glycerol')
+    .thinTexture(0xAB7D4A)
+    .bucketColor(0xAB7D4A)
+    .displayName('Glycerol')
+    global.tagFluids.push('kubejs:glycerol/minecraft:water')
 
     event.create('tar')
     .thinTexture(0x302D23)
@@ -184,8 +270,8 @@ onEvent('fluid.registry', event => {
         let cutColor = '#' + color.slice(2)
         let fluidColor = global.getColor(cutColor)
         let isLiquid = result[2]
-        console.log(isLiquid)
-        console.log('color' + color)
+        //console.log(isLiquid)
+        //console.log('color' + color)
         let displayName = 'ERROR'
         if(isLiquid == 'true') {
             displayName = "Liquid " + global.getCapitalizedWord(name)
@@ -193,7 +279,7 @@ onEvent('fluid.registry', event => {
             displayName = global.getCapitalizedWord(name)
         }
     
-        console.log(name + color + displayName)
+        //console.log(name + color + displayName)
 
         event.create(name)
         .thinTexture(fluidColor)
