@@ -1,0 +1,124 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:disc_vein",
+  "config": {
+    "rarity": 90,
+    "min_y": {
+      "absolute": -48
+    },
+    "max_y": {
+      "absolute": 100
+    },
+    "size": 30,
+    "density": 0.9,
+    "blocks": [
+      {
+        "replace": [
+          "tfc:rock/raw/shale"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/shale"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:shale_underclay"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/claystone"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/claystone"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:claystone_underclay"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/limestone"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/limestone"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:limestone_underclay"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/conglomerate"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/conglomerate"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:conglomerate_underclay"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/dolomite"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/dolomite"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:dolomite_underclay"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/chert"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/chert"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:chert_underclay"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/chalk"
+        ],
+        "with": [
+          {
+            "weight": 75,
+            "block": "tfc:ore/bituminous_coal/chalk"
+          },
+          {
+            "weight": 25,
+            "block": "kubejs:chalk_underclay"
+          }
+        ]
+      }
+    ],
+    "random_name": "bituminous_coal",
+    "height": 3
+  }
+}
