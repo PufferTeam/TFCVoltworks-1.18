@@ -43,6 +43,14 @@
         ]
       }
     ],
-    "random_name": "borax"
+    "random_name": "borax",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/chert"
+        }
+      ]
+    }
   }
 }

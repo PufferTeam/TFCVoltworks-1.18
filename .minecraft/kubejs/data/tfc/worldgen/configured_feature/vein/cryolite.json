@@ -23,6 +23,14 @@
         ]
       }
     ],
-    "random_name": "cryolite"
+    "random_name": "cryolite",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/slate"
+        }
+      ]
+    }
   }
 }

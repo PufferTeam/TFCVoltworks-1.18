@@ -78,6 +78,14 @@
         ]
       }
     ],
-    "random_name": "cinnabar"
+    "random_name": "cinnabar",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/gneiss"
+        }
+      ]
+    }
   }
 }

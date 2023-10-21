@@ -83,6 +83,14 @@
         ]
       }
     ],
-    "random_name": "kaolinite"
+    "random_name": "kaolinite",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/marble"
+        }
+      ]
+    }
   }
 }

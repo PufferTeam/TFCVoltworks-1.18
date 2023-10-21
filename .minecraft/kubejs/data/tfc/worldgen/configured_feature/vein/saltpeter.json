@@ -88,6 +88,14 @@
         ]
       }
     ],
-    "random_name": "saltpeter"
+    "random_name": "saltpeter",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/diorite"
+        }
+      ]
+    }
   }
 }

@@ -58,6 +58,14 @@
         ]
       }
     ],
-    "random_name": "sulfur"
+    "random_name": "sulfur",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/shale"
+        }
+      ]
+    }
   }
 }

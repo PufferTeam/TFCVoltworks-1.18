@@ -29,6 +29,14 @@
       }
     ],
     "random_name": "diamond",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/chalk"
+        }
+      ]
+    },
     "min_skew": 5,
     "max_skew": 13,
     "min_slant": 0,

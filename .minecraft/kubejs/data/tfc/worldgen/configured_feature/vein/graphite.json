@@ -53,6 +53,14 @@
         ]
       }
     ],
-    "random_name": "graphite"
+    "random_name": "graphite",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/claystone"
+        }
+      ]
+    }
   }
 }

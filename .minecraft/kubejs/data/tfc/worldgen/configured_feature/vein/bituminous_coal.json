@@ -119,6 +119,14 @@
       }
     ],
     "random_name": "bituminous_coal",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/basalt"
+        }
+      ]
+    },
     "height": 3
   }
 }

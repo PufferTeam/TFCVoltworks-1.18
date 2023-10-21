@@ -43,6 +43,14 @@
         ]
       }
     ],
-    "random_name": "sylvite"
+    "random_name": "sylvite",
+    "indicator": {
+      "rarity": 12,
+      "blocks": [
+        {
+          "block": "tfc:rock/loose/dolomite"
+        }
+      ]
+    }
   }
 }
