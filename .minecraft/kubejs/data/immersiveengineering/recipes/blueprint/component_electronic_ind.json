@@ -2,7 +2,7 @@
     "type": "immersiveengineering:blueprint",
     "inputs": [
         {
-            "count": 2,
+            "count": 1,
             "base_ingredient": {
                 "item": "kubejs:fiber_reinforced_polymer"
             }

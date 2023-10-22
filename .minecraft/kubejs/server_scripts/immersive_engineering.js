@@ -122,30 +122,37 @@ onEvent('recipes', event => {
     ]).tier(4).id(`tfc:anvil/part/steel_saw_blade`)
     event.recipes.createSequencedAssembly('immersiveengineering:sawblade', '#forge:sheets/steel', SsawBlade).transitionalItem(transitionItem).loops(1);
 
-    transitionItem = 'kubejs:transition_wrought_iron_block'
-    const lightAssembly = []
-    lightAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_hammers`]))
-    lightAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'immersiveengineering:component_electronic']))
-    lightAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
-    lightAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_double_ingots`]).keepHeldItem())
-    lightAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier3_rods`]).keepHeldItem())
-    event.recipes.createSequencedAssembly('4x kubejs:light_engineering_assembly', 'immersiveengineering:component_iron', lightAssembly).transitionalItem(transitionItem).loops(1);
+    event.recipes.createMechanicalCrafting('4x kubejs:light_engineering_assembly', [
+        'ASA',
+        'PCP',
+        'ASA'
+    ], {
+        C: 'immersiveengineering:component_iron',
+        P: 'immersiveengineering:component_electronic',
+        S: 'immersiveengineering:wire_electrum',
+        A: 'immersiveengineering:treated_scaffold'
+    }).id('kubejs:light_engineering_assembly')
 
-    transitionItem = 'kubejs:transition_steel_block'
-    const heavyAssembly = []
-    heavyAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_hammers`]))
-    heavyAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'immersiveengineering:component_electronic_adv']))
-    heavyAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_double_ingots`]).keepHeldItem())
-    heavyAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_double_ingots`]).keepHeldItem())
-    heavyAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_rods`]).keepHeldItem())
-    event.recipes.createSequencedAssembly('4x kubejs:heavy_engineering_assembly', 'immersiveengineering:component_steel', heavyAssembly).transitionalItem(transitionItem).loops(1);
+    event.recipes.createMechanicalCrafting('4x kubejs:heavy_engineering_assembly', [
+        'ASA',
+        'PCP',
+        'ASA'
+    ], {
+        C: 'immersiveengineering:component_steel',
+        P: 'immersiveengineering:component_electronic_adv',
+        S: 'immersiveengineering:wire_steel',
+        A: 'immersiveengineering:steel_scaffolding_standard'
+    }).id('kubejs:heavy_engineering_assembly')
 
-    transitionItem = 'kubejs:transition_stainless_steel_block'
-    const ponderousAssembly = []
-    ponderousAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_hammers`]))
-    ponderousAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, 'kubejs:industrial_electronic_component']))
-    ponderousAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_double_ingots`]).keepHeldItem())
-    ponderousAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_double_ingots`]).keepHeldItem())
-    ponderousAssembly.push(event.recipes.createDeploying(transitionItem, [transitionItem, `#forge:tier4_rods`]).keepHeldItem())
-    event.recipes.createSequencedAssembly('4x kubejs:ponderous_engineering_assembly', 'kubejs:stainless_steel_mechanical_component', ponderousAssembly).transitionalItem(transitionItem).loops(1);
+    event.recipes.createMechanicalCrafting('4x kubejs:ponderous_engineering_assembly', [
+        'ASA',
+        'PCP',
+        'ASA'
+    ], {
+        C: 'kubejs:stainless_steel_mechanical_component',
+        P: 'kubejs:industrial_electronic_component',
+        S: 'immersiveengineering:wire_aluminum',
+        A: 'immersiveengineering:alu_scaffolding_standard'
+    }).id('kubejs:ponderous_engineering_assembly')
+    
 })

@@ -48,6 +48,12 @@ onEvent('item.registry', event => {
     event.create('ponderous_mechanism').maxStackSize(64);
     event.create('incomplete_ponderous_mechanism', 'create:sequenced_assembly').maxStackSize(1);
 
+    event.create('carbon_fibers').maxStackSize(64);
+
+    event.create('carbon_mesh').maxStackSize(64);
+
+    event.create('carbon_plate').maxStackSize(64);
+
     event.create('electric_motor').maxStackSize(64);
 
     event.create('electric_piston').maxStackSize(64);
@@ -79,6 +85,8 @@ onEvent('item.registry', event => {
     event.create('polydimethylsiloxane_pulp').maxStackSize(64);
 
     event.create('mercury_dust').maxStackSize(64);
+
+    event.create('mercury_rosin').maxStackSize(64);
 
     event.create('compacted_sawdust').maxStackSize(64);
 

@@ -5,7 +5,7 @@ onEvent('block.registry', event => {
         event.create(`rock/pavedcobble/${rock}_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
         event.create(`rock/pavedcobble/${rock}_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
-        event.create(`${rock}_underclay`).material('stone').hardness(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true)
+        event.create(`${rock}_underclay`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').opaque(false).renderType('cutout').tagBlock('minecraft:needs_stone_tool').requiresTool(true)
     });
 
     global.resinWoodTypes.forEach(wood => {
