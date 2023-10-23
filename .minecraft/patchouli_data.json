@@ -32,7 +32,8 @@
         "tfc:mechanics/blast_furnace",
         "firmalife:firmalife/planters",
         "tfc:mechanics/powderkegs",
-        "rosia:tfc_rosia/steam_generator"
+        "rosia:tfc_rosia/steam_generator",
+        "advancedtfctech:main/beamhouse"
       ],
       "bookmarks": [],
       "completedManualQuests": []

@@ -1,14 +1,14 @@
 name = "Advanced TFC Tech Unofficial"
-filename = "AdvancedTFCTechUnofficial-1.8.jar"
+filename = "AdvancedTFCTechUnofficial-1.9.jar"
 side = "both"
 
 [download]
 mode = "metadata:curseforge"
 url = ""
 hash-format = "sha1"
-hash = "9e79822a01bc5ec6af978959ed793d1ea613f89a"
+hash = "e98d481bf5e2478bea484a3e860722ebedba710d"
 
 [update]
 [update.curseforge]
-file-id = 4596920
+file-id = 4810860
 project-id = 862559

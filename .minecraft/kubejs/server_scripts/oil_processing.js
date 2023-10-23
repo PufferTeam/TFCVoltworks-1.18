@@ -26,7 +26,7 @@ onEvent('recipes', event => {
     global.addStillOne('kubejs:propylene', 100, 'mekanism:ethene', 100, 6000)
     global.addStillOne('kubejs:butane', 100, 'mekanism:ethene', 30, 6000)
     global.addStill('kubejs:propane', 100, 'kubejs:propylene', 60, 'kubejs:methane', 10, 6000)
-    global.addStill('immersivepetroleum:gasoline', 100, 'pneumaticcraft:lpg', 60, 'kubejs:butane', 10, 6000)
+    global.addStillOne('immersivepetroleum:gasoline', 100, 'pneumaticcraft:lpg', 60, 6000)
     global.addThermoPlantFluidItemEFluid(null, 'forge:methane', 1000, 'kubejs:acetylene', 150, 2, 10)
     global.addThermoPlantFluidItemEFluid(null, 'forge:methanol', 1000, 'kubejs:acetylene', 750, 2, 10)
 

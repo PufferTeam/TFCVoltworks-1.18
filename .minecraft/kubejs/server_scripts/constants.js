@@ -142,6 +142,8 @@ global.recipeIdToRemove = [
     'immersivepetroleum:hydrotreater/propylene_plastic',
     'immersivepetroleum:hydrotreater/ethylene_plastic',
     'create:crafting/kinetics/white_sailfrom_conversion',
+    'pneumaticcraft:fluid_mixer/biodiesel',
+    'createaddition:compat/immersiveengineering/fabric_sail',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',
