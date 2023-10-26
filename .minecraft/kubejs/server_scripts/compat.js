@@ -66,7 +66,7 @@ onEvent('tags.items', event => {
         'minecraft:stick',
         'tfc:glass_shard'
     ];
-    
+
     global.heatingTagBlacklist = [
         'forge:sand',
         'forge:rods/wooden'
@@ -672,7 +672,7 @@ onEvent('recipes', event => {
                     //console.log(oreName)
                     event.remove({ id: `tfc_metallum:heating/ore/${oreName}` })
                     heatingTemperature = 5000
-                    if(fluid == 'tfc_metallum:metal/aluminum') {
+                    if (fluid == 'tfc_metallum:metal/aluminum') {
                         fluid = 'kubejs:cast_aluminum'
                         //heatingTemperature = temperature
                     }

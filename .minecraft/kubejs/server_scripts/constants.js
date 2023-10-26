@@ -144,6 +144,7 @@ global.recipeIdToRemove = [
     'create:crafting/kinetics/white_sailfrom_conversion',
     'pneumaticcraft:fluid_mixer/biodiesel',
     'createaddition:compat/immersiveengineering/fabric_sail',
+    'createaddition:mixing/bioethanol',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',
@@ -191,6 +192,7 @@ global.recipeTypeToRemove = [
     'thermal:centrifuge',
     'thermal:pulverizer',
     'thermal:tree_extractor',
+    'thermal:rock_gen',
 
     'minecraft:campfire_cooking',
     'minecraft:blasting',

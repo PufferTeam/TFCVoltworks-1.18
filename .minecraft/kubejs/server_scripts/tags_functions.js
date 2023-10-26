@@ -9,12 +9,15 @@ onEvent('tags.items', event => {
     event.add('tfc:rock_magma_blocks', 'minecraft:magma_block')
 
     global.tfcRockTypes.forEach(i => event.add('tfc:brick', `tfc:brick/${i}`));
+    global.tfcGemTypes.forEach(i => event.add('tfc:cut_gems', `tfc:gem/${i}`));
 
     event.add('tfc:placed_item_whitelist', 'kubejs:unfired_flower_box')
     event.add('tfc:unfired_pottery', 'kubejs:unfired_flower_box')
 
     event.add('tfc:ash', 'supplementaries:ash')
     event.add('tfc:ash', 'tfc:powder/wood_ash')
+
+    event.add('forge:biomass', 'createaddition:biomass')
 
     event.add('forge:dusts/wood', 'immersiveengineering:sawdust')
     event.add('forge:dusts/mercury', 'kubejs:mercury_dust')

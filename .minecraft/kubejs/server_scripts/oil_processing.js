@@ -23,10 +23,13 @@ onEvent('recipes', event => {
     global.addStillOne('immersivepetroleum:lubricant', 100, 'immersivepetroleum:kerosene', 40, 6000)
     global.addStill('kubejs:ethane', 100, 'mekanism:ethene', 70, 'kubejs:methanol', 10, 6000)
     global.addStill('mekanism:ethene', 100, 'kubejs:propylene', 80, 'kubejs:butane', 20, 6000)
-    global.addStillOne('kubejs:propylene', 100, 'mekanism:ethene', 100, 6000)
+    global.addStill('kubejs:propylene', 100, 'mekanism:ethene', 80, 'kubejs:glycerol', 20, 6000)
     global.addStillOne('kubejs:butane', 100, 'mekanism:ethene', 30, 6000)
     global.addStill('kubejs:propane', 100, 'kubejs:propylene', 60, 'kubejs:methane', 10, 6000)
     global.addStillOne('immersivepetroleum:gasoline', 100, 'pneumaticcraft:lpg', 60, 6000)
+    global.addStillOne('kubejs:butadiene', 100, 'kubejs:toluene', 100, 6000)
+    global.addStillOne('kubejs:toluene', 100, 'kubejs:butadiene', 100, 6000)
+
     global.addThermoPlantFluidItemEFluid(null, 'forge:methane', 1000, 'kubejs:acetylene', 150, 2, 10)
     global.addThermoPlantFluidItemEFluid(null, 'forge:methanol', 1000, 'kubejs:acetylene', 750, 2, 10)
 
@@ -311,6 +314,10 @@ onEvent('recipes', event => {
                 "amount": 4
             },
             {
+                "fluid": "kubejs:glycerol",
+                "amount": 2
+            },
+            {
                 "fluid": "kubejs:methane",
                 "amount": 2
             },
@@ -352,7 +359,51 @@ onEvent('recipes', event => {
         ]
     })
 
+    //Creosote Oil
+    event.custom({
+        "type": "pneumaticcraft:refinery",
+        "input": {
+            "type": "pneumaticcraft:fluid",
+            "tag": "forge:creosote",
+            "amount": 10
+        },
+        "temperature": {
+            "min_temp": 100
+        },
+        "results": [
+            {
+                "fluid": "kubejs:methanol",
+                "amount": 4
+            },
+            {
+                "fluid": "kubejs:phenol",
+                "amount": 6
+            }
+        ]
+    })
 
+    //Biodiesel
+    event.custom({
+        "type": "pneumaticcraft:refinery",
+        "input": {
+            "type": "pneumaticcraft:fluid",
+            "tag": "forge:biodiesel",
+            "amount": 10
+        },
+        "temperature": {
+            "min_temp": 100
+        },
+        "results": [
+            {
+                "fluid": "kubejs:ammonia",
+                "amount": 2
+            },
+            {
+                "fluid": "kubejs:glycerol",
+                "amount": 8
+            }
+        ]
+    })
 
 
 })

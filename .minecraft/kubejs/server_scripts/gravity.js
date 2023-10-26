@@ -11,7 +11,7 @@ onEvent('tags.blocks', event => {
         tagGravity('tfc:rock', i, 'landslide', 'cobble')
         tagGravity('tfc:rock', i, 'landslide', 'mossy_cobble')
         tagGravity('tfc:rock', i, 'collapse', 'raw')
-     
+
         tagGravity('additionalplacements:tfc.rock', i, 'landslide', 'cobble')
         tagGravity('additionalplacements:tfc.rock', i, 'landslide', 'mossy_cobble')
         tagGravity('additionalplacements:tfc.rock', i, 'collapse', 'raw')
@@ -24,7 +24,7 @@ onEvent('tags.blocks', event => {
         tagInsulation('tfc:rock', i, 'bricks')
         tagInsulation('tfc:rock', i, 'cracked_bricks')
         tagInsulation('tfc:rock', i, 'smooth')
-    
+
         tagInsulation('additionalplacements:tfc.rock', i, 'cobble')
         tagInsulation('additionalplacements:tfc.rock', i, 'mossy_cobble')
         tagInsulation('additionalplacements:tfc.rock', i, 'mossy_bricks')
@@ -32,7 +32,7 @@ onEvent('tags.blocks', event => {
         tagInsulation('additionalplacements:tfc.rock', i, 'bricks')
         tagInsulation('additionalplacements:tfc.rock', i, 'cracked_bricks')
         tagInsulation('additionalplacements:tfc.rock', i, 'smooth')
-    
+
         tagInsulation('kubejs:rock', i, 'pavedcobble')
         tagInsulation('additionalplacements:kubejs.rock', i, 'pavedcobble')
     });
@@ -51,7 +51,26 @@ onEvent('tags.blocks', event => {
         tagMineable('pickaxe', 'additionalplacements:tfc.alabaster', i, 'polished')
 
         tagMineableSpecial('pickaxe', `additionalplacements:quark.${i}_shingles`)
+        tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.sheetmetal_colored_${i}`)
     });
+
+    tagMineableSpecial('axe', `additionalplacements:immersiveengineering.treated_wood_vertical`)
+    tagMineableSpecial('axe', `additionalplacements:immersiveengineering.treated_wood_horizontal`)
+    tagMineableSpecial('axe', `additionalplacements:immersiveengineering.treated_wood_packaged`)
+
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.steel_scaffolding_standard`)
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.alu_scaffolding_standard`)
+
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.steel_scaffolding_grate_top`)
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.alu_scaffolding_grate_top`)
+
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.steel_scaffolding_wooden_top`)
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.alu_scaffolding_wooden_top`)
+    
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.hempcrete`)
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.concrete`)
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.concrete_tile`)
+    tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.concrete_leaded`)
 
     global.tfcSandstoneTypes.forEach(i => {
         tagMineableSpecial('pickaxe', `additionalplacements:tfc.raw_sandstone/${i}`)
@@ -63,10 +82,24 @@ onEvent('tags.blocks', event => {
         tagMineableSpecial('shovel', `additionalplacements:tfc.mud_bricks/${i}`)
     });
 
+    global.tfcSoilsTypes.forEach(i => {
+    });
+
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.nether_brick`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.brick`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.quartz`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.smooth_quartz`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.blackstone`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.polished_blackstone`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.polished_blackstone_brick`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.purpur`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.prismarine`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.prismarine_brick`)
+    tagMineableSpecial('pickaxe', `additionalplacements:minecraft.dark_prismarine`)
 
     addDirectInsulation('immersiveengineering:blastbrick')
     addDirectInsulation('immersiveengineering:blastbrick_reinforced')
-    
+
     function addDirectInsulation(input) {
         event.add('tfc:forge_insulation', input)
     }
@@ -81,11 +114,11 @@ onEvent('tags.blocks', event => {
         if (mod == 'tfc:rock') {
             event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}_wall`)
         }
-        if(mod == 'kubejs:rock') {
+        if (mod == 'kubejs:rock') {
             event.add(`tfc:forge_insulation`, `${mod}/${block}/${name}`)
         }
 
-        if(modName == 'additionalplacements') {
+        if (modName == 'additionalplacements') {
             tagMineable('pickaxe', mod, name, block)
         }
     }
@@ -97,12 +130,23 @@ onEvent('tags.blocks', event => {
 
     function tagMineableSpecial(tool, name) {
         let result = name.split(":")
-        let modName = result[0]
+        let result3 = result[1].split(".")
+        let result2 = result3[1].split("_")
+        let modName = result3[0]
+        let blockName = result2[0]
 
-        event.add(`minecraft:mineable/${tool}`, `${name}_slab`)
+        let slab = `${name}_slab`
+        let stairs = `${name}_stairs`
+        if(modName == 'immersiveengineering') {
+            let result4 = result3[1]
+            slab = `additionalplacements:immersiveengineering.slab_${result4}`
+            stairs = `additionalplacements:immersiveengineering.stairs_${result4}`
+        }
 
-        if(modName !== 'quark') {
-            event.add(`minecraft:mineable/${tool}`, `${name}_stairs`)
+        event.add(`minecraft:mineable/${tool}`, slab)
+
+        if (modName !== 'quark' && blockName !== 'sheetmetal') {
+            event.add(`minecraft:mineable/${tool}`, stairs)
         }
 
     }
@@ -113,7 +157,7 @@ onEvent('recipes', event => {
         recipeGravity('tfc:rock', i, 'landslide', 'cobble')
         recipeGravity('tfc:rock', i, 'landslide', 'mossy_cobble')
         recipeGravity('tfc:rock', i, 'collapse', 'raw')
-     
+
         recipeGravity('additionalplacements:tfc.rock', i, 'landslide', 'cobble')
         recipeGravity('additionalplacements:tfc.rock', i, 'landslide', 'mossy_cobble')
         recipeGravity('additionalplacements:tfc.rock', i, 'collapse', 'raw')

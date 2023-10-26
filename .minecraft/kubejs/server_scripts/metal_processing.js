@@ -374,7 +374,7 @@ onEvent('recipes', event => {
         let sheetmetal = `immersiveengineering:sheetmetal_${iemetal}`
         let sheetmetalSlab = `immersiveengineering:slab_sheetmetal_${iemetal}`
 
-        if(mod == 'kubejs') {
+        if (mod == 'kubejs') {
             sheetmetal = `kubejs:sheetmetal/${iemetal}`
             sheetmetalSlab = `kubejs:sheetmetal/${iemetal}_slab`
         }

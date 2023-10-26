@@ -106,6 +106,7 @@ global.removeAndHide = [
     'pneumaticcraft:ingot_iron_compressed',
     'tfc:metal/bucket/red_steel',
     'tfc:metal/bucket/blue_steel',
+    'supplementaries:checker_vertical_slab',
     'create:bar_of_chocolate',
     'create:tree_fertilizer',
     'create:sweet_roll',
@@ -659,6 +660,13 @@ global.tfcMetallumSheetmetalTypes = [
     'electrum'
 ]
 
+global.globalSheetmetalTypes = [
+
+]
+
+global.tfcSheetmetalTypes.forEach(i => global.globalSheetmetalTypes.push(i));
+global.tfcMetallumSheetmetalTypes.forEach(i => global.globalSheetmetalTypes.push(i));
+
 global.tfcMeatTypes = [
     'beef',
     'calamari',
@@ -751,7 +759,7 @@ global.vanillaRockTypes = [
 ];
 
 global.botaniaRockTypes = [
-    'forest', 
+    'forest',
     'plains',
     'mountain',
     'fungal',
@@ -891,6 +899,9 @@ global.modFluids = [
     'pneumaticcraft:kerosene',
     'pneumaticcraft:lubricant',
     'pneumaticcraft:vegetable_oil',
+    'immersivepetroleum:ethylene',
+    'immersivepetroleum:propylene',
+    'immersivepetroleum:benzene',
     'thermal:crude_oil',
     'thermal:creosote',
     'cofh_core:honey',
@@ -987,13 +998,13 @@ global.tfcJarTypes = [
     'peach',
     'plum',
     'red_apple'
-  ]
+]
 
-  global.firmalifeJarTypes = [
+global.firmalifeJarTypes = [
     'fig',
     'pineapple',
     'pumpkin_chunks'
-  ]
+]
 
 global.thermalItems = [
     'sugar_cane_block',
@@ -1001,6 +1012,7 @@ global.thermalItems = [
     'carrot_block',
     'potato_block',
     'beetroot_block',
+    'rosin_block',
     'oil_sand',
     'oil_red_sand',
     'ender_pearl_dust',

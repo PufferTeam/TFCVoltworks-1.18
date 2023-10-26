@@ -67,7 +67,7 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
         )
     }
 
-    if(type == 'netherwood') {
+    if (type == 'netherwood') {
         global.removeAndHide.push(
             `${mod}:wood/fallen_leaves/${item}`,
             `${mod}:wood/leaves/${item}`,
@@ -271,7 +271,7 @@ function removeAndHide(prefix, suffix, item, type, mod, sbvalid, color, secondit
                 `extendedgears:large_${item}_cogwheel`
             )
 
-            if(item !== 'warped' && item !== 'crimson') {
+            if (item !== 'warped' && item !== 'crimson') {
                 global.removeAndHide.push(
                     `quark:${item}_bookshelf`,
                     `quark:${item}_ladder`,

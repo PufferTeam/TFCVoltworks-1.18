@@ -155,6 +155,18 @@ onEvent('recipes', event => {
         A: 'kubejs:pitch_treated_waterwheel_segment'
     }).id('create:large_water_wheel')
 
+    event.remove({ output: 'create:sail_frame' })
+    event.shaped('create:sail_frame', [
+        'ASA',
+        'S S',
+        'ASA'
+    ], {
+        S: 'kubejs:pitch_treated_lumber',
+        A: 'kubejs:pitch_treated_stick'
+    }).id('create:sail_frame')
+
+    global.addItemApplication(false, 'create:sail_frame', 'kubejs:pitch_treated_tough_fabric', 'create:white_sail')
+
     event.remove({ output: 'create:item_vault' })
     event.shaped('3x create:item_vault', [
         ' S ',

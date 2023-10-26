@@ -13,6 +13,7 @@ onEvent('recipes', event => {
   event.recipes.createMixing(Fluid.of('tfc:salt_water', 125), ['tfc:powder/salt', Fluid.of('minecraft:water', 125)])
   event.recipes.createMixing('tfc:food/boiled_egg', ['minecraft:egg', Fluid.of('minecraft:water', 100)]).heated()
   event.recipes.createMixing('minecraft:magma_cream', ['tfc:glue', 'minecraft:blaze_powder', Fluid.of('minecraft:lava', 200)]).superheated()
+  event.recipes.createMixing('kubejs:void_shard', ['#tfc:cut_gems', 'kubejs:powder/ender_pearl', Fluid.of('kubejs:magmatic_lava', 200)]).superheated()
 
   event.recipes.tfc.pot([Fluid.of('tfc:tallow', 250), 'tfc:dirty_jute_net'], [Fluid.of('minecraft:water', 1000), '4x tfc:food/beef', 'tfc:jute_net'], 9600, 55)
 
@@ -255,7 +256,7 @@ onEvent('recipes', event => {
   ], {
       S: 'kubejs:creosote_treated_lumber',
       B: 'minecraft:red_dye',
-      A: '#tfc:high_quality_cloth'
+      A: '#forge:string'
   }).id('tfc:crafting/powderkeg')
 
   event.remove({ id: 'tfc:crafting/stick_bunch' })
@@ -294,6 +295,7 @@ onEvent('recipes', event => {
 
 onEvent('server.datapack.first', event => {
   event.addTFCHeat('kubejs:unfired_flower_box', 0.8)
+  
   event.addTFCMetal('kubejs:raw_andesite_alloy', 520, 0.01, 'create:andesite_alloy', 'minecraft:structure_void')
   event.addTFCMetal('kubejs:cast_aluminum', 660, 0.01, 'minecraft:structure_void', 'minecraft:structure_void')
   event.addTFCMetal('thermal:resin', 240, 0.01, 'thermal:rosin', 'minecraft:structure_void')

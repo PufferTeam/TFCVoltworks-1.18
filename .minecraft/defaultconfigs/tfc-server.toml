@@ -58,7 +58,7 @@ farmlandMakesTheBestRaceTracks = false
 		plantGrowthChance = 0.05
 		#A movement multiplier for players moving through plants. Individual plants will use a ratio of this value, and lower = slower.
 		#Range: 0.0 ~ 1.0
-		plantsMovementModifier = 1.0
+		plantsMovementModifier = 0.0
 		#Chance for a twisting/weeping/kelp plant to grow each random tick, does not include crops. Lower = slower growth. Set to 0 to disable random plant growth.
 		#Range: 0.0 ~ 1.0
 		plantLongGrowthChance = 0.03

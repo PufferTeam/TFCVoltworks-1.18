@@ -1,7 +1,9 @@
 onEvent('recipes', event => {
 
+    global.addSqueezer('kubejs:biomass', 30, 'forge:biomass', 6000)
     global.addSqueezer('immersiveengineering:plantoil', 40, 'tfc:seeds', 3000)
 
+    global.addFermenter('kubejs:fermented_biomass', 30, 'forge:biomass', 12800)
     global.addFermenter('immersiveengineering:ethanol', 50, 'tfc:foods/fruits', 6400)
     global.addFermenter('immersiveengineering:ethanol', 80, 'tfc:foods/vegetables', 6400)
     global.addFermenter('immersiveengineering:ethanol', 150, 'tfc:foods/dairy', 6400)

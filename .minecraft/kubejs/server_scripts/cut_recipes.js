@@ -129,16 +129,25 @@ onEvent('recipes', event => {
         if(type == 'bricks') {
             block = full_block.substr(0, full_block.length - 1);
         }
+        let result = block.split(":")
+        let mod = result[0]
+        let rest = result[1]
+
         let slab = `${block}_slab`
         let stairs = `${block}_stairs`
         let wall = `${block}_wall`
 
-        if (type == 'rockpaved' || type == 'bricks' || type == 'blackstone' || type == 'netherwood' || type == 'shingles') {
+        if(mod == 'immersiveengineering') {
+            slab = `${mod}:slab_${rest}`
+            stairs = `${mod}:stairs_${rest}`
+        }
+
+        if (type == 'rockpaved' || type == 'bricks' || type == 'blackstone' || type == 'netherwood' || type == 'shingles' || mod == 'immersiveengineering') {
             global.addCutting2Output(full_block, slab)
             global.addCutting(full_block, stairs)
         }
 
-        if (type !== 'netherwood' && type !== 'shingles') {
+        if (type !== 'netherwood' && type !== 'shingles' && mod !== 'immersiveengineering') {
             global.addCutting(full_block, wall)
         }
     }
@@ -148,9 +157,19 @@ onEvent('recipes', event => {
         if(type == 'bricks') {
             block = full_block.substr(0, full_block.length - 1);
         }
+        let result = block.split(":")
+        let mod = result[0]
+        let rest = result[1]
+
         let slab = `${block}_slab`
         let stairs = `${block}_stairs`
         let wall = `${block}_wall`
+
+        if(mod == 'immersiveengineering') {
+            slab = `${mod}:slab_${rest}`
+            stairs = `${mod}:stairs_${rest}`
+            event.remove({ id: `${mod}:crafting/${rest}_from_slab` })
+        }
 
         event.remove({ output: slab, type: 'minecraft:crafting_shaped' })
         event.remove({ output: stairs, type: 'minecraft:crafting_shaped' })
@@ -309,6 +328,28 @@ onEvent('recipes', event => {
     addBigCutRecipes('tfc:mortar', 'beneath:blackstone_brick', 'minecraft:polished_blackstone_bricks')
     addSmallCutRecipes('beneath:blackstone_pebble', 'minecraft:blackstone')
     addSmoothRecipes('blackstone', 'blackstone')
+
+    addCutRecipes('creosote_wood', 'immersiveengineering:treated_wood_vertical')
+    addCuttingRecipes('creosote_wood', 'immersiveengineering:treated_wood_vertical')
+    addCutRecipes('creosote_wood', 'immersiveengineering:treated_wood_horizontal')
+    addCuttingRecipes('creosote_wood', 'immersiveengineering:treated_wood_horizontal')
+    addCutRecipes('creosote_wood', 'immersiveengineering:treated_wood_packaged')
+    addCuttingRecipes('creosote_wood', 'immersiveengineering:treated_wood_packaged')
+
+    addCutRecipes('scaffolding', 'immersiveengineering:steel_scaffolding_standard')
+    addCuttingRecipes('scaffolding', 'immersiveengineering:steel_scaffolding_standard')
+    addCutRecipes('scaffolding', 'immersiveengineering:alu_scaffolding_standard')
+    addCuttingRecipes('scaffolding', 'immersiveengineering:alu_scaffolding_standard')
+
+    addCutRecipes('scaffolding', 'immersiveengineering:steel_scaffolding_grate_top')
+    addCuttingRecipes('scaffolding', 'immersiveengineering:steel_scaffolding_grate_top')
+    addCutRecipes('scaffolding', 'immersiveengineering:alu_scaffolding_grate_top')
+    addCuttingRecipes('scaffolding', 'immersiveengineering:alu_scaffolding_grate_top')
+
+    addCutRecipes('scaffolding', 'immersiveengineering:steel_scaffolding_wooden_top')
+    addCuttingRecipes('scaffolding', 'immersiveengineering:steel_scaffolding_wooden_top')
+    addCutRecipes('scaffolding', 'immersiveengineering:alu_scaffolding_wooden_top')
+    addCuttingRecipes('scaffolding', 'immersiveengineering:alu_scaffolding_wooden_top')
 
     function chiselRecipes(mod, name, type) {
         switch (type) {
