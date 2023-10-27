@@ -1,4 +1,4 @@
-To refresh this file, delete it and run /reload command again! Last updated: Apr 20, 2023, 8:21:34 PM
+To refresh this file, delete it and run /reload command again! Last updated: Oct 26, 2023, 5:44:17 PM
 
 #minecraft:end_city
 - minecraft:end_city
@@ -33,6 +33,9 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 
 #minecraft:igloo
 - minecraft:igloo
+
+#pneumaticcraft:no_oil_lakes
+- #minecraft:village
 
 #minecraft:bastion_remnant
 - minecraft:bastion_remnant

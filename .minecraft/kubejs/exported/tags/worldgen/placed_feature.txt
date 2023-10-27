@@ -1,4 +1,4 @@
-To refresh this file, delete it and run /reload command again! Last updated: Apr 20, 2023, 8:21:34 PM
+To refresh this file, delete it and run /reload command again! Last updated: Oct 26, 2023, 5:44:17 PM
 
 #tfc:in_biome/surface_decoration/volcanic_oceanic_mountain_lake
 - #tfc:feature/ocean_plants
@@ -148,7 +148,6 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:feature/land_plants
 
 #tfc:in_biome/large_features/plateau
-- tfchomestead:villager_homestead
 - #tfc:feature/boulders
 - tfc:forest
 - tfc:bamboo
@@ -212,6 +211,7 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:plant/licorice_fern_patch
 - tfc:plant/lilac_patch
 - tfc:plant/lotus_patch
+- tfc:plant/maiden_pink_patch
 - tfc:plant/meads_milkweed_patch
 - tfc:plant/milfoil_patch
 - tfc:plant/morning_glory_patch
@@ -351,7 +351,6 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:feature/ocean_decorations
 
 #tfc:in_biome/large_features/low_canyons
-- tfchomestead:villager_homestead
 - #tfc:feature/boulders
 - tfc:forest
 - tfc:bamboo
@@ -365,7 +364,6 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:feature/land_plants
 
 #tfc:in_biome/large_features/rolling_hills
-- tfchomestead:villager_homestead
 - #tfc:feature/boulders
 - tfc:forest
 - tfc:bamboo
@@ -484,7 +482,6 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:feature/soil_discs
 
 #tfc:in_biome/large_features/mountains
-- tfchomestead:villager_homestead
 - tfc:forest
 - tfc:bamboo
 - tfc:cave_vegetation
@@ -495,7 +492,6 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 #tfc:in_biome/soil_discs/ocean
 
 #tfc:in_biome/large_features/plains
-- tfchomestead:villager_homestead
 - tfc:forest
 - tfc:bamboo
 - tfc:cave_vegetation
@@ -517,13 +513,11 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:feature/land_plants
 
 #tfc:in_biome/large_features/lowlands
-- tfchomestead:villager_homestead
 - tfc:forest
 - tfc:bamboo
 - tfc:cave_vegetation
 
 #tfc:in_biome/large_features/old_mountains
-- tfchomestead:villager_homestead
 - tfc:forest
 - tfc:bamboo
 - tfc:cave_vegetation
@@ -583,6 +577,32 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:vein/amethyst
 - tfc:vein/opal
 - tfc:geode
+- tfc_metallum:vein/certus_quartz
+- tfc_metallum:vein/deep_uraninite
+- tfc_metallum:vein/surface_uraninite
+- tfc_metallum:vein/surface_native_platinum
+- tfc_metallum:vein/normal_native_platinum
+- tfc_metallum:vein/normal_native_osmium
+- tfc_metallum:vein/deep_native_osmium
+- tfc_metallum:vein/normal_cobaltite
+- tfc_metallum:vein/normal_cobaltite
+- tfc_metallum:vein/normal_kernite
+- tfc_metallum:vein/surface_galena
+- tfc_metallum:vein/normal_galena
+- tfc_metallum:vein/deep_galena
+- tfc_metallum:vein/normal_bertrandite
+- tfc_metallum:vein/deep_bertrandite
+- tfc_metallum:vein/normal_monazite
+- tfc_metallum:vein/surface_rutile
+- tfc_metallum:vein/normal_rutile
+- tfc_metallum:vein/deep_rutile
+- tfc_metallum:vein/normal_stibnite
+- tfc_metallum:vein/deep_stibnite
+- tfc_metallum:vein/surface_wolframite
+- tfc_metallum:vein/normal_wolframite
+- tfc_metallum:vein/deep_wolframite
+- tfc_metallum:vein/surface_bauxite
+- tfc_metallum:vein/normal_bauxite
 - tfc:vein/high_sulfur
 - tfc:vein/bituminous_coal
 - tfc:vein/lignite
@@ -619,32 +639,42 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:vein/really_deep_tetrahedrite
 - tfc:vein/surprise_diamond
 - tfc:vein/surprise_emerald
-- tfc_metallum:vein/certus_quartz
-- tfc_metallum:vein/deep_uraninite
-- tfc_metallum:vein/surface_uraninite
-- tfc_metallum:vein/surface_native_platinum
-- tfc_metallum:vein/normal_native_platinum
-- tfc_metallum:vein/normal_native_osmium
-- tfc_metallum:vein/deep_native_osmium
-- tfc_metallum:vein/normal_cobaltite
-- tfc_metallum:vein/normal_cobaltite
-- tfc_metallum:vein/normal_kernite
-- tfc_metallum:vein/surface_galena
-- tfc_metallum:vein/normal_galena
-- tfc_metallum:vein/deep_galena
-- tfc_metallum:vein/normal_bertrandite
-- tfc_metallum:vein/deep_bertrandite
-- tfc_metallum:vein/normal_monazite
-- tfc_metallum:vein/surface_rutile
-- tfc_metallum:vein/normal_rutile
-- tfc_metallum:vein/deep_rutile
-- tfc_metallum:vein/normal_stibnite
-- tfc_metallum:vein/deep_stibnite
-- tfc_metallum:vein/surface_wolframite
-- tfc_metallum:vein/normal_wolframite
-- tfc_metallum:vein/deep_wolframite
-- tfc_metallum:vein/surface_bauxite
-- tfc_metallum:vein/normal_bauxite
+- tfc:vein/high_sulfur
+- tfc:vein/bituminous_coal
+- tfc:vein/lignite
+- tfc:vein/kaolinite
+- tfc:vein/graphite
+- tfc:vein/cinnabar
+- tfc:vein/cryolite
+- tfc:vein/saltpeter
+- tfc:vein/sulfur
+- tfc:vein/sylvite
+- tfc:vein/borax
+- tfc:vein/gypsum
+- tfc:vein/lapis_lazuli
+- tfc:vein/halite
+- tfc:vein/diamond
+- tfc:vein/volcanic_sulfur
+- tfc:vein/deep_graphite
+- tfc:vein/deep_cinnabar
+- tfc:vein/deep_cryolite
+- tfc:vein/deep_lapis_lazuli
+- tfc:vein/deep_diamond
+- tfc:vein/deep_emerald
+- tfc:vein/high_hematite
+- tfc:vein/high_native_copper
+- tfc:vein/high_magnetite
+- tfc:vein/high_limonite
+- tfc:vein/really_deep_gold
+- tfc:vein/really_deep_silver
+- tfc:vein/really_deep_cassiterite
+- tfc:vein/really_deep_bismuthinite
+- tfc:vein/really_deep_garnierite
+- tfc:vein/really_deep_malachite
+- tfc:vein/really_deep_sphalerite
+- tfc:vein/really_deep_tetrahedrite
+- tfc:vein/surprise_diamond
+- tfc:vein/surprise_emerald
 - firmalife:vein/normal_chromite
 - firmalife:vein/deep_chromite
 
@@ -652,7 +682,6 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:feature/soil_discs
 
 #tfc:in_biome/large_features/hills
-- tfchomestead:villager_homestead
 - tfc:forest
 - tfc:bamboo
 - tfc:cave_vegetation

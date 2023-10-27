@@ -658,7 +658,7 @@ onEvent('recipes', event => {
     });
 
     global.addItemApplication(false, 'minecraft:bedrock', 'kubejs:void_shard', 'kubejs:cracked_bedrock')
-    global.addMechanicalExtruder('minecraft:lava', 'minecraft:water', 'kubejs:cracked_bedrock', 'kubejs:abyss_flour')
+    global.addMechanicalExtruder('minecraft:lava', 'minecraft:water', 'kubejs:cracked_bedrock', 'kubejs:bedrock_pebble')
 
     global.addDamageInputShapeless(1, 'create:sticky_mechanical_piston', 'create:mechanical_piston', "tfc:knives", 1)
 

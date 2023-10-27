@@ -1,4 +1,4 @@
-To refresh this file, delete it and run /reload command again! Last updated: Apr 20, 2023, 8:21:34 PM
+To refresh this file, delete it and run /reload command again! Last updated: Oct 26, 2023, 5:44:17 PM
 
 #tfc:forest_trees
 - tfc:tree/acacia_entry
@@ -20,3 +20,28 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:tree/sycamore_entry
 - tfc:tree/white_cedar_entry
 - tfc:tree/willow_entry
+
+#dttfc:dynamic_forest_trees
+- dttfc:acacia
+- dttfc:ash
+- dttfc:aspen
+- dttfc:birch
+- dttfc:blackwood
+- dttfc:chestnut
+- dttfc:douglas_fir
+- dttfc:hickory
+- dttfc:kapok
+- dttfc:maple
+- dttfc:oak
+- dttfc:palm
+- dttfc:pine
+- dttfc:rosewood
+- dttfc:sequoia
+- dttfc:spruce
+- dttfc:sycamore
+- dttfc:white_cedar
+- dttfc:willow
+- dttfc:saguaro_cactus
+- dttfc:pillar_cactus
+- dttfc:pipe_cactus
+- dttfc:mega_cactus

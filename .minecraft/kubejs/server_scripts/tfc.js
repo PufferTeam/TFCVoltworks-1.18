@@ -110,7 +110,7 @@ onEvent('recipes', event => {
   //event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/fire'], ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 1000)])
   event.recipes.createMixing('2x kubejs:powder/fire', ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 100)]).heated()
   event.recipes.tfc.barrel_instant([Fluid.of('kubejs:firewater', 500)], 'kubejs:powder/fire', Fluid.of('minecraft:water', 500))
-  event.recipes.createMixing(Fluid.of('kubejs:firewater', 500), ['kubejs:powder/fire', Fluid.of ('minecraft:water', 500)])
+  event.recipes.createMixing(Fluid.of('kubejs:firewater', 500), ['kubejs:powder/fire', Fluid.of('minecraft:water', 500)])
   event.recipes.createFilling('kubejs:brick/unfired_fire_brick', ['tfc:ceramic/unfired_fire_brick', Fluid.of('kubejs:firewater', 125)])
 
   event.remove({ output: 'create:rose_quartz' })
@@ -250,13 +250,13 @@ onEvent('recipes', event => {
 
   event.remove({ id: 'tfc:crafting/powderkeg' })
   event.shaped('tfc:powderkeg', [
-      'SAS',
-      'SBS',
-      'SSS'
+    'SAS',
+    'SBS',
+    'SSS'
   ], {
-      S: 'kubejs:creosote_treated_lumber',
-      B: 'minecraft:red_dye',
-      A: '#forge:string'
+    S: 'kubejs:creosote_treated_lumber',
+    B: 'minecraft:red_dye',
+    A: '#forge:string'
   }).id('tfc:crafting/powderkeg')
 
   event.remove({ id: 'tfc:crafting/stick_bunch' })
@@ -295,7 +295,7 @@ onEvent('recipes', event => {
 
 onEvent('server.datapack.first', event => {
   event.addTFCHeat('kubejs:unfired_flower_box', 0.8)
-  
+
   event.addTFCMetal('kubejs:raw_andesite_alloy', 520, 0.01, 'create:andesite_alloy', 'minecraft:structure_void')
   event.addTFCMetal('kubejs:cast_aluminum', 660, 0.01, 'minecraft:structure_void', 'minecraft:structure_void')
   event.addTFCMetal('thermal:resin', 240, 0.01, 'thermal:rosin', 'minecraft:structure_void')

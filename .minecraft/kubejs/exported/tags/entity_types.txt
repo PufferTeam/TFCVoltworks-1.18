@@ -1,4 +1,4 @@
-To refresh this file, delete it and run /reload command again! Last updated: Apr 20, 2023, 8:21:35 PM
+To refresh this file, delete it and run /reload command again! Last updated: Oct 26, 2023, 5:44:17 PM
 
 #supplementaries:cage_baby_catchable
 - minecraft:cow
@@ -27,6 +27,13 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:wither
 - minecraft:iron_golem
 
+#botania:cocoon/common
+- minecraft:pig
+- minecraft:cow
+- minecraft:chicken
+- minecraft:rabbit
+- minecraft:sheep
+
 #tfc:hunts_land_prey
 - #tfc:land_predators
 - minecraft:player
@@ -42,6 +49,8 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:black_bear
 
 #tfc:destroys_floating_plants
+- beneath:boat/crimson
+- beneath:boat/warped
 - minecraft:boat
 - tfc:boat/acacia
 - tfc:boat/ash
@@ -62,6 +71,23 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:boat/sycamore
 - tfc:boat/white_cedar
 - tfc:boat/willow
+
+#botania:cocoon/rare_aquatic
+- minecraft:dolphin
+- minecraft:glow_squid
+- minecraft:axolotl
+
+#mekanism:hurtable_vehicles
+- minecraft:boat
+- minecraft:minecart
+- minecraft:chest_minecart
+- minecraft:command_block_minecart
+- minecraft:furnace_minecart
+- minecraft:hopper_minecart
+- minecraft:spawner_minecart
+- minecraft:tnt_minecart
+- biomesoplenty:boat?
+- byg:boat?
 
 #tfc:land_prey
 - tfc:rabbit
@@ -84,6 +110,42 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - #tfc:pests
 - minecraft:player
 
+#botania:cocoon/rare
+- minecraft:horse
+- minecraft:donkey
+- minecraft:wolf
+- minecraft:ocelot
+- minecraft:cat
+- minecraft:parrot
+- minecraft:llama
+- minecraft:fox
+- minecraft:panda
+- minecraft:turtle
+- minecraft:goat
+- quark:frog?
+
+#botania:shaded_mesa_blacklist
+- minecraft:ender_dragon
+- minecraft:wither
+- minecraft:item_frame
+- minecraft:glow_item_frame
+- minecraft:end_crystal
+- minecraft:painting
+- minecraft:command_block_minecart
+- minecraft:marker
+- minecraft:area_effect_cloud
+- minecraft:evoker_fangs
+- minecraft:leash_knot
+- botania:corporea_spark
+- botania:doppleganger
+- botania:flame_ring
+- botania:magic_landmine
+- botania:magic_missile
+- botania:mana_burst
+- botania:pink_wither
+- botania:spark
+- botania:player_mover
+
 #tfc:turtle_friends
 - minecraft:player
 - tfc:dolphin
@@ -93,14 +155,27 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:endermite
 - minecraft:silverfish
 - minecraft:fox
+- mekanism:robit
+- thermal:blizz
 
 #tfc:pests
 - tfc:rat
+
+#botania:cocoon/common_aquatic
+- minecraft:cod
+- minecraft:salmon
+- minecraft:tropical_fish
+- minecraft:pufferfish
+- minecraft:squid
+- quark:crab?
 
 #tfc:horses
 - tfc:horse
 - tfc:mule
 - tfc:donkey
+
+#per-viam-invenire:replace_vanilla_navigator
+- mekanism:robit
 
 #minecraft:impact_projectiles
 - #minecraft:arrows
@@ -111,8 +186,12 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:trident
 - minecraft:dragon_fireball
 - minecraft:wither_skull
+- mekanism:flame
 - supplementaries:rope_arrow
 - supplementaries:brick_projectile
+- thermal:basalz_projectile
+- thermal:blitz_projectile
+- thermal:blizz_projectile
 
 #minecraft:beehive_inhabitors
 - minecraft:bee
@@ -143,6 +222,10 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:creeper
 - minecraft:slime
 
+#forge:bosses
+- minecraft:ender_dragon
+- minecraft:wither
+
 #minecraft:axolotl_always_hostiles
 - minecraft:drowned
 - minecraft:guardian
@@ -153,6 +236,8 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:polar_bear
 - minecraft:snow_golem
 - minecraft:wither
+- mekanism:robit
+- thermal:blizz
 
 #goprone:whitelisted_entities
 
@@ -266,6 +351,9 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:falling_block
 - tfc:goat
 
+#c:bosses
+- botania:doppleganger
+
 #tfc:creepers
 - minecraft:creeper
 
@@ -280,6 +368,8 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:vindicator
 - minecraft:illusioner
 - minecraft:witch
+
+#pneumaticcraft:vacuum_trap_blacklisted
 
 #minecraft:axolotl_hunt_targets
 - minecraft:tropical_fish
@@ -406,6 +496,8 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - tfc:goat
 - tfc:yak
 
+#ftbquests:no_loot_crates
+
 #tfc:livestock
 - tfc:pig
 - tfc:cow
@@ -451,6 +543,9 @@ To refresh this file, delete it and run /reload command again! Last updated: Apr
 - minecraft:strider
 - minecraft:blaze
 - minecraft:magma_cube
+
+#pneumaticcraft:omnihopper_blacklisted
+- minecraft:villager
 
 #tfc:deals_slashing_damage
 - minecraft:polar_bear

@@ -59,6 +59,15 @@ onEvent('client.generate_assets', event => {
         }
     })
 
+    global.dyeingItems.forEach(item => {
+        let displayName = global.getCapitalizedWord(item)
+        global.colors.forEach(color => {
+            let displayColor = global.getCapitalizedWord(color)
+                event.addLang(`tfc.recipe.barrel.tfc.barrel.dye.${color}_${item}`, `Dyeing ${displayName} ${displayColor}`)
+        })
+        event.addLang(`tfc.recipe.barrel.tfc.barrel.dye.bleach_${item}`, `Bleaching ${displayName}`)
+    })
+
     global.fluidsToAdd.forEach(i => {
         let result = i.split('/')
         let name = result[0]

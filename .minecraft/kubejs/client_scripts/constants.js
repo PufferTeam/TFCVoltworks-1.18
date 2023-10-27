@@ -24,3 +24,22 @@ global.categoriesToHide = [
     'minecraft:stonecutting',
     'minecraft:anvil'
 ]
+
+global.dyeingItems = [
+    'toolbox',
+    'seat',
+    'valve_handle',
+    'framed_glass',   
+    'shingles',
+    'sheetmetal_colored',
+    'present',
+    'flag',
+    'chalk',
+    'framed_glass_pane',
+    'shard',
+    'wattle',
+    'rockwool',
+    'hammock',
+    'sleeping_bag',
+    'conductor_cap'
+]

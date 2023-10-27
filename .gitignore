@@ -23,6 +23,8 @@
 .minecraft/config/defaultoptions/servers.dat
 .minecraft/config/jei/world/**
 .minecraft/config/*.toml.bak
+.minecraft/config/oculus.properties
+.minecraft/usercache.json
 
 # unignore defaultconfigs
 !.minecraft/defaultconfigs/**
@@ -38,8 +40,6 @@
 !.minecraft/kubejs/server_scripts/**
 !.minecraft/kubejs/startup_scripts/**
 !.minecraft/delete-client-mods.bat
-.minecraft/usercache.json
-.minecraft/config/oculus.properties
 
 # unignore resourcepacks
 !.minecraft/resourcepacks/**
