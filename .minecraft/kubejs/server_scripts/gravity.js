@@ -72,6 +72,13 @@ onEvent('tags.blocks', event => {
     tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.concrete_tile`)
     tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.concrete_leaded`)
 
+    tagMineableSpecial('pickaxe', `additionalplacements:kubejs.brick/bloomery_bricks`)
+    tagMineableSpecial('pickaxe', `additionalplacements:kubejs.brick/bloomery_bricks_reinforced`)
+    tagMineableSpecial('pickaxe', `additionalplacements:kubejs.brick/fire_bricks`)
+    tagMineableSpecial('pickaxe', `additionalplacements:kubejs.brick/fire_bricks_reinforced`)
+    tagMineableSpecial('pickaxe', `additionalplacements:kubejs.brick/tfcfire_bricks`)
+    tagMineableSpecial('pickaxe', `additionalplacements:kubejs.brick/coke_oven_bricks`)
+
     global.tfcSandstoneTypes.forEach(i => {
         tagMineableSpecial('pickaxe', `additionalplacements:tfc.raw_sandstone/${i}`)
         tagMineableSpecial('pickaxe', `additionalplacements:tfc.smooth_sandstone/${i}`)
@@ -82,7 +89,11 @@ onEvent('tags.blocks', event => {
         tagMineableSpecial('shovel', `additionalplacements:tfc.mud_bricks/${i}`)
     });
 
-    global.tfcSoilsTypes.forEach(i => {
+    global.globalSheetmetalTypes.forEach(i => {
+        if (i == 'wrought_iron') {
+            i = 'iron'
+        }
+        tagMineableSpecial('pickaxe', `additionalplacements:immersiveengineering.sheetmetal_${i}`)
     });
 
     tagMineableSpecial('pickaxe', `additionalplacements:minecraft.nether_brick`)

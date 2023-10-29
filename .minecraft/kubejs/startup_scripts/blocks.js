@@ -4,7 +4,9 @@ onEvent('block.registry', event => {
         event.create(`rock/pavedcobble/${rock}_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
         event.create(`rock/pavedcobble/${rock}_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
         event.create(`rock/pavedcobble/${rock}_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    });
 
+    global.tfcRockTypes.forEach(rock => {
         event.create(`${rock}_underclay`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').opaque(false).renderType('cutout').tagBlock('minecraft:needs_stone_tool').requiresTool(true)
     });
 
@@ -53,10 +55,28 @@ onEvent('block.registry', event => {
     });
 
     event.create(`brick/bloomery_bricks`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/bloomery_bricks_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/bloomery_bricks_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/bloomery_bricks_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
     event.create(`brick/bloomery_bricks_reinforced`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/bloomery_bricks_reinforced_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/bloomery_bricks_reinforced_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/bloomery_bricks_reinforced_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
     event.create(`brick/fire_bricks_reinforced`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_reinforced_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_reinforced_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/fire_bricks_reinforced_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
     event.create(`brick/coke_oven_bricks`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/coke_oven_bricks_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/coke_oven_bricks_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/coke_oven_bricks_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
     event.create(`brick/tfcfire_bricks`).material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/tfcfire_bricks_slab`, 'slab').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/tfcfire_bricks_stairs`, 'stairs').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
+    event.create(`brick/tfcfire_bricks_wall`, 'wall').material('stone').hardness(5).tagBlock('minecraft:mineable/pickaxe').requiresTool(true)
 
     event.create('underclay').material('clay').tagBlock('minecraft:mineable/shovel')
 

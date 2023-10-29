@@ -373,7 +373,11 @@ onEvent('recipes', event => {
         "results": [
             {
                 "fluid": "kubejs:methanol",
-                "amount": 4
+                "amount": 2
+            },
+            {
+                "fluid": "kubejs:tar",
+                "amount": 2
             },
             {
                 "fluid": "kubejs:phenol",

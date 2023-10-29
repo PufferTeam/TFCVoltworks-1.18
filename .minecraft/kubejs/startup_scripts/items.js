@@ -54,6 +54,14 @@ onEvent('item.registry', event => {
 
     event.create('carbon_plate').maxStackSize(64);
 
+    event.create('resistor').maxStackSize(64);
+
+    event.create('diode').maxStackSize(64);
+
+    event.create('transistor').maxStackSize(64);
+
+    event.create('capacitor').maxStackSize(64);
+
     event.create('electric_motor').maxStackSize(64);
 
     event.create('electric_piston').maxStackSize(64);
@@ -74,13 +82,13 @@ onEvent('item.registry', event => {
 
     event.create('fiber_reinforced_polymer').maxStackSize(64);
 
-    event.create('assembled_pcb').maxStackSize(64);
+    event.create('pcb/assembled_pcb').maxStackSize(64);
 
     event.create('clinker_flour').maxStackSize(64);
 
     event.create('abyss_flour').maxStackSize(64);
 
-    event.create('thermoplastic_starch').maxStackSize(64);
+    event.create('rubber_starch').maxStackSize(64);
 
     event.create('polydimethylsiloxane_pulp').maxStackSize(64);
 

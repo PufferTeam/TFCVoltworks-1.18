@@ -33,5 +33,5 @@ global.fluidsToAdd.push(
     'biomass/0x7DBA60/false',
     'fermented_biomass/0x54873C/false',
     'biogas/0xC0C973/false',
-    'thermoplastic/0xAfA88F/false'
+    'rubber/0xAfA88F/false'
 )
