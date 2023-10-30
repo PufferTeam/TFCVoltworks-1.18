@@ -100,17 +100,11 @@ onEvent('fluid.registry', event => {
     global.tagFluids.push('kubejs:molten_bioplastic/minecraft:lava')
     global.tagFluids.push('kubejs:molten_bioplastic/tfc:molten_metals')
 
-    event.create('molten_duroplast')
-        .thickTexture(0xC88A32)
-        .bucketColor(0xC88A32)
-        .displayName('Molten Duroplast')
-    global.tagFluids.push('kubejs:molten_duroplast/minecraft:lava')
-    global.tagFluids.push('kubejs:molten_duroplast/tfc:molten_metals')
-
     event.create('molten_fiberpolymer')
-        .thickTexture(0x55948D)
+        .stillTexture('kubejs:block/fluid/fiberpolymer_still')
+        .flowingTexture('kubejs:block/fluid/fiberpolymer_flow')
         .bucketColor(0x55948D)
-        .displayName('Molten Fiber Reinforced Polymer')
+        .displayName('Molten Fiber Reinforced Resin')
     global.tagFluids.push('kubejs:molten_fiberpolymer/minecraft:lava')
     global.tagFluids.push('kubejs:molten_fiberpolymer/tfc:molten_metals')
 

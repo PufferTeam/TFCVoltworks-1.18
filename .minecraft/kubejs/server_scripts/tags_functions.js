@@ -194,7 +194,7 @@ onEvent('tags.fluids', event => {
             nameResult = 'pneumaticcraft:plastic_flowing'
         }
 
-        console.log(nameCut[0])
+        //console.log(nameCut[0])
         if(nameCut[0] == 'immersiveengineering' || nameCut[0] == 'immersivepetroleum') {
             nameResult = nameCut[0] + ':' + nameCut[1] + '_flowing'
         }

@@ -176,6 +176,8 @@ onEvent('item.registry', event => {
 
     event.create('powder/alumina').maxStackSize(32);
 
+    event.create('powder/soda_ash').maxStackSize(32);
+
     event.create('underclay_ball').maxStackSize(64);
 
     global.scrapingItems.forEach(i => event.create('transition_' + i, 'create:sequenced_assembly').maxStackSize(1));

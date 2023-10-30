@@ -107,6 +107,8 @@ onEvent('recipes', event => {
   event.recipes.createMixing(Fluid.of('kubejs:cinderwater', 250), ['kubejs:powder/bloomery', Fluid.of('minecraft:water', 250)])
   event.recipes.createFilling('kubejs:brick/unfired_bloomery_brick', ['tfc:ceramic/unfired_brick', Fluid.of('kubejs:cinderwater', 250)])
 
+  event.recipes.createMixing('kubejs:powder/soda_ash', ['kubejs:powder/gypsum', 'tfc:powder/salt'])
+
   //event.recipes.firmalife.mixing_bowl(['2x kubejs:powder/fire'], ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 1000)])
   event.recipes.createMixing('2x kubejs:powder/fire', ['kubejs:powder/fly_ash', 'kubejs:powder/bauxite', 'kubejs:abyss_flour', Fluid.of('tfc:limewater', 100)]).heated()
   event.recipes.tfc.barrel_instant([Fluid.of('kubejs:firewater', 500)], 'kubejs:powder/fire', Fluid.of('minecraft:water', 500))

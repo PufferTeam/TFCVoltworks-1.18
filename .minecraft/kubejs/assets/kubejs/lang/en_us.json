@@ -30,7 +30,7 @@
     "block.kubejs.brick.tfcfire_bricks": "Fire Bricks",
     "block.kubejs.brick.tfcfire_bricks_slab": "Fire Bricks Slab",
     "block.kubejs.brick.tfcfire_bricks_stairs": "Fire Bricks Stairs",
-    "block.kubejs.brick.tfcfire_bricks_stairs": "Fire Bricks Wall",
+    "block.kubejs.brick.tfcfire_bricks_wall": "Fire Bricks Wall",
     "block.kubejs.brick.bloomery_bricks": "Bloomery Bricks",
     "block.kubejs.brick.bloomery_bricks_slab": "Bloomery Bricks Slab",
     "block.kubejs.brick.bloomery_bricks_stairs": "Bloomery Bricks Stairs",
@@ -59,6 +59,7 @@
     "item.kubejs.powder.lignite": "Lignite Powder",
     "item.kubejs.powder.cursecoal": "Cursecoal Powder",
     "item.kubejs.powder.ender_pearl": "Ender Powder",
+    "item.kubejs.powder.soda_ash": "Soda Ash",
 
     "block.kubejs.sheetmetal.black_steel": "Black Steel Sheetmetal",
     "block.kubejs.sheetmetal.black_steel_slab": "Black Steel Sheetmetal Slab",

@@ -18,7 +18,9 @@ global.customFluidGas = [
     'nitration_mixture/0xFFFC9C/true',
     'polydimethylsiloxane/0x98A0A6/true',
     'polytetrafluorene/0x687070/true',
-    'acetylene/0xEAB3C2/false'
+    'acetylene/0xEAB3C2/false',
+    'bioethylene/0xD5AFC4/false',
+    'biopolyethylene/0xAC8D9E/false'
 ]
 
 global.fluidsToAdd = []
