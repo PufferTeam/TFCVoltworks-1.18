@@ -1,0 +1,14 @@
+name = "TFC Rosia Create Compat"
+filename = "rosia_compat_for_create_0.5.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "1233c4c44e74f48d5c3817dd61d28d06a0e7d1eb"
+
+[update]
+[update.curseforge]
+file-id = 4827934
+project-id = 930450
