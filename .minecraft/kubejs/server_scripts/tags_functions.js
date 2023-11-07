@@ -21,6 +21,7 @@ onEvent('tags.items', event => {
 
     event.add('forge:dusts/wood', 'immersiveengineering:sawdust')
     event.add('forge:dusts/mercury', 'kubejs:mercury_dust')
+    event.add('forge:dusts/soda_ash', 'kubejs:powder/soda_ash')
 
     event.remove('create:windmill_sails', 'create:sail_frame')
     event.remove('forge:storage_blocks/gold', 'minecraft:gold_block')

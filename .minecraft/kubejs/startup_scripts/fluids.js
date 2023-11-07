@@ -79,6 +79,14 @@ onEvent('fluid.registry', event => {
         .displayName('Sulfurized Naphtha')
     global.tagFluids.push('kubejs:naphtha_sulfur/minecraft:water')
 
+    //Thermal
+    event.create('epoxy_resin')
+    .stillTexture('kubejs:block/fluid/epoxy_resin_still')
+    .flowingTexture('kubejs:block/fluid/epoxy_resin_flow')
+    .bucketColor(0x8F8280)
+    .displayName('Epoxy Resin')
+    .noBlock()
+
     //Normal
     event.create('magmatic_lava')
         .thickTexture(0x753A0F)
@@ -100,12 +108,19 @@ onEvent('fluid.registry', event => {
     global.tagFluids.push('kubejs:molten_bioplastic/minecraft:lava')
     global.tagFluids.push('kubejs:molten_bioplastic/tfc:molten_metals')
 
+    event.create('molten_thermoplastic')
+        .thickTexture(0x99B3B6)
+        .bucketColor(0x99B3B6)
+        .displayName('Molten Thermo Plastic')
+    global.tagFluids.push('kubejs:molten_thermoplastic/minecraft:lava')
+    global.tagFluids.push('kubejs:molten_thermoplastic/tfc:molten_metals')
+
     event.create('molten_fiberpolymer')
         .stillTexture('kubejs:block/fluid/fiberpolymer_still')
         .flowingTexture('kubejs:block/fluid/fiberpolymer_flow')
         .bucketColor(0x55948D)
-        .displayName('Molten Fiber Reinforced Resin')
-    global.tagFluids.push('kubejs:molten_fiberpolymer/minecraft:lava')
+        .displayName('Fiber Reinforced Resin')
+    global.tagFluids.push('kubejs:molten_fiberpolymer/minecraft:water')
     global.tagFluids.push('kubejs:molten_fiberpolymer/tfc:molten_metals')
 
     global.tagFluids.push('pneumaticcraft:plastic/minecraft:lava')
@@ -114,7 +129,7 @@ onEvent('fluid.registry', event => {
     event.create('cast_aluminum')
         .thickTexture(0x9C6A4F)
         .bucketColor(0x9C6A4F)
-        .displayName('Cast Aluminum')
+        .displayName('Raw Aluminum')
     global.tagFluids.push('kubejs:cast_aluminum/minecraft:lava')
     global.tagFluids.push('kubejs:cast_aluminum/tfc:molten_metals')
 

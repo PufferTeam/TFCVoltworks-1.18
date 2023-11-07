@@ -1,1 +1,6 @@
-{"parent":"minecraft:item/generated","textures":{"layer0":"immersiveengineering:item/material_dust_wood"}}
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "immersiveengineering:item/material_dust_wood"
+    }
+}

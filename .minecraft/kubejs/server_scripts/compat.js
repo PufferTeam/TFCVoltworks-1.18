@@ -673,7 +673,7 @@ onEvent('recipes', event => {
                     event.remove({ id: `tfc_metallum:heating/ore/${oreName}` })
                     heatingTemperature = 5000
                     if (fluid == 'tfc_metallum:metal/aluminum') {
-                        fluid = 'kubejs:cast_aluminum'
+                        fluid = 'tfc:metal/unknown'
                         //heatingTemperature = temperature
                     }
 

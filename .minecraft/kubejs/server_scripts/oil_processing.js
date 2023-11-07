@@ -400,11 +400,34 @@ onEvent('recipes', event => {
         "results": [
             {
                 "fluid": "kubejs:ammonia",
-                "amount": 2
+                "amount": 3
             },
             {
                 "fluid": "kubejs:glycerol",
-                "amount": 8
+                "amount": 7
+            }
+        ]
+    })
+
+    //Bioethanol
+    event.custom({
+        "type": "pneumaticcraft:refinery",
+        "input": {
+            "type": "pneumaticcraft:fluid",
+            "tag": "forge:bioethanol",
+            "amount": 10
+        },
+        "temperature": {
+            "min_temp": 100
+        },
+        "results": [
+            {
+                "fluid": "immersiveengineering:ethanol",
+                "amount": 6
+            },
+            {
+                "fluid": "kubejs:bioethylene",
+                "amount": 4
             }
         ]
     })

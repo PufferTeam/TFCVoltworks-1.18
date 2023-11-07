@@ -1,0 +1,17 @@
+{
+    "type": "immersiveengineering:mixer",
+    "inputs": [
+        {
+            "tag": "forge:dusts/soda_ash"
+        }
+    ],
+    "result": {
+        "fluid": "kubejs:alumina",
+        "amount": 250
+    },
+    "fluid": {
+        "tag": "forge:cast_aluminum",
+        "amount": 250
+    },
+    "energy": 1600
+}

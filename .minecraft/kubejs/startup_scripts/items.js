@@ -80,6 +80,8 @@ onEvent('item.registry', event => {
 
     event.create('bioplastic_sheet').maxStackSize(64);
 
+    event.create('thermoplastic_sheet').maxStackSize(64);
+
     event.create('fiber_reinforced_polymer').maxStackSize(64);
 
     event.create('pcb/assembled_pcb').maxStackSize(64);
@@ -88,13 +90,28 @@ onEvent('item.registry', event => {
 
     event.create('abyss_flour').maxStackSize(64);
 
-    event.create('rubber_starch').maxStackSize(64);
+    event.create('rubber_pulp').maxStackSize(64);
+    event.create('rubber_fiber').maxStackSize(64);
 
-    event.create('polydimethylsiloxane_pulp').maxStackSize(64);
+    event.create('vulcanized_rubber_pulp').maxStackSize(64);
+    event.create('vulcanized_rubber_fiber').maxStackSize(64);
+
+    event.create('silicon_rubber_pulp').maxStackSize(64);
+    event.create('silicon_rubber_fiber').maxStackSize(64);
+
+    event.create('isoprene_rubber_pulp').maxStackSize(64);
+    event.create('isoprene_rubber_fiber').maxStackSize(64);
+
+    event.create('styrene_butadiene_rubber_pulp').maxStackSize(64);
+    event.create('styrene_butadiene_rubber_fiber').maxStackSize(64);
+
+    event.create('rosin_dust').maxStackSize(64);
+    
+    event.create('epoxy_rosin_dust').maxStackSize(64);
+    event.create('epoxy_rosin').maxStackSize(64);
 
     event.create('mercury_dust').maxStackSize(64);
-
-    event.create('mercury_rosin').maxStackSize(64);
+    event.create('mercury_crystal').maxStackSize(64);
 
     event.create('compacted_sawdust').maxStackSize(64);
 
@@ -102,81 +119,69 @@ onEvent('item.registry', event => {
 
     event.create('unfired_flower_box').maxStackSize(64);
 
+    //Wood Stuff
     event.create('large_stick').maxStackSize(32);
 
     event.create('treated_stick').maxStackSize(32);
-
     event.create('treated_large_stick').maxStackSize(32);
 
     event.create('pitch_treated_lumber').maxStackSize(64);
-
     event.create('pitch_treated_small_gear').maxStackSize(64);
-
     event.create('pitch_treated_large_gear').maxStackSize(64);
-
     event.create('pitch_treated_stick').maxStackSize(32);
-
     event.create('pitch_treated_large_stick').maxStackSize(32);
-
     event.create('pitch_treated_waterwheel_segment').maxStackSize(16);
-
     event.create('pitch_treated_tough_fabric').maxStackSize(16);
 
     event.create('ash_treated_lumber').maxStackSize(64);
-
     event.create('ash_treated_stick').maxStackSize(32);
-
     event.create('ash_treated_large_stick').maxStackSize(32);
 
     event.create('creosote_treated_lumber').maxStackSize(64);
-
     event.create('creosote_treated_large_stick').maxStackSize(64);
 
+    //Brick Stuff
     event.create('brick/coke_oven_brick').maxStackSize(64);
-
     event.create('brick/bloomery_brick').maxStackSize(64);
-
     event.create('powder/fly_ash').maxStackSize(32);
-
     event.create('brick/unfired_ash_brick').maxStackSize(64);
-
     event.create('powder/bloomery').maxStackSize(32);
-
     event.create('brick/unfired_bloomery_brick').maxStackSize(64);
-
     event.create('powder/coke_oven').maxStackSize(32);
-
     event.create('brick/unfired_coke_oven_brick').maxStackSize(64);
-
     event.create('powder/fire').maxStackSize(32);
-
     event.create('brick/unfired_fire_brick').maxStackSize(64);
-
     event.create('brick/tfcfire_brick').maxStackSize(64);
 
+    //Ores
+    event.create('ore/phosphor').maxStackSize(32);
+
+    //Powders
     event.create('powder/gypsum').maxStackSize(32);
-
     event.create('powder/bauxite').maxStackSize(32);
-
+    event.create('powder/bertrandite').maxStackSize(32);
+    event.create('powder/cobaltite').maxStackSize(32);
+    event.create('powder/galena').maxStackSize(32);
+    event.create('powder/kernite').maxStackSize(32);
+    event.create('powder/monazite').maxStackSize(32);
+    event.create('powder/native_iridium').maxStackSize(32);
+    event.create('powder/native_osmium').maxStackSize(32);
+    event.create('powder/native_iridium').maxStackSize(32);
+    event.create('powder/rutile').maxStackSize(32);
+    event.create('powder/uraninite').maxStackSize(32);
+    event.create('powder/wolframite').maxStackSize(32);
     event.create('powder/bismuthinite').maxStackSize(32);
-
     event.create('powder/cassiterite').maxStackSize(32);
-
     event.create('powder/garnierite').maxStackSize(32);
-
     event.create('powder/cryolite').maxStackSize(32);
-
     event.create('powder/bituminous_coal').maxStackSize(32);
-
     event.create('powder/lignite').maxStackSize(32);
-
     event.create('powder/cursecoal').maxStackSize(32);
-
     event.create('powder/ender_pearl').maxStackSize(32);
-
     event.create('powder/alumina').maxStackSize(32);
-
     event.create('powder/soda_ash').maxStackSize(32);
+    event.create('powder/white_phosphorus').maxStackSize(32);
+    event.create('powder/red_phosphorus').maxStackSize(32);
 
     event.create('underclay_ball').maxStackSize(64);
 

@@ -156,5 +156,38 @@ onEvent('recipes', event => {
         S: 'immersiveengineering:wire_aluminum',
         A: 'immersiveengineering:alu_scaffolding_standard'
     }).id('kubejs:ponderous_engineering_assembly')
+
+    event.recipes.createMechanicalCrafting('4x kubejs:light_mechanical_assembly', [
+        'ASA',
+        'PCP',
+        'ASA'
+    ], {
+        C: 'immersiveengineering:component_iron',
+        P: 'immersiveengineering:component_electronic',
+        S: 'kubejs:light_mechanism',
+        A: 'immersiveengineering:treated_scaffold'
+    }).id('kubejs:light_engineering_assembly')
+
+    event.recipes.createMechanicalCrafting('4x kubejs:heavy_mechanical_assembly', [
+        'ASA',
+        'PCP',
+        'ASA'
+    ], {
+        C: 'immersiveengineering:component_steel',
+        P: 'immersiveengineering:component_electronic_adv',
+        S: 'kubejs:heavy_mechanism',
+        A: 'immersiveengineering:steel_scaffolding_standard'
+    }).id('kubejs:heavy_engineering_assembly')
+
+    event.recipes.createMechanicalCrafting('4x kubejs:ponderous_mechanical_assembly', [
+        'ASA',
+        'PCP',
+        'ASA'
+    ], {
+        C: 'kubejs:stainless_steel_mechanical_component',
+        P: 'kubejs:industrial_electronic_component',
+        S: 'kubejs:ponderous_mechanism',
+        A: 'immersiveengineering:alu_scaffolding_standard'
+    }).id('kubejs:ponderous_engineering_assembly')
     
 })

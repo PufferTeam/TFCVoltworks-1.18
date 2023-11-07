@@ -1,0 +1,17 @@
+{
+    "type": "immersiveengineering:mixer",
+    "inputs": [
+        {
+            "tag": "forge:dusts/wood"
+        }
+    ],
+    "result": {
+        "fluid": "kubejs:rubber",
+        "amount": 100
+    },
+    "fluid": {
+        "tag": "forge:latex",
+        "amount": 100
+    },
+    "energy": 300
+}

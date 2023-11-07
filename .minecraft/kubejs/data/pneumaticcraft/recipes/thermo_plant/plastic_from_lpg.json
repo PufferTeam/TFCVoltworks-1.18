@@ -1,7 +1,7 @@
 {
   "type": "pneumaticcraft:thermo_plant",
   "item_input": {
-    "item": "minecraft:coal"
+    "item": "kubejs:carbon_mesh"
   },
   "fluid_input": {
     "type": "pneumaticcraft:fluid",

@@ -145,6 +145,7 @@ global.recipeIdToRemove = [
     'pneumaticcraft:fluid_mixer/biodiesel',
     'createaddition:compat/immersiveengineering/fabric_sail',
     'createaddition:mixing/bioethanol',
+    'pneumaticcraft:thermo_plant/lpg',
 
     'rosia:alloy/invar',
     'rosia:alloy/weak_purple_steel',

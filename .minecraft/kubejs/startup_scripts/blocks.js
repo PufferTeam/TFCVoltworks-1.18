@@ -14,6 +14,8 @@ onEvent('block.registry', event => {
         event.create(`${wood}_leaking_log`).material('wood').hardness(5).tagBlock('minecraft:mineable/axe').requiresTool(true)
     });
 
+    event.create(`rich_slag_glass`).material('glass').hardness(1).tagBlock('minecraft:mineable/pickaxe').opaque(false).renderType('cutout')
+
     event.create('test_block').material('stone').hardness(0.5).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true)
     event.create('sturdy_sheet').material('metal').hardness(0.5).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').requiresTool(true)
 
