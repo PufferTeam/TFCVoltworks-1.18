@@ -29,6 +29,7 @@
 .minecraft/o_prof
 .minecraft/rhino.local.properties
 .minecraft/patchouli_data.json
+.minecraft/resourcepacks
 
 # unignore defaultconfigs
 !.minecraft/defaultconfigs/**
