@@ -166,7 +166,7 @@ onEvent('item.registry', event => {
     event.create('powder/monazite').maxStackSize(32);
     event.create('powder/native_iridium').maxStackSize(32);
     event.create('powder/native_osmium').maxStackSize(32);
-    event.create('powder/native_iridium').maxStackSize(32);
+    event.create('powder/native_platinum').maxStackSize(32);
     event.create('powder/rutile').maxStackSize(32);
     event.create('powder/uraninite').maxStackSize(32);
     event.create('powder/wolframite').maxStackSize(32);
