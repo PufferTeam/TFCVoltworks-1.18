@@ -25,6 +25,10 @@
 .minecraft/config/*.toml.bak
 .minecraft/config/oculus.properties
 .minecraft/usercache.json
+.minecraft/usernamecache.json
+.minecraft/o_prof
+.minecraft/rhino.local.properties
+.minecraft/patchouli_data.json
 
 # unignore defaultconfigs
 !.minecraft/defaultconfigs/**
